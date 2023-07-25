@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 375px;
+    height: 844px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 0;
+    z-index: 0;
+    background-color: #FFF;
+    border: 1px solid #989898;
+
+}
+
+.nav-bar {
+    width: 375px;
+    height: 50px;
+    background: #FFF;
+   
+}
+
+h3 {
+    color: #2A2A2A;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 37px;
+
+}
+
+form>p {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 37px;
+}
+
+form>input {
+    width: 300px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #989898;
+    background: #FFF;
+    margin-left: 37px;
+}
+
+.button button {
+    width: 298px;
+    height: 65px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #94C9FA;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 38px;
+    margin-top: 65px;
+    margin-bottom: 310px;
+    border: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+/* 하단바 */
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+    background-color: white;
+    width: 100%;
+    height: 54px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back>a>img,
+.home>a>img,
+.user>a>img {
+    width: 30px;
+    height: 30px;
+    margin: 12px 0px;
+}
