@@ -21,3 +21,5 @@ urlpatterns = [
     path('', include('boards.urls')),
     path('comment/', include('comment.urls')),
 ]
+
+

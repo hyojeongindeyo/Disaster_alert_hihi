@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Board</title>
+</head>
+<body>
+    <h1>Update Board</h1>
+    <form method="post" enctype="multipart/form-data">
+        <!-- enctype="multipart/form-data" : 폼 데이터에 파일 업로드가 포함 되어 있음을 나타냄 -->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
