@@ -23,6 +23,6 @@ class Board(models.Model) :
 
 
 class Comment(models.Model) :
-    community = models.foreignKey(Board, on_delete=models.CASCADE)  # 게시글 지우면 다 지워짐
+    community = models.ForeignKey(Board, on_delete=models.CASCADE)  # 게시글 지우면 다 지워짐
     ## user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name='comment')  # 유저가져오기
     description = models.TextField(blank=True)  # 내용쓰기
