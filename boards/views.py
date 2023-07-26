@@ -1,19 +1,19 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from .forms import boardForm
-from .models import boards
+from .models import Board
 
-from .models import comment
+from .models import Comment
 from .forms import commentForm
 
 # Create your views here.
 # board
 def post_list(request):
-    posts = boards.objects.all()
+    posts = Board.objects.all()
     return render(request, 'board_list.html', {'posts': posts})
 
 # 상세 view
 def post_detail(request, pk):
-    post = get_object_or_404(boards, id=pk)
+    post = get_object_or_404(Board, id=pk)
     return render(request, 'board_detail.html', {'post': post})
 
 # 작성 view
@@ -28,8 +28,11 @@ def post_create(request):
     return render(request, 'board_create.html', {'form': form})
 
 # 수정 view
+
+
+# 수정하기는 본인 글에만 보였으면 좋겠다고 했으니까 if문 써서 나중에 유저와 유저가 같을 시에 이렇게 넣으면 될 것 같아유
 def post_update(request, pk):
-    board = get_object_or_404(Post, id=pk)
+    board = get_object_or_404(Board, id=pk)
 
     if request.method == 'POST':
         form = boardForm(request.POST,instance=board)
@@ -43,7 +46,7 @@ def post_update(request, pk):
 
 # 삭제 view
 def post_delete(request, pk):
-    board = get_object_or_404(boards, id=pk)
+    board = get_object_or_404(Board, id=pk)
     if request.method == 'POST':
         board.delete()
         return redirect('board_list')
@@ -62,5 +65,5 @@ def comment_create(request):
 
 # 목록 조회 view
 def comment_list(request):
-    comments = comment.objects.all()
+    comments = Comment.objects.all()
     return render(request, 'comment_list.html', {'comments': comments})

@@ -1,15 +1,15 @@
 from django import forms
-from .models import board
-from .models import comment
+from .models import Board
+from .models import Comment
 
 # boardForm
 class boardForm(forms.ModelForm):
     class Meta:
-        model = board
+        model = Board
         fields = ('user','region','description', 'info_image')
 
 # commentForm
 class commentForm(forms.ModelForm):
     class Meta:
-        model = comment
+        model = Comment
         fields = ('user','community','description')
