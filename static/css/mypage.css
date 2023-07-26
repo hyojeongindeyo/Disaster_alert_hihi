@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 375px;
+    height: 844px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    z-index: 0;
+    background-color: #FFF;
+    border: 1px solid #989898;
+
+}
+
+.nav-bar {
+    width: 375px;
+    height: 50px;
+    background: #FFF;
+    
+
+}
+
+#user {
+    width: 168px;
+    height: 168px;
+    margin-top: 22px;
+    margin-left: 103px;
+    margin-right: 104px;
+}
+
+.name {
+    display: flex;
+
+
+}
+
+.name>p {
+    width: 55px;
+    height: 26px;
+    flex-shrink: 0;
+    width: 55px;
+    height: 26px;
+    flex-shrink: 0;
+    margin-left: 160px;
+    margin-top: 19px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.name-1>img {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 17px;
+}
+
+#name-2 {
+    margin-top: -5px;
+}
+
+.email {
+    width: 142px;
+    height: 23px;
+    margin-left: 117px;
+    margin-right: 116px;
+    margin-bottom: 16px;
+
+}
+
+.email>p {
+    color: #878080;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0px;
+
+}
+
+#line {
+    margin-top: 14px;
+
+}
+
+.section {
+    width: 162px;
+    height: 210px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 36px;
+    margin-right: 177px;
+
+}
+
+.section1,
+.section2,
+.section3,
+.section4 {
+    display: flex;
+}
+
+
+
+.section img {
+
+    width: 25px;
+    margin-right: 13px;
+}
+
+.retire {
+    color: #BEBEBE;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 18px;
+    margin-top: 22px;
+}
