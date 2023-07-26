@@ -15,11 +15,27 @@ body {
     z-index:0;
 }
 
+select option[value=""][disabled] { /*select box placeholder를 위해*/
+	display: none;
+}
+
 #area {
-    width: 84px;
-    height: 26px;
+    width: 200px;
+    height: 33px;
     font-size: 16px;
-    margin: 16px 21px 9px 0px;
+    margin: 9px 21px 28px 10px;
+    border-radius: 10px;
+    border-color: #A1A1A1;
+    background: url('../image/triangle.png') no-repeat 95% 50%/16px auto;
+    box-sizing: border;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 0px 5px 10px;
+}
+
+select::-ms-expand {
+    display: none;
 }
 
 .areaTitle {
@@ -55,9 +71,8 @@ body {
 
 .change > a > img {
     width: 31px;
-    height: px;
+    height: 31px;
 }
-
 
 .profile > a > img {
     width: 29px;
@@ -106,7 +121,6 @@ body {
 
 .userInfo {
     height: 24px;
-    /* border: 1px solid gray; */
 }
 
 .nickName {
@@ -140,7 +154,7 @@ body {
 
 .text {
     font-size: 15px;
-    margin: 10px 0px 0px 0px; /*음 */
+    margin: 15px 0px 0px 0px; /*음 */
 }
 
 .comment {
@@ -157,11 +171,9 @@ body {
     padding: 0;
     z-index: 30;
     background-color: white;
-    width: 100%;
+    width: 375px;
     height: 54px;
     position: fixed;
-    left: 0;
-    right: 0;
     bottom: 0;
 
     border-radius: 0.625rem 0.625rem 0rem 0rem;
