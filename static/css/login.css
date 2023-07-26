@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 375px;
+    height: 844px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    z-index: 0;
+    background-color: #FFF;
+    border: 1px solid #989898;
+
+}
+
+.nav-bar {
+    width: 375px;
+    height: 50px;
+    background: #FFF;
+
+}
+
+.back {
+    width: 61px;
+    height: 36px;
+    margin-bottom: 12px;
+    margin-left: 23px;
+
+}
+
+.logo {
+    width: 259px;
+    height: 152px;
+    border-radius: 10px;
+    background: #94C9FA;
+    margin-left: 58px;
+    margin-right: 58px;
+    margin-top: 38px;
+    margin-bottom: 69px;
+}
+
+form>input {
+    width: 300px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #989898;
+    background: #FFF;
+    margin-left: 37px;
+    margin-bottom: 23px;
+}
+
+
+
+
+
+
+
+
+.button button {
+    width: 298px;
+    height: 65px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #94C9FA;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 38px;
+    margin-top: 60px;
+    margin-bottom: 61px;
+    border: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.option {
+    margin-left: 102px;
+}
+
+
+
+.option a {
+    text-decoration: none;
+    color: #68B1F4;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
