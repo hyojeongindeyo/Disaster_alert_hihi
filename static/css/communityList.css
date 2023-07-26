@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: 375px; /* 전체 width 조절 */
+    height: 100%;
+    margin: 0 auto; /* 가운데로 오게 하기 */
+    position: relative;
+    padding: 0;
+    z-index:0;
+}
+
+#area {
+    width: 84px;
+    height: 26px;
+    font-size: 16px;
+    margin: 16px 21px 9px 0px;
+}
+
+.areaTitle {
+    display: inline-block;
+    font-size: 15px;
+    margin: 19px 5px 34px 13px;
+}
+
+.hd {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.areaSelect > form {
+    float: right;
+}
+
+.hdIcons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 10px 0px 0px;
+}
+
+.search > a > img {
+    width: 28px;
+    height: 28px;
+}
+
+.change > a > img {
+    width: 31px;
+    height: px;
+}
+
+
+.profile > a > img {
+    width: 29px;
+    height: 29px;
+}
+/*---상단 끝 ---*/
+
+.title {
+    font-size: 15px;
+    width: 86px;
+    height: 31px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 33px;
+    background-color: #ABD4FA;
+    margin: 0px 0px 21px 13px;
+}
+
+.line {
+    border: 1px solid #DFDFDF;
+}
+/*---제목 끝 ---*/
+
+.content1, .content2, .content3 {
+    height: 134px;
+    width: 346px; /*콘텐츠 들어가는 부분 width 조절함*/
+    margin: 0 auto;
+}
+
+.content2, .content3 {
+    margin-top: 10px;
+}
+
+.lineBox {
+    height: 8px;
+    background-color: #F6F6F6;
+}
+
+/* 콘텐츠 윗 부분 */
+.userInfo > img {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    margin-right: 6px;
+}
+
+.userInfo {
+    height: 24px;
+    /* border: 1px solid gray; */
+}
+
+.nickName {
+    font-size: 18px;
+    margin: 1px 11px 1px 0px;
+}
+
+.time {
+    font-size: 15px;
+    color: #878080;
+    margin: 4px 0px 2px 0px; 
+}
+
+.userInfo > img, .nickName, .time {
+    float: left;
+}
+
+.dotButton {
+    background-color: white;
+    border: none;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.dotButton > img {
+    width: 31px;
+    height: 31px;
+}
+/*콘텐츠 윗부분 끝 */
+
+.text {
+    font-size: 15px;
+    margin: 10px 0px 0px 0px; /*음 */
+}
+
+.comment {
+    transform: scaleX(-1);
+    float: right;
+    width: 28px;
+    height: 28px;
+    margin: 16px 0px;
+}
+
+/*-------하단 메뉴바-------css */
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+    background-color: white;
+    width: 100%;
+    height: 54px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
+}
