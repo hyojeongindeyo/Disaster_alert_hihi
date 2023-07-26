@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Board List</title>
+</head>
+<body>
+    <h1>Board List</h1>
+    <ul>
+        {% for post in posts %}
+        <!-- post 라는 변수에 posts (= boards 모델의 인스턴스들을 담고 있음) 쿼리셋의 각 객체가 들어가는 것 -->
+            <li>
+                <h3>{{ post.title }}</h3>
+                <p>Author: {{ post.user }}</p> # user 속성 접근
+                <p>Region: {{ post.region }}</p> # region 속성 접근
+                <p>Description: {{ post.description }}</p> # description 속성 접근
+                <img src="{{ post.info_image.url }}" alt="{{ post.title }}">
+                <!--info_image.url : 게시물과 연관된 이미지의 URL을 제공-->
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

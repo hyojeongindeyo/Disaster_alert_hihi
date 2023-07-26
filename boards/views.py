@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from .forms import boardForm
 from .models import boards
+from .forms import boardForm
 
 from .models import comment
 from .forms import commentForm

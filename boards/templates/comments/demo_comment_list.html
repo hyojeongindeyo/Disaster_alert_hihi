@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comment List</title>
+</head>
+<body>
+    <h1>Comment List</h1>
+    <ul>
+        {% for comment in comments %}
+        <!-- comment : 반복마다 사용될 변수명 / comments : 반복을 수행할 대상이 되는 변수 -->
+            <li>
+                <p>Content: {{ comment.content }}</p>
+                <!-- {{ comment.content }} : comment 변수에 담긴 댓글 객체의 content 속성 값 출력 -->
+                <p>Created: {{ comment.create_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

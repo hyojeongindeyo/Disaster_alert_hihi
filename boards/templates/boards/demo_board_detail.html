@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Board Detail</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>Author: {{ post.user }}</p>
+    <p>Region: {{ post.region }}</p>
+    <p>Description: {{ post.description }}</p>
+    <img src="{{ post.info_image.url }}" alt="{{ post.title }}">
+</body>
+</html>
