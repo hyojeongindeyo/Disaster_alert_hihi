@@ -26,6 +26,7 @@ select option[value=""][disabled] { /*select box placeholder를 위해*/
     margin: 9px 21px 28px 10px;
     border-radius: 10px;
     border-color: #A1A1A1;
+    /* select box 세모 부분 이미지로 변경 */
     background: url('../image/triangle.png') no-repeat 95% 50%/16px auto;
     box-sizing: border;
     -webkit-appearance: none;
@@ -38,12 +39,6 @@ select::-ms-expand {
     display: none;
 }
 
-.areaTitle {
-    display: inline-block;
-    font-size: 15px;
-    margin: 19px 5px 34px 13px;
-}
-
 .hd {
     display: flex;
     flex-wrap: nowrap;
@@ -51,7 +46,7 @@ select::-ms-expand {
     justify-content:space-between;
 }
 
-.areaSelect > form {
+.areaSelect {
     float: right;
 }
 
@@ -64,17 +59,17 @@ select::-ms-expand {
     padding: 13px 10px 0px 0px;
 }
 
-.search > a > img {
+.search {
     width: 28px;
     height: 28px;
 }
 
-.change > a > img {
+.change {
     width: 31px;
     height: 31px;
 }
 
-.profile > a > img {
+.profile {
     width: 29px;
     height: 29px;
 }
@@ -163,7 +158,7 @@ a:visited {
 
 .text {
     font-size: 15px;
-    margin: 15px 0px 0px 0px; /*음 */
+    margin: 15px 0px 0px 0px;
 }
 
 .comment {
