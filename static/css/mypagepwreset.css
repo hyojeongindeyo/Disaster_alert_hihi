@@ -49,6 +49,7 @@ form>p {
     margin-left: 37px;
 }
 
+/* input */
 form>input {
     width: 300px;
     height: 40px;
@@ -59,16 +60,7 @@ form>input {
     margin-left: 37px;
 }
 
-
-
-
-
-
-
-
-
-
-
+/* 로그인 버튼 */
 .button button {
     width: 298px;
     height: 65px;
@@ -96,11 +88,9 @@ form>input {
     padding: 0;
     z-index: 30;
     background-color: white;
-    width: 100%;
+    width: 375px;
     height: 54px;
     position: fixed;
-    left: 0;
-    right: 0;
     bottom: 0;
 
     border-radius: 0.625rem 0.625rem 0rem 0rem;
@@ -115,19 +105,19 @@ form>input {
     justify-content: space-around;
 }
 
-.back>a>img {
+.back > a > img {
     width: 25x;
     height: 23px;
     margin: 15px 0px;
 }
 
-.home>a>img {
+.home > a > img {
     width: 31px;
     height: 31px;
     margin: 11px 0px;
 }
 
-.user>a>img {
+.user > a > img {
     width: 27px;
     height: 27px;
     margin: 13px 0px;

@@ -41,6 +41,7 @@ h3 {
     margin-left: 37px;
 }
 
+/* 닉네임/이메일/비밀번호/비밀번호 재설정 text */
 form>p {
     margin-bottom: 15px;
     color: #000;
@@ -53,7 +54,7 @@ form>p {
 }
 
 
-
+/* 닉네임 인풋 */
 .nickname {
     width: 300px;
     height: 40px;
@@ -64,7 +65,7 @@ form>p {
    
 }
 
-
+/* 회원가입 버튼 */
 .button button {
     width: 298px;
     height: 65px;
@@ -89,12 +90,11 @@ form>p {
     padding: 0;
     z-index: 30;
     background-color: white;
-    width: 100%;
+    width: 375px;
     height: 54px;
     position: fixed;
-    left: 0;
-    right: 0;
     bottom: 0;
+
     border-radius: 0.625rem 0.625rem 0rem 0rem;
     background: #FFF;
     box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
@@ -107,10 +107,20 @@ form>p {
     justify-content: space-around;
 }
 
-.back>a>img,
-.home>a>img,
-.user>a>img {
-    width: 30px;
-    height: 30px;
-    margin: 12px 0px;
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
 }

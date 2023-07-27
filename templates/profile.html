@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-edit</title>
+    <link rel="stylesheet" href="../static/css/profile.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +21,9 @@
     <div class="container">
         <div class="nav-bar">
         </div>
-        <h3>회원가입</h3>
+        <h3>프로필</h3>
         <div class="input">
+            <img id="user" src="../static/image/user-1.svg" alt="">
             <form action="" method="post">
                 <p for="nickname">닉네임</p>
                 <input class="nickname"  type="text" id="nickname" name="nickname" required >
@@ -21,13 +31,12 @@
                 <p for="email">이메일</p>
                 <input class="nickname" type="email" id="email" name="email" required>
 
-                <p for="password">비밀번호</p>
+                <p for="password">비밀번호 확인</p>
                 <input class="nickname" type="password" id="password" name="password" required>
 
-                <p for="password-confirm">비밀번호 재설정</p>
-                <input class="nickname" type="password" id="password-confirm" name="password-confirm" required>
+                
                 <div class="button">
-                    <button type="submit">회원가입</button>
+                    <button type="submit">확인</button>
                 </form>
             </div>
             <div id="ft"> <!-- 메뉴 하단바 -->
@@ -53,7 +62,9 @@
             </div> <!-- 메뉴 하단바 div 끝-->
         </div>
     </div>
-    <script src="../static/js/signup.js"></script>
 </body>
 
+</html>
+    
+</body>
 </html>

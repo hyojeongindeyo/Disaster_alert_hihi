@@ -88,17 +88,15 @@ form>input {
     padding: 0;
     z-index: 30;
     background-color: white;
-    width: 100%;
+    width: 375px;
     height: 54px;
     position: fixed;
-    left: 0;
-    right: 0;
     bottom: 0;
+
     border-radius: 0.625rem 0.625rem 0rem 0rem;
     background: #FFF;
     box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
 }
-
 
 .ftIcons {
     display: flex;
@@ -107,10 +105,20 @@ form>input {
     justify-content: space-around;
 }
 
-.back>a>img,
-.home>a>img,
-.user>a>img {
-    width: 30px;
-    height: 30px;
-    margin: 12px 0px;
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
 }
