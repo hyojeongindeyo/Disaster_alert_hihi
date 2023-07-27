@@ -144,6 +144,32 @@ select::-ms-expand {
     width: 31px;
     height: 31px;
 }
+
+.reportBtn1, .reportBtn2, .reportBtn3 {
+    position: absolute;
+    width: 51px;
+    height: 26px;
+    display: none;
+    background-color: white;
+    color: black;
+    border: 0.1px solid #C7C7C7;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 999;
+    margin-top: 24px 0px 0px 295px;
+    padding: 0;
+}
+
+.reportBtn1.show, .reportBtn2.show, .reportBtn3.show {
+    display: block;
+    animation: fadeInDown 1s;
+}
+
+.send1, .send2, .send3 {
+    padding: 0;
+    margin: 24px 11px;
+    float: right;
+}
 /*콘텐츠 윗부분 끝 */
 
 a:link {
@@ -179,7 +205,6 @@ a:visited {
     height: 54px;
     position: fixed;
     bottom: 0;
-
     border-radius: 0.625rem 0.625rem 0rem 0rem;
     background: #FFF;
     box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
@@ -208,4 +233,16 @@ a:visited {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
+}
+
+/*위->아래로 자연스럽게 내려오기 효과*/
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -10%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
 }
