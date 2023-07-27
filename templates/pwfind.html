@@ -13,10 +13,10 @@
         <div class="nav-bar"></div>
         <h3>비밀번호 찾기</h3>
         <div class="input">
-            <form action="" method="post">
-                <p for "name">성함</p>
+            <form action="" method="post" onsubmit="return validateForm()">
+                <p for="name">성함</p>
                 <input type="text" id="name" name="name" required>
-                <p for "tel">전화번호</p>
+                <p for="tel">전화번호</p>
                 <div class="phone-number-input">
                     <input type="tel" id="phone-number1" name="phone-number1" maxlength="3" value="010" required>
                     <span>-</span>
@@ -24,7 +24,7 @@
                     <span>-</span>
                     <input type="tel" id="phone-number3" name="phone-number3" maxlength="4" required>
                 </div>
-                <p for "email">이메일</p>
+                <p for="email">이메일</p>
                 <input type="email" id="email" name="email" required>
                 <div class="button">
                     <button type="submit">찾기</button>
@@ -54,10 +54,10 @@
                     </a>
                 </div>
             </div>
-        </div> 
+        </div>
 
     </div>
-  
+
     <script src="../static/js/pwfind.js"></script>
 </body>
 
