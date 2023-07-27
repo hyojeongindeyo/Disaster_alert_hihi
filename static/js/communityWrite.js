@@ -31,10 +31,10 @@ textarea_cnt.addEventListener("input", updateCharCount);
 // 페이지 로드 시 초기 글자 수를 설정
 updateCharCount();
 
-//maxlength 작동이 안돼서.. 글자 수 제한하기
+//maxlength가 작동을 안해서... js처리
 function maxLengthCheck(object) {
     if (object.value.length > object.maxlength)
-        object.value = object.value.slice(0, object.max.length)
+       object.value = object.value.slice(0, object.maxlength)
 }
 
 // 파일 선택이 완료되었을 때의 이벤트를 처리
