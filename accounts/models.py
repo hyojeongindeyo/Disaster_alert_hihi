@@ -12,7 +12,7 @@ class MyAccountManager(BaseUserManager):
         user = self.model(
             username=username,
             email=self.normalize_email(email),
-            user_image=user_image,
+            user_image=user_image
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -45,15 +45,14 @@ class User(AbstractBaseUser):
 
     object = MyAccountManager()  # 헬퍼 클래스 사용
 
-    USERNAME_FIELD = 'username'  # 로그인 ID로 사용할 필드
-    REQUIRED_FIELDS = ['name', 'email', 'user_image']  # 필수 작성 필드
+    USERNAME_FIELD = 'email'  # 로그인 ID로 사용할 필드
+    REQUIRED_FIELDS = ['username', 'user_image']  # 필수 작성 필드
 
     def __str__(self):
-        return self.username
+        return self.email
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
 
     def has_module_perms(self, app_lable):
         return True
-
