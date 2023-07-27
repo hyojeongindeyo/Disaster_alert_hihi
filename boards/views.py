@@ -10,7 +10,7 @@ from .forms import commentForm
 # board
 def post_list(request):
     posts = Board.objects.all()
-    return render(request, 'board_list.html', {'posts': posts})
+    return render(request, 'boards/board_list.html', {'posts': posts})
 
 # 상세 view
 def post_detail(request, pk):
