@@ -60,9 +60,12 @@
                     <img src="../static/image/profile.png" alt="프로필">
                     <p class="nickName">아자핑 최고</p>
                     <p class="time">5분 전</p>
-                    <button type="submit" class="dotButton">
+                    <button type="submit" class="dotButton" onclick="appearButton1()">
                         <img src="../static/image/dot.png" alt="">
                     </button>
+                    <form method="post" class="send1">
+                        <button type="submit" class="reportBtn1">신고</button>
+                    </form>
                 </div>  
             <a href="communityPost.html"> <!--글 쪽을 누르면 글 상세보기 페이지로 넘어감-->
                 <p class="text">
@@ -80,9 +83,12 @@
                     <img src="../static/image/profile.png" alt="프로필">
                     <p class="nickName">아자핑 최고</p>
                     <p class="time">10분 전</p>
-                    <button type="submit" class="dotButton">
+                    <button type="submit" class="dotButton" onclick="appearButton2()">
                         <img src="../static/image/dot.png" alt="">
                     </button>
+                    <form method="post" class="send2">
+                        <button type="submit" class="reportBtn2">신고</button>
+                    </form>
                 </div>
             <p class="text">
                 현재 양주역 상황 말씀드려요.<br>
@@ -99,9 +105,12 @@
                     <img src="../static/image/profile.png" alt="프로필">
                     <p class="nickName">아자핑 최고</p>
                     <p class="time">15분 전</p>
-                    <button type="submit" class="dotButton">
+                    <button type="submit" class="dotButton" onclick="appearButton3()">
                         <img src="../static/image/dot.png" alt="">
                     </button>
+                    <form method="post" class="send3">
+                        <button type="submit" class="reportBtn3">신고</button>
+                    </form>
                 </div>  
             <p class="text">
                 현재 양주역 상황 말씀드려요.<br>
@@ -128,12 +137,13 @@
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
-                    <a href="">
+                    <a href="mypage.html">
                         <img src="../static/image/user_gray.png" alt="유저정보">
                     </a>
                 </div>
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
+    <script src="../static/js/communityList.js"></script>
 </body>
 </html>
