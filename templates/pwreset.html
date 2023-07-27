@@ -14,14 +14,14 @@
         </div>
         <h3>비밀번호 재설정</h3>
         <div class="input">
-            <form action="" method="post">
-                <p for ="password">새 비밀번호</p>
+            <form action="" method="post" onsubmit="return validateForm()">
+                <p for="password">새 비밀번호</p>
                 <input type="password" id="password" name="password" required>
-                <p for = "password-reset">비밀번호 확인</p>
+                <p for="password-reset">비밀번호 확인</p>
                 <input type="password" id="password-reset" name="password-reset" required>
-            </div>
-            <div class="button">
-                <button type="submit">재설정</button>
+                <div class="button">
+                    <button type="submit">재설정</button>
+                </div>
             </form>
         </div>
         <!-- 메뉴 하단바 -->
@@ -47,6 +47,7 @@
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
+    <script src="../static/js/pwreset.js"></script>
 </body>
 
 </html>
