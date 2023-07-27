@@ -31,7 +31,7 @@ body {
 
 }
 
-.header > h3 {
+.header>h3 {
     color: #000;
     font-family: Inter;
     font-size: 25px;
@@ -42,7 +42,7 @@ body {
     margin-left: 30px;
 }
 
-.section1 > p {
+.section1>p {
     color: #878080;
     font-family: Inter;
     font-size: 13px;
@@ -55,10 +55,10 @@ body {
 }
 
 
-.button button {
+ .button button{
     width: 298px;
     height: 65px;
-    margin-top: 260px;
+    margin-top: 250px;
     border-radius: 10px;
     background: #94C9FA;
     box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
@@ -70,6 +70,50 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
-
+    
 }
+
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+    background-color: white;
+    width: 375px;
+    height: 54px;
+    position: fixed;
+    bottom: 0;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
+}
+
+
+
+
+ 
