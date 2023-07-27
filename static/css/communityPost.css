@@ -148,14 +148,14 @@ body {
 /* 댓글 작성하기 부분 */
 form {
     width: 332px;
-    margin: 0 auto;
     border: 1px solid #D5D5D5;
     margin-bottom: 50px;
+    margin-left: 23px;
 }
 
 textarea {
     width: 328px;
-    height: 100px;
+    height: 90px;
     border-radius: 5px;
     font-family: 'Inter', sans-serif;
     border: none;
@@ -166,12 +166,14 @@ textarea {
 form button {
     width: 56px;
     height: 28px;
-    margin-left: 276px;
+    margin-left: 264px;
     background-color: #ABD4FA;
     border: none;
+    border-radius: 5px;
 }
 
 form > p {
+    padding: 7px;
     margin: 0;
     border-top: 1px solid #E5E5E5;
 }
@@ -261,27 +263,86 @@ form > p {
     margin: 13px 0px;
 }
 
-/*모달 테스트*/
-.modal_bg {
-    width: 100%;
+/*모달창*/
+.modal {
+    width: 375px;
     height: 100%;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index:999;
-    display: none;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 999;
+    margin: 0 auto;
 }
 
-.modal_wrap {
+.modal-content {
+    box-shadow: 1px 5px 7px 0px rgba(130, 130, 130, 0.25);
+    border-radius: 10px;
+    background-color: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 298px;
+    top: 35%;
+    left: 0;
+    right: 0;
+    width: 290px;
     height: 180px;
-    background: white;
-    z-index: 1000;
-    display: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    z-index: 999;
 }
+
+.modal-content > p {
+    color: black;
+    font-size: 19px;
+    margin: 54px 40px 24px 40px;
+}
+/* 모달과 제목 끝*/
+
+/* 모달창 버튼들 */
+.close-button {
+    display: block;
+    text-align: center;
+    background-color: #E8E8E8;
+    margin: 0px 18px 0px 43px;
+    text-decoration: none;
+    float: left;
+}
+
+.close-button > p {
+    padding: 0;
+    margin: 5px 15px 7px 15px;
+}
+
+.yesBtn {
+    display: block;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.delete_button {
+    background-color: #ABD4FA;
+    float: right;
+    margin: 0px 80px 0px 0px;
+    padding: 0;
+}
+
+.delete_button > a { /*이거 해야 '네' 버튼 계속 블랙 */
+    text-decoration: none;
+    color: black;
+}
+
+.close-button, .delete_button {
+    font-size: 17px;
+    border-radius: 10px;
+    width: 87px;
+    height: 33px;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
