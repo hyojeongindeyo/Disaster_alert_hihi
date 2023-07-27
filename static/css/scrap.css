@@ -55,6 +55,8 @@ image {
 
 }
 
+
+
 /* 구분선 */
 
 .article1>img {
@@ -62,12 +64,19 @@ image {
 
 }
 
+
+
 /* 글 리스트 제목 */
 
 .article1>h5 {
     margin-bottom: 0;
 }
 
+.article1 > h5 > a {
+    text-decoration: none;
+    color: black
+
+}
 /* 글 리스트 해시태그 */
 
 .article1>h6 {
@@ -95,6 +104,12 @@ image {
     margin-bottom: 0;
 }
 
+.article2 > h5 > a {
+    text-decoration: none;
+    color: black
+
+}
+
 /* 글 리스트 해시태그 */
 .article2>h6 {
     color: #878080;
@@ -117,6 +132,12 @@ image {
 /* 글 리스트 제목 */
 .article3>h5 {
     margin-bottom: 0;
+}
+
+.article3 > h5 > a {
+    text-decoration: none;
+    color: black
+
 }
 /* 글 리스트 해시태그 */
 .article3>h6 {
@@ -142,6 +163,12 @@ image {
 /* 글 리스트 제목 */
 .article4>h5 {
     margin-bottom: 0;
+}
+
+.article4 > h5 > a {
+    text-decoration: none;
+    color: black
+
 }
 /* 글 리스트 해시태그 */
 .article4>h6 {
@@ -169,6 +196,12 @@ image {
 .article5>h5 {
     margin-bottom: 0;
 }
+
+.article5 > h5 > a {
+    text-decoration: none;
+    color: black
+
+}
 /* 글 리스트 해시태그 */
 .article5>h6 {
     color: #878080;
@@ -194,6 +227,12 @@ image {
 /* 글 리스트 제목 */
 .article6>h5 {
     margin-bottom: 0;
+}
+
+.article6 > h5 > a {
+    text-decoration: none;
+    color: black
+
 }
 /* 글 리스트 해시태그 */
 .article6>h6 {
