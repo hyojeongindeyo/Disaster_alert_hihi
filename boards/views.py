@@ -56,7 +56,7 @@ def post_delete(request, pk):
 
 # comment
 # 생성 view
-def comment_create(request):
+def comment_create(request, pk):
     if request.method == 'POST':
         form = commentForm(request.POST)
         if form.is_valid():
