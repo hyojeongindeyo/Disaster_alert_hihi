@@ -31,6 +31,8 @@ body {
 
 }
 
+/* 프로필 */
+
 #user {
     width: 168px;
     height: 168px;
@@ -39,12 +41,14 @@ body {
     margin-right: 104px;
 }
 
+/* 닉네임 */
 .name {
     display: flex;
 
 
 }
 
+/* 행운핑 */
 .name>p {
     width: 55px;
     height: 26px;
@@ -63,18 +67,23 @@ body {
     line-height: normal;
 }
 
+/* 연필 */
 .name-1>img {
     width: 18px;
     height: 18px;
     display: flex;
     flex-direction: row;
     margin-top: 17px;
+    margin-left: 3px;
 }
 
-#name-2 {
+/* 작대기 부분 */
+#name-2{
     margin-top: -5px;
+    
 }
 
+/* email */
 .email {
     width: 142px;
     height: 23px;
@@ -99,7 +108,7 @@ body {
     margin-top: 14px;
 
 }
-
+/* 마이 페이지 기능 */
 .section {
     width: 162px;
     height: 210px;
@@ -118,6 +127,7 @@ body {
 }
 
 
+/* 기능-아이콘 */
 
 .section img {
 
@@ -134,4 +144,45 @@ body {
     line-height: normal;
     margin-left: 18px;
     margin-top: 22px;
+}
+
+/* 하단바 */
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+    background-color: white;
+    width: 375px;
+    height: 54px;
+    position: fixed;
+    bottom: 0;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
 }

@@ -36,12 +36,13 @@ h3 {
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     line-height: normal;
     margin-left: 37px;
 
 }
 
+/* 성함,전화번호,이메일 */
 form>p {
     color: #000;
     font-family: Inter;
@@ -52,6 +53,7 @@ form>p {
     margin-left: 37px;
 }
 
+/* input  */
 form>input {
     width: 300px;
     height: 40px;
@@ -60,8 +62,10 @@ form>input {
     border: 1px solid #989898;
     background: #FFF;
     margin-left: 37px;
+    
 }
 
+/* 전화번호 input */
 .phone-number-input {
     display: flex;
     align-items: center;
@@ -82,21 +86,22 @@ form>input {
 
 #phone-number1{
     margin-left: 37px;
+
 }
 
-#phone-number2 input {
-    margin-left: 24.67px;
-    margin-right: 25.67px;
-    
+/* span 태그 */
+.phone-number-input > span{
+    margin-left: 6.37px;
+    margin-right: 6.37px;
 }
+
 
 #phone-number3 {
-    margin-right: 37.67px; 
+    margin-right: 37px; 
 }
 
 
-
-
+/* 로그인 버튼 */
 .button button {
     width: 298px;
     height: 65px;
@@ -123,11 +128,9 @@ form>input {
     padding: 0;
     z-index: 30;
     background-color: white;
-    width: 100%;
+    width: 375px;
     height: 54px;
     position: fixed;
-    left: 0;
-    right: 0;
     bottom: 0;
 
     border-radius: 0.625rem 0.625rem 0rem 0rem;
@@ -142,19 +145,19 @@ form>input {
     justify-content: space-around;
 }
 
-.back>a>img {
+.back > a > img {
     width: 25x;
     height: 23px;
     margin: 15px 0px;
 }
 
-.home>a>img {
+.home > a > img {
     width: 31px;
     height: 31px;
     margin: 11px 0px;
 }
 
-.user>a>img {
+.user > a > img {
     width: 27px;
     height: 27px;
     margin: 13px 0px;

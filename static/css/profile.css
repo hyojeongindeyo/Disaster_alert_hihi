@@ -1,7 +1,8 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
 
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: Inter;
 }
 
 body {
@@ -26,79 +27,72 @@ body {
 .nav-bar {
     width: 375px;
     height: 50px;
-    background: #FFF;
-
+    background-color: #FFF;
+   
 }
 
 h3 {
-    margin-left: 16px;
-    font-weight: bold;
+    color: #2A2A2A;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 37px;
+}
+#user {
+    width: 168px;
+    height: 168px;
+    margin-top: 22px;
+    margin-left: 103px;
+    margin-right: 104px;
 }
 
 
-
-
-/* > */
-
-#q1 {
-    margin-left: 325px;
-    position: relative;
-    top: -10px;
-
-
-}
-
-.question1>p {
-    margin-left: 16px;
-    margin-right: 0;
-    transform: translateY(25px);
-    flex: 1;
-
+/* 닉네임/이메일/비밀번호/비밀번호 재설정 text */
+form>p {
+    margin-bottom: 15px;
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 37px;
 }
 
 
-
-
-
-.question2>p {
-    margin-left: 16px;
-    transform: translateY(25px);
-
-}
-/* > */
-
-#q2 {
-    margin-left: 325px;
-    position: relative;
-    top: -10px;
-
-
+/* 닉네임 인풋 */
+.nickname {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #989898;
+    background: #FFF;
+    margin-left: 37px;
+   
 }
 
-.question3>p {
-    margin-left: 16px;
-    transform: translateY(25px);
-
-}
-
-/* > */
-#q3 {
-    margin-left: 325px;
-    position: relative;
-    top: -10px;
+/* 회원가입 버튼 */
+.button button {
+    width: 298px;
+    height: 65px;
+    border: none;
+    border-radius: 10px;
+    background: #94C9FA;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 65px;
+    margin-bottom: 83px;
+    margin-left: 38px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
 
 }
 
+/* 하단바 태그 */
 
-
-
-
-
-
-
-
-
-/*-------하단 메뉴바-------css */
 #ft {
     margin: 0;
     padding: 0;
@@ -121,19 +115,19 @@ h3 {
     justify-content: space-around;
 }
 
-.back>a>img {
+.back > a > img {
     width: 25x;
     height: 23px;
     margin: 15px 0px;
 }
 
-.home>a>img {
+.home > a > img {
     width: 31px;
     height: 31px;
     margin: 11px 0px;
 }
 
-.user>a>img {
+.user > a > img {
     width: 27px;
     height: 27px;
     margin: 13px 0px;

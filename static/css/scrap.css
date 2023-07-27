@@ -47,7 +47,7 @@ image {
     width: 315px;
     height: 1px;
 }
-
+/* 스크랩한 글 리스트 */
 .article {
 
     margin-left: 28px;
@@ -55,17 +55,20 @@ image {
 
 }
 
+/* 구분선 */
 
 .article1>img {
     width: 315px;
 
 }
 
-
+/* 글 리스트 제목 */
 
 .article1>h5 {
     margin-bottom: 0;
 }
+
+/* 글 리스트 해시태그 */
 
 .article1>h6 {
     color: #878080;
@@ -79,19 +82,20 @@ image {
 }
 
 
-
+/* 구분선 */
 
 .article2>img {
     width: 315px;
 
 }
 
-
+/* 글 리스트 제목 */
 
 .article2>h5 {
     margin-bottom: 0;
 }
 
+/* 글 리스트 해시태그 */
 .article2>h6 {
     color: #878080;
     font-family: Inter;
@@ -103,17 +107,18 @@ image {
     margin-bottom: 0;
 }
 
+/* 글 구분선 */
 .article3>img {
     width: 315px;
 
 }
 
 
-
+/* 글 리스트 제목 */
 .article3>h5 {
     margin-bottom: 0;
 }
-
+/* 글 리스트 해시태그 */
 .article3>h6 {
     color: #878080;
     font-family: Inter;
@@ -127,18 +132,18 @@ image {
 
 
 
-
+/* 글 구분선 */
 .article4>img {
     width: 315px;
 
 }
 
 
-
+/* 글 리스트 제목 */
 .article4>h5 {
     margin-bottom: 0;
 }
-
+/* 글 리스트 해시태그 */
 .article4>h6 {
     color: #878080;
     font-family: Inter;
@@ -153,18 +158,18 @@ image {
 
 
 
-
+/* 글 구분선 */
 .article5>img {
     width: 315px;
 
 }
 
 
-
+/* 글 리스트 제목 */
 .article5>h5 {
     margin-bottom: 0;
 }
-
+/* 글 리스트 해시태그 */
 .article5>h6 {
     color: #878080;
     font-family: Inter;
@@ -179,18 +184,18 @@ image {
 
 
 
-
+/* 글 구분선 */
 .article6>img {
     width: 315px;
 
 }
 
 
-
+/* 글 리스트 제목 */
 .article6>h5 {
     margin-bottom: 0;
 }
-
+/* 글 리스트 해시태그 */
 .article6>h6 {
     color: #878080;
     font-family: Inter;
@@ -202,12 +207,14 @@ image {
     margin-bottom: 0;
 }
 
+/* 스크랩창  이동하는 버튼 */
 .button {
 
     display: flex;
     margin-bottom: 101px;
 }
 
+/* 양 버튼  */
 .button>button {
     border: none;
     background-color: #FFF;
@@ -215,11 +222,13 @@ image {
     height: 25px;
 }
 
+/* 왼쪽 버튼 */
 .button1 {
     margin-left: 36px;
     margin-top: 68px;
 }
 
+/* 오른쪽 버튼 */
 .button2 {
     margin-left: 209px;
     margin-right: 36px;
@@ -227,23 +236,11 @@ image {
 
 
 }
+/* 오른쪽 버튼 - 위치조정 */
 
 .button2>img {
     transform: translateY(-3px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*-------하단 메뉴바-------css */
