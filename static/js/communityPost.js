@@ -1,23 +1,26 @@
+const closeButton = document.getElementById('closePopup');
 
-function popOpen() {
-    let modalPop = $('.modal_wrap');
-    let modalBg = $('.modal_bg');
-
-    $(modalPop).show();
-    $(modalBg).show();
-}
-
-function popClose() {
-    let modalPop = $('.modal_wrap');
-    let modalBg = $('.modal_bg');
-
-    $(modalPop).hide();
-    $(modalBg).hide();
-}
-
-$('html').css({
-    overflow: 'hidden',
-    height: 'auto'
+closeButton.addEventListener('click', () => {
+    modal.style.display = 'none';
 });
 
-$('html').removeAttr('style');
+const openModalBtn = document.getElementById('open-modal');
+const modal = document.getElementById('modal');
+const closeModalBtn = document.getElementsByClassName('close')[0];
+
+openModalBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    modal.style.display = 'block';
+    body.style.overflow = 'hidden';
+});
+
+closeModalBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+

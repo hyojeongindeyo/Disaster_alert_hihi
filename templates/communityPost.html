@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이:커뮤니티 페이지-글 상세보기</title>
     <link rel="stylesheet" href="../static/css/communityPost.css">
-    <script src="../static/js/communityPost.js"></script>
 </head>
 <body>
     <div class="container">
@@ -29,9 +28,9 @@
                     <a href="">
                         <button type="submit" class="edit">수정</button>
                     </a>  
-                    <button type="submit" class="delete" onClick="javascript:popOpen();">삭제</button>  
+                    <button class="delete" id="open-modal">삭제</button>
                 </div>
-            </div> 
+            </div>  
 
             <p class="text">
                 현재 양주역 상황 말씀드려요.<br>
@@ -41,19 +40,30 @@
             <img src="../static/image/flood.png" alt="홍수 사진">
         </div> <!--게시글 부분 끝-->
 
-        <div class="comment">
+        <!--모달창-->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>글을 삭제하시겠습니까?</p>
+                <a href="#" class="close-button" id="closePopup"><p>아니오</p></a>
+                <form class="yesBtn">
+                    <button type="submit" class="delete_button"><a href="menubar.html">네</a></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="comment"> 
             <img src="../static/image/comment.png" alt="">
             <p>댓글 작성</p>
         </div>
 
         <hr class="line"> <!--선 긋기-->
 
-        <form>
-            <textarea name="commentText" id="" cols="10" rows="0"></textarea>
+        <form> <!--댓글 달기 -->
+            <textarea name="commentText"></textarea>
             <p><button type="submit">등록</button></p>
-        </form>
+        </form> <!--댓글 달기 끝-->
 
-        <div class="comments">
+        <div class="comments"> <!--댓글들 부분-->
             <div class="commentsHd">
                 <div class="commentsUser">
                     <img src="../static/image/profile.png" alt="">
@@ -89,7 +99,7 @@
                 헉 너무 심하네요<br>
                 아까까지는 저렇게까지는 아니었는데..
             </p>
-        </div>
+        </div> <!--댓글들 부분 끝-->
         
         <hr class="line"> <!--선 긋기-->
 
@@ -115,11 +125,6 @@
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
-
-    <div class="modal_bg" onClick="javascript:popClose();"></div>
-    <div class="modal_wrap">
-        정말 삭제하시겠습니까?
-        <button type="submit" class="modal_close" onClick="javascript:popClose();">닫기</button>
-    </div>
+    <script src="../static/js/communityPost.js"></script>
 </body>
 </html>
