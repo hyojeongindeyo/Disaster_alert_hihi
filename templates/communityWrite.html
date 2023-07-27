@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재난이:커뮤니티 페이지-글 등록</title>
+    <link rel="stylesheet" href="../static/css/communityWrite.css">
+</head>
+<body>
+    <div class="container">
+        <form class="pushBtn" method="post">
+            <button type="submit">등록</button>
+        </form>
+            
+        <form class="editText" method="post">
+            <textarea name="edit" rows="0" id="editArea" maxlength="150" oninput="maxLengthCheck(this)"
+            placeholder="현재 지역의 재난 상황에 대해 적어주세요.&#10;&#10;ex) 00역에 지금 침수된 것 같아요.&#10;현재 지역 상황이에요.&#10;&#10;많은 사람들이 보고 조심할 수 있도록 적어주세요."></textarea>
+            <!-- <img src="../static/image/flood.png" alt="홍수 사진"> -->
+            <div id="charCount">(0 / 150)</div> <!--글자수-->
+
+            <div class="image"> <!--사진 등록 부분-->
+                <label for="fileInput" id="imageButton">
+                    <img src="../static//image/camera.png" alt="파일 선택하기">
+                </label>
+                <input type="file" id="fileInput">
+                <span id="fileName"></span>
+            </div>
+        </form>
+
+        <div id="ft"> <!-- 메뉴 하단바 -->
+            <div class="ftIcons">
+                <div class="back"> <!--뒤로가기-->
+                    <a href="">
+                        <img src="../static/image/back_blue.png" alt="">
+                    </a>
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="../static/image/home_gray.png" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="">
+                        <img src="../static/image/user_gray.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
+    <script src="../static/js/communityWrite.js"></script>
+</body>
+</html>
