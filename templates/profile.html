@@ -23,22 +23,23 @@
         </div>
         <h3>프로필</h3>
         <div class="input">
-            <img id="user" src="../static/image/user-1.svg" alt="">
-            <form action="" method="post">
+            <label for="profile-image-input" class="custom-file-upload"><img id="user" src="../static/image/user-1.svg" alt=""></label>
+            <input type="file" id="profile-image-input" accept="image/*" >
+            <form id="profile-form" action="" method="post">
                 <p for="nickname">닉네임</p>
-                <input class="nickname"  type="text" id="nickname" name="nickname" required >
+                <input class="nickname"  type="text" id="nickname" name="nickname" required oninput="validateNicknameInput()" >
 
                 <p for="email">이메일</p>
                 <input class="nickname" type="email" id="email" name="email" required>
 
                 <p for="password">비밀번호 확인</p>
-                <input class="nickname" type="password" id="password" name="password" required>
+                <input class="nickname" type="password" id="password" name="password" required oninput="validatePasswordInput()">
 
                 
                 <div class="button">
                     <button type="submit">확인</button>
                 </div>
-             </form>
+            </form>
             <div id="ft"> <!-- 메뉴 하단바 -->
                 <div class="ftIcons">
                     <div class="back"> <!--뒤로가기-->
@@ -62,6 +63,7 @@
             </div> <!-- 메뉴 하단바 div 끝-->
         </div>
     </div>
+    <script src="../static/js/profile.js"></script>
 </body>
 
 </html>
