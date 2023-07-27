@@ -3,6 +3,7 @@
 * {
     font-family: 'Inter', sans-serif;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -27,8 +28,9 @@ body {
     width: 375px;
     height: 50px;
     background: #FFF;
-    
+
 }
+
 h3 {
     color: #2A2A2A;
     font-family: Inter;
@@ -39,6 +41,8 @@ h3 {
     margin-left: 37px;
 
 }
+
+
 form>p {
     color: #000;
     font-family: Inter;
@@ -48,6 +52,8 @@ form>p {
     line-height: normal;
     margin-left: 37px;
 }
+
+
 
 /* input */
 form>input {
@@ -59,6 +65,49 @@ form>input {
     background: #FFF;
     margin-left: 37px;
 }
+
+
+/* 보이기 버튼과 입력 필드 사이의 간격 설정 */
+form .pw-btn button {
+    margin-left: 10px;
+    /* 왼쪽 간격 설정 */
+    border: solid 1px gainsboro;
+    position: absolute;
+    right: 42px;
+    /* 우측 간격 설정 */
+    transform: translateX(50%);
+    /* 가운데 정렬 */
+
+}
+
+form .pw-btn button {
+    border-radius: 10px;
+    border: none;
+    right: 38px;
+    position: absolute;
+    transform: translateY(-80px);
+    margin-top: 5px;
+    color: #FFF;
+    background-color: #94C9FA;
+    opacity: 60%;
+}
+
+form .pw-btn1 button {
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    margin-top: 5px;
+    right: 38px;
+    transform: translateY(-80px);
+    color: #FFF;
+    background-color: #94C9FA;
+    opacity: 60%;
+
+
+}
+
+
+
 
 /* 로그인 버튼 */
 .button button {
@@ -80,6 +129,7 @@ form>input {
     line-height: normal;
 
 }
+
 
 
 /* 하단바 */
@@ -105,19 +155,19 @@ form>input {
     justify-content: space-around;
 }
 
-.back > a > img {
+.back>a>img {
     width: 25x;
     height: 23px;
     margin: 15px 0px;
 }
 
-.home > a > img {
+.home>a>img {
     width: 31px;
     height: 31px;
     margin: 11px 0px;
 }
 
-.user > a > img {
+.user>a>img {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
