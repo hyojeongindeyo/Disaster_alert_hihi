@@ -36,7 +36,7 @@ h3 {
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     line-height: normal;
     margin-left: 37px;
 }
@@ -46,8 +46,13 @@ h3 {
     margin-top: 22px;
     margin-left: 103px;
     margin-right: 104px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
+#profile-image-input {
+    display: none;
+}
 
 /* 닉네임/이메일/비밀번호/비밀번호 재설정 text */
 form>p {
