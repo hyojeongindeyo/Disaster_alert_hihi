@@ -12,4 +12,4 @@ class boardForm(forms.ModelForm):
 class commentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('user','community','description')
+        fields = ('community','description')
