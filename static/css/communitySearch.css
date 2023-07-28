@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 375px; /* 전체 width 조절 */
+    height: 700px;
+    margin: 0 auto; /* 가운데로 오게 하기 */
+    position: relative;
+    padding: 0;
+    z-index:0;
+    font-family: 'Inter', sans-serif;
+}
+
+/*검색창 부분*/
+.search {
+    width: 359px;
+    height: 47px;
+    border: 1px solid #878080;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 132px;
+    margin-top: 16px; 
+}
+
+.btn > img {
+    width: 17px;
+    height: 17px;
+}
+
+.btn {
+    border: none;
+    background-color: white;
+    margin: 13px 2px 15px 23px;
+}
+
+#searchText {
+    overflow-x: hidden;
+    resize: none;
+    font-family: 'Inter', sans-serif; 
+    position: absolute;
+    border: none;
+    width: 263px;
+    height: 20px;
+    margin: 8px 0px 7px 0px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#searchText::placeholder {
+    font-size: 15px;
+    color: #746D6D;
+}
+
+#searchText:focus, input:focus{ outline: none;} /* textarea 테두리 안 생기게 */
+/*검색창 부분 끝*/
+
+.content {
+    font-size: 16px;
+    color: #878080;
+    text-align: center;
+    opacity: 0.7;
+}
+
+#picture {
+    width: 77px;
+    height: 77px;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.3;
+}
+
+/*-------하단 메뉴바-------css */
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+    background-color: white;
+    width: 375px;
+    height: 54px;
+    position: fixed;
+    bottom: 0;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
+}
