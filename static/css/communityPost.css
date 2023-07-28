@@ -27,20 +27,11 @@ body {
     margin: 16px 0px 16px 22px;
 }
 
-.dotButton, .commentsDots {
+.commentsDots {
     background-color: white;
     border: none;
     float: right;
     padding: 0;
-}
-
-.dotButton {
-    margin: 13px 7px 12px 0px;
-}
-
-.dotButton > img {
-    width: 31px;
-    height: 31px;
 }
 /* 상단 부분 끝 */
 
