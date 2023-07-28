@@ -9,7 +9,7 @@
 <body>
     <div class="container">
 
-        <form name="writeText" class="editText" method="post">
+        <form name="writeText" class="editText" method="post" action="{% url 'boards:post_create' %}">
             {% csrf_token %}
             <div class="pushBtn" method="post">
                 <button type="submit">등록</button>
@@ -32,7 +32,7 @@
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
-                    <a href="/">
+                    <a href="{% url 'boards:post_list' %}">
                         <img src="../static/image/back_blue.png" alt="">
                     </a>
                 </div>
