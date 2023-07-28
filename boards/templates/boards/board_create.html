@@ -8,7 +8,9 @@
 </head>
 <body>
     <div class="container">
+
         <form name="writeText" class="editText" method="post">
+            {% csrf_token %}
             <div class="pushBtn" method="post">
                 <button type="submit">등록</button>
             </div>
@@ -30,7 +32,7 @@
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
-                    <a href="{% url 'community_list' %}">
+                    <a href="/">
                         <img src="../static/image/back_blue.png" alt="">
                     </a>
                 </div>
@@ -42,7 +44,7 @@
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
-                    <a href="{% url 'mypage' %}">
+                    <a href="/">
                         <img src="../static/image/user_gray.png" alt="">
                     </a>
                 </div>
