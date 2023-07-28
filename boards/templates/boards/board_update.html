@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="communityList.html">
+        <a href="{% url 'community_list' %}">
             <form class="pushBtn" method="post">
                 <button type="button">등록</button>
             </form>
@@ -31,7 +31,7 @@
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
-                    <a href="">
+                    <a href="{% url 'community_list' %}">
                         <img src="../static/image/back_blue.png" alt="">
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
-                    <a href="mypage.html">
+                    <a href="{% url 'mypage' %}">
                         <img src="../static/image/user_gray.png" alt="">
                     </a>
                 </div>

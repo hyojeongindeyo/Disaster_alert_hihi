@@ -32,17 +32,17 @@
             </form>
             <div class="hdIcons"> <!-- 아이콘 부분 -->
                 <div>
-                    <a href="">
+                    <a href="{% url 'post_detail' post.id %}">
                         <img src="../static/image/glass.png" class="search" alt="돋보기">
                     </a>
                 </div>
                 <div>
-                    <a href="communityWrite.html">
+                    <a href="{% url 'post_create' %}">
                         <img src="../static/image/pencil.png" class="change" alt="글쓰기">
                     </a>
                 </div>
                 <div>
-                    <a href="mypage.html">
+                    <a href="{% url 'mypage' %}">
                         <img src="../static/image/profile.png" class="profile" alt="프로필">
                     </a>
                 </div>
@@ -67,7 +67,7 @@
                         <button type="submit" class="reportBtn1">신고</button>
                     </form>
                 </div>
-            <a href="communityPost.html"> <!--글 쪽을 누르면 글 상세보기 페이지로 넘어감-->
+            <a href="{% url 'community_post_detail' %}"> <!--글 쪽을 누르면 글 상세보기 페이지로 넘어감-->
                 <p class="text">
                     현재 양주역 상황 말씀드려요.<br>
                     역이 거의 잠겼어요.... 다들 퇴근할 때 조심하세요
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
-                    <a href="mypage.html">
+                    <a href="{% url 'mypage' %}">
                         <img src="../static/image/user_gray.png" alt="유저정보">
                     </a>
                 </div>
