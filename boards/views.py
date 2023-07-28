@@ -14,7 +14,7 @@ def post_list(request):
 
 # 상세 view
 def post_detail(request, pk):
-    post = get_object_or_404(Board, id=pk)
+    post = get_object_or_404(Board, pk=pk)
     return render(request, 'boards/board_detail.html', {'post': post})
 
 
@@ -31,10 +31,9 @@ def post_create(request):
 
 # 수정 view
 
-
 # 수정하기는 본인 글에만 보였으면 좋겠다고 했으니까 if문 써서 나중에 유저와 유저가 같을 시에 이렇게 넣으면 될 것 같아유
 def post_update(request, pk):
-    board = get_object_or_404(Board, id=pk)
+    board = get_object_or_404(Board, pk=pk)
 
     if request.method == 'POST':
         form = boardForm(request.POST,instance=board)
