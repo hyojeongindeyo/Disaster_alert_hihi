@@ -10,11 +10,9 @@
     <div class="container">
         <div class="hd"> <!--윗(상단) 부분-->
             <div class="title">지역 소식</div>
-            <div class="dots">
                 <button type="submit" class="dotButton">
                     <img src="../static/image/dot.png" alt="">
                 </button>
-            </div>
         </div> <!--윗(상단) 부분 끝-->
 
         <div class="lineBox"></div> <!--구분하기 위한 선-->
@@ -22,10 +20,10 @@
         <div class="post"> <!--게시글 부분-->
             <div class="postHd">
                 <div class="userInfo">
-                    <img src="../static/image/profile.png" alt="">
+                    <img src="../static/image/profile.png" alt="프로필">
                     <p class="nickName">아자핑 최고</p>
                     <p class="time">5분 전</p>
-                    <a href="">
+                    <a href="communityEdit.html">
                         <button type="submit" class="edit">수정</button>
                     </a>
                     <button class="delete" id="open-modal">삭제</button>
@@ -45,9 +43,11 @@
             <div class="modal-content">
                 <p>글을 삭제하시겠습니까?</p>
                 <a href="#" class="close-button" id="closePopup"><p>아니오</p></a>
-                <form class="yesBtn">
-                    <button type="submit" class="delete_button"><a href="menubar.html">네</a></button>
-                </form>
+                <a href="communityList.html">
+                    <form class="yesBtn" method="post">
+                        <button type="button" class="delete_button">네</button>
+                    </form>
+                </a>
             </div>
         </div>
 
@@ -58,9 +58,12 @@
 
         <hr class="line"> <!--선 긋기-->
 
-        <form> <!--댓글 달기 -->
-            <textarea name="commentText"></textarea>
-            <p><button type="submit">등록</button></p>
+        <form method="post"> <!--댓글 달기 -->
+            <textarea name="commentText" rows="0" id="commentText" maxlength="150" oninput="maxLengthCheck(this)"></textarea>
+            <div class="border">
+                <button type="submit">등록</button>
+                <div id="charCount">(0 / 150)</div> <!--글자 수 세기-->
+            </div>
         </form> <!--댓글 달기 끝-->
 
         <div class="comments"> <!--댓글들 부분-->
@@ -69,17 +72,20 @@
                     <img src="../static/image/profile.png" alt="">
                     <p class="commentsName">행운핑 최고</p>
                     <p class="commentsTime">5분 전</p>
-                    <button type="submit" class="commentsDots">
+                    <button type="submit" class="commentsDots" onclick="appearButton1()">
                         <img src="../static/image/dot.png" alt="">
                     </button>
                 </div>
             </div>
-
+            <form method="post" class="send1">
+                <button type="submit" class="reportBtn1">신고</button>
+            </form>
             <p class="commentsText">
                 헉 너무 심하네요<br>
                 아까까지는 저렇게까지는 아니었는데..
             </p>
         </div>
+
 
         <hr class="line"> <!--선 긋기-->
 
@@ -89,12 +95,14 @@
                     <img src="../static/image/profile.png" alt="">
                     <p class="commentsName">라라핑 최고</p>
                     <p class="commentsTime">10분 전</p>
-                    <button type="submit" class="commentsDots">
+                    <button type="submit" class="commentsDots" onclick="appearButton2()">
                         <img src="../static/image/dot.png" alt="">
                     </button>
                 </div>
             </div>
-
+            <form method="post" class="send2">
+                <button type="submit" class="reportBtn2">신고</button>
+            </form>
             <p class="commentsText">
                 헉 너무 심하네요<br>
                 아까까지는 저렇게까지는 아니었는데..
@@ -118,7 +126,7 @@
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
-                    <a href="">
+                    <a href="mypage.html">
                         <img src="../static/image/user_gray.png" alt="">
                     </a>
                 </div>

@@ -15,7 +15,7 @@ def post_list(request):
 # 상세 view
 def post_detail(request, pk):
     post = get_object_or_404(Board, id=pk)
-    return render(request, 'boards/demo_board_detail.html', {'post': post})
+    return render(request, 'boards/board_detail.html', {'post': post})
 
 
 # 작성 view
@@ -27,7 +27,7 @@ def post_create(request):
             return redirect('board_list')
     else:
         form = boardForm()
-    return render(request, 'boards/demo_board_create.html', {'form': form})
+    return render(request, 'boards/board_create.html', {'form': form})
 
 # 수정 view
 
@@ -44,7 +44,7 @@ def post_update(request, pk):
             return redirect('post_list')
     else:
         form = boardForm(instance=board)
-    return render(request, 'boards/demo_board_update.html', {'form': form})
+    return render(request, 'boards/board_update.html', {'form': form})
 
 # 삭제 view
 def post_delete(request, pk):
