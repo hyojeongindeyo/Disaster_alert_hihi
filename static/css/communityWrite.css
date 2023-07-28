@@ -32,6 +32,7 @@ body {
     border: none;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
 }
 /* 상단 부분 끝 */
 
@@ -69,7 +70,7 @@ body {
 
 #charCount { /* 글자 수 세주는 부분 */
     font-size: 14px;
-    color: #666;
+    color: #B9B9B9;
     padding: 10px 4px;
     float: right;
 } 
@@ -115,6 +116,7 @@ body {
     margin: 18px 0px 18px 15px;
     font-size: 12px;
     float: left;
+    color: #B9B9B9;
 }
 
 /*-------하단 메뉴바-------css */
