@@ -151,9 +151,10 @@ form {
     border: 1px solid #D5D5D5;
     margin-bottom: 50px;
     margin-left: 23px;
+    border-radius: 7px;
 }
 
-textarea {
+#commentText {
     width: 328px;
     height: 90px;
     border-radius: 5px;
@@ -163,20 +164,27 @@ textarea {
     outline: none;
 }
 
-form button {
+.border {
+    border-top: 1px solid #D5D5D5;
+    height: 42px;
+}
+
+.border button {
     width: 56px;
     height: 28px;
-    margin-left: 264px;
     background-color: #ABD4FA;
     border: none;
     border-radius: 5px;
+    float: right;
+    margin: 7px 5px 7px 0px;
 }
 
-form > p {
-    padding: 7px;
-    margin: 0;
-    border-top: 1px solid #E5E5E5;
-}
+#charCount { /* 글자 수 세주는 부분 */
+    font-size: 14px;
+    color: #B9B9B9;
+    float: left;
+    padding: 13px 0px 13px 5px;
+} 
 /* 댓글 작성하기 부분 끝 */
 
 
@@ -220,13 +228,41 @@ form > p {
 .commentsText {
     padding-left: 26px;
 }
+
+.reportBtn1, .reportBtn2 {
+    position: absolute;
+    width: 42px;
+    height: 26px;
+    display: none;
+    background-color: white;
+    color: black;
+    border: 0.1px solid #C7C7C7;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 990;
+    float: right;
+    margin-left: 297px;
+}
+
+.reportBtn1.show, .reportBtn2.show {
+    display: block;
+    animation: fadeInDown 1s;
+}
+
+.send1, .send2 { /*여기도 absolute 적용해야 함.*/
+    padding: 0;
+    position: absolute;
+    z-index: 990;
+    border: none;
+    margin: 18px 0px 0px 0px;
+}
 /* 댓글 부분 끝 */
 
 /*-------하단 메뉴바-------css */
 #ft {
     margin: 0;
     padding: 0;
-    z-index: 30;
+    z-index: 998;
     background-color: white;
     width: 375px;
     height: 54px;
@@ -265,6 +301,7 @@ form > p {
 
 /*모달창*/
 .modal {
+    animation: fadeInDown 1s;
     width: 375px;
     height: 100%;
     display: none;
@@ -323,17 +360,11 @@ form > p {
     margin: 0;
 }
 
-
 .delete_button {
     background-color: #ABD4FA;
     float: right;
     margin: 0px 80px 0px 0px;
     padding: 0;
-}
-
-.delete_button > a { /*이거 해야 '네' 버튼 계속 블랙 */
-    text-decoration: none;
-    color: black;
 }
 
 .close-button, .delete_button {
@@ -346,3 +377,13 @@ form > p {
     color: black;
 }
 
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -10%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
