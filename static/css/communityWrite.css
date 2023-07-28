@@ -16,6 +16,31 @@ body {
 }
 
 /* 상단 부분 */
+select option[value=""][disabled] { /*select box placeholder를 위해*/
+	display: none;
+}
+
+#area {
+    float: left;
+    width: 200px;
+    height: 33px;
+    font-size: 16px;
+    margin: 21px 21px 28px 0px;
+    border-radius: 10px;
+    border-color: #A1A1A1;
+    /* select box 세모 부분 이미지로 변경 */
+    background: url('../image/triangle.png') no-repeat 95% 50%/16px auto;
+    box-sizing: border;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 0px 5px 10px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
 .pushBtn {
     height: 76px;
     margin-bottom: 25px;
