@@ -23,7 +23,7 @@
                     <img src="../static/image/profile.png" alt="프로필">
                     <p class="nickName">아자핑 최고</p>
                     <p class="time">5분 전</p>
-                    <a href="{% url 'post_update' post.pk %}">
+                    <a href="{% url 'boards:post_update' post.pk %}">
                         <button type="submit" class="edit">수정</button>
                     </a>
                     <button class="delete" id="open-modal">삭제</button>
@@ -43,7 +43,7 @@
             <div class="modal-content">
                 <p>글을 삭제하시겠습니까?</p>
                 <a href="#" class="close-button" id="closePopup"><p>아니오</p></a>
-                <a href="{% url 'post_list' %}">
+                <a href="{% url 'boards:post_list' %}">
                     <form class="yesBtn" method="post">
                         <button type="button" class="delete_button">네</button>
                     </form>
@@ -114,7 +114,7 @@
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
-                    <a href="{% url 'board_list' %}">
+                    <a href="{% url 'boards:post_list' %}">
                         <img src="../static/image/back_blue.png" alt="">
                     </a>
                 </div>
@@ -126,7 +126,7 @@
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
-                    <a href="{% url 'mypage' %}">
+                    <a href="">
                         <img src="../static/image/user_gray.png" alt="">
                     </a>
                 </div>
