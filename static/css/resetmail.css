@@ -68,7 +68,16 @@ body {
 
 
 
+/* 버튼 */
 
+.button > button > a{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
 
 
@@ -83,11 +92,6 @@ body {
     box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
     margin-left: 38px;
     border: none;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+   
 
 }
