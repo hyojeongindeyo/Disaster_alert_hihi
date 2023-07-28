@@ -12,3 +12,4 @@ urlpatterns = [
     path('comment/list/', views.comment_list, name='comment_list'),
 
 ]
+
