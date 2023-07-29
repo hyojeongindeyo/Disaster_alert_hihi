@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 375px;
+    height: 770px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    z-index: 0;
+    font-family: 'Inter', sans-serif;
+    background: #F6F6F6;
+    border: 1px solid gainsboro;
+}
+
+.nav-bar {
+    width: 375px;
+    height: 50px;
+    background-color: #FFF;
+
+
+}
+
+/* 배너 */
+.banner {
+    height: 100px;
+    /* 배너 줄이고 싶다면 1. 여기 height 조절*/
+    position: relative;
+    padding-top: 17px;
+    border: 1px solid gray;
+
+}
+
+.bannerTitle {
+    font-size: 17px;
+    position: relative;
+    margin: 0px 0px 0px 20px;
+    opacity: 0.9;
+}
+
+.move {
+    font-size: 16px;
+    float: right;
+    margin: 35px 5px 30px 0px;
+    /* 2. 여기 글자를 올려야 하기 때문에 */
+    /*35px를 더 작은 숫자로 줄여서 조절하면 됨*/
+    padding: 0;
+    position: relative;
+    /*블러 처리를 위한 코드*/
+
+}
+
+.move a {
+    text-decoration: none;
+    color: black;
+}
+
+.move>a>img {
+    float: right;
+    width: 16px;
+    height: 16px;
+    margin-right: 13px;
+    margin-top: 3.5px;
+}
+
+.text {
+    display: inline-block;
+    position: relative;
+    margin-top: 1.5px;
+    margin-right: 10px;
+}
+
+/*사진 블러처리*/
+.banner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url(../image/hehe.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+.location {
+    display: flex;
+
+
+}
+
+/* 프로필 / 내 위치 : ㅇㅇ시 부분 */
+
+.profile {
+    background-color: #E3E3E3;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    border: none;
+    margin-top: 21px;
+    text-align: center;
+    margin-left: 24px;
+
+
+}
+
+.profile>p {
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+    margin-top: 15px;
+
+
+}
+
+.site {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 34px;
+    margin-left: 12px;
+}
+
+
+
+.content {
+    margin-left: 23px;
+    margin-top: 30px;
+}
+
+
+/* 지역별 재난문자 */
+#content1 {
+    width: 328px;
+    height: 120px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
+    margin-bottom: 20px;
+    border: none;
+}
+
+#content1>img {
+    width: 52px;
+    height: 62px;
+    flex-shrink: 0;
+    transform: translateY(-79px);
+    margin-left: 234px;
+}
+
+#content1>h5 {
+    width: 135px;
+    height: 24px;
+    color: #000;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: bold;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    margin-top: 16px;
+
+}
+
+#content1>h6 {
+    width: 163px;
+    height: 18px;
+    color: #000;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    transform: translateY(-30px);
+
+}
+
+/* 커뮤니티 */
+#content2 {
+    width: 328px;
+    height: 120px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
+    margin-bottom: 20px;
+    border: none;
+}
+
+#content2>img {
+    width: 57px;
+    height: 77px;
+    flex-shrink: 0;
+    transform: translateY(-79px);
+    margin-left: 234px;
+}
+
+
+#content2>h5 {
+    width: 74px;
+    height: 24px;
+    color: #000;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: bold;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    margin-top: 16px;
+
+}
+
+#content2>h6 {
+    width: 101px;
+    height: 18px;
+    color: #000;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    transform: translateY(-30px);
+
+}
+
+/* 대피처 */
+#content3 {
+    width: 154px;
+    height: 171px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
+    border: none;
+}
+
+#content3>img {
+    width: 52px;
+    height: 62px;
+    flex-shrink: 0;
+    transform: translateY(-29px);
+    margin-left: 70px;
+}
+
+#content3>h5 {
+    width: 56px;
+    height: 24px;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: bold;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    margin-top: 16px;
+
+}
+
+#content3>h6 {
+    width: 109px;
+    height: 18px;
+    color: #000;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    transform: translateY(-30px);
+}
+
+/* 행동요령 */
+#content4 {
+    width: 154px;
+    height: 171px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
+    border: none;
+}
+
+#content4>img {
+    width: 52px;
+    height: 62px;
+    flex-shrink: 0;
+    transform: translateY(-29px);
+    margin-left: 70px;
+}
+
+#content4>h5 {
+    width: 74px;
+    height: 24px;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: bold;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    margin-top: 16px;
+
+}
+
+#content4>h6 {
+    width: 109px;
+    height: 18px;
+    color: #000;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    transform: translateY(-30px);
+}
+
+
+.content34 {
+    display: flex;
+
+}
+
+/* 하단바 */
+
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+    background-color: white;
+    width: 375px;
+    height: 54px;
+    position: fixed;
+    bottom: 0;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back>a>img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home>a>img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user>a>img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
+}
