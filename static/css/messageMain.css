@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #F6F6F6;
+    width: 375px; /* 전체 width 조절 */
+    height: 1200px;
+    margin: 0 auto; /* 가운데로 오게 하기 */
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 배너 부분 */
+.banner {
+    height: 100px; /* 배너 줄이고 싶다면 1. 여기 height 조절*/
+    position: relative;
+    padding-top: 17px;
+}
+
+.bannerTitle {
+    font-size: 17px;
+    position: relative;
+    margin: 0px 0px 0px 20px;
+    opacity: 0.9;
+}
+
+.move {
+    font-size: 16px;
+    float: right;
+    margin: 35px 5px 30px 0px; /* 2. 여기 글자를 올려야 하기 때문에 35px를 더 작은 숫자로 줄여서 조절하면 됨*/
+    padding: 0;
+    position: relative; /*블러 처리를 위한 코드*/
+}
+
+.move a {
+    text-decoration: none;
+    color: black;
+}
+
+.move > a > img {
+    float: right;
+    width: 26px;
+    height: 26px;
+}
+
+.text {
+    display: inline-block;
+    position: relative;
+    margin-top: 1.5px;
+}
+
+/*사진 블러처리*/
+.banner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url(../image/finedust.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+/*배너 부분 끝*/
+
+/*제목과 즐겨찾기 부분*/
+.fixArea {
+    height: 114px;
+    width: 328px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.star {
+    font-size: 17px;
+    margin: 30px 0px;
+}
+
+.starIcon > img {
+    width: 17px;
+    height: 17px;
+    margin: 3px 0px 0px 3px;
+}
+
+.starText {
+    float: left;
+    margin: 0;
+}
+
+.starIcon {
+    margin: 0;
+}
+
+.areaBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    width: 328px;
+    margin: 0 auto;
+}
+
+.box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
+    width: 100px;
+    height: 100px;
+}
+
+.starBtn {
+    margin-top: 8px;
+    border: none;
+    background-color: white;
+    float: right;
+    cursor: pointer;
+}
+
+.starBtn img {
+    width: 15px;
+    height: 15px;
+}
+
+.areaName {
+    font-size: 16px;
+    clear: both;
+    text-align: center;
+    padding-top: 12px;
+    color: black;
+}
+
+.areaBox a{
+    text-decoration: none;
+}
+
+.line {
+    margin: 34px 0px;
+    border: 1px solid #DBDBDB;
+
+}
+/*즐겨찾기 부분 끝*/
+
+/*-------하단 메뉴바-------css */
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+    background-color: white;
+    width: 375px;
+    height: 54px;
+    position: fixed;
+    bottom: 0;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
+}
