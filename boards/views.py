@@ -7,6 +7,9 @@ from .models import Comment
 from .forms import commentForm
 
 # Create your views here.
+
+def main_page_view(request):
+    return render(request, 'boards/board_main_page.html')
 # board
 def post_list(request):
     posts = Board.objects.all()
