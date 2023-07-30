@@ -10,6 +10,7 @@ from .forms import commentForm
 
 def main_page_view(request):
     return render(request, 'boards/board_main_page.html')
+
 # board
 def post_list(request):
     posts = Board.objects.all()
