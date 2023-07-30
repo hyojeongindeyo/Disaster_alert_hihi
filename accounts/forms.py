@@ -1,8 +1,10 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
 from .models import User
 from django.contrib.auth.forms import PasswordResetForm as BasePasswordResetForm
 
+
+# This is Form Login Form
 
 class UserForm(UserCreationForm):
     class Meta:
@@ -23,10 +25,12 @@ class UserForm(UserCreationForm):
             user.save()
         return user
 
-class UserChangeForm(UserChangeForm) :
-    class Meta :
+
+class UserChangeForm(UserChangeForm):
+    class Meta:
         model = User
         fields = ['user_image', 'username']
+
 
 class PasswordResetForm(forms.Form):
     email = forms.EmailField(
@@ -40,4 +44,3 @@ class PasswordResetForm(forms.Form):
         label="Password Check",
         widget=forms.PasswordInput(attrs={'placeholder': 'Password Check'})
     )
-

@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main-page</title>
-    <link rel="stylesheet" href="../static/css/main_page.css">
-</head>
 
-<body>
-    <div class="container">
-
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main_page.css' %}">
         <div class="nav-bar"></div>
         <!-- 배너 -->
         <div class="banner">
@@ -18,7 +11,7 @@
             <p class="move">
                 <a href="">
                     <span class="text">알아보기</span>
-                    <img src="../static/image/arrow.svg" alt="화살표">
+                    <img src="{% static 'image/arrow.svg' %}" alt="화살표">
                 </a>
             </p>
         </div>
@@ -27,7 +20,7 @@
             <div class="profile">
                 <p>프로필</p>
             </div>
-            <p class="site"> 내 위치: 경기도 양주시 <img src="../static/image/polygon-1.svg" alt=""></p>
+            <p class="site"> 내 위치: 경기도 양주시 <img src="{% static 'image/polygon-1.svg' %}" alt=""></p>
         </div>
         <!-- 주요 서비스 -->
         <div class="content">
@@ -36,17 +29,17 @@
                     <button id="content1">
                         <h5>지역별 재난문자</h5>
                         <h6>다른 지역은 무슨 일 없나?</h6>
-                        <img src="../static/image/phone.svg" alt="">
+                        <img src="{% static 'image/phone.svg' %}" alt="">
                     </button>
                 </a>
 
             </div>
             <div class="content2">
-                <a href="{% url 'boards:post_list' %}">
+                <a href="{% url 'board_list' %}">
                     <button id="content2">
                         <h5>커뮤니티</h5>
                         <h6>서로 얘기해보자</h6>
-                        <img src="../static/image/community.svg" alt="">
+                        <img src="{% static 'image/community.png' %}" alt="">
                     </button>
                 </a>
             </div>
@@ -55,7 +48,7 @@
                     <button id="content3">
                         <h5>대피처</h5>
                         <h6>어디로 가야하지?</h6>
-                        <img src="../static/image/shelter.svg" alt="">
+                        <img src="{% static 'image/shelter.svg' %}" alt="">
                     </button>
                 </a>
 
@@ -63,36 +56,10 @@
                     <button id="content4">
                         <h5>행동요령</h5>
                         <h6>재난별로 알아보자</h6>
-                        <img src="../static/image/manual.svg" alt="">
+                        <img src="{% static 'image/manual.svg' %}" alt="">
                     </button>
                 </a>
             </div>
 
         </div>
-        <div id="ft"> <!-- 메뉴 하단바 -->
-            <div class="ftIcons">
-                <div class="back"> <!--뒤로가기-->
-                    <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
-                    </a>
-                </div>
-
-                <div class="home"> <!--메인(홈)으로 가기-->
-                    <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
-                    </a>
-                </div>
-
-                <div class="user"> <!--마이페이지로 가기-->
-                    <a href="">
-                        <img src="../static/image/user_gray.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div> <!-- 메뉴 하단바 div 끝-->
-
-
-    </div>
-</body>
-
-</html>
+ {% endblock %}

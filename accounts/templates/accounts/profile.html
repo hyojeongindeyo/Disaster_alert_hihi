@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="../static/css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+        </div>
+        <h3>프로필</h3>
+        <div class="input">
+            <label for="profile-image-input" class="custom-file-upload"><img id="user"
+                    src="../static/image/user-1.svg" alt=""></label>
+            <input type="file" id="profile-image-input" accept="image/*">
+            <form id="profile-form" action="" method="post">
+                <p for="nickname">닉네임</p>
+                <input class="nickname" type="text" id="nickname" name="nickname" required
+                    oninput="validateNicknameInput()">
+
+                <p for="email">이메일</p>
+                <input class="nickname" type="email" id="email" name="email" required>
+
+                <p for="password">비밀번호 확인</p>
+                <input class="nickname" type="password" id="password" name="password" required
+                    oninput="validatePasswordInput()">
+
+
+                <div class="button">
+                    <button type="submit">확인</button>
+                </div>
+            </form>
+            <div id="ft"> <!-- 메뉴 하단바 -->
+                <div class="ftIcons">
+                    <div class="back"> <!--뒤로가기-->
+                        <a href="">
+                            <img src="../static/image/back_blue.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="home"> <!--메인(홈)으로 가기-->
+                        <a href="">
+                            <img src="../static/image/home_gray.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="user"> <!--마이페이지로 가기-->
+                        <a href="">
+                            <img src="../static/image/user_gray.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div> <!-- 메뉴 하단바 div 끝-->
+        </div>
+    </div>
+    <script src="../static/js/profile.js"></script>
+</body>
+</html>

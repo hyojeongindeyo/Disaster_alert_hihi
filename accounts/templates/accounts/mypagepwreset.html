@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지-비밀번호재설정</title>
+    <link rel="stylesheet" href="../static/css/mypagepwreset.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar">
+        </div>
+        <h3>비밀번호 재설정</h3>
+        <!-- input -->
+        <form action="" method="post" onsubmit="return validateForm()">
+            <p for="pw">현재 비밀번호</p>
+            <input type="password" id="password" name="password">
+            <p for="new-pw">새 비밀번호</p>
+            <input type="password" id="new-password" name="new-password">
+            <div class="pw-btn">
+                <button type="button" onclick="togglePasswordVisibility('new-password')">보이기</button>
+            </div>
+
+            <p for="pw-check">비밀번호 재확인</p>
+            <input type="password" id="password-check" name="password-check">
+            <div class="pw-btn1">
+                <button type="button" onclick="togglePasswordVisibility('password-check')">보이기</button>
+            </div>
+
+            <!-- 재설정 버튼 -->
+            <div class="button">
+                <button type="submit">재설정</button>
+            </div>
+        </form>
+
+        <div id="ft">
+            <div class="ftIcons">
+                <div class="back"> <!--뒤로가기-->
+                    <a href="">
+                        <img src="../static/image/back_blue.png" alt="">
+                    </a>
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="../static/image/home_gray.png" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="../templates/mypage.html">
+                        <img src="../static/image/user_gray.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
+    <script src="../static/js/mypagepwreset.js"></script>
+</body>
+
+</html>

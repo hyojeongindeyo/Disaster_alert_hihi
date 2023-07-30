@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입페이지</title>
+    <link rel="stylesheet" href="../static/css/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar">
+        </div>
+        <h3>회원가입</h3>
+        <div class="input">
+            <form action="" method="post" onsubmit="checkPassword()">
+                {% csrf_token %}
+                <p for="username">아이디</p>
+                <input class="nickname" type="text" id="username" name="username" required>
+
+                <p for="email">이메일</p>
+                <input class="nickname" type="email" id="email" name="email" required>
+
+                <p for="password">비밀번호</p>
+                <input class="nickname" type="password" id="password" name="password1" required>
+
+                <p for="password-confirm">비밀번호 확인</p>
+                <input class="nickname" type="password" id="password-confirm" name="password2" required>
+                <div class="button">
+                    <button type="submit" onclick="return validateForm()">회원가입</button>
+                </div>
+            </form>
+        </div>
+        <div id="ft"> <!-- 메뉴 하단바 -->
+            <div class="ftIcons">
+                <div class="back"> <!--뒤로가기-->
+                    <a href="">
+                        <img src="../static/image/back_blue.png" alt="">
+                    </a>
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="../static/image/home_gray.png" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="../templates/mypage.html">
+                        <img src="../static/image/user_gray.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
+  
+    <script src="../static/js/signup.js"></script>
+</body>
+
+</html>

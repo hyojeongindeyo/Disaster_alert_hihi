@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pw-reset mail</title>
+    <link rel="stylesheet" href="{% static 'css/resetmail.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar"></div>
+       
+        <div class="header">
+            <h3>재설정 메일을 발송했어요!</h3>
+        </div>
+        <div class="section1">
+            <p>30분 내로 비밀번호를 재설정해주세요</p>
+        </div>
+        <div class="section2">
+            <p>만약 메일이 오지 않는다면 이메일 주소를 다시 한 번 <br>
+                확인해주시고 스팸폴더를 확인해주세요</p>
+
+        </div>
+        <form action="">
+            <div class="button">
+                <button type="submit"><a href="{% url 'accounts:login' %}">로그인하기</a></button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

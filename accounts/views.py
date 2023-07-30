@@ -1,3 +1,4 @@
+from django.contrib import auth
 from django.contrib.auth import authenticate, login
 
 from .models import *
@@ -32,7 +33,7 @@ def signup(request):
             return redirect('accounts:login')
     else:
         form = UserForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'accounts/signup.html', {'form': form})
 
 
 @login_required
@@ -41,7 +42,7 @@ def my_page(request, pk):
     context = {
         'user': user,
     }
-    return render(request, "my_page.html", context)
+    return render(request, "accounts/mypage.html", context)
 
 
 def password_reset_request(request):
@@ -73,9 +74,9 @@ def password_reset_request(request):
                         send_mail(subject, email, 'jiyeon011004@gmail.com', [user.email], fail_silently=False)
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
-                    return redirect("done/")
+                    return redirect("/password_reset/done/")
     password_reset_form = PasswordResetForm()
     return render(
         request=request,
-        template_name='pwfind.html',
+        template_name='accounts/pwfind.html',
         context={'password_reset_form': password_reset_form})

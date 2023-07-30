@@ -37,7 +37,7 @@ class MyAccountManager(BaseUserManager):
 class User(AbstractBaseUser):
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=100, unique=True)
-    user_image = models.FileField(upload_to='profile/%Y/%m/%d', default="profile/user.png")
+    user_image = models.FileField(upload_to='board/profile/%Y/%m/%d', default="board/profile/user.png")
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -45,11 +45,11 @@ class User(AbstractBaseUser):
 
     object = MyAccountManager()  # 헬퍼 클래스 사용
 
-    USERNAME_FIELD = 'email'  # 로그인 ID로 사용할 필드
-    REQUIRED_FIELDS = ['username', 'user_image']  # 필수 작성 필드
+    USERNAME_FIELD = 'username'  # 로그인 ID로 사용할 필드
+    REQUIRED_FIELDS = ['email','user_image']  # 필수 작성 필드
 
     def __str__(self):
-        return self.email
+        return self.username
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
