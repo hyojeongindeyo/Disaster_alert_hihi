@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>profile</title>
+<!-- {% extends 'menuBar.html' %}
+{% block content %}
+{% load static %} -->
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-</head>
-<body>
+</head> <!--del-->
+<body> <!--del-->
     {% load static %}
-    <div class="container">
+    <div class="container"> <!--del-->
         <div class="nav-bar">
         </div>
         <h3>프로필</h3>
@@ -33,6 +36,8 @@
                     <button type="submit">확인</button>
                 </div>
             </form>
+<!-- {% endblock %} -->
+
             <div id="ft"> <!-- 메뉴 하단바 -->
                 <div class="ftIcons">
                     <div class="back"> <!--뒤로가기-->

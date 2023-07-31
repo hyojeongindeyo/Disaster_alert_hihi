@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이:커뮤니티 페이지-리스트</title>
+<!-- {% extends 'menuBar.html' %}
+{% block content %}
+{% load static %} -->
     <link rel="stylesheet" href="{% static 'css/communityList.css' %}">
-</head>
-<body>
-    <div class="container">
+</head> <!--del-->
+<body> <!--del-->
+    <div class="container"> <!--del-->
         <div class="hd"> <!-- 커뮤니티 상단 -->
             <form method="get" class="areaSelect"> <!-- select box form으로 묶기-->
                 <select name="area_select" id="area" required> 
@@ -120,6 +123,7 @@
         </div>
 
         <div class="lineBox"></div> <!--구분하기 위한 선-->
+<!-- {% endblock %} -->
 
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
