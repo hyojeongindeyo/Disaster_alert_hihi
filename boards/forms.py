@@ -28,3 +28,7 @@ class commentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['description']
+
+# 임시 신고 form
+#class ReportForm(forms.Form):
+#    reason = forms.CharField(widget=forms.Textarea, max_length=200)
