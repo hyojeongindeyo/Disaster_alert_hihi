@@ -75,19 +75,21 @@
                     {% if board.user == comment.user %}
                     <p class="commentsTime">( 글쓴이 )</p>
                     {% endif %}
-                    <button type="submit" class="commentsDots" onclick="appearButton1()">
+                    <button type="submit" class="commentsDots" onclick="appearButton(this)">
                         <img src="../static/image/dot.png" alt="">
                     </button>
                 </div>
             </div>
             {% if board.user != request.user %}
-            <form method="post" class="send1">
-                <button type="submit" class="reportBtn1">신고</button>
+            <form method="post" class="send">
+                <button type="submit" class="reportBtn">신고</button>
             </form>
             {% else %}
-            <a class="send1" href="{% url 'comment_delete' board.id comment.id %}">
-                <button type="submit" class="reportBtn1">삭제</button>
-            </a>
+            <div class="send">
+                <a href="{% url 'comment_delete' board.id comment.id %}">
+                    <button type="submit" class="reportBtn">삭제</button>
+                </a>
+            </div>
             {% endif %}
             <p class="commentsText">
                 {{ comment.description }}
