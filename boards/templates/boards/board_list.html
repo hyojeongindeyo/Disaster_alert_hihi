@@ -1,13 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이:커뮤니티 페이지-리스트</title>
-    <link rel="stylesheet" href="../static/css/communityList.css">
+    <link rel="stylesheet" href="{% static 'css/communityList.css' %}">
 </head>
 <body>
-    {% load static %}
     <div class="container">
         <div class="hd"> <!-- 커뮤니티 상단 -->
             <form method="GET" class="areaSelect" action="{% url 'board_list' %}" > <!-- select box form으로 묶기-->
@@ -27,7 +27,7 @@
                 {% if user.is_authenticated %}
                 <div>
                     <a href="{% url 'board_post' %}">
-                        <img src="../static/image/pencil.png" class="change" alt="글쓰기">
+                        <img src="{% static 'image/pencil.png' %}" class="change" alt="글쓰기">
                     </a>
                 </div>
                 <div>
@@ -57,7 +57,7 @@
                     <img src="{{ board.user.user_image.url }}" alt="프로필">
                     <p class="nickName">{{ board.user.username }}</p>
                     <button type="submit" class="dotButton" onclick="appearButton(this)">
-                        <img src="../static/image/dot.png" alt="">
+                        <img src="{% static 'image/dot.png' %}" alt="">
                     </button>
                     <form method="post" class="send">
                         <button type="submit" class="reportBtn">신고</button>
@@ -78,19 +78,19 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../static/image/back_blue.png" alt="뒤로가기">
+                        <img src="{% static 'image/back_blue.png' %}" alt="뒤로가기">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../static/image/home_gray.png" alt="홈">
+                        <img src="{% static 'image/home_gray.png' %}" alt="홈">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="/">
-                        <img src="../static/image/user_gray.png" alt="유저정보">
+                        <img src="{% static 'image/user_gray.png' %}" alt="유저정보">
                     </a>
                 </div>
             </div>
