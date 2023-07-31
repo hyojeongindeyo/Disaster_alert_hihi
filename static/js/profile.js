@@ -57,41 +57,41 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
 
 // 비밀번호 유효성 검사
-function validatePassword(password) {
-    const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?!.*[\W_]).{8,12}$/;
-    return passwordPattern.test(password);
-}
+// function validatePassword(password) {
+//     const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?!.*[\W_]).{8,12}$/;
+//     return passwordPattern.test(password);
+// }
 // 폼 제출 처리 함수
-function submitProfileForm() {
-    const form = document.getElementById('profile-form');
-    const formData = new FormData(form);
-    const password = formData.get('password');
+// function submitProfileForm() {
+//     const form = document.getElementById('profile-form');
+//     const formData = new FormData(form);
+//     const password = formData.get('password');
 
-    if (!validatePassword(password)) {
-        displayPasswordErrorMessage();
-        return false; // 폼 제출을 막습니다.
-    }
+//     if (!validatePassword(password)) {
+//         displayPasswordErrorMessage();
+//         return false; // 폼 제출을 막습니다.
+    // }
 
     // 이후 서버로 폼 데이터를 전송하는 코드를 추가합니다.
     // ...
-}
+// }
 
 // 비밀번호 형식 오류 메시지 표시 함수
-function displayPasswordErrorMessage() {
-    const errorMessage = '비밀번호는 특수문자를 사용하지 않아야 하고 8~12자 사이로 설정해야 합니다. ';
-    alert(errorMessage);
-}
+// function displayPasswordErrorMessage() {
+//     const errorMessage = '비밀번호는 특수문자를 사용하지 않아야 하고 8~12자 사이로 설정해야 합니다. ';
+//     alert(errorMessage);
+// }
 // 폼 제출 처리 함수
-function submitProfileForm() {
-    const form = document.getElementById('profile-form');
-    const formData = new FormData(form);
-    const password = formData.get('password');
+// function submitProfileForm() {
+//     const form = document.getElementById('profile-form');
+//     const formData = new FormData(form);
+//     const password = formData.get('password');
 
-    if (!validatePassword(password)) {
-        displayPasswordErrorMessage();
-        return false; // 폼 제출을 막습니다.
-    }
-}
+//     if (!validatePassword(password)) {
+//         displayPasswordErrorMessage();
+//         return false; // 폼 제출을 막습니다.
+//     }
+// }
 
 
 // 닉네임 확인 함수
