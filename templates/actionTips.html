@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이: 행동요령</title>
-    <link rel="stylesheet" href="../static/css/menuBar.css">
-    <link rel="stylesheet" href="../static/css/actionTips.css">
+    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/actionTips.css' %}">
 </head>
 <body>
     <div class="container">
@@ -166,26 +166,26 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="">
-                        <img src="../static/image/user_gray.png" alt="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/actionTips.js"></script>
+    <script src="{% static 'js/actionTips.js' %}"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 </html>
