@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: 375px; /* 전체 width 조절 */
+    height: 100%;
+    margin: 0 auto; /* 가운데로 오게 하기 */
+    position: relative;
+    padding: 0;
+    z-index:0;
+    padding-bottom: 190px;
+}
+
+/*카드뉴스 글자 부분-상단*/
+.hd, .title {
+    width: 347px;
+    height: 56px;
+    margin: 0 auto;
+}
+
+.hd {
+    padding-top: 21px;
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.cardnews {
+    font-size: 23px;
+    font-weight: 600;
+    margin: 0;
+}
+/*카드뉴스 글자 부분-상단 끝*/
+
+/*제목과 등록일 부분*/
+.title {
+    margin-bottom: 54px;
+}
+
+.cardTitle {
+    font-size: 21px;
+    margin: 24px 0px 10px 0px;
+    /* font-weight: 600; */
+}
+
+.time {
+    margin: 0;
+    font-size: 15px;
+    color: #878080;
+}
+/*제목과 등록일 부분 끝*/
+
+/*캐러셀*/
+.slide {
+    display: flex;
+    flex-wrap: nowrap;
+    /* margin-left: 100px; */
+    width: 300px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    justify-content: right;
+}
+
+.slide-container {
+    width: 375px;
+    margin: 0 auto;
+    border: none;
+    /* transform: translateX(-50px,50px);  */
+    overflow: hidden;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    border: none;
+}
+
+.slide li img {
+	border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    /* transform: translateX(-40px); */
+    /* margin-right: 40px; */
+    margin-bottom: 0px;
+    padding: 0;
+    margin: 0 auto;
+    margin-left: 40px;
+    transition: transform 10000s ease;
+}
+
+.btn-container {
+    width: 375px;
+    height: 30px;
+    /* background-color: white; */
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    border: none;
+    margin-bottom: 130px;
+}
+
+.prev-btn{
+    display: block;
+    /* float: right; */
+    border: none;
+    /* margin-right: 295px; */
+    background-color: transparent;
+    border-radius: 7px;
+    /* margin-top: 5px; */
+    float: left;
+}
+
+.next-btn{
+    background-color: transparent;
+    border: none;
+    border-radius: 7px;
+    /* margin-top: 5px; */
+    /* float: right; */
+    display: block;
+    float: right;
+}
+
+.next-btn > img, .prev-btn > img {
+    width: 22px;
+    height: 22px;
+}
+
+.prev {
+    transform: scaleX(-1);
+}
+/*캐러셀 끝*/
+
+/*-------하단 메뉴바-------css */
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    background-color: white;
+    width: 375px;
+    height: 54px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back > a > img {
+    width: 25x;
+    height: 23px;
+    margin: 15px 0px;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
+}
