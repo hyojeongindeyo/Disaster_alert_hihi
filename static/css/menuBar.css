@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+
 body {
     margin: 0;
     padding: 0;
 }
 
 .container {
+    font-family: 'Inter', sans-serif;
     width: 375px; /* 전체 width 조절 */
     height: 100%;
     margin: 0 auto; /* 가운데로 오게 하기 */
     position: relative;
-    padding: 0;
+    padding-bottom: 170px;
     z-index:0;
 }
 
@@ -16,7 +19,7 @@ body {
 #ft {
     margin: 0;
     padding: 0;
-    z-index: 30;
+    z-index: 998;
     background-color: white;
     width: 375px;
     height: 54px;
@@ -35,8 +38,8 @@ body {
     justify-content: space-around;
 }
 
-.back > a > img {
-    width: 25x;
+.back > img {
+    width: 25px;
     height: 23px;
     margin: 15px 0px;
 }
@@ -51,4 +54,12 @@ body {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
+}
+
+.home > a > img:hover {
+    content: url(../image/home_blue.png);
+}
+
+.user > a > img:hover {
+    content: url(../image/user_blue.png)
 }

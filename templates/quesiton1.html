@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question1-비밀번호재설정</title>
+<!-- {% extends 'menuBar.html' %}
+{% block content %}
+{% load static %} -->
     <link rel="stylesheet" href="{% static 'css/question1.css' %}">
-</head>
+</head> <!--del-->
 
-<body>
+<body> <!--del-->
     {% load static %}
-    <div class="container">
+    <div class="container"> <!--del-->
         <div class="nav-bar"></div>
         <h3>비밀번호 어떻게 찾나요?</h3>
         <img src="{% static 'image/rectangle-75.svg' %}" alt="">
@@ -24,6 +27,7 @@
                 <p>2.비밀번호 찾기를 누르시면 됩니다</p>
             </div>
         </div>
+<!-- {% endblock %} -->
 
         <!-- 하단바 -->
         <div id="ft"> <!-- 메뉴 하단바 -->

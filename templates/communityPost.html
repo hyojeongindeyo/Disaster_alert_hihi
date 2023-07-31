@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이:커뮤니티 페이지-글 상세보기</title>
+<!-- {% extends 'menuBar.html' %}
+{% block content %}
+{% load static %} -->
     <link rel="stylesheet" href="{% static 'css/communityPost.css' %}">
-</head>
-<body>
-    <div class="container">
+</head> <!--del-->
+<body> <!--del-->
+    <div class="container"> <!--del-->
         <div class="hd"> <!--윗(상단) 부분-->
             <div class="title">지역 소식</div>
         </div> <!--윗(상단) 부분 끝-->
@@ -113,6 +116,7 @@
         </div> <!--댓글들 부분 끝-->
         
         <hr class="line"> <!--선 긋기-->
+<!-- {% endblock %} -->
 
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
