@@ -16,11 +16,11 @@ def main_page(request):
 #        query = request.GET.get('q')
 #        if query:
 #            results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
-#            return render(request, 'search_results.html', {'results': results})
+#            return render(request, 'board_search.html', {'results': results})
 #    return redirect('boards/board_list.html')
 
 # 임시 신고 뷰
-#def post_report(request, post_id):
+#def post_report(request, pk):
 #    if request.method == 'POST':
 #        post = get_object_or_404(Post, id=post_id)
 #        post.is_reported = True
