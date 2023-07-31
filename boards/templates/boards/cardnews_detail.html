@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이: 카드뉴스 내용(캐러셀)</title>
+<!-- {% extends 'menuBar.html' %}
+{% block content %}
+{% load static %} -->
     <link rel="stylesheet" href="{% static 'css/cardnews_detail.css' %}">
-</head>
-<body>
-    <div class="container">
+</head> <!--del-->
+<body> <!--del-->
+    <div class="container">  <!--del-->
         <div class="hd"> <!--상단-->
             <p class="cardnews">카드뉴스</p>
         </div>
@@ -49,7 +52,8 @@
                 </button>
             </div>
         </div>
-
+<!-- {% endblock %} -->
+    
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
