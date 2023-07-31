@@ -10,6 +10,22 @@ from .models import *
 def main_page(request):
     return render(request, 'boards/board_main_page.html')
 
+# 임시 검색 뷰
+#def board_search(request):
+#    if request.method == 'GET':
+#        query = request.GET.get('q')
+#        if query:
+#            results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+#            return render(request, 'search_results.html', {'results': results})
+#    return redirect('boards/board_list.html')
+
+# 임시 신고 뷰
+#def post_report(request, post_id):
+#    if request.method == 'POST':
+#        post = get_object_or_404(Post, id=post_id)
+#        post.is_reported = True
+#        post.save()
+#        return redirect('boards/board_detail.html', post_id=post_id)
 
 def board_list(request):
     region_filter = request.GET.get('region', '')  # 주소 필터링 값을 가져옴
