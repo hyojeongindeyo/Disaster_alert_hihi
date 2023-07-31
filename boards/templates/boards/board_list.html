@@ -56,11 +56,11 @@
                 <div class="userInfo">
                     <img src="{{ board.user.user_image.url }}" alt="프로필">
                     <p class="nickName">{{ board.user.username }}</p>
-                    <button type="submit" class="dotButton" onclick="appearButton1()">
+                    <button type="submit" class="dotButton" onclick="appearButton(this)">
                         <img src="../static/image/dot.png" alt="">
                     </button>
-                    <form method="post" class="send1">
-                        <button type="submit" class="reportBtn1">신고</button>
+                    <form method="post" class="send">
+                        <button type="submit" class="reportBtn">신고</button>
                     </form>
                 </div>
             <a href="{% url 'board_detail' pk=board.pk %}"> <!--글 쪽을 누르면 글 상세보기 페이지로 넘어감-->

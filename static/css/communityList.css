@@ -13,6 +13,7 @@ body {
     position: relative;
     padding: 0;
     z-index:0;
+    padding-bottom: 200px;
 }
 
 select option[value=""][disabled] { /*select box placeholder를 위해*/
@@ -92,9 +93,11 @@ select::-ms-expand {
 /*---제목 끝 ---*/
 
 .content1, .content2, .content3 {
-    height: 134px;
+    height: auto; /*변경*/
     width: 346px; /*콘텐츠 들어가는 부분 width 조절함*/
-    margin: 0 auto;
+    margin: 0 auto; 
+    overflow: auto; /*추가*/
+    word-break: break-all; /*추가: 영어가 잘려서...*/
 }
 
 .content2, .content3 {
@@ -137,7 +140,8 @@ select::-ms-expand {
     border: none;
     float: right;
     padding: 0;
-    margin: 0;
+    margin: 0; 
+    cursor: pointer;
 }
 
 .dotButton > img {
@@ -145,7 +149,7 @@ select::-ms-expand {
     height: 31px;
 }
 
-.reportBtn1, .reportBtn2, .reportBtn3 {
+.reportBtn {
     position: absolute;
     width: 51px;
     height: 26px;
@@ -156,19 +160,22 @@ select::-ms-expand {
     border-radius: 5px;
     cursor: pointer;
     z-index: 999;
-    margin-top: 24px 0px 0px 295px;
+    margin-left: 295px; /*이상하게 있어서 변경*/
     padding: 0;
-}
-
-.reportBtn1.show, .reportBtn2.show, .reportBtn3.show {
-    display: block;
+    /* float: right; */
     animation: fadeInDown 1s;
 }
 
-.send1, .send2, .send3 {
+/* .reportBtn1.show, .reportBtn2.show, .reportBtn3.show {
+    display: block;
+    animation: fadeInDown 1s;
+} */
+
+.send {
     padding: 0;
     margin: 24px 11px;
-    float: right;
+    position: absolute; /*추가*/
+    z-index: 880; /*추가*/
 }
 /*콘텐츠 윗부분 끝 */
 
@@ -185,6 +192,7 @@ a:visited {
 .text {
     font-size: 15px;
     margin: 15px 0px 0px 0px;
+    /* overflow-x: hidden; */
 }
 
 .comment {
@@ -192,7 +200,7 @@ a:visited {
     float: right;
     width: 28px;
     height: 28px;
-    margin: 16px 0px;
+    margin: 15px 0px; /*살짝 변경*/
 }
 
 /*-------하단 메뉴바-------css */
@@ -233,6 +241,15 @@ a:visited {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
+}
+
+#colorButton {
+    background-color: transparent;
+    border: none;
+}
+
+.active {
+    filter: hue-rotate(#ABD4FA); /* 원하는 색상으로 변경하세요. */
 }
 
 /*위->아래로 자연스럽게 내려오기 효과*/
