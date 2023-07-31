@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이:커뮤니티 페이지-글 수정</title>
-    <link rel="stylesheet" href="../static/css/communityEdit.css">
+    <link rel="stylesheet" href="{% static 'css/communityEdit.css' %}">
 </head>
 <body>
     <div class="container">
@@ -36,12 +37,12 @@
             </a>
             
             <textarea name="edit" rows="0" id="editArea" maxlength="150" oninput="maxLengthCheck(this)">현재 양주역 상황 말씀드려요.&#10;역이 거의 잠겼어요.... 다들 퇴근할 때 조심하세요&#10;</textarea>
-            <img src="../static/image/flood.png" alt="홍수 사진">
+            <img src="{% static 'image/flood.png' %}" alt="홍수 사진">
             <div id="charCount">(0 / 150)</div> <!--글자수-->
 
             <div class="image"> <!--사진 등록 부분-->
                 <label for="fileInput" id="imageButton">
-                    <img src="../static//image/camera.png" alt="파일 선택하기">
+                    <img src="{% static 'image/camera.png' %}" alt="파일 선택하기">
                 </label>
                 <input type="file" id="fileInput">
                 <span id="fileName"></span>
@@ -52,24 +53,24 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="mypage.html">
-                        <img src="../static/image/user_gray.png" alt="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
-    <script src="../static/js/communityEdit.js"></script>
+    <script src="{% static 'js/communityEdit.js' %}"></script>
 </body>
 </html>

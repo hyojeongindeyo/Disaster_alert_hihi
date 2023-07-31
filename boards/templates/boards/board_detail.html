@@ -50,7 +50,7 @@
         </div>
 
         <div class="comment">
-            <img src="../static/image/comment.png" alt="">
+            <img src="{% static 'image/comment.png' %}" alt="">
             <p>댓글 작성</p>
         </div>
 
@@ -76,7 +76,7 @@
                     <p class="commentsTime">( 글쓴이 )</p>
                     {% endif %}
                     <button type="submit" class="commentsDots" onclick="appearButton(this)">
-                        <img src="../static/image/dot.png" alt="">
+                        <img src="{% static 'image/dot.png' %}" alt="">
                     </button>
                 </div>
             </div>
@@ -102,19 +102,19 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="">
-                        <img src="../static/image/user_gray.png" alt="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>

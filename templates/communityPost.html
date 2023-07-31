@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이:커뮤니티 페이지-글 상세보기</title>
-    <link rel="stylesheet" href="../static/css/communityPost.css">
+    <link rel="stylesheet" href="{% static 'css/communityPost.css' %}">
 </head>
 <body>
     <div class="container">
@@ -17,7 +18,7 @@
         <div class="post"> <!--게시글 부분-->
             <div class="postHd">
                 <div class="userInfo">
-                    <img src="../static/image/profile.png" alt="프로필">
+                    <img src="{% static 'image/profile.png' %}" alt="프로필">
                     <p class="nickName">아자핑 최고</p>
                     <p class="time">5분 전</p>
                     <a href="communityEdit.html">
@@ -32,7 +33,7 @@
                 역이 거의 잠겼어요.... 다들 퇴근할 때 조심하세요
             </p>
 
-            <img src="../static/image/flood.png" alt="홍수 사진">
+            <img src="{% static 'image/flood.png' %}" alt="홍수 사진">
         </div> <!--게시글 부분 끝-->
 
         <!--모달창-->
@@ -49,7 +50,7 @@
         </div>
 
         <div class="comment"> 
-            <img src="../static/image/comment.png" alt="">
+            <img src="{% static 'image/comment.png' %}" alt="">
             <p>댓글 작성</p>
         </div>
 
@@ -66,11 +67,11 @@
         <div class="comments"> <!--댓글들 부분-->
             <div class="commentsHd">
                 <div class="commentsUser">
-                    <img src="../static/image/profile.png" alt="">
+                    <img src="{% static 'image/profile.png' %}" alt="">
                     <p class="commentsName">행운핑 최고</p>
                     <p class="commentsTime">5분 전</p>
                     <button type="submit" class="commentsDots" onclick="appearButton(this)">
-                        <img src="../static/image/dot.png" alt="">
+                        <img src="{% static 'image/dot.png' %}" alt="">
                     </button>
                 </div>
             </div>
@@ -89,11 +90,11 @@
         <div class="comments">
             <div class="commentsHd">
                 <div class="commentsUser">
-                    <img src="../static/image/profile.png" alt="">
+                    <img src="{% static 'image/profile.png' %}" alt="">
                     <p class="commentsName">라라핑 최고</p>
                     <p class="commentsTime">10분 전</p>
                     <button type="submit" class="commentsDots" onclick="appearButton(this)">
-                        <img src="../static/image/dot.png" alt="">
+                        <img src="{% static 'image/dot.png' %}" alt="">
                     </button>
                 </div>
             </div>
@@ -117,24 +118,24 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="mypage.html">
-                        <img src="../static/image/user_gray.png" alt="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
-    <script src="../static/js/communityPost.js"></script>
+    <script src="{% static 'js/communityPost.js' %}"></script>
 </body>
 </html>

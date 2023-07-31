@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이: 지역별 재난문자 메인페이지-리스트 형식</title>
-    <link rel="stylesheet" href="../../../static/css/messageMain.css">
+    <link rel="stylesheet" href="{% static 'css/messageMain.css' %}">
 </head>
 <body>
     <div class="container">
@@ -13,7 +14,7 @@
             <p class="move">
                 <a href="">
                     <span class="text">알아보기</span>
-                    <img src="../../../static/image/arrow.png" alt="화살표">
+                    <img src="{% static 'image/arrow.png' %}" alt="화살표">
                 </a>
             </p>
         </div> <!--배너 부분 끝-->
@@ -21,7 +22,7 @@
             <div class="title">지역별 재난문자</div>
             <div class="star">
                 <p class="starText">즐겨찾기</p>
-                <p class="starIcon"><img src="../../../static/image/star_black.png" alt="별" class="change"></p>
+                <p class="starIcon"><img src="{% static 'image/star_black.png' %}" alt="별" class="change"></p>
             </div>
         </div>
 
@@ -30,7 +31,7 @@
                 <div class="areaBox">
                     <div>
                         <button type="button" class="starBtn" onclick="toggleImage(this)">
-                            <img src="../../../static/image/star_white.png" alt="별">
+                            <img src="{% static 'image/star_black.png' %}" alt="별">
                         </button>
                         <a href="#">
                             <div class="box">
@@ -41,7 +42,7 @@
 
                     <div>
                         <button type="button" class="starBtn" onclick="toggleImage(this)">
-                            <img src="../../../static/image/star_white.png" alt="별">
+                            <img src="{% static 'image/star_black.png' %}" alt="별">
                         </button>
                         <a href="#">
                             <div class="box">
@@ -57,7 +58,7 @@
             <div class="areaBox">
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_black.png" alt="별">
+                        <img src="{% static 'image/star_black.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -68,7 +69,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_black.png" alt="별">
+                        <img src="{% static 'image/star_black.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -79,7 +80,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_black.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -90,7 +91,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -101,7 +102,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -112,7 +113,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -123,7 +124,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -134,7 +135,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -145,7 +146,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -156,7 +157,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -167,7 +168,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -178,7 +179,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -189,7 +190,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -200,7 +201,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -211,7 +212,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -222,7 +223,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -233,7 +234,7 @@
 
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="../../../static/image/star_white.png" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="#">
                         <div class="box">
@@ -248,24 +249,24 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../../../static/image/back_blue.png" alt="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../../../static/image/home_gray.png" alt="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="">
-                        <img src="../../../static/image/user_gray.png" alt="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
-    <script src="../../../static/js/messageMain.js"></script>
+    <script src="{% static 'js/messageMain.js' %}"></script>
 </body>
 </html>
