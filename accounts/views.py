@@ -44,6 +44,19 @@ def my_page(request, pk):
     }
     return render(request, "accounts/mypage.html", context)
 
+@login_required
+def my_page_update(request, pk) :
+    user = User.object.get(id=pk)
+    if request.method == 'POST':
+        print(request.POST)
+        form = UserChangeForm(request.POST, request.FILES, instance=user)
+        print(form.is_valid())
+        if form.is_valid():
+            form.save()
+            return redirect('accounts:my_page', pk=user.pk)
+    else:
+        form = UserChangeForm(instance=user)
+    return render(request, "accounts/profile.html", {'form': form})
 
 def password_reset_request(request):
     if request.method == "POST":

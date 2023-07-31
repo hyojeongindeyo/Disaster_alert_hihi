@@ -29,7 +29,7 @@ class UserForm(UserCreationForm):
 class UserChangeForm(UserChangeForm):
     class Meta:
         model = User
-        fields = ['user_image', 'username']
+        fields = ['user_image', 'username', 'email']
 
 
 class PasswordResetForm(forms.Form):
