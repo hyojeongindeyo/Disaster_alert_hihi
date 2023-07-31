@@ -69,20 +69,20 @@
                     <img src="../static/image/profile.png" alt="">
                     <p class="commentsName">행운핑 최고</p>
                     <p class="commentsTime">5분 전</p>
-                    <button type="submit" class="commentsDots" onclick="appearButton1()">
+                    <button type="submit" class="commentsDots" onclick="appearButton(this)">
                         <img src="../static/image/dot.png" alt="">
                     </button>
                 </div>
             </div>
-            <form method="post" class="send1">
-                <button type="submit" class="reportBtn1">신고</button>
+            <form method="post" class="send">
+                <button type="submit" class="reportBtn">신고</button>
             </form>
             <p class="commentsText">
-                헉 너무 심하네요<br>
+                헉 너무 심하네요
                 아까까지는 저렇게까지는 아니었는데..
+                ㅇㄴ란어ㅏㅣㄹv아아아아 150자를 채워야 하는데 할 말이 없다 할 말이 없어 어랄라라라 업서엇어ㅏ어없어서 어ㅏㅓㅁ어머라이너리ㅏㅓ이ㅏㅓ나ㅣ러ㅏㅣㄴ어리넝라ㅓ아ㅓㄹ나어라ㅣㄴ어리ㅏㅇ너ㅣㅏ러ㅣㅏㄴ어라ㅣ너ㅣㅏ어나ㅣㄹ나어리나어리ㅏ너이ㅏ러어ㅏㄴ나ㅏㅇdfjjdlfjsldkfjdskljfhello hehlloo umm i will check ummmm ummm........
             </p>
         </div>
-
 
         <hr class="line"> <!--선 긋기-->
 
@@ -92,14 +92,19 @@
                     <img src="../static/image/profile.png" alt="">
                     <p class="commentsName">라라핑 최고</p>
                     <p class="commentsTime">10분 전</p>
-                    <button type="submit" class="commentsDots" onclick="appearButton2()">
+                    <button type="submit" class="commentsDots" onclick="appearButton(this)">
                         <img src="../static/image/dot.png" alt="">
                     </button>
                 </div>
             </div>
-            <form method="post" class="send2">
-                <button type="submit" class="reportBtn2">신고</button>
-            </form>
+            <!-- <form method="post" class="send">
+                <button type="submit" class="reportBtn">신고</button>
+            </form> -->
+            <div class="send">
+                <a href="{% url 'comment_delete' board.id comment.id %}">
+                    <button type="submit" class="reportBtn">삭제</button>
+                </a>
+            </div>
             <p class="commentsText">
                 헉 너무 심하네요<br>
                 아까까지는 저렇게까지는 아니었는데..

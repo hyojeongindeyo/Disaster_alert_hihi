@@ -8,11 +8,12 @@ body {
 
 .container {
     width: 375px; /* 전체 width 조절 */
-    height: 1000px;
+    height: 100%;
     margin: 0 auto; /* 가운데로 오게 하기 */
     position: relative;
     padding: 0;
     z-index:0;
+    padding-bottom: 150px;
 }
 
 /* 상단 부분 */
@@ -100,6 +101,7 @@ body {
     clear: both;
     font-size: 15px;
     margin-bottom: 16px;
+    word-break: break-all; /*영어 이상하게 잘려서 추가*/
 }
 
 .post > img {
@@ -153,6 +155,7 @@ form {
     border: none;
     resize: none;
     outline: none;
+    word-break: break-all; /*영어 이상하게 줄바꿈돼서 추가*/
 }
 
 .border {
@@ -180,9 +183,8 @@ form {
 
 
 /* 댓글 부분 */
-.comments {
+.comments { /*변경 height 삭제-늘어나도록*/
     width: 330px;
-    height: 65px;
     margin: 0 auto;
     margin-bottom: 11px;
 }
@@ -220,7 +222,29 @@ form {
     padding-left: 26px;
 }
 
+/* .reportBtn1, .reportBtn2, .commentDelBtn {
+    position: absolute;
+    width: 42px;
+    height: 26px;
+    display: none;
+    background-color: white;
+    color: black;
+    border: 0.1px solid #C7C7C7;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 990;
+    float: right;
+}
+
+.commentDelBtn { 추가
+    margin-left: 135px;
+}
+
 .reportBtn1, .reportBtn2 {
+    margin-left: 297px;
+} */
+
+.reportBtn {
     position: absolute;
     width: 42px;
     height: 26px;
@@ -233,19 +257,20 @@ form {
     z-index: 990;
     float: right;
     margin-left: 297px;
-}
-
-.reportBtn1.show, .reportBtn2.show {
-    display: block;
     animation: fadeInDown 1s;
 }
 
-.send1, .send2 { /*여기도 absolute 적용해야 함.*/
+/* .reportBtn1.show, .reportBtn2.show {
+    display: block;
+    animation: fadeInDown 1s;
+} */
+
+.send, .commentDelete { /*여기도 absolute 적용해야 함.*/
     padding: 0;
     position: absolute;
     z-index: 990;
-    border: none;
     margin: 18px 0px 0px 0px;
+    border: none;
 }
 /* 댓글 부분 끝 */
 
@@ -378,3 +403,4 @@ form {
         transform: translateZ(0);
     }
 }
+
