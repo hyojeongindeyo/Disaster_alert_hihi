@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>profile</title>
-    <link rel="stylesheet" href="../static/css/profile.css">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 </head>
 <body>
+    {% load static %}
     <div class="container">
         <div class="nav-bar">
         </div>
         <h3>프로필</h3>
         <div class="input">
             <label for="profile-image-input" class="custom-file-upload"><img id="user"
-                    src="../static/image/user-1.svg" alt=""></label>
+                    src="{% static 'image/user-1.svg' %}" alt=""></label>
             <input type="file" id="profile-image-input" accept="image/*">
             <form id="profile-form" action="" method="post">
                 <p for="nickname">닉네임</p>
@@ -36,25 +37,25 @@
                 <div class="ftIcons">
                     <div class="back"> <!--뒤로가기-->
                         <a href="">
-                            <img src="../static/image/back_blue.png" alt="">
+                            <img src="{% static 'image/back_blue.png' %}" alt="">
                         </a>
                     </div>
 
                     <div class="home"> <!--메인(홈)으로 가기-->
                         <a href="">
-                            <img src="../static/image/home_gray.png" alt="">
+                            <img src="{% static 'image/home_gray.png' %}" alt="">
                         </a>
                     </div>
 
                     <div class="user"> <!--마이페이지로 가기-->
                         <a href="">
-                            <img src="../static/image/user_gray.png" alt="">
+                            <img src="{% static 'image/user_gray.png' %}" alt="">
                         </a>
                     </div>
                 </div>
             </div> <!-- 메뉴 하단바 div 끝-->
         </div>
     </div>
-    <script src="../static/js/profile.js"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
 </body>
 </html>

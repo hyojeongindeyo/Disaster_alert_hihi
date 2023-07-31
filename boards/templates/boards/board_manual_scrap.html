@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual-scrap</title>
-    <link rel="stylesheet" href="../static/css/manual_scrap.css">
+    <link rel="stylesheet" href="{% static 'css/manual_scrap.css'%}">
 </head>
 
 <body>
+    {% load static %}
     <div class="container">
         <div class="nav_bar">
         </div>
@@ -27,7 +28,7 @@
 
 
         </div>
-        <img src="../static/image/line.svg" alt="">
+        <img src="{% static 'image/line.svg' %}" alt="">
         <div class="content">
             <div class="content1">
                 <h4>태풍 예보 시</h4>
@@ -35,16 +36,16 @@
                     <h2 class="slide-title"></h2>
                     <ul class="slide">
                         <li>
-                            <img src="../static/image/001.png" alt="" />
+                            <img src="{% static 'image/001.png' %}" alt="" />
                         </li>
                         <li>
-                            <img src="../static/image/002.png" alt="" />
+                            <img src="{% static 'image/002.png' %}" alt="" />
                         </li>
                         <li>
-                            <img src="../static/image/003.png" alt="" />
+                            <img src="{% static 'image/003.png' %}" alt="" />
                         </li>
                         <li>
-                            <img src="../static/image/004.png" alt="">
+                            <img src="{% static 'image/004.png' %}" alt="">
                         </li>
                     </ul>
                     <div class="btn-container">
@@ -76,13 +77,13 @@
                     <h2 class="slide-title"></h2>
                     <ul class="slide">
                         <li>
-                            <img src="../static/image/005.png" alt="">
+                            <img src="{% static 'image/005.png' %}" alt="">
                         </li>
                         <li>
-                            <img src="../static/image/007.png" alt="" />
+                            <img src="{% static 'image/007.png' %}" alt="" />
                         </li>
                         <li>
-                            <img src="../static/image/008.png" alt="" />
+                            <img src="{% static 'image/008.png' %}" alt="" />
                         </li>
 
                     </ul>
@@ -104,13 +105,13 @@
                     <h2 class="slide-title"></h2>
                     <ul class="slide">
                         <li>
-                            <img src="../static/image/009.png" alt="" />
+                            <img src="{% static 'image/009.png' %}" alt="" />
                         </li>
                         <li>
-                            <img src="../static/image/011.png" alt="" />
+                            <img src="{% static 'image/011.png' %}" alt="" />
                         </li>
                         <li>
-                            <img src="../static/image/013.png" alt="" />
+                            <img src="{% static 'image/013.png' %}" alt="" />
                         </li>
                     </ul>
                     <div class="btn-container">
@@ -145,25 +146,25 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="">
-                        <img src="../static/image/user_gray.png" alt="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
-    <script src="../static/js/manual_scrap.js"></script>
+    <script src="{% static 'js/manual_scrap.js' %}"></script>
 </body>
 
 </html>

@@ -5,33 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>question</title>
-    <link rel="stylesheet" href="../static/css/question.css">
+    <link rel="stylesheet" href="{% static 'css.question.css' %}">
 </head>
 
 <body>
+    {% load static %}
     <div class="container">
         <div class="nav-bar"></div>
         <div class="section">
             <h3>자주 묻는 질문</h3>
         </div>
-        <img src="../static/image/rectangle-75.svg" alt="">
+        <img src="{% static 'image/rectangle-75.svg' %}" alt="">
         <div class="questions">
             <div class="question1">
                 <p>비밀번호 어떻게 찾나요?</p>
-                <a href="../templates/question1.html"> <img id="q1" src="../static/image/vector44.svg" alt=""></a>
-                <img src="../static/image/line.svg" alt="">
+                <a href="../templates/question1.html"> <img id="q1" src="{% static'image/vector44.svg' %}" alt=""></a>
+                <img src="{% static'image/line.svg'%}" alt="">
             </div>
             <div class="question2">
                 <p>커뮤니티는 왜 안들어가지나요?</p>
-                <a href=""><img id="q2" src="../static/image/vector44.svg" alt=""></a>
+                <a href=""><img id="q2" src="{% static 'image/vector44.svg' %}" alt=""></a>
 
-                <img src="../static/image/line.svg" alt="">
+                <img src="{% static 'image/line.svg' %}" alt="">
             </div>
             <div class="question3">
                 <p>위치설정은 어떻게 하나요?</p>
-                <a href=""><img id="q3" src="../static/image/vector44.svg" alt=""></a>
+                <a href=""><img id="q3" src="{% static 'image/vector44.svg' %}" alt=""></a>
 
-                <img src="../static/image/line.svg" alt="">
+                <img src="{% static 'image/line.svg'%}" alt="">
             </div>
 
         </div>
@@ -40,19 +41,19 @@
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->
                     <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
+                        <img src="{% static'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="home"> <!--메인(홈)으로 가기-->
                     <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
+                        <img src="{% static'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
                 <div class="user"> <!--마이페이지로 가기-->
                     <a href="">
-                        <img src="../static/image/user_gray.png" alt="">
+                        <img src="{% static'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>
