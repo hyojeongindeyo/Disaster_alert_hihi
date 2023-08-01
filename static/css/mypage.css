@@ -27,7 +27,7 @@ body {
     width: 375px;
     height: 50px;
     background: #FFF;
-    
+
 
 }
 
@@ -44,19 +44,23 @@ body {
 /* 닉네임 */
 .name {
     display: flex;
-
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+ 
 
 }
 
-/* 행운핑 */
+/* 닉네임 */
 .name>p {
-    width: 55px;
+    width: 130px;
     height: 26px;
     flex-shrink: 0;
     width: 55px;
     height: 26px;
     flex-shrink: 0;
-    margin-left: 158px;
+    margin-left: 105px;
     margin-top: 19px;
     color: #000;
     text-align: center;
@@ -65,6 +69,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+   
 }
 
 /* 연필 */
@@ -74,33 +79,39 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 17px;
-    margin-left: 3px;
+    margin-right: 80px;
+  
 }
 
 /* 작대기 부분 */
-#name-2{
-    margin-top: -5px;
-    
+#name-2 {
+    margin-top: -6px;
+
 }
 
 /* email */
 .email {
-    width: 142px;
+    width: 180px;
     height: 23px;
-    margin-left: 117px;
-    margin-right: 116px;
+    margin-left: 100px;
+    margin-right: 104px;
     margin-bottom: 16px;
+  
+    /* text-align: center; */
+    
+   
 
 }
 
 .email>p {
     color: #878080;
     font-family: Inter;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin-top: 0px;
+    /* border: 1px solid red; */
 
 }
 
@@ -108,11 +119,12 @@ body {
     margin-top: 14px;
 
 }
+
 /* 마이 페이지 기능 */
 .section {
     width: 162px;
     height: 210px;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 10px;
     margin-left: 36px;
     margin-right: 177px;
@@ -122,14 +134,13 @@ body {
 
 .section1,
 .section2,
-.section3,
-.section4 {
+.section3 {
     display: flex;
 }
-.section1 > a,
-.section2 > a,
-.section3 > a,
-.section4 > a {
+
+.section1>a,
+.section2>a,
+.section3>a {
     text-decoration: none;
     color: #878080;
 }
@@ -176,19 +187,19 @@ body {
     justify-content: space-around;
 }
 
-.back > a > img {
+.back>a>img {
     width: 25x;
     height: 23px;
     margin: 15px 0px;
 }
 
-.home > a > img {
+.home>a>img {
     width: 31px;
     height: 31px;
     margin: 11px 0px;
 }
 
-.user > a > img {
+.user>a>img {
     width: 27px;
     height: 27px;
     margin: 13px 0px;

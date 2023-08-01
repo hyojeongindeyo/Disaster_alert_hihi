@@ -96,35 +96,27 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
 // 닉네임 확인 함수
 
-document.getElementById("submit-button").addEventListener("click", function(event) {
+document.getElementById("profile-form").addEventListener("submit", function(event) {
     event.preventDefault(); // 기본 폼 제출 동작 취소
-    if (validateForm()) {
-        document.getElementById("profile-form").submit(); // 폼 제출
-    }
+    validateForm();
 });
 
 function validateForm() {
-    // 이전 코드 유지...
-
-    return true;
-}
-
-function validateNicknameInput() {
-    var nickname = document.getElementById("nickname").value;
+    const nickname = document.getElementById("nickname").value.trim();
 
     // 닉네임이 비어있는지 확인
-    if (nickname.trim() === "") {
-        alert("닉네임을 입력해주세요.");
+    if (nickname === "") {
+        alert("아이디를 입력해주세요.");
         return false;
     }
 
-    // 닉네임 유효성 검사 - 영어, 숫자, 한글로만 구성되어야 하며, 최대 8자까지 입력 가능합니다.
-    var nicknameRegExp = /^[a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣]{1,8}$/;
+    // 닉네임 유효성 검사 - 영어, 숫자로만 구성되어야 하며, 최대 9자까지 입력 가능합니다.
+    const nicknameRegExp = /^[A-Za-z0-9]{1,9}$/;
     if (!nicknameRegExp.test(nickname)) {
-        alert("닉네임은 영어, 숫자, 한글로만 구성되어야 하며, 최대 8자까지 입력 가능합니다.");
+        alert("아이디는 영어, 숫자로만 구성되어야 하며, 최대 9자까지 입력 가능합니다.");
         return false;
     }
 
-    
-    return true;
+    document.getElementById("profile-form").submit(); // 폼 제출
 }
+
