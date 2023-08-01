@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head>
+{% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이:커뮤니티 페이지-글 수정</title>
-<!-- {% extends 'menuBar.html' %}
-{% block content %}
-{% load static %} -->
+{% comment %}
+    {% extends 'menuBar.html' %}
+    {% block content %}
+    {% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/communityEdit.css' %}">
 </head> <!--del-->
 <body> <!--del-->
@@ -37,7 +39,9 @@
                 <span id="fileName"></span>
             </div>
         </form>
-<!-- {% endblock %} -->
+{% comment %}
+    {% endblock %}
+{% endcomment %}
 
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
