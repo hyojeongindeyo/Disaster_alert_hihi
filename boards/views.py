@@ -25,7 +25,7 @@ def main_page(request):
 #        post = get_object_or_404(Post, id=post_id)
 #        post.is_reported = True
 #        post.save()
-#        return redirect('boards/board_detail.html', post_id=post_id)
+#        return redirrect('boards/board_detail.html', post_id=post_id)
 
 def board_list(request):
     region_filter = request.GET.get('region', '')  # 주소 필터링 값을 가져옴
