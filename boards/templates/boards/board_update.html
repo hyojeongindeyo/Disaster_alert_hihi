@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'menuBar.html' %}
+{% block content %}
 {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>재난이:커뮤니티 페이지-글 수정</title>
-{% comment %}
-    {% extends 'menuBar.html' %}
-    {% block content %}
-    {% load static %}
-{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/communityEdit.css' %}">
-</head> <!--del-->
-<body> <!--del-->
-    <div class="container"> <!--del-->
         <form  class="editText" method="POST" action="{% url 'board_update' pk=board.pk %}" enctype="multipart/form-data">
             {% csrf_token %}
             <select name="region" id="area" required>
@@ -39,32 +27,5 @@
                 <span id="fileName"></span>
             </div>
         </form>
-{% comment %}
-    {% endblock %}
-{% endcomment %}
-
-        <div id="ft"> <!-- 메뉴 하단바 -->
-            <div class="ftIcons">
-                <div class="back"> <!--뒤로가기-->
-                    <a href="">
-                        <img src="{% static 'image/back_blue.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="home"> <!--메인(홈)으로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/home_gray.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="user"> <!--마이페이지로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/user_gray.png' %}" alt="">
-                    </a>
-                </div>
-            </div>
-        </div> <!-- 메뉴 하단바 div 끝-->
-    </div>
     <script src="{% static 'js/communityEdit.js' %}"></script>
-</body>
-</html>
+{% endblock %}

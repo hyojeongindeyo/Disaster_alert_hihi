@@ -90,10 +90,12 @@ body {
 .delete {
     background-color: #E8E8E8;
     margin-right: 8px;
+    cursor: pointer;
 }
 
 .edit {
     background-color: #ABD4FA;
+    cursor: pointer;
 }
 /* 게시글 윗부분 끝 */
 
