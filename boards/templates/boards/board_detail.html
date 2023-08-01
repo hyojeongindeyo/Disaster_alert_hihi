@@ -86,7 +86,7 @@
                     </button>
                 </div>
             </div>
-            {% if board.user != request.user %}
+            {% if comment.user != request.user %}
             <form method="post" class="send">
                 <button type="submit" class="reportBtn">신고</button>
             </form>
