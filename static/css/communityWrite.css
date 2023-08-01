@@ -35,6 +35,7 @@ select option[value=""][disabled] { /*select box placeholder를 위해*/
     -moz-appearance: none;
     appearance: none;
     padding: 6px 0px 5px 10px;
+    cursor: pointer;
 }
 
 select::-ms-expand {
