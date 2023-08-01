@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재난이: 하단바(메뉴바)</title>
+    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+
+        {% endblock %}
+        <div id="ft"> <!-- 메뉴 하단바 -->
+            <div class="ftIcons">
+                <div class="back" onClick="window.history.back()"> <!--뒤로가기-->
+                    <img src="{% static 'image/back_blue.png' %}" alt="">
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/user_blue.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
+</body>
+</html>
