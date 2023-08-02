@@ -13,6 +13,7 @@ urlpatterns = [
     path('board/update/<int:pk>/', views.board_update, name='board_update'),
     path('board/delete/<int:pk>/', views.board_delete, name='board_delete'),
 
+
 #    path('board/search/', views.board_search, name='board_search'),
 #    path('board/report/<int:pk>/', views.board_report, name='board_report'),
 
