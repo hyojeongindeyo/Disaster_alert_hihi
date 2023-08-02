@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지-비밀번호재설정</title>
+{% comment %}
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="../static/css/mypagepwreset.css">
-</head>
+</head> <!--del-->
 
-<body>
-    <div class="container">
+<body> <!--del--> 
+    <div class="container"> <!--del-->
         <div class="nav-bar">
         </div>
         <h3>비밀번호 재설정</h3>
@@ -34,7 +39,9 @@
                 <button type="submit">재설정</button>
             </div>
         </form>
-
+{% comment %}
+{% endblock %}
+{% endcomment %}
         <div id="ft">
             <div class="ftIcons">
                 <div class="back"> <!--뒤로가기-->

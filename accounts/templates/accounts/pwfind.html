@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀번호 찾기</title>
+{% comment %}
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/pwfind.css' %}">
-</head>
+</head> <!--del-->
 
-<body>
-    <div class="container">
+<body> <!--del-->
+    <div class="container"> <!--del-->
         <div class="nav-bar"></div>
         <h3>비밀번호 찾기</h3>
         <div class="input">
@@ -24,7 +29,9 @@
                 </div>
             </form>
         </div>
-
+{% comment %}
+{% endblock %}
+{% endcomment %}
         <!-- 하단바 -->
 
         <div id="ft"> <!-- 메뉴 하단바 -->

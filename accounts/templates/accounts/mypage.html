@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mypage</title>
+{% comment %}
+{% extends 'menuBar_mp.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
     <style>
     /* 팝업창 */
@@ -108,12 +113,12 @@
     }
     </style>
 
-</head>
+</head> <!--del-->
 
-<body>
+<body> <!--del-->
     <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9ebeb400fc1296a2fb45002cd5ccfc9c&libraries=services"></script>
 
-    <div class="container">
+    <div class="container"> <!--del-->
         <!-- 상단바 공간 -->
         <div class="nav-bar"></div>
         <!-- 프로필 -->
@@ -180,7 +185,9 @@
 
         <!-- 탈퇴하기 -->
         <a href="{% url 'accounts:logout' %}"> <p class="retire">로그아웃</p></a>
-
+{% comment %}
+{% endblock %}
+{% endcomment %}
         <!-- 하단바 -->
         <div id="ft">
             <div class="ftIcons">
