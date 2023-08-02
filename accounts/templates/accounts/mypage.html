@@ -6,6 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mypage</title>
     <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+    <style>
+    /* 팝업창 */
+    .modal {
+        animation: fadeInDown 1s;
+        width: 375px;
+        height: 100%;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        z-index: 999;
+        margin: 0 auto;
+    }
+
+    .modal.active {
+        display: block;
+    }
+
+    .modal-content {
+        box-shadow: 1px 5px 7px 0px rgba(130, 130, 130, 0.25);
+        border-radius: 10px;
+        background-color: white;
+        position: absolute;
+        top: 35%;
+        left: 0;
+        right: 0;
+        width: 290px;
+        height: 180px;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .modal-content > p {
+        color: black;
+        font-size: 19px;
+        margin: 54px 40px 24px 40px;
+    }
+    /* 모달과 제목 끝*/
+
+    /* 모달창 버튼들 */
+    .button-container {
+        display: flex;
+        justify-content: center; /* 가운데 정렬 */
+        margin-top: 20px; /* 버튼들과의 간격 */
+    }
+    .close-button {
+        display: block;
+        text-align: center;
+        background-color: #E8E8E8;
+        margin: 0px 18px 0px 43px;
+        text-decoration: none;
+        float: left;
+    }
+
+    .close-button > p {
+        padding: 0;
+        margin: 5px 15px 7px 15px;
+    }
+
+    .yesBtn, #deny-location, #confirm-btn {
+        display: block;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        border-radius: 10px;
+        width: 87px;
+        height: 33px;
+        border: none;
+        cursor: pointer;
+        color: black;
+        float: left;
+        margin: 0px 5px;
+    }
+
+    #deny-location {
+        float: right;
+
+    .delete_button {
+        background-color: #ABD4FA;
+        float: right;
+        margin: 0px 80px 0px 0px;
+        padding: 0;
+    }
+
+    .close-button, .delete_button, .yesBtn, #deny-location {
+        font-size: 17px;
+        border-radius: 10px;
+        width: 87px;
+        height: 33px;
+        border: none;
+        cursor: pointer;
+        color: black;
+    }
+</style>
 </head>
 
 <body>
@@ -36,9 +136,26 @@
         <div class="section">
             <div class="section1">
                 <img src="{% static 'image/vector.svg' %}" alt="">
-                <span id="get-location">
+                <span id="get-location" class="find-location-text">
                     <p>내 위치 찾기</p>
                 </span>
+            </div>
+            <div id="popup-container" class="modal">
+                <div id="popup" class="modal-content">
+                    <h2>위치 정보 허용</h2>
+                    <p id="location-info">사용자의 위치 정보를 가져올까요?</p>
+                    <div id="popup-buttons">
+                        <button id="allow-location" class="yesBtn">허용</button>
+                        <button id="deny-location" class="close-button">거부</button>
+                    </div>
+                </div>
+            </div>
+            <div id="result-popup-container" class="modal">
+                <div id="result-popup" class="modal-content">
+                    <h2>내 위치 정보 </h2>
+                    <p id="result-info"></p>
+                    <button id="close-result" class="close-button">확인</button>
+                </div>
             </div>
             <div class="section2">
                 <img src="{% static 'image/question.svg' %}" alt="">
