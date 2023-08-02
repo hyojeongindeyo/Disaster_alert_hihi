@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mypage</title>
     <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+    {% comment %} 다현
     <style>
     /* 팝업창 */
     .modal {
@@ -105,7 +106,8 @@
         cursor: pointer;
         color: black;
     }
-</style>
+    </style>
+    {% endcomment %}
 </head>
 
 <body>
@@ -140,6 +142,7 @@
                     <p>내 위치 찾기</p>
                 </span>
             </div>
+            {% comment %}
             <div id="popup-container" class="modal">
                 <div id="popup" class="modal-content">
                     <h2>위치 정보 허용</h2>
@@ -157,6 +160,7 @@
                     <button id="close-result" class="close-button">확인</button>
                 </div>
             </div>
+            {% endcomment %}
             <div class="section2">
                 <img src="{% static 'image/question.svg' %}" alt="">
                 <a href="question.html">
