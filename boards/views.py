@@ -139,3 +139,5 @@ def comment_delete(request, board_id, comment_id):
 #         boards = boards.filter(category=current_category)
 #
 #     return render(request, 'board/list.html', {'current_category':current_category, 'categories':categories, 'boards': boards})
+
+
