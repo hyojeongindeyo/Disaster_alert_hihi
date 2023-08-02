@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     const resultInfo = document.getElementById("result-info");
                     resultInfo.textContent = "당신의 위치: 위도 " + latitude + ", 경도 " + longitude;
 
+
+
                     // 결과 팝업 열기
                     const resultPopupContainer = document.getElementById("result-popup-container");
                     resultPopupContainer.classList.add("active");
