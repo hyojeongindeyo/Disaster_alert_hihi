@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // 사용자의 허용 여부를 묻는 팝업창 띄우기
       const isAllowed = confirm("사용자의 위치 정보를 가져올까요?");
       if (isAllowed) {
-        // 사용자가 허용한 경우에만 위치 정보 가져오기
+        // 사용자가 허용한 경우 : 위치 정보 가져오기
         navigator.geolocation.getCurrentPosition(
           function (position) {
             // 사용자의 위치 정보를 성공적으로 가져왔을 때
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            // 위도와 경도를 처리하거나, 예를 들어 페이지에 표시하도록 하세요
+            // 위도 경도 처리
             alert("당신의 위치: 위도 " + latitude + ", 경도 " + longitude);
           },
           function (error) {
@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // "내 위치 찾기" 텍스트에 클릭 이벤트 핸들러를 추가합니다
   const getLocationText = document.getElementById("get-location");
   getLocationText.addEventListener("click", getLocation);
 });
