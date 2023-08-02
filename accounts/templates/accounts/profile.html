@@ -14,7 +14,7 @@
         <h3>프로필</h3>
         <div class="input">
 
-            <form id="profile-form" action="" method="post">
+            <form id="profile-form" action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <label for="profile-image-input" class="custom-file-upload"><img id="user"
                     src="{{ user.user_image.url }}" alt=""></label>
