@@ -7,7 +7,7 @@ body {
 
 .container {
     width: 375px;
-    height: 770px;
+    height: 790px; /*변경 770->790*/
     margin: 0 auto;
     position: relative;
     padding: 0;
@@ -157,11 +157,11 @@ body {
 }
 
 #content1>img {
-    width: 52px;
-    height: 62px;
+    width: 72px; /*변경 52->72*/
+    height: 70px; /*변경 62->70*/
     flex-shrink: 0;
     transform: translateY(-79px);
-    margin-left: 234px;
+    margin-left: 250px; /*변경 234->250*/
 }
 
 #content1>h5 {
@@ -204,11 +204,11 @@ body {
 }
 
 #content2>img {
-    width: 57px;
+    width: 77px; /*변경 57->77*/
     height: 77px;
     flex-shrink: 0;
     transform: translateY(-79px);
-    margin-left: 234px;
+    margin-left: 215px; /*변경 234 -> 215*/
 }
 
 
@@ -253,11 +253,11 @@ body {
 }
 
 #content3>img {
-    width: 52px;
-    height: 62px;
+    width: 70px; /*변경 52-> 70*/
+    height: 70px; /*변경 62 -> 70*/
     flex-shrink: 0;
     transform: translateY(-29px);
-    margin-left: 70px;
+    margin: 0px 6px 18px 75px; /*변경 원래 margin-left: 70px; 였음*/
 }
 
 #content3>h5 {
@@ -282,7 +282,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 10px;
+    margin-left: 9px; /*변경 10->9*/
     transform: translateY(-30px);
 }
 
@@ -298,11 +298,11 @@ body {
 }
 
 #content4>img {
-    width: 52px;
-    height: 62px;
+    width: 57px; /*변경 52->57*/
+    height: 57px; /*변경 62->57*/
     flex-shrink: 0;
     transform: translateY(-29px);
-    margin-left: 70px;
+    margin: 5px 17px 18px 75px; /*변경 원래 margin-left: 70px; 였음*/
 }
 
 #content4>h5 {
@@ -327,7 +327,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 10px;
+    margin-left: 13px; /*변경 10->13*/
     transform: translateY(-30px);
 }
 
