@@ -57,21 +57,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     kakao.maps.load(function () {
                         // 카카오맵 API 사용 가능한 상태
                         // 카카오맵 API를 사용하여 주소로 변환
-                        const geocoder = new kakao.maps.services.Geocoder();
-                        const latlng = new kakao.maps.LatLng(locX, locY);
-                        geocoder.coord2Address(latlng, function (result, status) {
-                            if (status === kakao.maps.services.Status.OK) {
-                                if (Array.isArray(result) && result.length > 0) {
-                                    resultInfo.textContent += "\n주소: " + result[0].address.address_name;
-                                } else {
-                                    console.error("Geocoder 실패: " + status);
-                                    resultInfo.textContent += "\n주소를 찾을 수 없습니다.";
-                                }
-                            } else {
-                                console.error("Geocoder 실패: " + status);
-                                resultInfo.textContent = "주소를 찾을 수 없습니다.";
-                            }
-                        });
+//                        const geocoder = new kakao.maps.services.Geocoder();
+//                        const latlng = new kakao.maps.LatLng(locX, locY);
+//                        geocoder.coord2Address(latlng, function (result, status) {
+//                            if (status === kakao.maps.services.Status.OK) {
+//                                if (Array.isArray(result) && result.length > 0) {
+//                                    resultInfo.textContent += "\n주소: " + result[0].address.address_name;
+//                                } else {
+//                                    console.error("Geocoder 실패: " + status);
+//                                    resultInfo.textContent += "\n주소를 찾을 수 없습니다.";
+//                                }
+//                            } else {
+//                                console.error("Geocoder 실패: " + status);
+//                                resultInfo.textContent = "주소를 찾을 수 없습니다.";
+//                            }
+//                        });
 
                         // 결과 팝업 열기
                         const resultPopupContainer = document.getElementById("result-popup-container");
