@@ -30,12 +30,28 @@ document.addEventListener("DOMContentLoaded", function () {
                     locX = position.coords.latitude;
                     locY = position.coords.longitude;
 
+                    // 위도, 경도를 주소로 변환해주는 것입니다잉 -여기서부터 geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+                    // 여기까지 효징이가 했는데 아래에 주소변환 함수가 있긴 하던디... 우선은 제걸로 뜨게끔 해놨는데 아래 함수로 바꾸고 싶으시면 바꾸셔도 괜찮습니닷....
+                    var geocoder = new kakao.maps.services.Geocoder();
+                    var coord = new kakao.maps.LatLng(locX, locY);
+                    var callback = function(result, status) {
+                        if (status === kakao.maps.services.Status.OK) {
+                            resultInfo.innerHTML = "당신의 위치<br>" + result[0].address.address_name
+//                            console.log(result[0].address.address_name);
+//                            juso = result[0].address.address_name;
+                        }
+                    };
+
+                    geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+
+
+
                     // 허용 팝업 닫기
                     closePopup();
 
                     // 결과 팝업에 위치 정보 표시
                     const resultInfo = document.getElementById("result-info");
-                    resultInfo.innerHTML = "당신의 위치<br> 위도 " + locX + "<br> 경도 " + locY;
+//                    resultInfo.innerHTML = "당신의 위치<br> 위도 " + locX + "<br> 경도 " + locY;
 
                     // 카카오맵 API 로드하기
                     kakao.maps.load(function () {
