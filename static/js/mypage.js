@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // 결과 팝업에 위치 정보 표시
                     const resultInfo = document.getElementById("result-info");
-                    resultInfo.textContent = "당신의 위치: 위도 " + locX + ", 경도 " + locY;
+                    resultInfo.innerHTML = "당신의 위치<br> 위도 " + locX + "<br> 경도 " + locY;
 
                     // 카카오맵 API 로드하기
                     kakao.maps.load(function () {
