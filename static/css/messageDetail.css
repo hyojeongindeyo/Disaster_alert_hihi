@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-family: 'Inter', sans-serif;
+    width: 375px; /* 전체 width 조절 */
+    height: 100%;
+    margin: 0 auto; /* 가운데로 오게 하기 */
+    position: relative;
+    padding-bottom: 170px;
+    z-index:0;
+    background-color: #F6F6F6;
+}
+
+/* 배너 부분 */
+.banner {
+    height: 100px; 
+    position: relative;
+    padding-top: 17px;
+    margin-bottom: 27px;
+}
+
+.bannerTitle {
+    font-size: 17px;
+    position: relative;
+    margin: 0px 0px 0px 20px;
+    opacity: 0.9;
+}
+
+.move {
+    font-size: 16px;
+    float: right;
+    margin: 35px 5px 30px 0px; 
+    padding: 0;
+    position: relative; /*블러 처리를 위한 코드*/
+}
+
+.move a {
+    text-decoration: none;
+    color: black;
+}
+
+.move > a > img {
+    float: right;
+    width: 26px;
+    height: 26px;
+}
+
+.text {
+    display: inline-block;
+    position: relative;
+    margin-top: 1.5px;
+}
+
+/*사진 블러처리*/
+.banner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url(../image/finedust.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+/*배너 부분 끝*/
+
+/*지역 이름과 며칠 치 문자 볼건지 부분*/
+.term {
+    height: 26px;
+    margin-bottom: 29px;
+}
+
+.areaName {
+    font-size: 20px;
+    float: left;
+    margin: 0px 15px 0px 22px;
+}
+
+#messageTerm {
+    float: left;
+    width: 84px;
+    height: 26px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    background: url('../image/triangle.png') no-repeat 95% 50%/16px auto white;
+    box-sizing: border;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 3px 0px 5px 10px;
+    margin-top: 2px;
+    vertical-align: middle;
+    border-color: #A5A5A5;
+}
+/*지역 이름과 며칠 치 문자 볼건지 부분 끝*/
+
+/*문자 메세지 부분*/
+.message {
+    width: 328px;
+    margin: 0 auto;
+    background-color: white;
+    word-break: break-all;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 27px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
+}
+
+.messageText {
+    font-size: 15px;
+    padding: 0;
+    margin: 0px 0px 7px 0px;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+.time {
+    text-align: right;
+    font-size: 12px;
+    color: #878080;
+    margin: 0;
+    height: 13px;
+}
+
+/*-------하단 메뉴바-------css */
+#ft {
+    margin: 0;
+    padding: 0;
+    z-index: 998;
+    background-color: white;
+    width: 375px;
+    height: 54px;
+    position: fixed;
+    bottom: 0;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+}
+
+.ftIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.back > img {
+    width: 25px;
+    height: 23px;
+    margin: 15px 0px;
+    cursor: pointer;
+}
+
+.home > a > img {
+    width: 31px;
+    height: 31px;
+    margin: 11px 0px;
+}
+
+.user > a > img {
+    width: 27px;
+    height: 27px;
+    margin: 13px 0px;
+}
+
+.home > a > img:hover {
+    content: url(../image/home_blue.png);
+}
+
+.user > a > img:hover {
+    content: url(../image/user_blue.png)
+}
