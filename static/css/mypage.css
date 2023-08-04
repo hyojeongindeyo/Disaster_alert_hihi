@@ -43,33 +43,37 @@ body {
 
 /* 닉네임 */
 .name {
-    display: flex;
+    /* display: flex;
     flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 10px;
- 
+    flex-direction: row; */
+    /* justify-content: space-between; */
+    gap: 5px;
+
+    /* border: 1px solid blue; */
+    justify-content: center;
+    display: inline-flex;
 
 }
 
 /* 닉네임 */
-.name>p {
-    width: 130px;
+.nickname {
+    /* width: 130px; */
     height: 26px;
     flex-shrink: 0;
-    width: 55px;
-    height: 26px;
+    /* width: 55px; */
+    /* height: 26px; */
     flex-shrink: 0;
-    margin-left: 105px;
-    margin-top: 19px;
+    /* margin-left: 105px; */
+    margin-top: 15px;
     color: #000;
     text-align: center;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-   
+    /* border: 1px solid red; */
+    margin-left: 20px;
 }
 
 /* 연필 */
@@ -79,7 +83,7 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 17px;
-    margin-right: 80px;
+    /* margin-right: 80px; */
   
 }
 
@@ -87,6 +91,19 @@ body {
 #name-2 {
     margin-top: -6px;
 
+}
+
+/* email */
+.email {
+    /* width: 180px; */
+    height: 23px;
+		/*
+    margin-left: 100px;
+    margin-right: 104px;
+		*/
+    margin-bottom: 16px;
+  
+    text-align: center;
 }
 
 /* email */
