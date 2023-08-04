@@ -204,3 +204,146 @@ body {
     height: 27px;
     margin: 13px 0px;
 }
+
+/* 팝업창 */
+.modal {
+    animation: fadeInDown 1s;
+    width: 375px;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 999;
+    margin: 0 auto;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    box-shadow: 1px 5px 7px 0px rgba(130, 130, 130, 0.25);
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    width: 290px;
+    height: 180px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    z-index: 999;
+    border: 1px solid #EDEDED;
+}
+
+#location-info { /*위치 정보를 가져오시겠습니까?*/
+    color: black;
+    font-size: 16px;
+    margin-top: 23px;
+}
+
+.title { /*타이틀*/
+    margin-top: 18px;
+    font-size: 20px;
+    font-weight: 600;
+}
+/* 모달과 제목 끝*/
+
+/* 모달창 버튼들 */
+/* .button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+} */
+
+#popup-buttons {
+    margin-top: 25px;
+}
+
+.close-button {
+    display: block;
+    /* text-align: center; */
+    background-color: #E8E8E8;
+    margin-right: 53px;
+    text-decoration: none;
+    float: right;
+}
+
+.yesBtn {
+    float: left;
+    margin-left: 50px;
+    background-color: #ABD4FA;
+}
+
+/* .close-button > p {
+    padding: 0;
+    margin: 5px 15px 7px 15px;
+} */
+
+/* .yesBtn, #deny-location, #confirm-btn {
+    display: block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 87px;
+    height: 33px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    float: left;
+    margin: 0px 5px;
+} */
+
+/* #deny-location {
+    float: right;
+} */
+
+/* .delete_button {
+    background-color: #ABD4FA;
+    float: right;
+    margin: 0px 80px 0px 0px;
+    padding: 0;
+} */
+
+.close-button, .yesBtn, .okay-button { /*버튼 꾸미기*/
+    font-size: 17px;
+    border-radius: 10px;
+    width: 80px;
+    height: 33px;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+/*여기까지가 허용/거부에 대한 부분*/
+
+/*위치 알려주는 부분*/
+.okay-button {
+    background-color: #ABD4FA;
+    margin-top: 7px;
+}
+
+#result-info {
+    box-sizing: border-box;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -10%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}

@@ -31,9 +31,9 @@ def board_list(request):
     region_filter = request.GET.get('region', '')  # 주소 필터링 값을 가져옴
     print(region_filter)
     if region_filter:  # 주소 필터링 값이 있다면 해당 주소의 게시글만 필터링
-        boards = Board.objects.filter(region=region_filter, complete=False)
+        boards = Board.objects.filter(region=region_filter, complete=False).order_by('-create_date')
     else:  # 주소 필터링 값이 없다면 모든 게시글 표시
-        boards = Board.objects.filter(complete=False)
+        boards = Board.objects.filter(complete=False).order_by('-create_date')
 
     region_choices = Board.region_choice  # 주소 선택지
 

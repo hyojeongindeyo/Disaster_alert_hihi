@@ -1,17 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>재난이: 커뮤니티 페이지-검색</title>
-<!-- {% extends 'menuBar.html' %}
+{% extends 'menuBar.html' %}
 {% block content %}
-{% load static %} -->
+{% load static %}
     <link rel="stylesheet" href="{% static 'css/communitySearch.css' %}">
-</head> <!--del-->
-<body> <!--del-->
-    <div class="container"> <!--del-->
         <form method="post" class="search" name="communitySearch">
                 <button type="submit" class="btn">
                     <img src="{% static 'image/glass.png' %}" alt="돋보기">
@@ -24,29 +14,4 @@
         <p class="content">검색어를 입력해 원하는 글을 찾아보세요</p>
 
         <img id="picture" src="{% static 'image/community.png' %}" alt="커뮤니티 아이콘 사진">
-<!-- {% endblock %} -->
-
-        <div id="ft"> <!-- 메뉴 하단바 -->
-            <div class="ftIcons">
-                <div class="back"> <!--뒤로가기-->
-                    <a href="">
-                        <img src="{% static 'image/back_blue.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="home"> <!--메인(홈)으로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/home_gray.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="user"> <!--마이페이지로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/user_gray.png' %}" alt="">
-                    </a>
-                </div>
-            </div>
-        </div> <!-- 메뉴 하단바 div 끝-->
-    </div>
-</body>
-</html>
+{% endblock %}

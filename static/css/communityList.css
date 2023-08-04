@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
 
 body {
     margin: 0;
@@ -7,14 +7,14 @@ body {
 }
 
 .container {
-    width: 375px; /* 전체 width 조절 */
+    width: 375px; 
     height: 100%;
-    margin: 0 auto; /* 가운데로 오게 하기 */
+    margin: 0 auto; 
     position: relative;
     padding: 0;
     z-index:0;
     padding-bottom: 200px;
-}
+} */
 
 select option[value=""][disabled] { /*select box placeholder를 위해*/
 	display: none;
@@ -34,6 +34,7 @@ select option[value=""][disabled] { /*select box placeholder를 위해*/
     -moz-appearance: none;
     appearance: none;
     padding: 6px 0px 5px 10px;
+    cursor: pointer;
 }
 
 select::-ms-expand {
@@ -73,6 +74,10 @@ select::-ms-expand {
 .profile {
     width: 29px;
     height: 29px;
+}
+
+.login {
+    padding-top: 3px;
 }
 /*---상단 끝 ---*/
 
@@ -204,7 +209,7 @@ a:visited {
 }
 
 /*-------하단 메뉴바-------css */
-#ft {
+/* #ft {
     margin: 0;
     padding: 0;
     z-index: 1000;
@@ -226,7 +231,7 @@ a:visited {
 }
 
 .back > a > img {
-    width: 25x;
+    width: 25px;
     height: 23px;
     margin: 15px 0px;
 }
@@ -241,16 +246,7 @@ a:visited {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
-}
-
-#colorButton {
-    background-color: transparent;
-    border: none;
-}
-
-.active {
-    filter: hue-rotate(#ABD4FA); /* 원하는 색상으로 변경하세요. */
-}
+} */
 
 /*위->아래로 자연스럽게 내려오기 효과*/
 @keyframes fadeInDown {

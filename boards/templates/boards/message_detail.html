@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재난이: 지역별 재난문자-문자 보기</title>
+    <link rel="stylesheet" href="../../../static/css/messageDetail.css">
+</head>
+<body>
+    <div class="container">
+        <div class="banner"> <!--배너 부분-->
+            <p class="bannerTitle">미세먼지, 어떻게 해야할까?</p>
+            <p class="move">
+                <a href="">
+                    <span class="text">알아보기</span>
+                    <img src="../../../static/image/arrow.png" alt="화살표">
+                </a>
+            </p>
+        </div> <!--배너 부분 끝-->
+
+        <!--지역과 며칠 치 볼건지-->
+        <form method="post" class="term">
+            <p class="areaName">경기도</p>
+            <select name="term" id="messageTerm">
+                <option value="7일">7일</option>
+                <option value="14일">14일</option>
+                <option value="30일">30일</option>
+                <option value="1년">1년</option>
+            </select>
+        </form>
+
+        <div class="message">
+            <p class="messageText">
+                [경기도청] 현재 폭염특보 발효중. 태양
+                볕, 고온 다습한 곳에 오래 머무를 경우
+                위험하니 물은 자주 마시고 충분한
+                휴식을 취하고 장시간 야외활동은
+                자제해주세요.
+            </p>
+            <p class="time">하루 전</p>
+        </div>
+
+        <div class="message">
+            <p class="messageText">
+                [포천시] 폭염경보 발효중. 충분한
+                수분보충 및 휴식, 장시간 야외활동
+                자제 등 건강관리에 유의하여 주시기
+                바랍니다. 
+            </p>
+            <p class="time">5일 전</p>
+        </div>
+
+        <div class="message">
+            <p class="messageText">
+                [동두천시] 호우주의보가 발효되어 새벽 집중호우가
+                예상되오니 신천변, 등산로, 계곡 등 위험지역에 접근하지 마시고 
+                안전사고 예방에 주의해 주시기 바랍니다.
+            </p>
+            <p class="time">7일 전</p>
+        </div>
+        
+        <div id="ft"> <!-- 메뉴 하단바 -->
+            <div class="ftIcons">
+                <div class="back" onClick="window.history.back()"> <!--뒤로가기-->
+                    <img src="../../../static/image/back_blue.png" alt="">
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="../../../static/image/home_gray.png" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="">
+                        <img src="../../../static/image/user_gray.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
+    <script src="../../../static/js/messageDetail.js"></script>
+</body>
+</html>

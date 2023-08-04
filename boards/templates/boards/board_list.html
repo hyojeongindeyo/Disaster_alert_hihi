@@ -1,15 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'menuBar.html' %}
+{% block content %}
 {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>재난이:커뮤니티 페이지-리스트</title>
     <link rel="stylesheet" href="{% static 'css/communityList.css' %}">
-</head> <!--del-->
-<body> <!--del-->
-    <div class="container"> <!--del-->
         <div class="hd"> <!-- 커뮤니티 상단 -->
             <form method="GET" class="areaSelect" action="{% url 'board_list' %}" > <!-- select box form으로 묶기-->
                 <select name="region" id="area" onchange="this.form.submit()" required>
@@ -37,7 +29,7 @@
                     </a>
                 </div>
                 {% else %}
-                <div>
+                <div class="login">
                     <a href="{% url 'accounts:login' %}">
                         로그인
                     </a>
@@ -53,7 +45,7 @@
         <hr class="line"> <!-- 선 긋기 -->
 
         {% for board in boards %}
-        <div class="content1"> <!--컨텐츠-->
+        <div class="content2"> <!--컨텐츠-->
                 <div class="userInfo">
                     <img src="{{ board.user.user_image.url }}" alt="프로필">
                     <p class="nickName">{{ board.user.username }}</p>
@@ -74,30 +66,5 @@
 
         <div class="lineBox"></div> <!--구분하기 위한 선-->
         {% endfor %}
-
-
-        <div id="ft"> <!-- 메뉴 하단바 -->
-            <div class="ftIcons">
-                <div class="back"> <!--뒤로가기-->
-                    <a href="">
-                        <img src="{% static 'image/back_blue.png' %}" alt="뒤로가기">
-                    </a>
-                </div>
-
-                <div class="home"> <!--메인(홈)으로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/home_gray.png' %}" alt="홈">
-                    </a>
-                </div>
-
-                <div class="user"> <!--마이페이지로 가기-->
-                    <a href="/">
-                        <img src="{% static 'image/user_gray.png' %}" alt="유저정보">
-                    </a>
-                </div>
-            </div>
-        </div> <!-- 메뉴 하단바 div 끝-->
-    </div>
     <script src="{% static 'js/communityList.js' %}"></script>
-</body>
-</html>
+{% endblock %}

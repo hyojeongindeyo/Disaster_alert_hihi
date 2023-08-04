@@ -4,12 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9ebeb400fc1296a2fb45002cd5ccfc9c&libraries=services"></script>
     <title>mypage</title>
+{% comment %}
+{% extends 'menuBar_mp.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
-</head>
-
-<body>
-    <div class="container">
+</head> <!--del-->
+<body> <!--del-->
+    <div class="container"> <!--del-->
         <!-- 상단바 공간 -->
         <div class="nav-bar"></div>
         <!-- 프로필 -->
@@ -36,10 +41,29 @@
         <div class="section">
             <div class="section1">
                 <img src="{% static 'image/vector.svg' %}" alt="">
-                <a href="">
+                <span id="get-location" class="find-location-text">
                     <p>내 위치 찾기</p>
-                </a>
+                </span>
             </div>
+            {% comment %} 다현 {%endcomment%}
+            <div id="popup-container" class="modal">
+                <div id="popup" class="modal-content">
+                    <h2 class="title">위치 정보 허용</h2>
+                    <p id="location-info">사용자의 위치 정보를 가져올까요?</p>
+                    <div id="popup-buttons">
+                        <button id="allow-location" class="yesBtn">허용</button>
+                        <button id="deny-location" class="close-button">거부</button>
+                    </div>
+                </div>
+            </div>
+            <div id="result-popup-container" class="modal">
+                <div id="result-popup" class="modal-content">
+                    <h2 class="title">내 위치 정보</h2>
+                    <p id="result-info"></p>
+                    <button id="close-result" class="okay-button">확인</button>
+                </div>
+            </div>
+
             <div class="section2">
                 <img src="{% static 'image/question.svg' %}" alt="">
                 <a href="question.html">
@@ -57,7 +81,9 @@
 
         <!-- 탈퇴하기 -->
         <a href="{% url 'accounts:logout' %}"> <p class="retire">로그아웃</p></a>
-
+{% comment %}
+{% endblock %}
+{% endcomment %}
         <!-- 하단바 -->
         <div id="ft">
             <div class="ftIcons">

@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual-scrap</title>
-<!-- {% extends 'menuBar.html' %}
+{% comment %}
+{% extends 'menuBar.html' %}
 {% block content %}
-{% load static %} -->
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/manual_scrap.css'%}">
 </head> <!--del-->
 
@@ -131,7 +133,9 @@
                 </div>
             </div>
         </div>
-<!-- {% endblock %} -->
+{% comment %}
+{% endblock %}
+{% endcomment %}
 
 
 

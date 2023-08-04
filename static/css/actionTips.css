@@ -176,7 +176,7 @@ ul.hashtag li {
 .cardnews_container {
     width: 326px;
     height: 100%;
-    margin-top: 29px;
+    margin-top: 19.03px;
     /* background-color: thistle; */
 }
 
@@ -187,7 +187,7 @@ ul.hashtag li {
     
 }
 
-.cardnews_box {
+.cardnews_box > a > img {
     border-radius: 10px;
 }
 
