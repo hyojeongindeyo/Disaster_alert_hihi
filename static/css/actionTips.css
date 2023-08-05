@@ -77,7 +77,6 @@ ul.tab_menu {
 ul.tab_menu li {
     color: #878080;
     cursor: pointer;
-    margin-right: 24px;
     display: inline-block;
     /* background-color: #ec8d8d; */
 }
@@ -89,7 +88,14 @@ ul.tab_menu li.current {
     /* border-bottom: none; */
     /* background-color: rgb(228, 255, 204); */
 }
-  
+
+ul.tab_menu li.menuLine {
+    margin: 2px 12px;
+    background-color: #C8C0C0;
+    width: 1px;
+    height: 16px;
+}
+
 .tab_content {
     display: none;
     padding-top: 21px;
