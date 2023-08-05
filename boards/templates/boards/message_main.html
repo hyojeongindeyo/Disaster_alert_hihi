@@ -1,15 +1,11 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이: 지역별 재난문자 메인페이지-리스트 형식</title>
-{% comment %}
-{% extends 'menuBar.html' %}
-{% block content %}
-{% load static %}
-{% endcomment %}
+
     <link rel="stylesheet" href="{% static 'css/messageMain.css' %}">
 </head> <!--del-->
 <body> <!--del-->
@@ -61,197 +57,20 @@
 
             <!--지역별-->
             <div class="areaBox">
+                {% for c in categories %}
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
                         <img src="{% static 'image/star_black.png' %}" alt="별">
                     </button>
-                    <a href="#">
+                    <a href="{{ c.get_absolute_url }}">
                         <div class="box">
-                            <p class="areaName">서울</p>
+                            <p class="areaName">{{ c.region_name }}</p>
                         </div>
                     </a>
                 </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_black.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">경기도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_black.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">부산</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">대구</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">인천</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">광주</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">대전</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">울산</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">세종</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">강원도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">충청북도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">충청남도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">전라북도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">전라남도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">경상북도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">경상남도</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    <a href="#">
-                        <div class="box">
-                            <p class="areaName">제주도</p>
-                        </div>
-                    </a>
-                </div>
+                {% endfor %}
             </div>
         </form>
-{% comment %}
-{% endblock %}
-{% endcomment %}
         
         <div id="ft"> <!-- 메뉴 하단바 -->
             <div class="ftIcons">
