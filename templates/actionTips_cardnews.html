@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="../static/css/actionTips.css"> -->
     
     <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
+{% comment %}
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/actionTips.css' %}">
 
-</head>
-<body>
-    <div class="container">
+</head> <!-- del -->
+<body> <!-- del -->
+    <div class="container"> <!-- del -->
         <!-- 캐러슬 -->
         <div class="slide-container">
             <ul class="slide">
@@ -96,7 +101,10 @@
                 </div>
             </div>
         </div>
-
+    <!--여기에는 script src 부분 넣으세유 그것도 지우면 js 연결이 끊겨요!-->
+{% comment %}
+{% endblock %}
+{% endcomment %}
 
         <!-- 메뉴 하단바 -->
         <div id="ft">
