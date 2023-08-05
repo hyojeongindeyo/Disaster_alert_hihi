@@ -261,3 +261,25 @@ ul.hashtag li {
     font-weight: 600;
     margin: 0;
 }
+
+.tab_cardnews_box > a > img {
+    border-radius: 10px;
+}
+
+.cardnews_container {
+    width: 326px;
+    height: 100%;
+    margin-top: 19.03px;
+    /* background-color: thistle; */
+}
+
+.cardnews_box {
+    margin-bottom: 16.97px;
+    /* background: rgba(245, 97, 204, 0.53); */
+    /* border-radius: 10px; */
+    
+}
+
+.cardnews_box > a > img {
+    border-radius: 10px;
+}
