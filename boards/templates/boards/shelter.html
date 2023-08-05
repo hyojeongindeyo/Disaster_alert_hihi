@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find shelter</title>
+{% comment %}
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="../static/css/shelter.css">
     {% load static %}
-</head>
+</head> <!--del-->
 
-<body>
-    <div class="container">
+<body> <!--del-->
+    <div class="container"> <!--del-->
 
         <div class="map">
 
@@ -48,7 +53,10 @@
                 <h4>다현아파트 지하주차장</h4>
             </div>
         </div>
-
+    <!--여기에 script src 쓰세유 그것도 지우면 js 연결이 끊겨요!-->
+{% comment %}
+{% endblock %}
+{% endcomment %}
         <div id="ft">
            <div class="ftIcons">
                 <div class="back" onClick="window.history.back()"> <!--뒤로가기-->
