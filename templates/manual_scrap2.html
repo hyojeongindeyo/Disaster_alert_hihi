@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual-scrap</title>
+{% comment %}
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/manual_scrap.css' %}">
+</head> <!--del-->
+
+<body> <!--del-->
+    {% load static %}
+    <div class="container"> <!--del-->
+        <div class="nav_bar">
+        </div>
+        <div class="header">
+            <h4>태풍 시 행동요령</h4>
+            <div class="scrap-button">
+                <form action="" method="post">
+                    <input type="checkbox" id="scrap-checkbox" onclick="toggleStar() " checked>
+                    <label for="scrap-checkbox">
+                        <span class="scrap-text">스크랩</span>
+                        <span class="star">&#9734;</span>
+                        <span class="filled-star">&#9733;</span>
+                    </label>
+                </form>
+            </div>
+
+
+        </div>
+        <img src="{% static 'image/line.svg' %}" alt="">
+        <div class="content">
+            <div class="content1">
+                <h4>태풍 예보 시</h4>
+                <div class="slide-container">
+                    <h2 class="slide-title"></h2>
+                    <ul class="slide">
+                        <li>
+                            <img src="{% static 'image/001.png' %}" alt="" />
+                        </li>
+                        <li>
+                            <img src="{% static 'image/002.png' %}" alt="" />
+                        </li>
+                        <li>
+                            <img src="{% static 'image/003.png' %}" alt="" />
+                        </li>
+                        <li>
+                            <img src="{% static 'image/004.png' %}" alt="">
+                        </li>
+                    </ul>
+                    <div class="btn-container">
+                        <button class="prev-btn">prev</button>
+                        <button class="next-btn">next</button>
+                    </div>
+                </div>
+                <div class="text">
+
+                    <p>1. TV, 스마트폰 등으로 기상상황을 파악하고 준비 <br>
+                    </p>
+                    <p>
+                        2. 창문은 창틀에 단단하게 테이프 등으로 고정 <br>
+                    </p>
+                    <p>
+                        3. 상수도 공급이 중단될 수 있으므로 욕실 등에 미리 물을 받아둡니다. <br>
+                    </p>
+                    <p>
+                        ※ 연세 많은 어르신 등은 수시로 안부를 확인 <br>
+                    </p>
+
+
+
+                </div>
+            </div>
+            <div class="content2">
+                <h4>태풍 특보중</h4>
+                <div class="slide-container">
+                    <h2 class="slide-title"></h2>
+                    <ul class="slide">
+                        <li>
+                            <img src="{% static 'image/005.png' %}" alt="">
+                        </li>
+                        <li>
+                            <img src="{% static 'image/007.png' %}" alt="" />
+                        </li>
+                        <li>
+                            <img src="{% static 'image/008.png' %}" alt="" />
+                        </li>
+
+                    </ul>
+                    <div class="btn-container">
+                        <button class="prev-btn">prev</button>
+                        <button class="next-btn">next</button>
+                    </div>
+                </div>
+                <div class="text">
+
+                    <p> 1. 만약 계곡, 하천, 붕괴 우려가 있는 노후건물 등 위험지역이라면 즉시 안전한 곳으로 이동 <br></p>
+                    <p> 2. 창문은 닫고 창문, 유리문에서는 되도록 떨어져 있도록 합니다. <br></p>
+                    <p> 3. 감전 위험이 있는 집 안팎의 전기시설은 만지지 않습니다.</p>
+                </div>
+            </div>
+            <div class="content3">
+                <h4>태풍 이후</h4>
+                <div class="slide-container">
+                    <h2 class="slide-title"></h2>
+                    <ul class="slide">
+                        <li>
+                            <img src="{% static 'image/009.png' %}" alt="" />
+                        </li>
+                        <li>
+                            <img src="{% static 'image/011.png' %}" alt="" />
+                        </li>
+                        <li>
+                            <img src="{% static 'image/013.png' %}" alt="" />
+                        </li>
+                    </ul>
+                    <div class="btn-container">
+                        <button class="prev-btn">prev</button>
+                        <button class="next-btn">next</button>
+                    </div>
+                </div>
+                <div class="text">
+
+                    <p> 1. 태풍이 지나간 후에는 피해 상황을 확인하고, 가까운 행정복지센터 등에 피해를 신고하여 보수 ∙ 보강을 하도록 합니다. <br></p>
+                    <p>2. 파손된 사유시설을 보수 또는 복구할 때에는 반드시 사진을 찍어 둡니다 <br></p>
+                    <p> 3. 대피 후 집으로 돌아온 경우 반드시 주택 등의 안전 여부를 확인하고 출입합니다<br></p>
+                    <p> 4. 고립된 지역에서는 무리하게 물을 건너지 말고, 119에 신고하거나 주변에 도움을 요청합니다</p>
+                </div>
+            </div>
+        </div>
+{% comment %}
+{% endblock %}
+{% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="ft"> <!-- 메뉴 하단바 -->
+            <div class="ftIcons">
+                <div class="back"> <!--뒤로가기-->
+                    <a href="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
+    <script src="{% static 'js/manual_scrap.js' %}"></script>
+</body>
+
+</html>
