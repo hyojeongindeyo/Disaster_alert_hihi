@@ -7,38 +7,55 @@
     list-style: none;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /* .header {
     width: 375px;
     height: 50px;
     background-color: bisque;
 } */
 
-.actionTips_carousel {
-    width: 375px;
-    height: 234px;
-    /* height: 237px; */
-    /* background-color: pink; */   
+
+/* 캐러슬 시작 */
+.slide-container {
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    /* background: rgba(245, 97, 204, 0.53); */
 }
 
-.carousel01 {
-    width: 280px;
-    height: 190px;
-    /* background-color: powderblue; */
-    margin: auto;
-    display: block;
-    text-align: center;
+.slide {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 900px;
+    /* background-color: aqua; */
 }
 
-.carousel01 > img {
+.slide li {
+    /* width: 280px;
+    height: 190px; */
+    
+    margin-top: 0px;
+    flex: 0 0 300px;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    cursor: pointer; 
+
     border-radius: 10px;
-    margin-top: 13px;
+    display: block;
+    margin: 0 auto;
+    margin: 13px 0px 34px;
 }
-
-/* .actionTips_contents {
-    width: 375px;
-    height: 515px;
-    background-color: palegreen;
-} */
+/* 캐러슬 끝 */
 
 /* 한 페이지 당 전체 크기 */
 .tab_container {
@@ -52,7 +69,7 @@ ul.tab_menu {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 가로로 나열하기 위해 Flexbox 레이아웃 사용 */
+    display: flex; /* 가로로 나열하기 위해 Flexbox 사용 */
     margin-left: 34px;
     /* background-color: thistle; */
 }
@@ -85,6 +102,7 @@ ul.tab_menu li.current {
     display: block;
 }
 
+
 /* 검색 */
 .search_container {
     width: 327px;
@@ -105,7 +123,31 @@ ul.tab_menu li.current {
     background: #000;
 }
 
-/* 전체 / 메뉴얼 / 카드뉴스 공통 */
+.search_container input {
+    background-color: transparent; /* 배경색 투명 */
+    border: none; /* 테두리 */
+    color: #000;
+    font-size: 16px;
+    width: 100%; 
+    outline: none; /* 포커스 표시 */
+    font-size: 12px;
+    /* width: 326px; */
+}
+
+#search {
+    width: 300px;
+    padding: 0px 10px;
+}
+
+/* 아이콘 수정 필요 */
+/* .search_icon {
+    width: 17px;
+    height: 17px;
+    margin-left: 10px;
+} */
+
+
+/* 공통 */
 .hashtag {
     display: flex;
     margin: 0;
@@ -118,85 +160,104 @@ ul.tab_menu li.current {
     line-height: normal;
 }
 
+.hashtag li {
+    margin-bottom: 20px;
+}
+
 ul.hashtag li {
     margin-right: 5px;
 }
 
+.listInner {
+    width: 326px;
+}
+
+.menual_box {
+    width: 326px;
+    /* height: 52px; */
+    height: 60px;
+    margin: 0px 0px 10px 0px;
+    padding-top: 14px;
+    padding-left: 5px;
+    /* background-color: thistle; */
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 9px;
+    font-size: 16px;
+    line-height: normal;
+}
+
 .menual_line {
+    margin: 0;
+    padding: 0;
+    display: flex;
     width: 316px;
     height: 1px;
     background: #878080;
 }
 
-/* 전체 - 카드뉴스 */
+
+/* [메뉴얼] */
+.menual_container {
+    width: 326px;
+    height: 387px;
+
+}
+
+
+/* [카드뉴스] */
 .tab_cardnews_box {
     width: 326px;
     height: 161px;
     margin-top: 19.03px;
     margin-bottom: 20.97px;
-    /* border-radius: 10px; */
     /* background: gold; */
 }
 
-.tab_cardnews_box > img {
+.cd-image {
+    position: relative;
+}
+
+.cd-image > img {
     border-radius: 10px;
 }
 
-/* 전체 - 메뉴얼 */
-.tab_menual_container {
-    width: 326px;
-    height: 164px;
-    /* background: rgba(162, 166, 251, 0.53); */
+.cd-hashtag {
+    width: 71.218px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF;
+    /* position: absolute; */
+    position: relative;
+    transform: translate(10%, -600%);
 }
 
-.menual_container {
-    width: 326px;
-    height: 387px;
-    margin-top: 13.97px;
-    /* border-color: #ec8d8d; */
-    /* background-color: blanchedalmond; */
+.p-cardnews {
+    margin: 0 auto;
+    /* text-align: center; */
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
 
-.menual_box {
-    width: 326px;
-    height: 52px;
-    margin: 14px 0px 10px 0px;
-    padding-left: 5px;
-    /* padding: 14px 0px 27px 5px; */
-    /* background-color: thistle; */
+.cd-text {
+    width: 186.572px;
+    height: auto; 
+    position: absolute;
+    transform: translate(7%, -315%);
+    /* background: #FFF; */
 }
 
-.menual_text {
+.cd-text > p {
+    color: #000;
+    width: 186.572px;
+    height: 24px;
+    flex-shrink: 0;
+    font-size: 24px;
+    font-weight: 600;
     margin: 0;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: normal;
 }
-
-.cardnews_container {
-    width: 326px;
-    height: 100%;
-    margin-top: 19.03px;
-    /* background-color: thistle; */
-}
-
-.cardnews_box {
-    margin-bottom: 16.97px;
-    /* background: rgba(245, 97, 204, 0.53); */
-    /* border-radius: 10px; */
-    
-}
-
-.cardnews_box > a > img {
-    border-radius: 10px;
-}
-
-
-/* .hashtag {
-    color: #878080;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-} */
