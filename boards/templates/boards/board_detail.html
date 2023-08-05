@@ -75,9 +75,11 @@
                 </div>
             </div>
             {% if comment.user != request.user %}
-            <form method="post" class="send">
-                <button type="submit" class="reportBtn">신고</button>
-            </form>
+            <div class="send">
+                <a href="{% url 'comment_report' board.id comment.id %}">
+                    <button type="submit" class="reportBtn">신고</button>
+                </a>
+            </div>
             {% else %}
             <div class="send">
                 <a href="{% url 'comment_delete' board.id comment.id %}">

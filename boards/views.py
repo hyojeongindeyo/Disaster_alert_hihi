@@ -3,15 +3,16 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import boardForm, commentForm
 from .models import *
-
+from django.contrib import messages
 
 # Create your views here.
 
 def main_page(request):
     return render(request, 'boards/board_main_page.html')
 
+
 # 임시 검색 뷰
-#def board_search(request):
+# def board_search(request):
 #    if request.method == 'GET':
 #        query = request.GET.get('q')
 #        if query:
@@ -20,7 +21,7 @@ def main_page(request):
 #    return redirect('boards/board_list.html')
 
 # 임시 신고 뷰
-#def post_report(request, pk):
+# def post_report(request, pk):
 #    if request.method == 'POST':
 #        post = get_object_or_404(Post, id=post_id)
 #        post.is_reported = True
@@ -45,6 +46,7 @@ def board_list(request):
 
     return render(request, 'boards/board_list.html', context)
 
+
 @login_required
 def board_post(request):
     if request.method == 'POST':
@@ -62,7 +64,8 @@ def board_post(request):
             except RegionCategory.DoesNotExist:
                 # 사용자가 선택한 지역 이름에 해당하는 인스턴스를 찾지 못한 경우에 대한 처리
                 # 적절한 예외 처리를 수행하거나 다른 로직을 추가할 수 있습니다.
-                return render(request, 'boards/board_create.html', {'form': form, 'region_choices': Board.region_choice})
+                return render(request, 'boards/board_create.html',
+                              {'form': form, 'region_choices': Board.region_choice})
 
             board.category = selected_region_instance  # 선택한 지역의 인스턴스를 'category' 필드에 할당
             board.save()
@@ -71,9 +74,10 @@ def board_post(request):
         form = boardForm(request=request)
     return render(request, 'boards/board_create.html', {'form': form, 'region_choices': Board.region_choice})
 
-def board_detail(request,pk):
+
+def board_detail(request, pk):
     board = Board.objects.get(id=pk)
-    return render(request, 'boards/board_detail.html', {'board':board})
+    return render(request, 'boards/board_detail.html', {'board': board})
 
 
 @login_required
@@ -95,21 +99,25 @@ def board_update(request, pk):
             except RegionCategory.DoesNotExist:
                 # 사용자가 선택한 지역 이름에 해당하는 인스턴스를 찾지 못한 경우에 대한 처리
                 # 적절한 예외 처리를 수행하거나 다른 로직을 추가할 수 있습니다.
-                return render(request, 'boards/board_update.html', {'form': form, 'board':board, 'region_choices': Board.region_choice})
+                return render(request, 'boards/board_update.html',
+                              {'form': form, 'board': board, 'region_choices': Board.region_choice})
 
             board.category = selected_region_instance  # 선택한 지역의 인스턴스를 'category' 필드에 할당
             boards.save()
             return redirect('board_detail', pk=board.pk)
     else:
         form = boardForm(request=request, instance=board)
-    return render(request, 'boards/board_update.html', {'form': form, 'board':board, 'region_choices': Board.region_choice})
+    return render(request, 'boards/board_update.html',
+                  {'form': form, 'board': board, 'region_choices': Board.region_choice})
+
 
 def board_delete(request, pk):
     board = Board.objects.get(id=pk)
     board.delete()
     return redirect('board_list')
 
-def comment_create(request,pk):
+
+def comment_create(request, pk):
     board = Board.objects.get(id=pk)
     if request.method == 'POST':
         form = commentForm(request.POST)
@@ -121,7 +129,7 @@ def comment_create(request,pk):
             return redirect('board_detail', pk)
     else:
         form = commentForm()
-    return render(request,'boards/board_detail.html', {'form':form})
+    return render(request, 'boards/board_detail.html', {'form': form})
 
 
 def comment_delete(request, board_id, comment_id):
@@ -129,13 +137,50 @@ def comment_delete(request, board_id, comment_id):
     comment.delete()
     return redirect('board_detail', board_id)
 
-# def region_in_category(request, category_slug=None):
-#     current_category = None
-#     categories = RegionCategory.objects.all()
-#     boards = Board.objects.filter(available_display=True)
-#
-#     if category_slug :
-#         current_category = get_object_or_404(RegionCategory, slug=category_slug)
-#         boards = boards.filter(category=current_category)
-#
-#     return render(request, 'board/list.html', {'current_category':current_category, 'categories':categories, 'boards': boards})
+
+def board_report(request, pk):
+    board = get_object_or_404(Board, id=pk)
+    report = BoardReport.objects.filter(board=board, user=request.user).first()
+
+    if report is None:
+        apply = BoardReport(board=board, user=request.user, complete=True)
+        apply.save()
+
+        board.count += 1
+        if board.count == 2:
+            board.delete()
+        else :
+            board.save()
+    else:
+        messages.warning(request, '이미 신고한 게시글 입니다.')
+
+    return redirect('board_list')
+
+def comment_report(request, board_id, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    report = CommentReport.objects.filter(comment=comment, user=request.user).first()
+
+    if report is None:
+        apply = CommentReport(comment=comment, user=request.user, complete=True)
+        apply.save()
+
+        comment.count += 1
+        if comment.count == 1:
+            comment.delete()
+        else :
+            comment.save()
+    else:
+        messages.warning(request, '이미 신고한 댓글 입니다.')
+
+    return redirect('board_detail', pk=board_id)
+
+def region_in_category(request, category_slug=None):
+    current_category = None
+    categories = RegionCategory.objects.all()
+
+    if category_slug:
+        current_category = get_object_or_404(RegionCategory, slug=category_slug)
+
+    return render(request, 'boards/message_main.html', {'current_category': current_category, 'categories': categories})
+
+
