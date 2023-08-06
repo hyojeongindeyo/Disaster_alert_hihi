@@ -1,18 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual-scrap</title>
+{% comment %}
 {% extends 'menuBar.html' %}
-
 {% block content %}
 {% load static %}
+{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/manual_scrap.css' %}">
+</head> <!--del-->
 
-    <link rel="stylesheet" href="{% static 'css/manual_scrap.css'%}">
-
+<body> <!--del-->
+    {% load static %}
+    <div class="container"> <!--del-->
         <div class="nav_bar">
         </div>
         <div class="header">
             <h4>태풍 시 행동요령</h4>
             <div class="scrap-button">
                 <form action="" method="post">
-                    <input type="checkbox" id="scrap-checkbox" onclick="toggleStar()">
+                    <input type="checkbox" id="scrap-checkbox" onclick="toggleStar() " checked>
                     <label for="scrap-checkbox">
                         <span class="scrap-text">스크랩</span>
                         <span class="star">&#9734;</span>
@@ -123,7 +133,45 @@
                 </div>
             </div>
         </div>
-
-    <script src="{% static 'js/manual_scrap.js' %}"></script>
+{% comment %}
 {% endblock %}
+{% endcomment %}
 
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="ft"> <!-- 메뉴 하단바 -->
+            <div class="ftIcons">
+                <div class="back"> <!--뒤로가기-->
+                    <a href="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
+    <script src="{% static 'js/manual_scrap.js' %}"></script>
+</body>
+
+</html>

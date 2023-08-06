@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재난이: 행동요령 - 메뉴얼</title>
+    <!-- <link rel="stylesheet" href="../static/css/menuBar.css">
+    <link rel="stylesheet" href="../static/css/actionTips.css"> -->
+
+    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
+{% comment %}
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/actionTips.css' %}">
+</head> <!--del-->
+<body> <!--del-->
+    <div class="container"> <!--del-->
+        <!-- 캐러슬 -->
+        <div class="slide-container">
+            <ul class="slide">
+                <li>
+                    <img src="{% static 'image/finedust-preview.png' %}" alt="" />
+                </li>
+                <li>
+                    <img src="{% static 'image/heatWave-preview.png' %}" alt="" />
+                </li>
+                <li>
+                    <img src="{% static 'image/typhoon-preview.png' %}" alt="" />
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab_container">
+            <ul class="tab_menu">
+                <li data-tab="tab_1"><a href="{% static 'html/templates/actionTips_main.html' %}">전체</a></li>
+                <li class="menuLine"></li>
+                <li data-tab="tab_2" class="current"><a href="{% static static 'html/actionTips_menual.html' %}">메뉴얼</a></li>
+                <li class="menuLine"></li>
+                <li data-tab="tab_3"><a href="{% static 'html/actionTips_cardnews.html' %}">카드뉴스</a></li>            
+            </ul>
+
+            <!-- 메뉴얼 -->
+            <div id="tab_2" class="tab_content current">
+                <!-- 검색 -->
+                <div class="search_container">
+                    <label>
+                        <input type="text" id="search" onkeyup="filter()" placeholder="검색어를 입력해주세요." />
+                        <hr class="search_line">
+                    </label>
+                </div>
+                <div class="menual_container">
+                    <div class="listInner">
+                        <div class="menual_box">
+                            <a href="#">
+                                <p class="title">태풍 발생 시 행동요령</p>
+                                <ul class="hashtag">
+                                    <li>#태풍_예보_시</li>
+                                    <li>#태풍_특보_시</li>
+                                    <li>#태풍_특보_중</li>
+                                </ul>
+                            </a>
+                            <hr class="menual_line">
+                        </div>
+                    </div>
+                    
+                    <div class="listInner">
+                        <div class="menual_box">
+                            <a href="#">
+                                <p class="title">지진 발생 시 행동요령</p>
+                                <ul class="hashtag">
+                                    <li>#지진_예보시</li>
+                                    <li>#지진경보</li>
+                                </ul>
+                            </a>
+                            <hr class="menual_line">
+                        </div>
+                    </div>
+                    <div class="listInner">
+                        <div class="menual_box">
+                            <a href="#">
+                                <p class="title">호우 발생 시 행동요령</p>
+                                <ul class="hashtag">
+                                    <li>#사전준비</li>
+                                    <li>#호우특보</li>
+                                    <li>#호우_이후</li>
+                                </ul>
+                            </a>
+                            <hr class="menual_line">
+                        </div>
+                    </div>
+                    <div class="listInner">
+                        <div class="menual_box">
+                            <a href="#">
+                                <p class="title">폭염 시 행동요령</p>
+                                <ul class="hashtag">
+                                    <li>#평상시</li>
+                                    <li>#폭염발생_시</li>
+                                    <li>#폭염_관련_정보</li>
+                                </ul>
+                            </a>
+                            <hr class="menual_line">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--여기에는 script src 부분 넣으세유 그것도 지우면 js 연결이 끊겨요!-->
+{% comment %}
+{% endblock %}
+{% endcomment %}
+        <!-- 메뉴 하단바 -->
+        <div id="ft">
+            <div class="ftIcons">
+                <div class="back"> <!--뒤로가기-->
+                    <a href="">
+                        <img src="{% static 'image/back_blue.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    <a href="">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+
+    </div>
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="{% static 'js/actionTips_search.js' %}"></script>
+    <script src="{% static 'js/actionTips_carousel.js' %}"></script>
+    
+
+    <!-- 아이콘 -->
+    <!-- <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> -->
+</body>
+</html>

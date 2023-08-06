@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이: 행동요령</title>
     <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
-<!-- {% extends 'menuBar.html' %}
+{% comment %}
+{% extends 'menuBar.html' %}
 {% block content %}
-{% load static %} -->
+{% load static %}
+{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/actionTips.css' %}">
 </head> <!--del-->
 <body> <!--del-->
@@ -162,7 +164,10 @@
                 <p>카드뉴스 콘텐츠 내용을 여기에 작성합니다.</p>
             </div>
         </div>
-<!-- {% endblock %} -->
+    <!--여기에는 script src 부분 넣으세유 그것도 지우면 js 연결이 끊겨요!-->
+{% comment %}
+{% endblock %}
+{% endcomment %}
 
         <!-- 메뉴 하단바 -->
         <div id="ft">
