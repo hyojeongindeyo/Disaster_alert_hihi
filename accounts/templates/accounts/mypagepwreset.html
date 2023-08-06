@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이페이지-비밀번호재설정</title>
-{% comment %}
-{% extends 'menuBar.html' %}
+{% extends 'accounts/menuBar_mp.html' %}
 {% block content %}
 {% load static %}
-{% endcomment %}
-    <link rel="stylesheet" href="../static/css/mypagepwreset.css">
-</head> <!--del-->
 
-<body> <!--del--> 
-    <div class="container"> <!--del-->
+    <link rel="stylesheet" href="{% static 'css/mypagepwreset.css' %}">
+
         <div class="nav-bar">
         </div>
         <h3>비밀번호 재설정</h3>
@@ -39,32 +29,6 @@
                 <button type="submit">재설정</button>
             </div>
         </form>
-{% comment %}
+
+    <script src="{% static 'js/mypagepwreset.js' %}"></script>
 {% endblock %}
-{% endcomment %}
-        <div id="ft">
-            <div class="ftIcons">
-                <div class="back"> <!--뒤로가기-->
-                    <a href="">
-                        <img src="../static/image/back_blue.png" alt="">
-                    </a>
-                </div>
-
-                <div class="home"> <!--메인(홈)으로 가기-->
-                    <a href="">
-                        <img src="../static/image/home_gray.png" alt="">
-                    </a>
-                </div>
-
-                <div class="user"> <!--마이페이지로 가기-->
-                    <a href="../templates/mypage.html">
-                        <img src="../static/image/user_gray.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div> <!-- 메뉴 하단바 div 끝-->
-    </div>
-    <script src="../static/js/mypagepwreset.js"></script>
-</body>
-
-</html>

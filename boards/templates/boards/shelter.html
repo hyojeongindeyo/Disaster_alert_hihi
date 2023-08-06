@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find shelter</title>
-{% comment %}
 {% extends 'menuBar.html' %}
-{% block content %}
-{% load static %}
-{% endcomment %}
-    <link rel="stylesheet" href="../static/css/shelter.css">
-    {% load static %}
-</head> <!--del-->
 
-<body> <!--del-->
-    <div class="container"> <!--del-->
+{% block content %}
+
+{% load static %}
+    <link rel="stylesheet" href="{% staic 'css/shelter.css' %}">
 
         <div class="map">
 
@@ -27,14 +15,14 @@
         </div>
         <div class="site">
             <div class="site1">
-                <img src="{% static'image/line.svg'%}" alt="">
+                <img src="{% static 'image/line.svg'%}" alt="">
                 <h4>지연 아파트 지하주차장</h4> <br>
                 <h6>경기도 양주시 민경동</h6>
                 <h5>230m</h5>
             </div>
             <div class="site2">
 
-                <img src="{% static'image/line.svg' %}" alt="">
+                <img src="{% static 'image/line.svg' %}" alt="">
 
                 <h4>혜현 아파트 지하주차장</h4>
                 <h6>경기도 양주시 송이동</h6>
@@ -53,43 +41,6 @@
                 <h4>다현아파트 지하주차장</h4>
             </div>
         </div>
-    <!--여기에 script src 쓰세유 그것도 지우면 js 연결이 끊겨요!-->
-{% comment %}
-{% endblock %}
-{% endcomment %}
-        <div id="ft">
-           <div class="ftIcons">
-                <div class="back" onClick="window.history.back()"> <!--뒤로가기-->
-                    <img src="{% static 'image/back_blue.png' %}" alt="">
-                </div>
-
-                <div class="home"> <!--메인(홈)으로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/home_gray.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="user"> <!--마이페이지로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/user_gray.png' %}" alt="">
-                    </a>
-                </div>
-            </div>
-
-        </div> <!-- 메뉴 하단바 -->
-
-    </div>
-
-
-
-
-
-
-
-
-
 
     <script src="{% static 'js/shelter.js' %}"></script>
-</body>
-
-</html>
+{% endblock %}
