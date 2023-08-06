@@ -23,9 +23,9 @@ function formatDate(date) {
     } else {
         return dayDiff + '일 전';
     }
-}
+} //n일 전 표기를 위해
 
-function parseDateString(dateString) {
+function parseDateString(dateString) { //정렬이 쓰기 위함
 var parts = dateString.split(' ');
 var datePart = parts[0].split('/');
 var timePart = parts[1].split(':');
@@ -40,15 +40,17 @@ var seconds = parseInt(timePart[2]);
 return new Date(year, month, day, hours, minutes, seconds);
 }
 
+//이건 css 제어를 위한 코드
 document.querySelector('.container').style.height = '800px';
 document.querySelector('.loading').style.display = 'block';
 
+//데이터 불러오기
 function getDisasterMessages(pageNumber) {
     var xhr = new XMLHttpRequest();
     var url = 'http://apis.data.go.kr/1741000/DisasterMsg3/getDisasterMsg1List';
     var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'enh0By9MVc5ZXW6tQaiu0NElUnh6mfIivoB9u3IPuJhEAKb4K%2FPZc6JMKqiAyeNpQ7kRvzghYyM7EAFZ4%2BoJbA%3D%3D';
     queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent(pageNumber); //페이지번호
-    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); 
+    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); //한 페이지결과 수
     queryParams += '&' + encodeURIComponent('type') + '=' + encodeURIComponent('json');
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
@@ -70,7 +72,7 @@ function getDisasterMessages(pageNumber) {
                     //~ ~ ~ ~ ~ ★★★★★지역별 재난 문자 뽑기 부분★★★★★ ~ ~ ~ ~ ~//
                 });
 
-                // 이미 존재하는 데이터와 create_date(발송 일자)가 겹치지 않는 경우만 배열에 추가
+                // 이미 존재하는 데이터와 create_date(발송 일자)가 겹치지 않는 경우만 배열에 추가 - 중복 데이터 못 들어오게 하려고..
                 filteredData.forEach(function (row) {
                     var createDate = parseDateString(row.create_date);
                     if (!disasterMsgList.some(function (existingRow) {
@@ -121,7 +123,7 @@ function getDisasterMessages(pageNumber) {
 
                 // 페이지네이션 버튼 추가
                 addPaginationButtons();
-            } catch (error) {
+            } catch (error) { //데이터 제대로 전송하지 못하면 콘솔에 원인, 화면에 새로고침 하라는 말
                 var fail = document.createElement('p');
                 fail.textContent = '새로고침 해주세요!';
                 fail.classList.add('fail');
@@ -134,6 +136,7 @@ function getDisasterMessages(pageNumber) {
     xhr.send();
 }
 
+//페이지네이션
 function addPaginationButtons() {
     var paginationDiv = document.querySelector('.pagination');
     paginationDiv.innerHTML = ''; // 이전 페이지네이션 버튼 초기화
@@ -141,7 +144,7 @@ function addPaginationButtons() {
     var totalPages = Math.ceil(disasterMsgList.length / 15); // 한 페이지당 15개씩
 
     // 이전 페이지네이션 버튼
-    if (currentPage > 1) {
+    if (currentPage > 1) { //페이지번호가 1 이상이면 이전 버튼 나오게
         var prevButton = document.createElement('button');
         prevButton.textContent = '이전';
         prevButton.classList.add('prevBtn');
