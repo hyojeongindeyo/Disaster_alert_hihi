@@ -1,19 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>재난이: 카드뉴스 내용(캐러셀)</title>
-{% comment %}
+
 {% extends 'menuBar.html' %}
 {% block content %}
 {% load static %}
-{% endcomment %}
+
     <link rel="stylesheet" href="{% static 'css/cardnews_detail.css' %}">
-</head> <!--del-->
-<body> <!--del-->
-    <div class="container">  <!--del-->
+
         <div class="hd"> <!--상단-->
             <p class="cardnews">카드뉴스</p>
         </div>
@@ -26,22 +17,22 @@
         <div class="slide-container">
             <ul class="slide">
                 <li>
-                    <img src="{% static 'static/image/hot1.png' %}" alt="">
+                    <img src="{% static 'image/hot1.png' %}" alt="">
                 </li>
                 <li>
-                    <img src="{% static 'static/image/hot2.png' %}" alt="">
+                    <img src="{% static 'image/hot2.png' %}" alt="">
                 </li>
                 <li>
-                    <img src="{% static 'static/image/hot3.png' %}" alt="">
+                    <img src="{% static 'image/hot3.png' %}" alt="">
                 </li>
                 <li>
-                    <img src="{% static 'static/image/hot4.png' %}" alt="">
+                    <img src="{% static 'image/hot4.png' %}" alt="">
                 </li>
                 <li>
-                    <img src="{% static 'static/image/hot5.png' %}" alt="">
+                    <img src="{% static 'image/hot5.png' %}" alt="">
                 </li>
                 <li>
-                    <img src="{% static 'static/image/hot6.png' %}" alt="">
+                    <img src="{% static 'image/hot6.png' %}" alt="">
                 </li>
             </ul>
 
@@ -54,32 +45,5 @@
                 </button>
             </div>
         </div>
-{% comment %}
-{% endblock %}
-{% endcomment %}
-    
-        <div id="ft"> <!-- 메뉴 하단바 -->
-            <div class="ftIcons">
-                <div class="back"> <!--뒤로가기-->
-                    <a href="">
-                        <img src="{% static 'image/back_blue.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="home"> <!--메인(홈)으로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/user_gray.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="user"> <!--마이페이지로 가기-->
-                    <a href="">
-                        <img src="{% static 'image/user_gray.png' %}" alt="">
-                    </a>
-                </div>
-            </div>
-        </div> <!-- 메뉴 하단바 div 끝-->
-    </div>
     <script src="{% static 'js/cardnews_detail.js' %}"></script>
-</body>
-</html>
+{% endblock %}
