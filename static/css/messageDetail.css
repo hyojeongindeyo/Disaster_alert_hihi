@@ -132,6 +132,97 @@ body {
     height: 13px;
 }
 
+/*api 관련 버튼들*/
+.up {
+    position: fixed;
+    background-color: #ABD4FA;
+    opacity: 0.9;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 997;
+    bottom: 70px;
+    margin: 0;
+    padding: 0;
+    margin-left: 320px;
+    
+}
+.up > img {
+    width: 15px;
+    height: 15px;
+    margin: 12px 0px;
+    opacity: 0.7;
+} 
+
+.pagination {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* .load-more {
+    background-color: #ABD4FA;
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+
+} */
+
+.page-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border : none;
+    /* border: 1px solid #E8E8E8; */
+    /* background-color: #ABD4FA; */
+    background-color: #ABD4FA;
+    /* box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25); */
+    margin: 0px 5px;
+    display: inline-block;
+    color: #616161;
+}
+
+.nextBtn {
+    width: 45px;
+    height: 30px;
+    border: none;
+    background-color: #d8d8d8;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.prevBtn {
+    width: 45px;
+    height: 30px;
+    border: none;
+    background-color: #E8E8E8;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.loading {
+    font-size: 17px;
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 150px;
+}
+
+.loading > img {
+    margin-bottom: 15px;
+    width: 72px;
+    height: 72px;
+}
+
+.fail {
+    color: gray;
+    margin-top: 13px;
+}
+
 /*-------하단 메뉴바-------css */
 #ft {
     margin: 0;

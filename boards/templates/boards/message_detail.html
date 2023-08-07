@@ -25,7 +25,30 @@
             </select>
         </form>
 
-        <div class="message">
+        <div class="content">
+            <div class="message-list">
+              <!-- 메시지들 -->                                                                          
+            </div>
+        </div>
+
+        <div class="pagination">
+            <!-- <button id="prevButton" style="display: none;">이전</button>
+            <button id="nextButton" style="display: none;">다음</button> -->
+            <!-- <button class="load-more">더보기</button> -->
+        </div>
+
+        <p class="loading">
+            <img src="{% static 'image/smartphone.png' %}" alt="재난문자 아이콘"><br>
+            잠시만 기다려주세요!
+        </p>
+
+        <a href="#">
+            <div class="up">
+                <img src="{% static 'image/up.png' %}" alt="위로가기">
+            </div>
+        </a>
+
+        <!-- <div class="message">
             <p class="messageText">
                 [경기도청] 현재 폭염특보 발효중. 태양
                 볕, 고온 다습한 곳에 오래 머무를 경우
@@ -53,7 +76,7 @@
                 안전사고 예방에 주의해 주시기 바랍니다.
             </p>
             <p class="time">7일 전</p>
-        </div>
+        </div> -->
 
     <script src="{% static 'js/messageDetail.js' %}"></script>
 {% endblock %}
