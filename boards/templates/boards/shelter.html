@@ -1,18 +1,18 @@
+
 {% extends 'menuBar.html' %}
 
 {% block content %}
 
 {% load static %}
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff7c48b467f31c35e3c51e12b7525385
+    "></script>
     <link rel="stylesheet" href="{% staic 'css/shelter.css' %}">
+   
+        <div id="map"></div>
+        <!-- <form action="" method=""> -->
+        <p id="locationInfo">내 위치: <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button></p>
+        <!-- </form> -->
 
-        <div class="map">
-
-        </div>
-
-        <div class="location">
-            <p>내 위치: 경기도 양주시</p>
-
-        </div>
         <div class="site">
             <div class="site1">
                 <img src="{% static 'image/line.svg'%}" alt="">
@@ -29,18 +29,17 @@
                 <h5>470m</h5>
             </div>
             <div class="site3">
-
                 <img src="{% static 'image/line.svg' %}" alt="">
                 <h4>다현아파트 지하주차장</h4>
                 <h6>경기도 양주시 효정동</h6>
                 <h5>753m</h5>
             </div>
             <div class="site4">
-
                 <img src="{% static 'image/line.svg' %}" alt="">
                 <h4>다현아파트 지하주차장</h4>
             </div>
         </div>
 
-    <script src="{% static 'js/shelter.js' %}"></script>
+    <script src="{% static 'js/shelter2.js' %}"></script>
 {% endblock %}
+
