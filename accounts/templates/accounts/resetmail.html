@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pw-reset mail</title>
-    <link rel="stylesheet" href="{% static 'css/resetmail.css' %}">
-</head>
+{% extends 'accounts/menuBar_mp.html' %}
 
-<body>
-    <div class="container">
+{% block content %}
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/resetmail.css' %}">
+
         <div class="nav-bar"></div>
        
         <div class="header">
@@ -28,7 +23,4 @@
                 <button type="submit"><a href="{% url 'accounts:login' %}">로그인하기</a></button>
             </div>
         </form>
-    </div>
-</body>
-
-</html>
+{% endblock %}

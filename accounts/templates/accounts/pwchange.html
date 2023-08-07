@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'accounts/menuBar_mp.html' %}
+{% block content %}
 {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pwchange-finished</title>
     <link rel="stylesheet" href="{% static 'css/pwchange.css' %}">
-</head>
-<body>
-    <div class="container">
         <div class="nav-bar"></div>
        
         <div class="header">
@@ -22,6 +15,4 @@
                 <button type="submit">로그인하기</button>
             </div>
         </a>
-    </div>
-</body>
-</html>
+{% endblock %}

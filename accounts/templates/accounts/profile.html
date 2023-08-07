@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
-{% comment %}
-{% extends 'menuBar_mp.html' %}
+{% extends 'accounts/menuBar_mp.html' %}
 {% block content %}
 {% load static %}
-{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-</head> <!--del-->
-<body> <!--del-->
-    <div class="container"> <!--del-->
         <div class="nav-bar">
         </div>
         <h3>프로필</h3>
@@ -35,32 +23,6 @@
                     <button type="submit">확인</button>
                 </div>
             </form>
-{% comment %}
-{% endblock %}
-{% endcomment %}
-            <div id="ft"> <!-- 메뉴 하단바 -->
-                <div class="ftIcons">
-                    <div class="back"> <!--뒤로가기-->
-                        <a href="">
-                            <img src="../static/image/back_blue.png" alt="">
-                        </a>
-                    </div>
-
-                    <div class="home"> <!--메인(홈)으로 가기-->
-                        <a href="">
-                            <img src="../static/image/home_gray.png" alt="">
-                        </a>
-                    </div>
-
-                    <div class="user"> <!--마이페이지로 가기-->
-                        <a href="">
-                            <img src="../static/image/user_gray.png" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- 메뉴 하단바 div 끝-->
         </div>
-    </div>
-    <script src="{% static 'js/profile.js' %}"></script>
-</body>
-</html>
+<script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
