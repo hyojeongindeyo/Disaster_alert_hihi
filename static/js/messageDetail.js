@@ -1,4 +1,8 @@
-/*아직 내용 없음*/
+/*다른 지역에서 왔을 때 문제 없는 것으로 보였음*/
+/* api가 방금 막 보낸 문자 데이터를 바로 주는? 것이 아니라 시간차가 있어보였음
+이전, 다음을 오갔는데 문제 없었음 1건*/
+
+
 var currentPage = 1;
 var messageListDiv;
 // var oneYearAgoDate = new Date();
@@ -123,7 +127,7 @@ function getDisasterMessages(pageNumber) {
 
                 // 페이지네이션 버튼 추가
                 addPaginationButtons();
-            } catch (error) { //데이터 제대로 전송하지 못하면 콘솔에 원인, 화면에 새로고침 하라는 말
+            } catch (error) { //데이터 제대로 전송하지 못하면 콘솔에 원인, 화면에 새로고침 하라는 말(수정 필요)
                 var fail = document.createElement('p');
                 fail.textContent = '새로고침 해주세요!';
                 fail.classList.add('fail');
@@ -180,7 +184,10 @@ function addPaginationButtons() {
 // 페이지 로드 시 API 호출 및 결과 표시
 getDisasterMessages(currentPage);
 
-//-----------------------------------------혹은 이러한 방법.....? 페이지네이션 x, 대신 밑으로 데이터가 주욱 쌓이고 스크롤 되어버림...
+//-----------------------------------------
+//혹은 이러한 방법.....? 페이지네이션 x, 대신 밑으로 데이터가 주욱 쌓이고 스크롤 되어버림...
+//이런 식으로 전체 데이터에서 걸러오려 했으나 전체 데이터가 너무 많아 화면에 띄우기까지 꽤걸림...
+
 // function formatDate(date) {
 //     var currentDate = new Date();
 //     var oneYearAgoDate = new Date();
