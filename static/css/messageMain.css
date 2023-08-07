@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
 
 body {
     margin: 0;
@@ -7,12 +7,12 @@ body {
 
 .container {
     background-color: #F6F6F6;
-    width: 375px; /* 전체 width 조절 */
+    width: 375px; 
     height: 1200px;
-    margin: 0 auto; /* 가운데로 오게 하기 */
+    margin: 0 auto; 
     padding: 0;
     font-family: 'Inter', sans-serif;
-}
+} */
 
 /* 배너 부분 */
 .banner {
@@ -151,7 +151,7 @@ body {
 /*즐겨찾기 부분 끝*/
 
 /*-------하단 메뉴바-------css */
-#ft {
+/* #ft {
     margin: 0;
     padding: 0;
     z-index: 30;
@@ -189,4 +189,4 @@ body {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
-}
+} */
