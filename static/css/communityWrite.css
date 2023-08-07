@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
 
 body {
     margin: 0;
@@ -6,14 +6,14 @@ body {
 }
 
 .container {
-    width: 375px; /* 전체 width 조절 */
+    width: 375px; 
     height: 1000px;
-    margin: 0 auto; /* 가운데로 오게 하기 */
+    margin: 0 auto; 
     position: relative;
     padding: 0;
     z-index:0;
     font-family: 'Inter', sans-serif;
-}
+} */
 
 /* 상단 부분 */
 select option[value=""][disabled] { /*select box placeholder를 위해*/
@@ -147,7 +147,7 @@ select::-ms-expand {
 }
 
 /*-------하단 메뉴바-------css */
-#ft {
+/* #ft {
     margin: 0;
     padding: 0;
     z-index: 30;
@@ -185,4 +185,4 @@ select::-ms-expand {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
-}
+} */
