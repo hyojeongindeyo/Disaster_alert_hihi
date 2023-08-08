@@ -2,23 +2,7 @@
 {% block content %}
 {% load static %}
 
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>재난이: 행동요령 - 메뉴얼</title>
-    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}"> -->
-{% comment %}
-{% extends 'menuBar.html' %}
-{% block content %}
-{% load static %}
-{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/actionTips.css' %}">
-<!-- </head> del -->
-<!-- <body> del -->
-    <!-- <div class="container"> del -->
-        <!-- 캐러슬 -->
         <div class="slide-container">
             <ul class="slide">
                 <li>
@@ -42,9 +26,7 @@
                 <li data-tab="tab_3"><a href="{% static 'html/actionTips_cardnews.html' %}">카드뉴스</a></li>            
             </ul>
 
-            <!-- 메뉴얼 -->
             <div id="tab_2" class="tab_content current">
-                <!-- 검색 -->
                 <div class="search_container">
                     <label>
                         <input type="text" id="search" onkeyup="filter()" placeholder="검색어를 입력해주세요." />
@@ -107,40 +89,7 @@
                 </div>
             </div>
         </div>
-    <!--여기에는 script src 부분 넣으세유 그것도 지우면 js 연결이 끊겨요!-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'js/actionTips_search.js' %}"></script>
     <script src="{% static 'js/actionTips_carousel.js' %}"></script>
 {% endblock %}
-
-{% comment %}
-{% endblock %}
-{% endcomment %}
-        <!-- 메뉴 하단바 -->
-        <!-- <div id="ft">
-            <div class="ftIcons">
-                <div class="back">
-                    <a href="">
-                        <img src="{% static 'image/back_blue.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="home">
-                    <a href="">
-                        <img src="{% static 'image/home_gray.png' %}" alt="">
-                    </a>
-                </div>
-
-                <div class="user">
-                    <a href="">
-                        <img src="{% static 'image/user_gray.png' %}" alt="">
-                    </a>
-                </div>
-            </div>
-        </div> -->
-        <!-- 메뉴 하단바 div 끝-->
-
-    <!-- </div>
-
-</body>
-</html> -->
