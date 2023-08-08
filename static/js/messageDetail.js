@@ -82,7 +82,7 @@ function getDisasterMessages(pageNumber) {
 
                 var filteredData = newDisasterMsgList.filter(function (row) {
                     var createDate = parseDateString(row.create_date);
-                    return row.location_name.includes('경기도') && createDate >= thirtyDaysAgoDate;
+                    return row.location_name.includes(region) && createDate >= thirtyDaysAgoDate;
                     //~ ~ ~ ~ ~ ★★★★★지역별 재난 문자 뽑기 부분★★★★★ ~ ~ ~ ~ ~//
                 });
 

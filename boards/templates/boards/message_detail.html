@@ -3,7 +3,9 @@
 {% block content %}
 
 {% load static %}
-    <link rel="stylesheet" href="{% static 'css.messageDetail.css' %}">
+    <script type="text/javascript"> var region = "{{ region.slug }}" </script>
+    <script defer src="{% static 'js/messageDetail.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/messageDetail.css' %}">
         <div class="banner"> <!--배너 부분-->
             <p class="bannerTitle">미세먼지, 어떻게 해야할까?</p>
             <p class="move">
@@ -16,7 +18,7 @@
 
         <!--지역과 며칠 치 볼건지-->
         <form method="post" class="term">
-            <p class="areaName">경기도</p>
+            <p class="areaName">{{region.region_name}}</p>
             <select name="term" id="messageTerm">
                 <option value="7일">7일</option>
                 <option value="14일">14일</option>
@@ -78,5 +80,5 @@
             <p class="time">7일 전</p>
         </div> -->
 
-    <script src="{% static 'js/messageDetail.js' %}"></script>
+
 {% endblock %}
