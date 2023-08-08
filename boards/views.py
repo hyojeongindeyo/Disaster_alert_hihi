@@ -1,9 +1,26 @@
+import math
+import time
+from itertools import islice
+
 from django.contrib.auth.decorators import login_required
+import csv
+
+from pyproj import Proj, transform
+import requests
+import json
 from django.shortcuts import render, get_object_or_404, redirect
+from django.template.defaultfilters import pprint
 
 from .forms import boardForm, commentForm
 from .models import *
 from django.contrib import messages
+
+import os
+from dotenv import load_dotenv
+
+from .localCode import localCode
+
+load_dotenv()
 
 # Create your views here.
 
@@ -183,4 +200,94 @@ def region_in_category(request, category_slug=None):
 
     return render(request, 'boards/message_main.html', {'current_category': current_category, 'categories': categories})
 
+def detail_in_category(request, category_slug=None):
 
+    region = get_object_or_404(RegionCategory, slug=category_slug)
+
+    return render(request, 'boards/message_detail.html', {'region': region})
+
+
+def BtoW_coordinate_transform(x1, y1) :
+
+    inProj = Proj(init='epsg:2097')
+    outProj = Proj(init='epsg:4326')
+
+    x2, y2 = transform(inProj, outProj, x1, y1)  # 구형 좌표계를 투영 좌표계로 변환
+
+    return x2, y2
+
+def WtoB_coordinate_transform() :
+
+    inProj = Proj(init='epsg:4326')
+    outProj = Proj(init='epsg:2097')
+
+
+    x1, y1 = 127.0145985, 37.6445275
+    x2, y2 = transform(inProj, outProj, x1, y1)  # 구형 좌표계를 투영 좌표계로 변환
+
+    return x2, y2
+
+def shelter_location(request):
+
+    # 아까워서 남겨 두는 저의 api.... 하 진짜!!!!!!!
+    # url = 'http://www.localdata.go.kr/platform/rest/GR0/openDataApi?'
+    # locCode = localCode["서울 종로구"]
+    # print(locCode)
+    # params = {'authKey': os.getenv('SHELTER_KEY'), 'localCode': 3000000, 'state': '01', 'resultType': 'json'}
+    # response = requests.get(url, params=params)
+    # shelter = json.loads(response.content)
+    # print(shelter['result']['body']['rows'][0])
+
+    x1, y1 = WtoB_coordinate_transform()
+
+    f = open('boards/shelter.csv', 'r')
+    rdr = csv.reader(f)
+    # k = 0
+    #
+    # for line in rdr :
+    #     if line[7] == '01' :
+    #         k = k + 1
+    #         print(line)
+    # print(k)
+
+    locCode = localCode["서울 강북구"]
+    locLength = {}
+    locLoc = []
+    locName = []
+    shelterX = []
+    shelterY = []
+    k = 0
+    p = 0
+    q = 0
+
+    for line in rdr :
+        if line[7] == '01':
+            x2 = line[26]
+            y2 = line[27]
+            k = k + 1
+            if x2=='' or y2== '' :
+                p = p + 1
+
+            else :
+                q = q + 1
+                x = float(x1)-float(x2)
+                y = float(y1)-float(y2)
+                locLength[float(math.sqrt(pow(x, 2) + pow(y, 2)))] = [line[19], line[21], line[26], line[27]]
+
+    dic = dict(sorted(locLength.items()))
+    dic = dict(islice(dic.items(), 5))
+    result = list(dic.values())
+    print(result)
+
+    for i in result :
+        x, y = BtoW_coordinate_transform(float(i[2]), float(i[3]))
+        locLoc.append(i[0])
+        locName.append(i[1])
+        shelterX.append(x)
+        shelterY.append(y)
+
+    print(shelterX)
+
+    f.close()
+
+    return render(request, 'boards/test.html')
