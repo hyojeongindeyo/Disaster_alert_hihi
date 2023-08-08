@@ -1,22 +1,23 @@
-<!DOCTYPE html>
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재난이: 행동요령 - 메뉴얼</title>
-    <!-- <link rel="stylesheet" href="../static/css/menuBar.css">
-    <link rel="stylesheet" href="../static/css/actionTips.css"> -->
-
-    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}"> -->
 {% comment %}
 {% extends 'menuBar.html' %}
 {% block content %}
 {% load static %}
 {% endcomment %}
     <link rel="stylesheet" href="{% static 'css/actionTips.css' %}">
-</head> <!--del-->
-<body> <!--del-->
-    <div class="container"> <!--del-->
+<!-- </head> del -->
+<!-- <body> del -->
+    <!-- <div class="container"> del -->
         <!-- 캐러슬 -->
         <div class="slide-container">
             <ul class="slide">
@@ -107,42 +108,39 @@
             </div>
         </div>
     <!--여기에는 script src 부분 넣으세유 그것도 지우면 js 연결이 끊겨요!-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/actionTips_search.js' %}"></script>
+    <script src="{% static 'js/actionTips_carousel.js' %}"></script>
+{% endblock %}
+
 {% comment %}
 {% endblock %}
 {% endcomment %}
         <!-- 메뉴 하단바 -->
-        <div id="ft">
+        <!-- <div id="ft">
             <div class="ftIcons">
-                <div class="back"> <!--뒤로가기-->
+                <div class="back">
                     <a href="">
                         <img src="{% static 'image/back_blue.png' %}" alt="">
                     </a>
                 </div>
 
-                <div class="home"> <!--메인(홈)으로 가기-->
+                <div class="home">
                     <a href="">
                         <img src="{% static 'image/home_gray.png' %}" alt="">
                     </a>
                 </div>
 
-                <div class="user"> <!--마이페이지로 가기-->
+                <div class="user">
                     <a href="">
                         <img src="{% static 'image/user_gray.png' %}" alt="">
                     </a>
                 </div>
             </div>
-        </div> <!-- 메뉴 하단바 div 끝-->
+        </div> -->
+        <!-- 메뉴 하단바 div 끝-->
 
-    </div>
+    <!-- </div>
 
-    <!-- js -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="{% static 'js/actionTips_search.js' %}"></script>
-    <script src="{% static 'js/actionTips_carousel.js' %}"></script>
-    
-
-    <!-- 아이콘 -->
-    <!-- <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> -->
 </body>
-</html>
+</html> -->
