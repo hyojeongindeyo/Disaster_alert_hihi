@@ -7,10 +7,16 @@
 {% load customtags %}
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff7c48b467f31c35e3c51e12b7525385"></script>
     <link rel="stylesheet" href="{% static 'css/shelter2.css' %}">
-   
+
+        <div class="nav_bar">
+          <p>내 위치 주변 대피소 찾기</p>
+        </div>
         <div id="map"></div>
         <!-- <form action="" method=""> -->
-        <p id="locationInfo">내 위치: <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button></p>
+        <div class="location">
+          <p id="locationInfo">내 위치: </p>
+          <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button>
+        </div>
         <!-- </form> -->
 
         <form action="{% url 'shelter_location' %}" method="post" id="myinput">
@@ -28,6 +34,26 @@
                 </div>
             {% endfor %}
         </div>
+    <script>
+        var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+          mapOption = {
+            center: new kakao.maps.LatLng('{{ locY }}', '{{ locX }}'), // 지도의 중심좌표
+            level: 3, // 지도의 확대 레벨
+          };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다
+        var markerPosition = new kakao.maps.LatLng('{{ locY }}', '{{ locX }}');
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+          position: markerPosition,
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+    </script>
     <script src="{% static 'js/shelter2.js' %}"></script>
 {% endblock %}
 

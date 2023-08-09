@@ -11,7 +11,7 @@ body {
 
 .container {
     width: 375px;
-    height: 844px;
+    height: 1060px;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -27,6 +27,8 @@ body {
 .nav_bar{
     width: 375px;
     height: 30px;
+    
+    /* position: fixed; */
     /* border: 1px solid grey; */
 }
 
@@ -41,13 +43,29 @@ body {
 #map {
     background-color: #D9D9D9;
     width: 375px;
-    height: 263px;
-    /* border: 1px solid black; */
+    height: 300px;
+   
+
 }
 
+.location{
+    display: flex;
+    flex-direction:row ;
+}
 
+#getMyPositionBtn{
+    width: 80px;
+    height: 30px;
+    background-color: #94C9FA;
+    color: #FFF;
+    border-radius: 10px;
+    border: none;
+    font-size: 12px;
+    margin-left: 240px;
+    margin-top: 7px;
+    
+}
 #getLocation{
-   border: 1px solid green;
    font-size: 12px;
    border-radius: 8px;
    
@@ -62,12 +80,12 @@ body {
     margin-left: 8px;
     margin-top: 15px;
     margin-bottom: 9.5px;
-    border: 1px solid pink;
+    
 }
 .site1 {
-    /* border: 1px solid yellow; */
     width: 377px;
     height: 123.5px;
+    border: 1px solid red;
 
 }
 
@@ -76,122 +94,28 @@ body {
 }
 
 .site1>h4 {
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     margin-left: 13px;
     margin-top: 7.5px;
+    border: 1px solid pink;
+    height: 60px;
 
 }
 
-.site1>h5 {
-    color: #707070;
-    font-size: 14px;
-    font-style: normal;
-    transform: translateY(-20px);
-    margin-left: 300px;
-
-}
 
 .site1>h6 {
     color: #000;
-    font-size: 11px;
+    font-size: 12px;
     font-style: normal;
-    margin-top: -35px;
+    margin-top: -40px;
     margin-left: 13px;
+   
+     border: 1px solid green;
 
 }
 
-.site2 {
-    /* border: 1px solid yellow; */
-    width: 377px;
-    height: 123.5px;
 
-}
-
-.site2>img {
-    transform: translateY(-14px);
-}
-
-.site2>h4 {
-    font-size: 18px;
-    font-style: normal;
-    margin-left: 13px;
-    margin-top: 7.5px;
-
-}
-
-.site2>h5 {
-    color: #707070;
-    font-size: 14px;
-    font-style: normal;
-    transform: translateY(-20px);
-    margin-left: 300px;
-
-}
-
-.site2>h6 {
-    color: #000;
-    font-size: 11px;
-    font-style: normal;
-    margin-top: -15px;
-    margin-left: 13px;
-
-}
-
-.site3 {
-    /* border: 1px solid yellow; */
-    width: 377px;
-    height: 123.5px;
-
-}
-
-.site3>img {
-    transform: translateY(-14px);
-}
-
-.site3>h4 {
-    font-size: 18px;
-    font-style: normal;
-    margin-left: 13px;
-    margin-top: 7.5px;
-
-}
-
-.site3>h5 {
-    color: #707070;
-    font-size: 14px;
-    font-style: normal;
-    transform: translateY(-20px);
-    margin-left: 300px;
-
-}
-
-.site3>h6 {
-    color: #000;
-    font-size: 11px;
-    font-style: normal;
-    margin-top: -15px;
-    margin-left: 13px;
-
-}
-.site4 {
-    /* border: 1px solid yellow; */
-    width: 377px;
-    height: 123.5px;
-
-}
-
-.site4>img {
-    transform: translateY(-14px);
-}
-
-.site4>h4 {
-    font-size: 18px;
-    font-style: normal;
-    margin-left: 13px;
-    margin-top: 7.5px;
-
-}
 
 
 
