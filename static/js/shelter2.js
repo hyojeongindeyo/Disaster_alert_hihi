@@ -59,6 +59,7 @@ function setValue(locX,locY) {
 
 function submitForm() {
     var form = document.getElementById("myinput");
+    event.preventDefault();
     form.submit();
 }
 
