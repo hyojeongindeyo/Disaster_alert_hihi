@@ -234,7 +234,7 @@ def shelter_enter(request):
 
     x1, y1 = WtoB_coordinate_transform(locX, locY)
 
-    f = open('boards/shelter.csv', 'r', encoding='cp949')
+    f = open('boards/shelter.csv', 'r')
     rdr = csv.reader(f)
 
     locLength = {}
@@ -336,11 +336,12 @@ def shelter_location(request):
     f.close()
 
     context = {
-        'locLoc' : locLoc,
-        'locName' : locName,
-        'shelterX' : shelterX,
-        'shelterY' : shelterY
+        'locX': locX,
+        'locY': locY,
+        'locLocs': locLoc,
+        'locNames': locName,
+        'shelterXs': shelterX,
+        'shelterYs': shelterY
     }
-
 
     return render(request, 'boards/shelter.html', context)
