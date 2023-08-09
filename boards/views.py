@@ -216,13 +216,13 @@ def BtoW_coordinate_transform(x1, y1) :
 
     return x2, y2
 
-def WtoB_coordinate_transform() :
+def WtoB_coordinate_transform(a,b) :
 
     inProj = Proj(init='epsg:4326')
     outProj = Proj(init='epsg:2097')
 
 
-    x1, y1 = 127.0145985, 37.6445275
+    x1, y1 = a, b
     x2, y2 = transform(inProj, outProj, x1, y1)  # 구형 좌표계를 투영 좌표계로 변환
 
     return x2, y2
@@ -237,13 +237,19 @@ def shelter_location(request):
     # response = requests.get(url, params=params)
     # shelter = json.loads(response.content)
     # print(shelter['result']['body']['rows'][0])
+    locX = 0
+    locY = 0
 
-    x1, y1 = WtoB_coordinate_transform()
+    if request.method == 'POST':
+        print(request.POST)
+        locX = float(request.POST['locationX'])
+        locY = float(request.POST['locationY'])
+
+    x1, y1 = WtoB_coordinate_transform(locX, locY)
 
     f = open('boards/shelter.csv', 'r')
     rdr = csv.reader(f)
 
-    locCode = localCode["서울 강북구"]
     locLength = {}
     locLoc = []
     locName = []
@@ -272,6 +278,8 @@ def shelter_location(request):
         shelterX.append(x)
         shelterY.append(y)
 
+    print(locLoc)
+
     f.close()
 
     context = {
@@ -280,5 +288,6 @@ def shelter_location(request):
         'shelterX' : shelterX,
         'shelterY' : shelterY
     }
+
 
     return render(request, 'boards/shelter.html', context)
