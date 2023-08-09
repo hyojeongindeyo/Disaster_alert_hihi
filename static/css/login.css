@@ -19,7 +19,7 @@ body {
     padding: 0;
     z-index: 0;
     background-color: #FFF;
-    
+    /* border: 1px solid green; */
 
 }
 
@@ -41,15 +41,16 @@ body {
 
 /* 로고 위치 표시 - 로고 생기면 변경 */
 
-.logo {
+.logo>img {
     width: 259px;
-    height: 152px;
+    height: 158px;
     border-radius: 10px;
-    background: #94C9FA;
-    margin-left: 58px;
+    /* background: #94C9FA; */
+    margin-left: 50px;
     margin-right: 58px;
     margin-top: 38px;
     margin-bottom: 69px;
+    /* border: 1px solid gray; */
 }
 
 
@@ -63,6 +64,7 @@ form>input {
     background: #FFF;
     margin-left: 37px;
     margin-bottom: 23px;
+    transform: translateY(-7px);
 }
 
 
