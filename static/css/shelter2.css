@@ -24,6 +24,20 @@ body {
 
 }
 
+.nav_bar{
+    width: 375px;
+    height: 30px;
+    /* border: 1px solid grey; */
+}
+
+.nav_bar > p {
+    font-size: 14px;
+    transform: translateY(-9px);
+    font-weight: bold;
+    text-align: center;
+    justify-items: center;
+}
+
 #map {
     background-color: #D9D9D9;
     width: 375px;
@@ -32,15 +46,14 @@ body {
 }
 
 
-#getLocation {
-  
-    font-size: 12px;
-    border-radius: 8px;
-
-
+#getLocation{
+   border: 1px solid green;
+   font-size: 12px;
+   border-radius: 8px;
+   
+   
 }
-
-#locationInfo {
+#locationInfo{
     color: #000;
     font-size: 12px;
     font-style: normal;
@@ -49,9 +62,8 @@ body {
     margin-left: 8px;
     margin-top: 15px;
     margin-bottom: 9.5px;
-  
+    border: 1px solid pink;
 }
-
 .site1 {
     /* border: 1px solid yellow; */
     width: 377px;
@@ -162,7 +174,6 @@ body {
     margin-left: 13px;
 
 }
-
 .site4 {
     /* border: 1px solid yellow; */
     width: 377px;
@@ -206,28 +217,28 @@ body {
     justify-content: space-around;
 }
 
-.back>img {
+.back > img {
     width: 25px;
     height: 23px;
     margin: 15px 0px;
 }
 
-.home>a>img {
+.home > a > img {
     width: 31px;
     height: 31px;
     margin: 11px 0px;
 }
 
-.user>a>img {
+.user > a > img {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
 }
 
-.home>a>img:hover {
+.home > a > img:hover {
     content: url(../image/home_blue.png);
 }
 
-.user>a>img:hover {
+.user > a > img:hover {
     content: url(../image/user_blue.png)
 }
