@@ -106,5 +106,8 @@ class CardScrap(models.Model) :
 
 class ImageMulti(models.Model) :
     card = models.ForeignKey(CardNews, on_delete=models.CASCADE, related_name='cardnews')
-    images = models.ImageField(upload_to='cardnews/%Y/%m/%d')
-    description = models.TextField(blank=True)
+    image1 = models.ImageField(upload_to='cardnews/%Y/%m/%d', null=True)
+    image2 = models.ImageField(upload_to='cardnews/%Y/%m/%d', null=True)
+    image3 = models.ImageField(upload_to='cardnews/%Y/%m/%d', null=True)
+    image4 = models.ImageField(upload_to='cardnews/%Y/%m/%d', null=True)
+    description = models.TextField(blank=True, null=True)
