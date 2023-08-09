@@ -67,13 +67,13 @@ def password_reset_request(request):
             associated_users = User.object.filter(Q(email=data))
             if associated_users.exists():
                 for user in associated_users:
-                    subject = '[Jaenani] 비밀번호 재설정'
+                    subject = '[피해피해] 비밀번호 재설정'
                     email_template_name = "password_reset_email.txt"
                     c = {
                         "email": user.email,
                         # local: '127.0.0.1:8000', prod: 'givwang.herokuapp.com'
                         'domain': settings.HOSTNAME,
-                        'site_name': 'jaenani',
+                        'site_name': '피해피해',
                         # MTE4
                         "uid": urlsafe_base64_encode(force_bytes(user.pk)),
                         "user": user,
