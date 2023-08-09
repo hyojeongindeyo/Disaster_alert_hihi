@@ -21,7 +21,8 @@ urlpatterns = [
     path('region/', region_in_category, name='region_all'),
     path('region/<category_slug>/', detail_in_category, name='region_in_category'),
 
-    path('shelter/', shelter_location, name='shelter_location'),
+    path('shelter/', shelter_enter, name='shelter_enter'),
+    path('sheltersearch/', shelter_location, name='shelter_location'),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

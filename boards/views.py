@@ -227,6 +227,59 @@ def WtoB_coordinate_transform(a,b) :
 
     return x2, y2
 
+def shelter_enter(request):
+
+    locX = 127.048995
+    locY = 37.5571237
+
+    x1, y1 = WtoB_coordinate_transform(locX, locY)
+
+    f = open('boards/shelter.csv', 'r', encoding='cp949')
+    rdr = csv.reader(f)
+
+    locLength = {}
+    locLoc = []
+    locName = []
+    shelterX = []
+    shelterY = []
+
+    for line in rdr :
+        if line[7] == '01':
+            x2 = line[26]
+            y2 = line[27]
+            if x2=='' or y2== '' :
+                pass
+            else :
+                x = float(x1)-float(x2)
+                y = float(y1)-float(y2)
+                locLength[float(math.sqrt(pow(x, 2) + pow(y, 2)))] = [line[19], line[21], line[26], line[27]]
+
+    dic = dict(sorted(locLength.items()))
+    dic = dict(islice(dic.items(), 5))
+    result = list(dic.values())
+
+    for i in result :
+        x, y = BtoW_coordinate_transform(float(i[2]), float(i[3]))
+        locLoc.append(i[0])
+        locName.append(i[1])
+        shelterX.append(x)
+        shelterY.append(y)
+
+    print(locLoc)
+
+    f.close()
+
+    context = {
+        'locX': locX,
+        'locY': locY,
+        'locLocs': locLoc,
+        'locNames': locName,
+        'shelterXs': shelterX,
+        'shelterYs': shelterY
+    }
+
+    return render(request, 'boards/shelter_first.html', context)
+
 def shelter_location(request):
 
     # 아까워서 남겨 두는 저의 api.... 하 진짜!!!!!!!
@@ -242,8 +295,8 @@ def shelter_location(request):
 
     if request.method == 'POST':
         print(request.POST)
-        locX = float(request.POST['locationX'])
-        locY = float(request.POST['locationY'])
+        locX = float(request.POST['locationY'])
+        locY = float(request.POST['locationX'])
 
     x1, y1 = WtoB_coordinate_transform(locX, locY)
 
