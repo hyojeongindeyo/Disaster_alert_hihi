@@ -164,7 +164,7 @@ def board_report(request, pk):
         apply.save()
 
         board.count += 1
-        if board.count == 2:
+        if board.count == 3:
             board.delete()
         else :
             board.save()
@@ -182,7 +182,7 @@ def comment_report(request, board_id, comment_id):
         apply.save()
 
         comment.count += 1
-        if comment.count == 1:
+        if comment.count == 3:
             comment.delete()
         else :
             comment.save()
@@ -242,13 +242,6 @@ def shelter_location(request):
 
     f = open('boards/shelter.csv', 'r')
     rdr = csv.reader(f)
-    # k = 0
-    #
-    # for line in rdr :
-    #     if line[7] == '01' :
-    #         k = k + 1
-    #         print(line)
-    # print(k)
 
     locCode = localCode["서울 강북구"]
     locLength = {}
@@ -256,20 +249,14 @@ def shelter_location(request):
     locName = []
     shelterX = []
     shelterY = []
-    k = 0
-    p = 0
-    q = 0
 
     for line in rdr :
         if line[7] == '01':
             x2 = line[26]
             y2 = line[27]
-            k = k + 1
             if x2=='' or y2== '' :
-                p = p + 1
-
+                pass
             else :
-                q = q + 1
                 x = float(x1)-float(x2)
                 y = float(y1)-float(y2)
                 locLength[float(math.sqrt(pow(x, 2) + pow(y, 2)))] = [line[19], line[21], line[26], line[27]]
@@ -277,7 +264,6 @@ def shelter_location(request):
     dic = dict(sorted(locLength.items()))
     dic = dict(islice(dic.items(), 5))
     result = list(dic.values())
-    print(result)
 
     for i in result :
         x, y = BtoW_coordinate_transform(float(i[2]), float(i[3]))
@@ -286,8 +272,13 @@ def shelter_location(request):
         shelterX.append(x)
         shelterY.append(y)
 
-    print(shelterX)
-
     f.close()
 
-    return render(request, 'boards/test.html')
+    context = {
+        'locLoc' : locLoc,
+        'locName' : locName,
+        'shelterX' : shelterX,
+        'shelterY' : shelterY
+    }
+
+    return render(request, 'boards/shelter.html', context)
