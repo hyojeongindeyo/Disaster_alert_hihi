@@ -124,3 +124,5 @@ class ImageMulti(models.Model) :
     description_2 = models.TextField(blank = True, null = True)
     description_3 = models.TextField(blank=True, null=True)
 
+class Banner(models.Model) :
+    bannerwinner = models.ImageField(upload_to='banner/%Y/%m/%d', null=True)
