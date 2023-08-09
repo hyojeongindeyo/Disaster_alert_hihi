@@ -126,3 +126,4 @@ class ImageMulti(models.Model) :
 
 class Banner(models.Model) :
     bannerwinner = models.ImageField(upload_to='banner/%Y/%m/%d', null=True)
+    banner_title = models.CharField(max_length=50, null = True)
