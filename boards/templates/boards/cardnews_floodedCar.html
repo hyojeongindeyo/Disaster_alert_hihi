@@ -1,0 +1,41 @@
+{% extends 'menuBar.html' %}
+{% block content %}
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/cardnews_detail.css' %}">
+        <div class="hd">
+            <p class="cardnews">카드뉴스</p>
+        </div>
+
+        <div class="title">
+            <p class="cardTitle">침수시 차량 탈출법</p>
+            <p class="time">등록일 2023.07.14</p>
+        </div>
+
+        <div class="slide-container">
+            <ul class="slide">
+                <li>
+                    <img src="{% static 'imge/floodedCar_001.png' %}" alt="">
+                </li>
+                <li>
+                    <img src="{% static 'imge/floodedCar_002.png' %}" alt="">
+                </li>
+                <li>
+                    <img src="{% static 'imge/floodedCar_003.png' %}" alt="">
+                </li>
+                <li>
+                    <img src="{% static 'imge/floodedCar_004.png' %}" alt="">
+                </li>
+            </ul>
+
+            <div class="btn-container">
+                <button class="prev-btn">
+                    <img src="{% static 'image/newsArrow.png' %}" alt="뒤로가기" class="prev">
+                </button>
+                <button class="next-btn">
+                    <img src="{% static 'image/newsArrow.png' %}" alt="앞으로 가기">
+                </button>
+            </div>
+        </div>
+    <script src="{% static 'js/cardnews_detail.js' %}"></script>
+{% endblock %}
