@@ -85,7 +85,7 @@ body {
     margin: 0px 15px 0px 22px;
 }
 
-#messageTerm {
+/* #messageTerm {
     float: left;
     width: 84px;
     height: 26px;
@@ -100,7 +100,7 @@ body {
     margin-top: 2px;
     vertical-align: middle;
     border-color: #A5A5A5;
-}
+} */
 /*지역 이름과 며칠 치 문자 볼건지 부분 끝*/
 
 /*문자 메세지 부분*/
@@ -114,6 +114,7 @@ body {
     margin-bottom: 27px;
     box-sizing: border-box;
     box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
+    border: 1px solid #cacaca;
 }
 
 .messageText {
