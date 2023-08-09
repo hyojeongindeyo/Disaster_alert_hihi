@@ -7,3 +7,5 @@ from .models import *
 admin.site.register(Board)
 admin.site.register(Comment)
 admin.site.register(RegionCategory)
+admin.site.register(CardNews)
+admin.site.register(ImageMulti)
