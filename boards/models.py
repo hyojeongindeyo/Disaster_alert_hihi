@@ -79,3 +79,32 @@ class CommentReport(models.Model):
     def __str__(self):
         return self.user.username
 
+
+class CardNews(models.Model):
+    KIND_CHOICES = (
+        ('메뉴얼', '메뉴얼'),
+        ('카드뉴스', '카드뉴스'),
+    )
+
+    kind = models.CharField(max_length=30, choices=KIND_CHOICES)
+    tags = models.CharField(max_length=50, blank=True)  # 해쉬태그
+    title = models.CharField(max_length=50)
+    # scrap = models.BooleanField(default=None)
+    description = models.TextField(blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)  # 생성 날짜
+
+    def __str__(self):
+        return self.title
+
+
+class CardScrap(models.Model) :
+    card = models.ForeignKey(CardNews, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name='menu_card')  # 유저가져오기
+    scrap = models.BooleanField(default=None)
+
+
+class ImageMulti(models.Model) :
+    card = models.ForeignKey(CardNews, on_delete=models.CASCADE, related_name='cardnews')
+    images = models.ImageField(upload_to='cardnews/%Y/%m/%d')
+    description = models.TextField(blank=True)
