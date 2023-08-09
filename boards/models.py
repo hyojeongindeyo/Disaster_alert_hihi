@@ -118,3 +118,6 @@ class ImageMulti(models.Model) :
     image10 = models.ImageField(upload_to='cardnews/%Y/%m/%d', null=True)
     image11 = models.ImageField(upload_to='cardnews/%Y/%m/%d', null=True)
     description = models.TextField(blank=True, null=True)
+    description_2 = models.TextField(blank = True, null = True)
+    description_3 = models.TextField(blank=True, null=True)
+
