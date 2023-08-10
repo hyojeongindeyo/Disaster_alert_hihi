@@ -64,11 +64,11 @@
         <img src="{% static 'image/line.svg'% }" alt="">
 
         <!-- 탈퇴하기 -->
-        <form action="" method="post">
+        <div>
             <div class="button">
-                <button type="submit">로그아웃하기</button>
+                <button onclick="location.href='{% url 'accounts:logout' %}'">로그아웃하기</button>
             </div>
-        </form>
+        </div>
         <!-- 하단바 -->
     <script src="{% static 'js/mypage.js' %}"></script>
 
