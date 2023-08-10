@@ -10,6 +10,8 @@ import requests
 import json
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.defaultfilters import pprint
+from .models import Banner
+import random
 
 from .forms import boardForm, commentForm
 from .models import *
@@ -345,3 +347,14 @@ def shelter_location(request):
     }
 
     return render(request, 'boards/shelter.html', context)
+
+
+def random_banner(request):
+    banners = Banner.objects.all()
+    selected_banner = random.choice(banners)
+
+    context = {
+        'selected_banner': selected_banner,
+    }
+
+    return render(request, 'board_main_page.html', context)
