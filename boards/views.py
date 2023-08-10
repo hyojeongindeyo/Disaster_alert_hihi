@@ -381,3 +381,6 @@ def random_banner(request):
     }
 
     return render(request, 'boards/board_main_page.html', context)
+
+def actions(request) :
+    return render(request, 'boards/actionTips_main.html')
