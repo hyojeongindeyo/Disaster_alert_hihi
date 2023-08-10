@@ -207,13 +207,29 @@ def region_in_category(request, category_slug=None):
     if category_slug:
         current_category = get_object_or_404(RegionCategory, slug=category_slug)
 
-    return render(request, 'boards/message_main.html', {'current_category': current_category, 'categories': categories})
+    banners = Banner.objects.all()
+    selected_banner = random.choice(banners)
+
+    context = {
+        'selected_banner': selected_banner,
+        'current_category': current_category,
+        'categories': categories,
+    }
+
+    return render(request, 'boards/message_main.html', context)
 
 def detail_in_category(request, category_slug=None):
 
     region = get_object_or_404(RegionCategory, slug=category_slug)
+    banners = Banner.objects.all()
+    selected_banner = random.choice(banners)
 
-    return render(request, 'boards/message_detail.html', {'region': region})
+    context = {
+        'selected_banner': selected_banner,
+        'region' : region
+    }
+
+    return render(request, 'boards/message_detail.html', context)
 
 
 def BtoW_coordinate_transform(x1, y1) :
