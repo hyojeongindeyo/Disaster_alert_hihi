@@ -384,3 +384,9 @@ def random_banner(request):
 
 def actions(request) :
     return render(request, 'boards/actionTips_main.html')
+
+def manuals(request):
+    return render(request, 'boards/actionTips_menual.html')
+
+def cardNews(request):
+    return render(request, 'boards/actionTips_cardnews.html')

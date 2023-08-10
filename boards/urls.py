@@ -25,7 +25,8 @@ urlpatterns = [
     path('sheltersearch/', shelter_location, name='shelter_location'),
 
     path('actions/', actions, name='actions'),
-
+    path('manuals/', manuals, name='manuals'),
+    path('cardNews/', cardNews, name='cardNews'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
