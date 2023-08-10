@@ -27,7 +27,14 @@ load_dotenv()
 # Create your views here.
 
 def main_page(request):
-    return render(request, 'boards/board_main_page.html')
+    banners = Banner.objects.all()
+    selected_banner = random.choice(banners)
+
+    context = {
+        'selected_banner': selected_banner,
+    }
+
+    return render(request, 'boards/board_main_page.html', context)
 
 
 # 임시 검색 뷰
