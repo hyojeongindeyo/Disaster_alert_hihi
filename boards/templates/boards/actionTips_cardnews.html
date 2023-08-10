@@ -19,11 +19,11 @@
 
         <div class="tab_container">
             <ul class="tab_menu">
-                <li data-tab="tab_1"><a href="{% static 'html/templates/actionTips_main.html' %}">전체</a></li>
+                <li data-tab="tab_1"><a href="{% url 'actions' %}">전체</a></li>
                 <li class="menuLine"></li>
-                <li data-tab="tab_2"><a href="{% static static 'html/actionTips_menual.html' %}">메뉴얼</a></li>
+                <li data-tab="tab_2"><a href="{% url 'manuals' %}">메뉴얼</a></li>
                 <li class="menuLine"></li>
-                <li data-tab="tab_3" class="current"><a href="{% static 'html/actionTips_cardnews.html' %}">카드뉴스</a></li>
+                <li data-tab="tab_3" class="current"><a href="{% url 'cardNews' %}">카드뉴스</a></li>
             </ul>
             
 
