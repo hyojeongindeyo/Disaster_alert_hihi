@@ -14,15 +14,20 @@
                 </a>
             </p>
         </div> <!--배너 부분 끝-->
+
         <div class="fixArea"> <!--즐겨찾기 부분-->
             <div class="title">지역별 재난문자</div>
+            {% if user.is_authenticated %}
             <div class="star">
                 <p class="starText">즐겨찾기</p>
                 <p class="starIcon"><img src="{% static 'image/star_black.png' %}" alt="별" class="change"></p>
             </div>
+            {% endif %}
         </div>
 
+
         <form method="post" name="area" id="area">
+            {% if user.is_authenticated %}
                 <!--즐겨찾기 박스들-->
                 <div class="areaBox">
                     <div>
@@ -49,7 +54,7 @@
                 </div>
 
             <hr class="line">
-
+            {% endif %}
             <!--지역별-->
             <div class="areaBox">
                 {% for c in categories %}
