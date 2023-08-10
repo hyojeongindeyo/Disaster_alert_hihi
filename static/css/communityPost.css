@@ -1,9 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+    height: 100%;
 }
 
 .container {
@@ -13,8 +14,8 @@ body {
     position: relative;
     padding: 0;
     z-index:0;
-    padding-bottom: 150px;
-} */
+    padding-bottom: 120px;
+}
 
 /* 상단 부분 */
 .hd {
@@ -203,7 +204,7 @@ form {
 
 .commentsName {
     font-size: 15px;
-    margin: 0px 11px 0px 6px;
+    margin: 0px 11px 15px 6px;
 } 
 
 .commentsTime {
@@ -222,7 +223,7 @@ form {
 }
 
 .commentsText {
-    padding-left: 26px;
+    padding-left: 24px;
 }
 
 /* .reportBtn1, .reportBtn2, .commentDelBtn {

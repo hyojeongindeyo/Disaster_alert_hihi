@@ -69,12 +69,13 @@
                     {% if board.user == comment.user %}
                     <p class="commentsTime">( 글쓴이 )</p>
                     {% endif %}
-                     {% if user.is_authenticated %}
-                    <button type="submit" class="commentsDots" onclick="appearButton(this)">
-                        <img src="{% static 'image/dot.png' %}" alt="">
-                    </button>
                 </div>
             </div>
+                {% if user.is_authenticated %}
+                <button type="submit" class="commentsDots" onclick="appearButton(this)">
+                    <img src="{% static 'image/dot.png' %}" alt="">
+                </button>
+                
                 {% if comment.user != request.user %}
                 <div class="send">
                     <a href="{% url 'comment_report' board.id comment.id %}">
