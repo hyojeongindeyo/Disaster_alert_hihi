@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
         <div class="nav-bar"></div>
         <!-- 배너 -->
-        <div class="banner">
-            <p class="bannerTitle">미세먼지, 어떻게 해야할까?</p>
+        <div class="banner" style="background-image: url('{{ selected_banner.bannerwinner.url }}')">
+            <p class="bannerTitle">{{ selected_banner.banner_title }}</p>
             <p class="move">
                 <a href="">
                     <span class="text">알아보기</span>

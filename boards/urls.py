@@ -24,6 +24,8 @@ urlpatterns = [
     path('shelter/', shelter_enter, name='shelter_enter'),
     path('sheltersearch/', shelter_location, name='shelter_location'),
 
+    path('random_banner/', random_banner, name='random_banner'),
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
