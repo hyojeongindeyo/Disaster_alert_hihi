@@ -85,7 +85,7 @@ body {
 .site1 {
     width: 377px;
     height: 123.5px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 }
 
@@ -98,7 +98,7 @@ body {
     font-style: normal;
     margin-left: 13px;
     margin-top: 7.5px;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     height: 60px;
 
 }
@@ -111,7 +111,7 @@ body {
     margin-top: -40px;
     margin-left: 13px;
    
-     border: 1px solid green;
+     /* border: 1px solid green; */
 
 }
 

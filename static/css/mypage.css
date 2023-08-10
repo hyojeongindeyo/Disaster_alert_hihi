@@ -364,3 +364,28 @@ body {
         transform: translateZ(0);
     }
 }
+
+/* 로그아웃 버튼 */
+
+.button > button > a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.button button {
+    width: 298px;
+    height: 65px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #94C9FA;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 38px;
+    transform: translateY(-20px);
+    border: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+};
