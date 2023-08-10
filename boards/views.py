@@ -357,4 +357,4 @@ def random_banner(request):
         'selected_banner': selected_banner,
     }
 
-    return render(request, 'board_main_page.html', context)
+    return render(request, 'boards/board_main_page.html', context)
