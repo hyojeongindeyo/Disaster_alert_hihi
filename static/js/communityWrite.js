@@ -38,10 +38,33 @@ function maxLengthCheck(object) {
 }
 
 // 파일 선택이 완료되었을 때의 이벤트를 처리
+const file = document.getElementById('fileName');
 fileInput.addEventListener("change", function () {
-  const file = document.getElementById('fileName');
   if (fileInput.files.length > 0) {
     const fileName = fileInput.files[0].name;
     file.textContent = `${fileName}`;
   } 
 });
+
+const imageInput = document.getElementById('fileInput');
+const imageView = document.getElementById('change');
+const del = document.getElementById('del');
+
+imageInput.addEventListener('change', (event) => {
+  const file = event.target.files[0];
+  console.log(file);
+  if (file && file.type.startsWith('image/')) {
+    imageView.src = URL.createObjectURL(file);
+    imageView.style.width = '332px';
+    del.style.display = 'inline-block';
+  } 
+  // else {
+  //   imageView.src = '';
+  // }
+});
+
+del.addEventListener('click', () => {
+  imageView.src = '';
+  file.textContent = '';
+  del.style.display = 'none';
+})
