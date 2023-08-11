@@ -34,58 +34,19 @@
                     </label>
                 </div>
                 <div class="menual_container">
-                    <div class="listInner">
-                        <div class="menual_box">
-                            <a href="#">
-                                <p class="title">태풍 발생 시 행동요령</p>
-                                <ul class="hashtag">
-                                    <li>#태풍_예보_시</li>
-                                    <li>#태풍_특보_시</li>
-                                    <li>#태풍_특보_중</li>
-                                </ul>
-                            </a>
-                            <hr class="menual_line">
+                    {% for menu in menus %}
+                        <div class="listInner">
+                            <div class="menual_box">
+                                <a href="#">
+                                    <p class="title">{{ menu.title }}</p>
+                                    <ul class="hashtag">
+                                        <li>{{ menu.tags}}</li>
+                                    </ul>
+                                </a>
+                                <hr class="menual_line">
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="listInner">
-                        <div class="menual_box">
-                            <a href="#">
-                                <p class="title">지진 발생 시 행동요령</p>
-                                <ul class="hashtag">
-                                    <li>#지진_예보시</li>
-                                    <li>#지진경보</li>
-                                </ul>
-                            </a>
-                            <hr class="menual_line">
-                        </div>
-                    </div>
-                    <div class="listInner">
-                        <div class="menual_box">
-                            <a href="#">
-                                <p class="title">호우 발생 시 행동요령</p>
-                                <ul class="hashtag">
-                                    <li>#사전준비</li>
-                                    <li>#호우특보</li>
-                                    <li>#호우_이후</li>
-                                </ul>
-                            </a>
-                            <hr class="menual_line">
-                        </div>
-                    </div>
-                    <div class="listInner">
-                        <div class="menual_box">
-                            <a href="#">
-                                <p class="title">폭염 시 행동요령</p>
-                                <ul class="hashtag">
-                                    <li>#평상시</li>
-                                    <li>#폭염발생_시</li>
-                                    <li>#폭염_관련_정보</li>
-                                </ul>
-                            </a>
-                            <hr class="menual_line">
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
