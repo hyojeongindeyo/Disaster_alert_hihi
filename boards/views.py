@@ -77,6 +77,8 @@ def board_list(request):
 def board_post(request):
     if request.method == 'POST':
         form = boardForm(request.POST, request.FILES)
+        print(request.POST)
+        print(request.FILES)
         if form.is_valid():
             board = form.save(commit=False)
             board.user = request.user
@@ -112,12 +114,16 @@ def board_update(request, pk):
     if request.method == 'POST':
         form = boardForm(request.POST, request.FILES, instance=board)
         print(request.POST)
+        print(request.FILES)
         print(form.is_valid())
         if form.is_valid():
             board.user = request.user
             boards = form.save(commit=False)
             # 사용자가 선택한 지역 이름
             selected_region_name = request.POST.get('region')
+
+            if request.POST.get('info_image') == '' :
+                board.info_image = ''
 
             try:
                 # 사용자가 선택한 지역 이름으로 'RegionCategory' 모델에서 인스턴스를 찾음

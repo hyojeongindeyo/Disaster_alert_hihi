@@ -25,7 +25,7 @@
                 <label for="fileInput" id="imageButton">
                     <img src="{% static 'image/camera.png' %}" alt="파일 선택하기">
                 </label>
-                <input type="file" id="fileInput" name="info_image" value="{{ form.info_image.value|default_if_none:'' }}">
+                <input type="file" id="fileInput" name="info_image" value="{{ form.info_image.url }}">
                 <span id="fileName"></span>
                 <div id="del">&#215;</div>
             </div>
