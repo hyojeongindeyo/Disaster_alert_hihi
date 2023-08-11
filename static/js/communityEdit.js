@@ -1,3 +1,18 @@
+const fileInput = document.getElementById('fileInput');
+const file = document.getElementById('fileName');
+const del = document.getElementById('del');
+
+// 이미지가 이미 선택되어 있는지 확인 후, 파일 이름을 표시
+window.onload=function(){
+  if (change.src != '') {
+    let last = change.src.lastIndexOf('/')
+    let name = change.src.substring(last+1, change.src.length);
+    console.log(name);
+    file.textContent = `${name}`;
+    del.style.display = 'inline-block';
+  }
+}
+
 // textarea 요소를 가져오기
 const textarea = document.getElementById("editArea");
 
@@ -39,9 +54,32 @@ function maxLengthCheck(object) {
 
 // 파일 선택이 완료되었을 때의 이벤트를 처리
 fileInput.addEventListener("change", function () {
-  const file = document.getElementById('fileName');
   if (fileInput.files.length > 0) {
     const fileName = fileInput.files[0].name;
     file.textContent = `${fileName}`;
   } 
 });
+
+const imageInput = document.getElementById('fileInput');
+const imageView = document.getElementById('change');
+
+imageInput.addEventListener('change', (event) => {
+  const file = event.target.files[0];
+  console.log(file);
+  if (file && file.type.startsWith('image/')) {
+    imageView.src = URL.createObjectURL(file);
+    imageView.style.display = 'block';
+    imageView.style.width = '332px';
+    del.style.display = 'inline-block';
+  } 
+  // else {
+  //   imageView.src = '';
+  // }
+});
+
+del.addEventListener('click', () => {
+  imageView.src = '';
+  imageView.style.display = 'none';
+  file.textContent = '';
+  del.style.display = 'none';
+})
