@@ -25,8 +25,9 @@
             <p class="text">
                 {{ board.description }}
             </p>
-
+            {% if board.info_image %}
             <img src="{{ board.info_image.url }}" alt="홍수 사진">
+            {% endif %}
         </div> <!--게시글 부분 끝-->
 
         <!--모달창-->
