@@ -34,7 +34,7 @@ class Board(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True,
                              related_name='community')  # 유저가져오기
     description = models.TextField(max_length=200, blank=True)  # 내용쓰기
-    info_image = models.ImageField(upload_to='community/%Y/%m/%d')  # 이미지 업로드 (다중이미지 안됨)
+    info_image = models.ImageField(upload_to='community/%Y/%m/%d', null=True, blank=True)  # 이미지 업로드 (다중이미지 안됨)
     create_date = models.DateTimeField(auto_now_add=True)  # 피그마에 나와있진 않지만 날짜가 없으면 혼돈 올 듯 해서 넣었슴돠...
     # 셀렉트 박스에 넣으려고 초이스로 했어유...
     region_choice = (
