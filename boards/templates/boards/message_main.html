@@ -41,17 +41,6 @@
                             </div>
                         </a>
                     </div>
-
-                    <div>
-                        <button type="button" class="starBtn" onclick="toggleImage(this)">
-                            <img src="{% static 'image/star_black.png' %}" alt="별">
-                        </button>
-                        <a href="#">
-                            <div class="box">
-                                <p class="areaName">경기도</p>
-                            </div>
-                        </a>
-                    </div>
                 </div>
 
             <hr class="line">
@@ -61,7 +50,7 @@
                 {% for c in categories %}
                 <div>
                     <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_black.png' %}" alt="별">
+                        <img src="{% static 'image/star_white.png' %}" alt="별">
                     </button>
                     <a href="{{ c.get_absolute_url }}">
                         <div class="box">
