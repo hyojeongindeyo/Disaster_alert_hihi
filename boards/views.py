@@ -391,8 +391,11 @@ def random_banner(request):
 def actions(request) :
     return render(request, 'boards/actionTips_main.html')
 
+
 def manuals(request):
-    return render(request, 'boards/actionTips_menual.html')
+    menus = CardNews.objects.filter(kind='메뉴얼').order_by('-id')
+    return render(request, 'boards/actionTips_menual.html', {'menus':menus})
 
 def cardNews(request):
-    return render(request, 'boards/actionTips_cardnews.html')
+    cards = CardNews.objects.filter(kind='카드뉴스').order_by('-id')
+    return render(request, 'boards/actionTips_cardnews.html', {'cards':cards})
