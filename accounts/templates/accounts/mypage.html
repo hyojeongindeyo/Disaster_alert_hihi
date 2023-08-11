@@ -1,75 +1,78 @@
 
-    {% extends 'accounts/menuBar_mp.html' %}
-    {% block content %}
-    {% load static %}
-     <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9ebeb400fc1296a2fb45002cd5ccfc9c&libraries=services"></script>
-    <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
-        <!-- 상단바 공간 -->
-        <div class="nav-bar"></div>
-        <!-- 프로필 -->
-        <img id="user" src="{{ user.user_image.url }}" alt="">
-        <!-- 닉네임   -->
-        <div class="name">
-            <div class="nickname">{{ user.username }} </div>
-            <div>
-                <a href="{% url 'accounts:my_page_update' pk=user.id %}">
-                    <div class="name-1">
-                        <!-- 연필 img -->
-                        <img src="{% static 'image/image-8.svg' %}" alt="">
-                        <!-- ㅡ -->
-                        <img id="name-2" src="{% static 'image/vector-5.svg' %}" alt="">
-                    </div>
-                </a>
-            </div>
-        </div>
-        <!-- email 보이게 하는 부분 -->
-        <div class="email">
-            <p>{{ user.email }}</p>
-        </div>
-        <img id="line" src="{% static 'image/line.svg' %}" alt="">
-        <!-- 마이페이지 기능 -->
-        <div class="section">
-            <div class="section1">
-                <img src="{% static 'image/vector.svg' %}" alt="">
-                <span id="get-location" class="find-location-text">
-                    <p>내 위치 찾기</p>
-                </span>
-            </div>
-            {% comment %} 다현 {%endcomment%}
-            <div id="popup-container" class="modal">
-                <div id="popup" class="modal-content">
-                    <h2 class="title">위치 정보 허용</h2>
-                    <p id="location-info">사용자의 위치 정보를 가져올까요?</p>
-                    <div id="popup-buttons">
-                        <button id="allow-location" class="yesBtn">허용</button>
-                        <button id="deny-location" class="close-button">거부</button>
-                    </div>
-                </div>
-            </div>
-            <div id="result-popup-container" class="modal">
-                <div id="result-popup" class="modal-content">
-                    <h2 class="title">내 위치 정보</h2>
-                    <p id="result-info"></p>
-                    <button id="close-result" class="okay-button">확인</button>
-                </div>
-            </div>
-
-            <div class="section2">
-                <img src="{% static 'image/ph-newspaper-clipping-light.svg' %}" alt="">
-                <a href="scrap.html">
-                    <p>내가 스크랩한 글</p>
-                </a>
-            </div>
-        </div>
-        <img src="{% static 'image/line.svg'% }" alt="">
-
-        <!-- 탈퇴하기 -->
+{% extends 'accounts/menuBar_mp.html' %}
+{% block content %}
+{% load static %}
+ <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9ebeb400fc1296a2fb45002cd5ccfc9c&libraries=services"></script>
+<link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+    <!-- 상단바 공간 -->
+    <div class="nav-bar"></div>
+    <!-- 프로필 -->
+    <img id="user" src="{{ user.user_image.url }}" alt="">
+    <!-- 닉네임   -->
+    <div class="name">
+        <div class="nickname">{{ user.username }} </div>
         <div>
-            <div class="button">
-                <button onclick="location.href='{% url 'accounts:logout' %}'">로그아웃하기</button>
+            <a href="{% url 'accounts:my_page_update' pk=user.id %}">
+                <div class="name-1">
+                    <!-- 연필 img -->
+                    <img src="{% static 'image/image-8.svg' %}" alt="">
+                    <!-- ㅡ -->
+                    <img id="name-2" src="{% static 'image/vector-5.svg' %}" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- email 보이게 하는 부분 -->
+    <div class="email">
+        <p>{{ user.email }}</p>
+    </div>
+    <img id="line" src="{% static 'image/line.svg' %}" alt="">
+    <!-- 마이페이지 기능 -->
+    <div class="section">
+        <div class="section1">
+            <img src="{% static 'image/vector.svg' %}" alt="">
+            <span id="get-location" class="find-location-text">
+                <p>내 위치 찾기</p>
+            </span>
+        </div>
+        {% comment %} 다현 {%endcomment%}
+        <div id="popup-container" class="modal">
+            <div id="popup" class="modal-content">
+                <h2 class="title">위치 정보 허용</h2>
+                <p id="location-info">사용자의 위치 정보를 가져올까요?</p>
+                <div id="popup-buttons">
+                    <button id="allow-location" class="yesBtn">허용</button>
+                    <button id="deny-location" class="close-button">거부</button>
+                </div>
             </div>
         </div>
-        <!-- 하단바 -->
-    <script src="{% static 'js/mypage.js' %}"></script>
+        <div id="result-popup-container" class="modal">
+            <div id="result-popup" class="modal-content">
+                <h2 class="title">내 위치 정보</h2>
+                <p id="result-info"></p>
+                <button id="close-result" class="okay-button">확인</button>
+            </div>
+        </div>
 
- {% endblock %}
+        <div class="section2">
+            <img src="{% static 'image/ph-newspaper-clipping-light.svg' %}" alt="">
+            <a href="scrap.html">
+                <p>내가 스크랩한 글</p>
+            </a>
+        </div>
+    </div>
+    <img src="{% static 'image/line.svg'% }" alt="">
+
+    <!-- 탈퇴하기 -->
+    <!-- 혹시 몰라서 button 태그 주석처리 했어요  -->
+        <!-- <div class="button">
+            <button onclick="location.href='{% url 'accounts:logout' %}'">로그아웃하기</button>
+        </div> -->
+        <div class="logout">
+            <a class="btn" href="">로그아웃하기</a>
+        </div>
+
+    <!-- 하단바 -->
+<script src="{% static 'js/mypage.js' %}"></script>
+
+{% endblock %}

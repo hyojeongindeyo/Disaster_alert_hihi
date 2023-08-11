@@ -5,21 +5,24 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
+    height: 100vh;
 }
 
 .container {
-    width: 375px;
-    height: 844px;
-    margin: 0 auto;
+    height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
+
+    /* margin: 0 auto;
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 0;
     z-index: 0;
-    background-color: #FFF;
-    border: 1px solid #989898;
+    background-color: #FFF; */
+    /* border: 1px solid #989898; */
 
 }
 
@@ -47,8 +50,8 @@ body {
     flex-wrap: nowrap;
     flex-direction: row; */
     /* justify-content: space-between; */
+    text-align: center;
     gap: 5px;
-
     /* border: 1px solid blue; */
     justify-content: center;
     display: inline-flex;
@@ -73,7 +76,7 @@ body {
     font-weight: 400;
     line-height: normal;
     /* border: 1px solid red; */
-    margin-left: 20px;
+    margin-left: 170px;
 }
 
 /* 연필 */
@@ -159,6 +162,11 @@ body {
 .section2>a,
 .section3>a {
     text-decoration: none;
+    color: #878080;
+}
+
+
+.find-location-text{
     color: #878080;
 }
 
@@ -367,7 +375,7 @@ body {
 
 /* 로그아웃 버튼 */
 
-.button > button > a {
+/* .button > button > a {
     text-decoration: none;
     color: #FFF;
 }
@@ -388,4 +396,23 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-};
+}; */
+
+
+
+.btn{
+    
+    text-decoration: none;
+    text-align: center;
+    /* border: 1px solid green; */
+    background: #94C9FA;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 62px;
+    margin-right: 62px;
+    border-radius: 10px;
+    color: #FFF;
+    font-size: 20px;
+    padding: 18px 55px;
+    display: block;
+    margin-top: 30px;
+}
