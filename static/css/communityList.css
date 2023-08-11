@@ -90,12 +90,20 @@ select::-ms-expand {
     text-align: center;
     line-height: 33px;
     background-color: #ABD4FA;
-    margin: 0px 0px 21px 13px;
+    margin: 0px 0px 27px 13px;
 }
 
 .line {
     border: 1px solid #DFDFDF;
 }
+
+.alert {
+    font-size: 13px;
+    color: gray;
+    margin: 0px 0px 19px 17px;
+    opacity: 0.8;
+}
+
 /*---제목 끝 ---*/
 
 .content1, .content2, .content3 {
