@@ -1,19 +1,21 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
 
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .container {
     width: 375px; 
-    height: 1000px;
+    height: 100%;
+    padding-bottom: 100px;
     margin: 0 auto; 
     position: relative;
     padding: 0;
     z-index:0;
     font-family: 'Inter', sans-serif;
-} */
+}
 
 /* 상단 부분 */
 select option[value=""][disabled] { /*select box placeholder를 위해*/
@@ -59,6 +61,7 @@ select::-ms-expand {
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+    padding-bottom: 3px;
 }
 /* 상단 부분 끝 */
 
@@ -144,6 +147,22 @@ select::-ms-expand {
     font-size: 12px;
     float: left;
     color: #B9B9B9;
+}
+
+#del {
+    display: inline-block;
+    clear: both;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #e5e5e5;
+    margin: 14px 0px 0px 10px;
+    font-size: 19px;
+    text-align: center;
+    color: rgb(107, 107, 107);
+    display: none;
+    cursor: pointer;
 }
 
 /*-------하단 메뉴바-------css */

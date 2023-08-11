@@ -108,7 +108,7 @@ function getDisasterMessages(pageNumber) {
                 // 페이지에 표시할 데이터 추가
                 messageListDiv.innerHTML = ''; // 기존 결과 초기화
 
-                var displayedData = disasterMsgList.slice((currentPage - 1) * 15, currentPage * 15); // 현재 페이지에 표시할 데이터만 추출
+                var displayedData = disasterMsgList.slice((currentPage - 1) * 10, currentPage * 10); // 현재 페이지에 표시할 데이터만 추출
                 //한 페이지당 개수 조절하면 됨
                 console.log(displayedData);
 
@@ -155,7 +155,7 @@ function addPaginationButtons() {
     var paginationDiv = document.querySelector('.pagination');
     paginationDiv.innerHTML = ''; // 이전 페이지네이션 버튼 초기화
 
-    var totalPages = Math.ceil(disasterMsgList.length / 15); // 한 페이지당 15개씩
+    var totalPages = Math.ceil(disasterMsgList.length / 10); // 한 페이지당 15개씩
 
     // 이전 페이지네이션 버튼
     if (currentPage > 1) { //페이지번호가 1 이상이면 이전 버튼 나오게

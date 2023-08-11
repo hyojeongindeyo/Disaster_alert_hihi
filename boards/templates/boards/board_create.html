@@ -20,12 +20,15 @@
             placeholder="현재 지역의 재난 상황에 대해 적어주세요.&#10;&#10;ex) 00역에 지금 침수된 것 같아요.&#10;현재 지역 상황이에요.&#10;&#10;많은 사람들이 보고 조심할 수 있도록 적어주세요."></textarea>
             <div id="charCount">(0 / 150)</div> <!--글자수-->
 
+            <img src="" alt="" id = "change">
+
             <div class="image"> <!--사진 등록 부분-->
                 <label for="fileInput" id="imageButton">
                     <img src="{% static 'image/camera.png' %}" alt="파일 선택하기">
                 </label>
-                <input type="file" id="fileInput" name="info_image" value="{{ form.info_image.value|default_if_none:'' }}">
+                <input type="file" id="fileInput" name="info_image" accept="image/*" value="{{ form.info_image.value|default_if_none:'' }}">
                 <span id="fileName"></span>
+                <div id="del">&#215;</div>
             </div>
         </form>
     <script src="{% static 'js/communityWrite.js' %}"></script>
