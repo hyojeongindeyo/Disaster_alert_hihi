@@ -16,7 +16,7 @@
             </div>
             <input type="hidden" name="username" value="{{ user.username }}" />
             <textarea name="description" rows="0" id="editArea" maxlength="150" oninput="maxLengthCheck(this)">{{ board.description }}</textarea>
-            <img src="{{ board.info_image.url }}" alt="홍수 사진">
+            <img src="{{ board.info_image.url }}" alt=" " id="change">
             <div id="charCount">(0 / 150)</div> <!--글자수-->
 
             <div class="image"> <!--사진 등록 부분-->
@@ -25,6 +25,7 @@
                 </label>
                 <input type="file" id="fileInput" name="info_image" value="{{ form.info_image.value|default_if_none:'' }}">
                 <span id="fileName"></span>
+                <div id="del">&#215;</div>
             </div>
         </form>
     <script src="{% static 'js/communityEdit.js' %}"></script>
