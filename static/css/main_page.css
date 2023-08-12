@@ -3,22 +3,28 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh; /*추가*/
+    height: 100vh;
+    /*추가*/
 }
 
 .container {
     width: 375px;
-/* height: 790px;  */ /*지움*/
-    height: 100vh; /*추가*/
-    height: -webkit-fill-available; /*추가*/
-    height: fill-available; /*추가*/
+    /* height: 790px;  */
+    /*지움*/
+    height: 100vh;
+    /*추가*/
+    height: -webkit-fill-available;
+    /*추가*/
+    height: fill-available;
+    /*추가*/
     margin: 0 auto;
     position: relative;
     padding: 0;
     z-index: 0;
     font-family: 'Inter', sans-serif;
     background: #F6F6F6;
-    /* border: 1px solid gainsboro; */ /*지움*/
+    /* border: 1px solid gainsboro; */
+    /*지움*/
 }
 
 /* 상단 여백 지우기!!!*/
@@ -67,14 +73,15 @@ body {
     float: right;
     width: 18px;
     height: 18px;
-    margin-top: 4px;
+    transform: translateY(-19px);
 }
 
 .text {
     display: inline-block;
     position: relative;
     margin-top: 1.5px;
-    margin-right: 3px;
+    margin-right: 20px;
+
 }
 
 /*사진 블러처리*/
@@ -103,48 +110,13 @@ body {
 
 /* 프로필 / 내 위치 : ㅇㅇ시 부분 */
 
-.profile {
-    background-color: #E3E3E3;
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 50%;
-    border: none;
-    margin-top: 21px;
-    text-align: center;
-    margin-left: 24px;
 
-
-}
-
-.profile>p {
-    font-family: Inter;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #000;
-    margin-top: 15px;
-
-
-}
-
-.site {
-    color: #000;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 34px;
-    margin-left: 12px;
-}
 
 
 
 .content {
     margin-left: 23px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 
@@ -159,12 +131,20 @@ body {
     border: none;
 }
 
+.content1>p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 #content1>img {
-    width: 72px; /*변경 52->72*/
-    height: 70px; /*변경 62->70*/
+    width: 72px;
+    /*변경 52->72*/
+    height: 70px;
+    /*변경 62->70*/
     flex-shrink: 0;
     transform: translateY(-79px);
-    margin-left: 250px; /*변경 234->250*/
+    margin-left: 250px;
+    /*변경 234->250*/
 }
 
 #content1>h5 {
@@ -206,12 +186,20 @@ body {
     border: none;
 }
 
+.content2>p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
 #content2>img {
-    width: 77px; /*변경 57->77*/
+    width: 77px;
+    /*변경 57->77*/
     height: 77px;
     flex-shrink: 0;
     transform: translateY(-79px);
-    margin-left: 215px; /*변경 234 -> 215*/
+    margin-left: 215px;
+    /*변경 234 -> 215*/
 }
 
 
@@ -243,7 +231,10 @@ body {
 
 }
 
+
 /* 대피처 */
+
+
 #content3 {
     width: 154px;
     height: 171px;
@@ -256,11 +247,14 @@ body {
 }
 
 #content3>img {
-    width: 70px; /*변경 52-> 70*/
-    height: 70px; /*변경 62 -> 70*/
+    width: 70px;
+    /*변경 52-> 70*/
+    height: 70px;
+    /*변경 62 -> 70*/
     flex-shrink: 0;
     transform: translateY(-29px);
-    margin: 0px 6px 18px 75px; /*변경 원래 margin-left: 70px; 였음*/
+    margin: 0px 6px 18px 75px;
+    /*변경 원래 margin-left: 70px; 였음*/
 }
 
 #content3>h5 {
@@ -285,7 +279,8 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 9px; /*변경 10->9*/
+    margin-left: 9px;
+    /*변경 10->9*/
     transform: translateY(-30px);
 }
 
@@ -301,11 +296,14 @@ body {
 }
 
 #content4>img {
-    width: 57px; /*변경 52->57*/
-    height: 57px; /*변경 62->57*/
+    width: 57px;
+    /*변경 52->57*/
+    height: 57px;
+    /*변경 62->57*/
     flex-shrink: 0;
     transform: translateY(-29px);
-    margin: 5px 17px 18px 75px; /*변경 원래 margin-left: 70px; 였음*/
+    margin: 5px 17px 18px 75px;
+    /*변경 원래 margin-left: 70px; 였음*/
 }
 
 #content4>h5 {
@@ -330,14 +328,26 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 13px; /*변경 10->13*/
+    margin-left: 13px;
+    /*변경 10->13*/
     transform: translateY(-30px);
 }
 
 
 .content34 {
     display: flex;
+    flex-direction: row;
 
+
+}
+
+.text {
+    display: flex;
+    font-weight: bold;
+}
+
+.text2 {
+    margin-left: 122px;
 }
 
 /* 하단바 */
@@ -383,7 +393,7 @@ body {
     margin: 13px 0px;
 }
 
-.user > a > img:hover {
+.user>a>img:hover {
     content: url(../image/user_blue.png)
 }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
 </head>
+
 <body>
     <div class="container">
         <!-- <div class="nav-bar"></div> --> <!--!!! 지우기 !!!!-->
@@ -22,14 +24,13 @@
         </div>
         <!-- 위치 표시 -->
         <div class="location">
-            <div class="profile">
-                <p>프로필</p>
-            </div>
-            <p class="site"> 내 위치: 경기도 양주시 <img src="{% static 'image/polygon-1.svg' %}" alt=""></p>
+
+
         </div>
         <!-- 주요 서비스 -->
         <div class="content">
             <div class="content1">
+                <p>지역별 재난문자</p>
                 <a href="{% url 'region_all' %}">
                     <button id="content1">
                         <h5>지역별 재난문자</h5>
@@ -40,6 +41,7 @@
 
             </div>
             <div class="content2">
+                <p>커뮤니티</p>
                 <a href="{% url 'board_list' %}">
                     <button id="content2">
                         <h5>커뮤니티</h5>
@@ -47,6 +49,10 @@
                         <img src="{% static 'image/community.png' %}" alt="">
                     </button>
                 </a>
+            </div>
+            <div class="text">
+                <p class="text1">대피처</p>
+                <p class="text2">행동요령</p>
             </div>
             <div class="content34">
                 <a href="{% url 'shelter_enter' %}">
@@ -56,7 +62,6 @@
                         <img src="{% static 'image/shelter.svg' %}" alt="">
                     </button>
                 </a>
-
                 <a href="{% url 'actions' %}">
                     <button id="content4">
                         <h5>행동요령</h5>
@@ -93,4 +98,5 @@
         </div> <!-- 메뉴 하단바 div 끝-->
     </div>
 </body>
+
 </html>
