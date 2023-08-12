@@ -10,16 +10,17 @@ body {
 }
 
 .container {
-    width: 375px;
-    height: 100%;
-    margin: 0 auto;
+    height: 100vh;
+    height: -webkit-fil-avaliable;
+    height: fill-avaliable;
+    /* margin: 0 auto;
     position: relative;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-    padding: 0;
+    /* padding: 0;
     z-index: 0;
-    background-color: #FFF;
+    background-color: #FFF; */ 
     
 
 }
@@ -42,7 +43,7 @@ h3 {
 
 }
 
-/* 성함,전화번호,이메일 */
+/* 아이디,이메일 */
 form>p {
     color: #000;
     font-family: Inter;
@@ -51,6 +52,7 @@ form>p {
     font-weight: 400;
     line-height: normal;
     margin-left: 37px;
+    margin-top: 30px;
 }
 
 /* input  */
@@ -62,46 +64,13 @@ form>input {
     border: 1px solid #989898;
     background: #FFF;
     margin-left: 37px;
+    margin-top: 5px;
     
 }
 
-/* 전화번호 input */
-.phone-number-input {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.phone-number-input input {
-    width: 83.333px;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid #989898;
-    background: #FFF;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-
-}
-
-#phone-number1{
-    margin-left: 37px;
-
-}
-
-/* span 태그 */
-.phone-number-input > span{
-    margin-left: 6.37px;
-    margin-right: 6.37px;
-}
 
 
-#phone-number3 {
-    margin-right: 37px; 
-}
-
-
-/* 로그인 버튼 */
+/* 찾기 버튼 */
 .button button {
     width: 298px;
     height: 65px;
@@ -110,7 +79,7 @@ form>input {
     background: #94C9FA;
     box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
     margin-left: 38px;
-    margin-top: 65px;
+    margin-top: 125px;
     margin-bottom: 251px;
     border: none;
     color: #FFF;
@@ -122,43 +91,16 @@ form>input {
 
 }
 
-/* 하단바 */
-#ft {
-    margin: 0;
-    padding: 0;
-    z-index: 30;
-    background-color: white;
-    width: 375px;
-    height: 54px;
-    position: fixed;
-    bottom: 0;
-
-    border-radius: 0.625rem 0.625rem 0rem 0rem;
-    background: #FFF;
-    box-shadow: 0px -4px 8px 0px rgba(162, 162, 162, 0.25);
+@media screen and (max-height:740px){
+    .container{
+        height: 100%;
+        padding-bottom: 150px;
+    }
 }
 
-.ftIcons {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.back > a > img {
-    width: 25x;
-    height: 23px;
-    margin: 15px 0px;
-}
-
-.home > a > img {
-    width: 31px;
-    height: 31px;
-    margin: 11px 0px;
-}
-
-.user > a > img {
-    width: 27px;
-    height: 27px;
-    margin: 13px 0px;
+@media screen and (max-width:300px){
+    .container{
+        height: 100%;
+        padding-bottom: 200px;
+    }
 }
