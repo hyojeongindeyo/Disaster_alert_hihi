@@ -35,24 +35,50 @@
             {% endfor %}
         </div>
     <script>
-        var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-          mapOption = {
-            center: new kakao.maps.LatLng('{{ locY }}', '{{ locX }}'), // 지도의 중심좌표
-            level: 3, // 지도의 확대 레벨
-          };
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+            mapOption = {
+                center: new kakao.maps.LatLng({{ locY }}, {{ locX }}), // 지도의 중심좌표
+                level: 4 // 지도의 확대 레벨
+            };
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-        // 마커가 표시될 위치입니다
-        var markerPosition = new kakao.maps.LatLng('{{ locY }}', '{{ locX }}');
+        // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
+        var positions = [
+            {
+                content: '<div>내위치</div>',
+                latlng: new kakao.maps.LatLng({{ locY }}, {{ locX }})
+            },
+            {
+                content: '<div>{{ locLoc.0 }}</div>',
+                latlng: new kakao.maps.LatLng({{ shelterYs.0 }}, {{ shelterXs.0 }})
+            },
+            {
+                content: '<div>{{ locLoc.1 }}</div>',
+                latlng: new kakao.maps.LatLng({{ shelterYs.1 }}, {{ shelterXs.1 }})
+            },
+            {
+                content: '<div>{{ locLoc.2 }}</div>',
+                latlng: new kakao.maps.LatLng({{ shelterYs.2 }}, {{ shelterXs.2 }})
+            },
+            {
+                content: '<div>{{ locLoc.3 }}</div>',
+                latlng: new kakao.maps.LatLng({{ shelterYs.3 }}, {{ shelterXs.3 }})
+            },
+            {
+                content: '<div>{{ locLoc.4 }}</div>',
+                latlng: new kakao.maps.LatLng({{ shelterYs.4 }}, {{ shelterXs.4 }})
+            }
+        ];
 
-        // 마커를 생성합니다
-        var marker = new kakao.maps.Marker({
-          position: markerPosition,
-        });
+        for (var i = 0; i < positions.length; i ++) {
 
-        // 마커가 지도 위에 표시되도록 설정합니다
-        marker.setMap(map);
+            var marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: positions[i].latlng // 마커의 위치
+            });
+
+        }
     </script>
     <script src="{% static 'js/shelter2.js' %}"></script>
 {% endblock %}

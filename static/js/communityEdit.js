@@ -82,4 +82,5 @@ del.addEventListener('click', () => {
   imageView.style.display = 'none';
   file.textContent = '';
   del.style.display = 'none';
+  fileInput.value = "";
 })

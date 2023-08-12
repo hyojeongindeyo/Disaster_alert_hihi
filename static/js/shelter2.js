@@ -8,12 +8,7 @@ function locationLoadSuccess(pos) {
   locX = pos.coords.latitude;
   locY = pos.coords.longitude;
 
-  console.log(locX, locY)
-
   setValue(locX, locY);
-
-  // 지도 이동(기존 위치와 가깝다면 천천히 이동)
-  map.panTo(currentPos);
 
   // 마커 생성
   var marker = new kakao.maps.Marker({
