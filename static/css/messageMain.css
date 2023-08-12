@@ -15,7 +15,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* 배너 부분 */
+/* 배너 부분 */ /*여기부터*/
 .banner {
     height: 100px; /* 배너 줄이고 싶다면 1. 여기 height 조절*/
     position: relative;
@@ -69,7 +69,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
 }
-/*배너 부분 끝*/
+/*배너 부분 끝*/ /*여기까지*/
 
 /*제목과 즐겨찾기 부분*/
 .fixArea {
