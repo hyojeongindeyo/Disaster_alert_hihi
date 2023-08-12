@@ -63,8 +63,9 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
+    /* background-color 주는 부분입니당~ 원래 밑에 사진이 있던데 그거 삭제해줘영!! */
+    background-color : #fff;
     opacity: 0.4;
-    background-image: url('{{ selected_banner.bannerwinner.url }}');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
