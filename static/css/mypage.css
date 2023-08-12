@@ -15,13 +15,13 @@ body {
     height: -webkit-fill-available;
     height: fill-available;
 
-    /* margin: 0 auto;
+    margin: 0 auto;
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 0;
     z-index: 0;
-    background-color: #FFF; */
+    background-color: #FFF;
     /* border: 1px solid #989898; */
 
 }
@@ -50,7 +50,7 @@ body {
     flex-wrap: nowrap;
     flex-direction: row; */
     /* justify-content: space-between; */
-    text-align: center;
+    /* text-align: center; */
     gap: 5px;
     /* border: 1px solid blue; */
     justify-content: center;
@@ -76,7 +76,7 @@ body {
     font-weight: 400;
     line-height: normal;
     /* border: 1px solid red; */
-    margin-left: 170px;
+    margin-left: 20px;
 }
 
 /* 연필 */
