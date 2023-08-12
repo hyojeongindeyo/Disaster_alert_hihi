@@ -47,6 +47,7 @@ body {
 .post {
     width: 332px;
     margin: 0 auto;
+    margin-bottom: 70px;
 }
 
 .userInfo > img {
@@ -111,7 +112,6 @@ body {
 .post > img {
     width: 332px;
     height: 200px;
-    margin-bottom: 70px;
 }
 /* 게시글 글 부분 끝 */
 
