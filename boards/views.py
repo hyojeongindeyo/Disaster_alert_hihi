@@ -400,3 +400,6 @@ def manuals(request):
 def cardNews(request):
     cards = CardNews.objects.filter(kind='카드뉴스').order_by('-id')
     return render(request, 'boards/actionTips_cardnews.html', {'cards':cards})
+
+def manual_scrap2_view(request):
+    return render(request, 'boards/manual_scrap2.html')
