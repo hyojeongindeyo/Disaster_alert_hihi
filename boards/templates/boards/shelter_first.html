@@ -6,12 +6,15 @@
 {% load static %}
 
 {% load customtags %}
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff7c48b467f31c35e3c51e12b7525385"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=%KAKAO_APP_KEY%"></script>
     <link rel="stylesheet" href="{% static 'css/shelter2.css' %}">
 
+        <div class="nav_bar">
+          <p>내 위치 주변 대피소 찾기</p>
+        </div>
         <div id="map"></div>
         <!-- <form action="" method=""> -->
-        <p id="locationInfo">내 위치: <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button></p>
+        <p id="locationInfo">옆의 버튼을 눌러 위치를 찾아주세요. <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button></p>
         <!-- </form> -->
 
         <form action="{% url 'shelter_location' %}" method="post" id="myinput">
