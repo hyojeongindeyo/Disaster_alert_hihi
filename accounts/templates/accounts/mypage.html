@@ -2,7 +2,7 @@
 {% extends 'accounts/menuBar_mp.html' %}
 {% block content %}
 {% load static %}
- <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9ebeb400fc1296a2fb45002cd5ccfc9c&libraries=services"></script>
+ <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_key }}&libraries=services"></script>
 <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
     <!-- 상단바 공간 -->
     <div class="nav-bar"></div>
@@ -73,6 +73,7 @@
         </div>
 
     <!-- 하단바 -->
+<script type="text/javascript"> var kakao_key = "{{ kakao_key }}" </script>
 <script src="{% static 'js/mypage.js' %}"></script>
 
 {% endblock %}

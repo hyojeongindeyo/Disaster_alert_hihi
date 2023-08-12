@@ -20,8 +20,6 @@ from django.contrib import messages
 import os
 from dotenv import load_dotenv
 
-from .localCode import localCode
-
 load_dotenv()
 
 # Create your views here.
@@ -232,7 +230,8 @@ def detail_in_category(request, category_slug=None):
 
     context = {
         'selected_banner': selected_banner,
-        'region' : region
+        'region' : region,
+        'appkey' : os.getenv('MESSAGE_KEY')
     }
 
     return render(request, 'boards/message_detail.html', context)
@@ -306,7 +305,8 @@ def shelter_enter(request):
         'locLocs': locLoc,
         'locNames': locName,
         'shelterXs': shelterX,
-        'shelterYs': shelterY
+        'shelterYs': shelterY,
+        'kakao_key': os.getenv('KAKAO_APP_KEY')
     }
 
     return render(request, 'boards/shelter_first.html', context)
@@ -372,7 +372,8 @@ def shelter_location(request):
         'locLocs': locLoc,
         'locNames': locName,
         'shelterXs': shelterX,
-        'shelterYs': shelterY
+        'shelterYs': shelterY,
+        'kakao_key': os.getenv('KAKAO_APP_KEY')
     }
 
     return render(request, 'boards/shelter.html', context)

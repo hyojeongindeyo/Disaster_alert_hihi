@@ -3,7 +3,10 @@
 {% block content %}
 
 {% load static %}
-    <script type="text/javascript"> var region = "{{ region.slug }}" </script>
+    <script type="text/javascript">
+        var region = "{{ region.slug }}"
+        var appkey = "{{ appkey }}"
+    </script>
     <script defer src="{% static 'js/messageDetail.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/messageDetail.css' %}">
         <!-- 배너 -->

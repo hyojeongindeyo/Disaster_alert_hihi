@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
 
@@ -41,11 +46,13 @@ def my_page(request, pk):
     user = get_object_or_404(User, pk=pk)
     context = {
         'user': user,
+        'kakao_key': os.getenv('KAKAO_POSITION')
     }
     return render(request, "accounts/mypage.html", context)
 
+
 @login_required
-def my_page_update(request, pk) :
+def my_page_update(request, pk):
     user = User.object.get(id=pk)
     if request.method == 'POST':
         print(request.POST)
@@ -57,6 +64,7 @@ def my_page_update(request, pk) :
     else:
         form = UserChangeForm(instance=user)
     return render(request, "accounts/profile.html", {'form': form})
+
 
 def password_reset_request(request):
     if request.method == "POST":
