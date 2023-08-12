@@ -43,6 +43,7 @@ body {
     width: 25px;
     height: 23px;
     margin: 15px 0px;
+    cursor: pointer;
 }
 
 .home > a > img {
