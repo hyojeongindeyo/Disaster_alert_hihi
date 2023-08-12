@@ -42,14 +42,14 @@ body {
 /* 로고 위치 표시 - 로고 생기면 변경 */
 
 .logo>img {
-    width: 259px;
-    height: 158px;
+    width: 211px;
+    height: 215px;
     border-radius: 10px;
     /* background: #94C9FA; */
-    margin-left: 50px;
+    margin-left: 76px;
     margin-right: 58px;
     margin-top: 38px;
-    margin-bottom: 69px;
+    margin-bottom: 60px;
     /* border: 1px solid gray; */
 }
 
