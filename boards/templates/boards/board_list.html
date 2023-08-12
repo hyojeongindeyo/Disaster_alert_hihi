@@ -52,7 +52,7 @@
                     <img src="{{ board.user.user_image.url }}" alt="프로필">
                     <p class="nickName">{{ board.user.username }}</p>
                     {% if user.is_authenticated %}
-                        <button type="submit" class="dotButton" onclick="appearButton(this)">
+                        <button type="button" class="dotButton" onclick="appearButton(this)">
                             <img src="{% static 'image/dot.png' %}" alt="">
                         </button>
                         {% if user.username != board.user.username %}

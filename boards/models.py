@@ -58,9 +58,9 @@ class Board(models.Model):
     def __str__(self):
         return self.description
 
-    def delete(self, *args, **kwargs):
-        os.remove(os.path.join(settings.MEDIA_ROOT, self.info_image.name))
-        super(Board, self).delete(*args, **kwargs)
+    # def delete(self, *args, **kwargs):
+    #     os.remove(os.path.join(settings.MEDIA_ROOT, self.info_image.name))
+    #     super(Board, self).delete(*args, **kwargs)
 
 
 class Comment(models.Model):
