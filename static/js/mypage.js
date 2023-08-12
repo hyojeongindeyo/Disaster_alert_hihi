@@ -1,5 +1,5 @@
 const script = document.createElement("script");
-script.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=9ebeb400fc1296a2fb45002cd5ccfc9c";
+script.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=kakaokey";
 document.head.appendChild(script);
 
 document.addEventListener("DOMContentLoaded", function () {
