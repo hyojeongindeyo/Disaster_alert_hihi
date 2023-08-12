@@ -27,6 +27,7 @@ urlpatterns = [
     path('actions/', actions, name='actions'),
     path('manuals/', manuals, name='manuals'),
     path('cardNews/', cardNews, name='cardNews'),
+    path('manual_scrap2/', manual_scrap2_view, name='manual_scrap2'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
