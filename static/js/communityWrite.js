@@ -5,7 +5,7 @@ const textarea = document.getElementById("editArea");
 function autoResize() {
     textarea.style.height = "auto";
     textarea.style.height = textarea.scrollHeight + "px";
-}
+};
 
 // textarea의 내용이 변경될 때마다 높이를 자동으로 조절
 textarea.addEventListener("input", autoResize);
@@ -23,7 +23,7 @@ function updateCharCount() {
     const text = textarea_cnt.value;
     const charCount = text.length;
     charCountDiv.textContent = `(${charCount} / 150)`;
-}
+};
 
 // textarea의 내용이 변경될 때마다 updateCharCount 함수를 호출
 textarea_cnt.addEventListener("input", updateCharCount);
@@ -35,18 +35,42 @@ updateCharCount();
 function maxLengthCheck(object) {
     if (object.value.length > object.maxlength)
        object.value = object.value.slice(0, object.maxlength)
-}
+};
 
 // 파일 선택이 완료되었을 때의 이벤트를 처리
+const imageInput = document.getElementById('fileInput');
 const file = document.getElementById('fileName');
+
 fileInput.addEventListener("change", function () {
   if (fileInput.files.length > 0) {
-    const fileName = fileInput.files[0].name;
-    file.textContent = `${fileName}`;
+    let fileName = fileInput.files[0].name;
+    console.log(fileName);
+    let imgName = fileName.substring(0, fileName.lastIndexOf('.'));
+    let extension = fileName.substring(fileName.lastIndexOf('.'), fileName.length + 1);
+
+    if (imgName.length <= 10) {
+      file.textContent = imgName + extension;
+    } 
+    else {
+      let shortenedFileName = fileName.substring(0, 7) + '...' + extension;
+      file.textContent = shortenedFileName;
+    }
+
+    let image = new Image();
+    let select = fileInput.files[0]
+    image.src = URL.createObjectURL(select);
+
+    let container = document.querySelector('.container');
+
+    image.onload = function () {
+      
+      let height = image.height / 20;
+      console.log(height);
+      container.style.paddingBottom = `${height}px`;
+    }
   } 
 });
 
-const imageInput = document.getElementById('fileInput');
 const imageView = document.getElementById('change');
 const del = document.getElementById('del');
 
@@ -56,6 +80,7 @@ imageInput.addEventListener('change', (event) => {
   if (file && file.type.startsWith('image/')) {
     imageView.src = URL.createObjectURL(file);
     imageView.style.width = '332px';
+    imageView.style.marginTop = '10px';
     del.style.display = 'inline-block';
   } 
   // else {
@@ -67,4 +92,6 @@ del.addEventListener('click', () => {
   imageView.src = '';
   file.textContent = '';
   del.style.display = 'none';
-})
+  fileInput.value = ''; /*!!!여기!!!*/
+  console.log(fileInput.value);
+});
