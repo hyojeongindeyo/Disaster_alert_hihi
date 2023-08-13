@@ -434,3 +434,17 @@ def manual_view(request, card_id):
 #    elif card_id == 9:
 #        card_type_nm = "손씻기"
 #    return render(request, 'boards/card_view.html', {'card': card, 'type':card_type_nm})
+
+## 이 부분은 현재 모델 고친다는 얘기 들었기 때문에 일단 주석처리하고 고치고 난 후에 다시 살릴게요.
+# def manual_scrap (request, card_id):
+#     card = get_object_or_404(CardNews, card_id=card_id)
+#     scrap = CardScrap.objects.filter(card=card, user=request.user).first()
+#
+#     if scrap is None:
+#         apply = CardScrap(card=card, user=request.user, scrap=True)
+#         apply.save()
+#     else:
+#         apply = CardScrap(card=card, user=request.user, scrap=False)
+#         apply.save()
+#
+#     return redirect('boards/manual_view.html', card_id)
