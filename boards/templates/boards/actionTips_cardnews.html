@@ -25,9 +25,9 @@
                 <li class="menuLine"></li>
                 <li data-tab="tab_3" class="current"><a href="{% url 'cardNews' %}">카드뉴스</a></li>
             </ul>
-            
 
-            
+
+
             <div id="tab_3" class="tab_content current">
                 <div class="search_container">
                     <label>
@@ -36,7 +36,6 @@
                     </label>
                 </div>
                 <div class="tab_menual_container">
-                    {% for cardNews in cards %}
                     <div class="listInner">
                         <div class="tab_cardnews_box">
                             <a href="#">
@@ -82,7 +81,6 @@
                             </a>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>

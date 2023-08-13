@@ -26,6 +26,7 @@ urlpatterns = [
 
     path('actions/', actions, name='actions'),
     path('manuals_type/<int:card_id>', manual_view, name='manual_view'),
+    # path('cards_type/<int:card_id>', manual_view, name='manual_view'),
     path('manuals/', manuals, name='manuals'),
     path('cardNews/', cardNews, name='cardNews'),
 

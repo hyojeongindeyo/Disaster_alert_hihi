@@ -423,3 +423,14 @@ def manual_view(request, card_id):
     elif card_id == 6:
         manual_type_nm = "호우"
     return render(request, 'boards/manual_view.html', {'manual': manual, 'type':manual_type_nm})
+
+# def card_view(request, card_id):
+#    card = ImageMulti.objects.get(card_id=card_id)
+#    card_type_nm = "none"
+#    if card_id == 7:
+#        card_type_nm = "침수차량"
+#    elif card_id == 8:
+#        card_type_nm = "여름철"
+#    elif card_id == 9:
+#        card_type_nm = "손씻기"
+#    return render(request, 'boards/card_view.html', {'card': card, 'type':card_type_nm})
