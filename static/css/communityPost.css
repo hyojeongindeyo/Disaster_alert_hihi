@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
     height: 100%;
 }
 
 .container {
+    font-family: 'GmarketSansMedium';
     width: 375px; 
     height: 100%;
     margin: 0 auto; 
@@ -62,8 +67,8 @@ body {
 }
 
 .nickName {
-    font-size: 18px;
-    margin: 1px 11px 1px 0px;
+    font-size: 16px;
+    margin: 2px 11px 1px 2px;
 }
 
 .time {
@@ -83,10 +88,12 @@ body {
 .userInfo button {
     width: 51px;
     height: 26px;
-    font-size: 15px;
+    font-size: 14px;
     float: right;
     border-radius: 5px;
     border: none;
+    padding-top: 4px;
+    font-family: 'GmarketSansMedium';
 }
 
 .delete {
@@ -131,13 +138,13 @@ body {
     width: 24px;
     height: 24px;
     float: left;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .comment > p {
     font-size: 15px;
     margin: 0;
-    padding: 3px 0px 0px 0px;
+    padding: 2px 0px 0px 0px;
 }
 /* 댓글 작성 제목 부분 끝 */
 
@@ -157,14 +164,15 @@ form {
 }
 
 #commentText {
+    font-family: 'GmarketSansMedium';
     width: 328px;
     height: 90px;
     border-radius: 5px;
-    font-family: 'Inter', sans-serif;
     border: none;
     resize: none;
     outline: none;
     word-break: break-all; /*영어 이상하게 줄바꿈돼서 추가*/
+    font-size: 13px;
 }
 
 .border {
@@ -173,28 +181,31 @@ form {
 }
 
 .border button {
-    width: 56px;
+    width: 53px;
     height: 28px;
     background-color: #ABD4FA;
     border: none;
     border-radius: 5px;
     float: right;
     margin: 7px 5px 7px 0px;
+    font-family: 'GmarketSansMedium';
+    padding-top: 4px;
+    font-size: 13px;
 }
 
 #charCount { /* 글자 수 세주는 부분 */
-    font-size: 14px;
+    font-size: 13px;
     color: #B9B9B9;
     float: left;
-    padding: 13px 0px 13px 5px;
+    padding: 13px 0px 13px 9px;
 } 
 
 #alertText {
     clear: both;
     float: left;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0px 0px 3px;
     color: rgb(230, 78, 78);
     text-align: center;
 }
@@ -219,11 +230,11 @@ form {
 
 .commentsName {
     font-size: 15px;
-    margin: 0px 11px 15px 6px;
+    margin: 0px 11px 15px 7px;
 } 
 
 .commentsTime {
-    font-size: 14px;
+    font-size: 13px;
     color: #878080;
     margin: 0;
 }
@@ -239,6 +250,7 @@ form {
 
 .commentsText {
     padding-left: 24px;
+    font-size: 13px;
 }
 
 /* .reportBtn1, .reportBtn2, .commentDelBtn {
@@ -264,19 +276,23 @@ form {
 } */
 
 .reportBtn {
+    font-family: 'GmarketSansMedium';
+    font-size: 12px;
+    padding-top: 3px;
     position: absolute;
     width: 42px;
     height: 26px;
     display: none;
     background-color: white;
     color: black;
-    border: 0.1px solid #C7C7C7;
+    border: 0.1px solid #d9d9d9;
     border-radius: 5px;
     cursor: pointer;
     z-index: 990;
     float: right;
     margin-left: 297px;
     animation: fadeInDown 1s;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
 }
 
 /* .reportBtn1.show, .reportBtn2.show {
@@ -403,7 +419,9 @@ form {
 }
 
 .close-button, .delete_button {
-    font-size: 17px;
+    font-family: 'GmarketSansMedium';
+    font-size: 16px;
+    padding-top: 4px;
     border-radius: 10px;
     width: 87px;
     height: 33px;
