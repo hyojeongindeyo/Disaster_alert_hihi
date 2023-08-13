@@ -46,7 +46,7 @@ body {
 .bannerTitle {
     font-family: 'GmarketSansMedium';
     font-size: 17px;
-    font-weight: 600;
+    /* font-weight: 600; */
     position: relative;
     margin: 0px 0px 0px 20px;
     opacity: 0.9;
