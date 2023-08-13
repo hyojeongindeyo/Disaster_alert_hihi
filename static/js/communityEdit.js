@@ -8,8 +8,10 @@ window.onload=function(){
     let last = change.src.lastIndexOf('/')
     let name = change.src.substring(last+1, change.src.length);
     console.log(name);
-    file.textContent = `${name}`;
-    del.style.display = 'inline-block';
+    if (name !== '') {
+        file.textContent = `${name}`;
+        del.style.display = 'inline-block';
+    }
   }
 }
 

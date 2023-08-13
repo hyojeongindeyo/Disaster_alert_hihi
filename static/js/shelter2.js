@@ -20,6 +20,7 @@ function locationLoadSuccess(pos) {
   marker.setMap(map);
 
   submitForm();
+
 }
 
 function locationLoadError(pos) {
