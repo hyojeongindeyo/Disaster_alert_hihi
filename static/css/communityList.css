@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
     height: 100%;
 }
 
@@ -15,6 +19,8 @@ body {
     padding: 0;
     z-index:0;
     padding-bottom: 100px;
+    font-family: 'GmarketSansMedium';
+    font-weight: 300;
 }
 
 select option[value=""][disabled] { /*select box placeholder를 위해*/
@@ -34,8 +40,9 @@ select option[value=""][disabled] { /*select box placeholder를 위해*/
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: 6px 0px 5px 10px;
+    padding: 7px 0px 5px 10px;
     cursor: pointer;
+    font-family: 'GmarketSansMedium';
 }
 
 select::-ms-expand {
@@ -78,7 +85,7 @@ select::-ms-expand {
 }
 
 .login {
-    padding-top: 3px;
+    padding-top: 6px;
 }
 /*---상단 끝 ---*/
 
@@ -90,7 +97,7 @@ select::-ms-expand {
     text-align: center;
     line-height: 33px;
     background-color: #ABD4FA;
-    margin: 0px 0px 27px 13px;
+    margin: 0px 0px 30px 13px;
 }
 
 .line {
@@ -100,7 +107,7 @@ select::-ms-expand {
 .alert {
     font-size: 13px;
     color: gray;
-    margin: 0px 0px 19px 17px;
+    margin: 0px 0px 13px 17px;
     opacity: 0.8;
 }
 
@@ -128,6 +135,7 @@ select::-ms-expand {
     width: 24px;
     height: 24px;
     margin-right: 6px;
+    margin-top: 2px;
 }
 
 .userInfo {
@@ -135,8 +143,8 @@ select::-ms-expand {
 }
 
 .nickName {
-    font-size: 18px;
-    margin: 1px 11px 1px 0px;
+    font-size: 16px;
+    margin: 4px 11px 1px 2px;
 }
 
 .time {
@@ -164,20 +172,22 @@ select::-ms-expand {
 }
 
 .reportBtn {
+    font-family: 'GmarketSansMedium';
     position: absolute;
     width: 51px;
     height: 26px;
     display: none;
     background-color: white;
     color: black;
-    border: 0.1px solid #C7C7C7;
+    border: 0.1px solid #d9d9d9;
     border-radius: 5px;
     cursor: pointer;
     z-index: 999;
     margin-left: 295px; /*이상하게 있어서 변경*/
-    padding: 0;
+    padding: 2px 0px 0px 0px;
     /* float: right; */
     animation: fadeInDown 1s;
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 0.25);
 }
 
 /* .reportBtn1.show, .reportBtn2.show, .reportBtn3.show {
