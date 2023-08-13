@@ -31,12 +31,12 @@ closeButton.addEventListener('click', () => {
 
 const openModalBtn = document.getElementById('open-modal');
 const modal = document.getElementById('modal');
-const closeModalBtn = document.getElementsByClassName('close')[0];
+const closeModalBtn = document.getElementById('closePopup');
 
 openModalBtn.addEventListener('click', function(event) {
     event.preventDefault();
     modal.style.display = 'block';
-    body.style.overflow = 'hidden';
+    // body.style.overflow = 'hidden';
 });
 
 closeModalBtn.addEventListener('click', function() {

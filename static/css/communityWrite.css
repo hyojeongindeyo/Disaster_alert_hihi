@@ -93,10 +93,10 @@ select::-ms-expand {
     color: #B6B6B6;
 }
 
-/* .editText > img {
+.editText > img {
     width: 330px;
-    height: 200px;
-} */
+    /* height: 200px; */
+}
 
 #charCount { /* 글자 수 세주는 부분 */
     font-size: 14px;

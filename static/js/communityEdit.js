@@ -1,19 +1,31 @@
 const fileInput = document.getElementById('fileInput');
 const file = document.getElementById('fileName');
 const del = document.getElementById('del');
+let change = document.getElementById('change');
 
 // 이미지가 이미 선택되어 있는지 확인 후, 파일 이름을 표시
 window.onload=function(){
   if (change.src != '') {
+    // console.log(encodeURI(change.src));
     let last = change.src.lastIndexOf('/')
     let name = change.src.substring(last+1, change.src.length);
+    name = decodeURIComponent(name);
+    let test = name.substring(0, name.lastIndexOf('.'));
+    let extension = name.substring(name.lastIndexOf('.'), name.length+1);
+    
     console.log(name);
     if (name !== '') {
-        file.textContent = `${name}`;
-        del.style.display = 'inline-block';
+      if(test.length <= 10) {
+        file.innerText = `${name}`;
+      }
+      else {
+        let short = test.substring(0, 7) + '...' + extension;
+        file.innerText = `${short}`;
+      }
+      del.style.display = 'inline-block';
     }
   }
-}
+};
 
 // textarea 요소를 가져오기
 const textarea = document.getElementById("editArea");
@@ -57,9 +69,19 @@ function maxLengthCheck(object) {
 // 파일 선택이 완료되었을 때의 이벤트를 처리
 fileInput.addEventListener("change", function () {
   if (fileInput.files.length > 0) {
-    const fileName = fileInput.files[0].name;
-    file.textContent = `${fileName}`;
-  } 
+    let fileName = fileInput.files[0].name;
+    console.log(fileName);
+    let imgName = fileName.substring(0, fileName.lastIndexOf('.'));
+    let extension = fileName.substring(fileName.lastIndexOf('.'), fileName.length + 1);
+
+    if (imgName.length <= 10) {
+      file.textContent = imgName + extension;
+    } 
+    else {
+      let shortenedFileName = fileName.substring(0, 7) + '...' + extension;
+      file.textContent = shortenedFileName;
+    }
+  }
 });
 
 const imageInput = document.getElementById('fileInput');
