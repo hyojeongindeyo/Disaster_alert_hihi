@@ -37,7 +37,7 @@
                     {% for menu in menus %}
                         <div class="listInner">
                             <div class="menual_box">
-                                <a href="#">
+                                <a href="{% url 'manual_view' card_id=menu.id %}">
                                     <p class="title">{{ menu.title }}</p>
                                     <ul class="hashtag">
                                         <li>{{ menu.tags}}</li>

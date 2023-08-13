@@ -401,5 +401,11 @@ def cardNews(request):
 
 def manual_view(request, card_id):
     manual = ImageMulti.objects.get(card_id=card_id)
-
-    return render(request, 'boards/manual_view.html', {'manual': manual})
+    manual_type_nm = "none"
+    if card_id == 1:
+        manual_type_nm = "태풍"
+    elif card_id == 5:
+        manual_type_nm = "지진"
+    elif card_id == 6:
+        manual_type_nm = "호우"
+    return render(request, 'boards/manual_view.html', {'manual': manual, 'type':manual_type_nm})
