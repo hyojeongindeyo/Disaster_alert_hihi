@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: 'GmarketSansMedium';
 }
+
 
 body {
     margin: 0;
@@ -33,7 +39,7 @@ body {
 
 .header>h3 {
     color: #000;
-    font-family: Inter;
+    font-family: 'GmarketSansMedium';
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
@@ -44,7 +50,7 @@ body {
 
 .section1>p {
     color: #878080;
-    font-family: Inter;
+    font-family: 'GmarketSansMedium';
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -65,7 +71,8 @@ body {
     margin-left: 38px;
     border: none;
     color: #FFF;
-    font-family: Inter;
+    
+    font-family: 'GmarketSansMedium';
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
