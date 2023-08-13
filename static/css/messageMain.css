@@ -1,4 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap'); */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 body {
     margin: 0;
@@ -12,7 +18,7 @@ body {
     height: 100%;
     margin: 0 auto; 
     padding-bottom: 100px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'GmarketSansMedium';
 }
 
 /* 배너 부분 */ /*여기부터*/
@@ -44,9 +50,9 @@ body {
 
 .move > a > img {
     float: right;
-    width: 18px;
-    height: 18px;
-    margin-top: 4px;
+    width: 17px;
+    height: 17px;
+    margin-top: 2px;
 }
 
 .text {
@@ -94,7 +100,7 @@ body {
 .starIcon > img {
     width: 17px;
     height: 17px;
-    margin: 3px 0px 0px 3px;
+    margin: 1px 0px 0px 3px;
 }
 
 .starText {
