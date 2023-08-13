@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
-
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} 
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: 'GmarketSansMedium';
 }
 
 body {
@@ -36,7 +40,7 @@ body {
 
 .nav_bar > p {
     font-size: 14px;
-    transform: translateY(-9px);
+    transform: translateY(-3px);
     font-weight: bold;
     text-align: center;
     justify-items: center;
@@ -72,6 +76,7 @@ body {
     margin-left: 60px;
     margin-top: 7px;
     position: sticky;
+    
     
 }
 #getLocation{
@@ -109,8 +114,9 @@ body {
 .site1>h4 {
     font-size: 15px;
     font-style: normal;
+    font-weight: 600;
     margin-left: 13px;
-    margin-top: 7.5px;
+    margin-top: 6.5px;
     /* border: 1px solid pink; */
     height: 60px;
 
@@ -121,7 +127,9 @@ body {
     color: #000;
     font-size: 12px;
     font-style: normal;
-    margin-top: -40px;
+    font-weight: 500;
+    margin-top: -65px;
+    
     margin-left: 13px;
    
      /* border: 1px solid green; */

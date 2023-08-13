@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} 
 
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: 'GmarketSansMedium';
 }
 
 body {
@@ -67,7 +72,7 @@ body {
     /* height: 26px; */
     flex-shrink: 0;
     /* margin-left: 105px; */
-    margin-top: 15px;
+    margin-top: 17px;
     color: #000;
     text-align: center;
     /* font-family: Inter; */
@@ -180,7 +185,6 @@ body {
 
 .retire {
     color: #BEBEBE;
-    font-family: Inter;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -405,14 +409,18 @@ body {
     text-decoration: none;
     text-align: center;
     /* border: 1px solid green; */
+    height: 25px;
     background: #94C9FA;
     box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
     margin-left: 62px;
     margin-right: 62px;
     border-radius: 10px;
     color: #FFF;
-    font-size: 20px;
+    font-size: 19px;
     padding: 18px 55px;
     display: block;
     margin-top: 30px;
+ 
+    
+    
 }
