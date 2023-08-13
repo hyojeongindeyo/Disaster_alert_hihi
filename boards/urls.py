@@ -25,9 +25,10 @@ urlpatterns = [
     path('sheltersearch/', shelter_location, name='shelter_location'),
 
     path('actions/', actions, name='actions'),
+    path('manuals_type/<int:card_id>', manual_view, name='manual_view'),
+    path('manuals_type/<int:card_id>', manual_view, name='manual_view'),
     path('manuals/', manuals, name='manuals'),
     path('cardNews/', cardNews, name='cardNews'),
-    path('manual_scrap2/', manual_scrap2_view, name='manual_scrap2'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

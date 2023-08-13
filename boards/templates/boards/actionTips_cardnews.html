@@ -36,9 +36,10 @@
                     </label>
                 </div>
                 <div class="tab_menual_container">
+                    {% for cardNews in cards %}
                     <div class="listInner">
                         <div class="tab_cardnews_box">
-                            <a href="">
+                            <a href="#">
                                 <div class="cd-image">
                                     <img class="hashtag" src="{% static 'image/floodedCar_000.png' %}" alt="">
                                 </div>
@@ -81,6 +82,7 @@
                             </a>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -398,5 +398,7 @@ def cardNews(request):
     cards = CardNews.objects.filter(kind='카드뉴스').order_by('-id')
     return render(request, 'boards/actionTips_cardnews.html', {'cards':cards})
 
-def manual_scrap2_view(request):
-    return render(request, 'boards/manual_scrap2.html')
+def manual_view(request, card_id):
+    manual = ImageMulti.objects.get(card_id=card_id)
+
+    return render(request, 'boards/manual_view.html', {'manual': manual})
