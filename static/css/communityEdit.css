@@ -158,6 +158,16 @@ select::-ms-expand {
     cursor: pointer;
 }
 
+#alertText {
+    /* clear: both; */
+    float: left;
+    font-size: 14px;
+    padding: 0;
+    margin: 10px 0px 0px 0px;
+    color: rgb(230, 78, 78);
+    text-align: center;
+}
+
 /*-------하단 메뉴바-------css */
 /* #ft {
     margin: 0;

@@ -13,12 +13,14 @@
             </select>
 
             <div class="pushBtn" method="post">
-                <button type="submit">등록</button>
+                <button type="submit" id="stop">등록</button>
             </div>
             <input type="hidden" name="username" value="{{ user.username }}" />
             <textarea name="description" rows="0" id="editArea" maxlength="150" oninput="maxLengthCheck(this)"
             placeholder="현재 지역의 재난 상황에 대해 적어주세요.&#10;&#10;ex) 00역에 지금 침수된 것 같아요.&#10;현재 지역 상황이에요.&#10;&#10;많은 사람들이 보고 조심할 수 있도록 적어주세요."></textarea>
             <div id="charCount">(0 / 150)</div> <!--글자수-->
+
+            <p id="alertText">글을 작성해주세요!</p>
 
             <img src="" alt="" id = "change">
 

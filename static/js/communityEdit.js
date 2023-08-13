@@ -108,3 +108,21 @@ del.addEventListener('click', () => {
   del.style.display = 'none';
   fileInput.value = "";
 })
+
+// 등록 버튼 클릭 이벤트 처리
+let submitButton = document.getElementById('stop'); 
+let tvalue = document.getElementById('editArea'); 
+let alert = document.getElementById('alertText');
+alert.style.display = 'none';
+
+submitButton.addEventListener('click', function (event) {
+  let text = tvalue.value.trim(); // textarea의 텍스트를 가져와서 앞뒤 공백을 제거
+  
+  if (text.length === 0) {
+    // 텍스트가 비어있을 경우 폼 제출 막기
+    event.preventDefault(); // 폼 제출을 막기
+    // tvalue.style.border = '1px solid #68B1F4';
+    // tvalue.style.borderRadius = '10px';
+    alert.style.display = 'block';
+  }
+});
