@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
-    font-family: 'Inter', sans-serif;
-    text-decoration: none;
-    color: inherit;
-    list-style: none;
+    font-family: 'GmarketSansMedium';
 }
+
 
 body {
     height: 100%;
@@ -14,7 +17,18 @@ body {
 .container {
     height: 100%;
     padding-bottom: 120px;
+   
 }
+/* 폰트 바꾸니까 갑자기 text-decoration이 생겨서 따로 css 지정했어요 */
+a {
+    text-decoration: none !important;
+    color: #000;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+  
 
 /* .header {
     width: 375px;
@@ -75,6 +89,8 @@ ul.tab_menu {
     margin: 0;
     display: flex; /* 가로로 나열하기 위해 Flexbox 사용 */
     margin-left: 34px;
+   
+    
     /* background-color: thistle; */
 }
   
@@ -82,6 +98,7 @@ ul.tab_menu li {
     color: #878080;
     cursor: pointer;
     display: inline-block;
+    
     /* background-color: #ec8d8d; */
 }
   
