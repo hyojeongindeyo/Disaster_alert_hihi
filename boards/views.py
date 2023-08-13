@@ -6,8 +6,7 @@ from django.contrib.auth.decorators import login_required
 import csv
 
 from pyproj import Proj, transform
-import requests
-import json
+import requests, json, pprint
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.defaultfilters import pprint
 from .models import Banner
@@ -313,14 +312,6 @@ def shelter_enter(request):
 
 def shelter_location(request):
 
-    # 아까워서 남겨 두는 저의 api.... 하 진짜!!!!!!!
-    # url = 'http://www.localdata.go.kr/platform/rest/GR0/openDataApi?'
-    # locCode = localCode["서울 종로구"]
-    # print(locCode)
-    # params = {'authKey': os.getenv('SHELTER_KEY'), 'localCode': 3000000, 'state': '01', 'resultType': 'json'}
-    # response = requests.get(url, params=params)
-    # shelter = json.loads(response.content)
-    # print(shelter['result']['body']['rows'][0])
     locX = 0
     locY = 0
 
@@ -339,6 +330,11 @@ def shelter_location(request):
     locName = []
     shelterX = []
     shelterY = []
+    kakao_url = f'https://dapi.kakao.com/v2/local/geo/coord2address.json?x={locX}&y={locY}&input_coord=WGS84'
+    headers = {'Authorization': f'KakaoAK {os.getenv("KAKAO_REST_API")}'}
+    api_json = requests.get(kakao_url, headers=headers)
+    json_body = json.loads(api_json.text)
+    full_address = json_body['documents'][0]['road_address']['address_name']
 
     for line in rdr :
         if line[7] == '01':
@@ -373,7 +369,8 @@ def shelter_location(request):
         'locNames': locName,
         'shelterXs': shelterX,
         'shelterYs': shelterY,
-        'kakao_key': os.getenv('KAKAO_APP_KEY')
+        'kakao_key': os.getenv('KAKAO_APP_KEY'),
+        'full_address' : full_address
     }
 
     return render(request, 'boards/shelter.html', context)
