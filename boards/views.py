@@ -333,8 +333,6 @@ def shelter_location(request):
     kakao_url = f'https://dapi.kakao.com/v2/local/geo/coord2address.json?x={locX}&y={locY}&input_coord=WGS84'
     headers = {'Authorization': f'KakaoAK {os.getenv("KAKAO_REST_API")}'}
     api_json = requests.get(kakao_url, headers=headers)
-    json_body = json.loads(api_json.text)
-    full_address = json_body['documents'][0]['road_address']['address_name']
 
     for line in rdr :
         if line[7] == '01':
@@ -361,6 +359,9 @@ def shelter_location(request):
     print(locLoc)
 
     f.close()
+
+    json_body = json.loads(api_json.text)
+    full_address = json_body['documents'][0]['road_address']['address_name']
 
     context = {
         'locX': locX,
