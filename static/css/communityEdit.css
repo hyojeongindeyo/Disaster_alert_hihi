@@ -88,7 +88,7 @@ select::-ms-expand {
 
 .editText > img {
     width: 330px;
-    height: 200px;
+    /* height: 200px; */
 }
 
 #charCount { /* 글자 수 세주는 부분 */

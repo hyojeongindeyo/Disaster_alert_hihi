@@ -64,7 +64,7 @@ fileInput.addEventListener("change", function () {
 
     image.onload = function () {
       
-      let height = image.height / 20;
+      let height = image.height / 25;
       console.log(height);
       container.style.paddingBottom = `${height}px`;
     }
@@ -79,8 +79,8 @@ imageInput.addEventListener('change', (event) => {
   console.log(file);
   if (file && file.type.startsWith('image/')) {
     imageView.src = URL.createObjectURL(file);
+    imageView.style.display = 'block';
     imageView.style.width = '332px';
-    imageView.style.marginTop = '10px';
     del.style.display = 'inline-block';
   } 
   // else {
