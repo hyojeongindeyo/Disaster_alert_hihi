@@ -156,6 +156,7 @@ img {
 .slide li img {
 	border-radius: 10px;
     width: 300px;
+    height: 300px; /* 이 부분 추가*/
     margin-top: -40px;
     transform: translateX(-40px);
     margin-right: 40px;
