@@ -151,7 +151,7 @@ body {
 form {
     width: 332px;
     border: 1px solid #D5D5D5;
-    margin-bottom: 50px;
+    margin-bottom: 65px;
     margin-left: 23px;
     border-radius: 7px;
 }
@@ -188,6 +188,16 @@ form {
     float: left;
     padding: 13px 0px 13px 5px;
 } 
+
+#alertText {
+    clear: both;
+    float: left;
+    font-size: 14px;
+    padding: 0;
+    margin: 10px 0px 0px 0px;
+    color: rgb(230, 78, 78);
+    text-align: center;
+}
 /* 댓글 작성하기 부분 끝 */
 
 
