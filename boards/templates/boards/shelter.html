@@ -37,7 +37,7 @@
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
             mapOption = {
-                center: new kakao.maps.LatLng({{ locY }}, {{ locX }}), // 지도의 중심좌표
+                center: new kakao.maps.LatLng({{ avgY }}, {{ avgX }}), // 지도의 중심좌표
                 level: 4 // 지도의 확대 레벨
             };
 
@@ -50,23 +50,23 @@
                 latlng: new kakao.maps.LatLng({{ locY }}, {{ locX }})
             },
             {
-                content: '<div>{{ locLoc.0 }}</div>',
+                content: '<div>{{ locNames.0 }}</div>',
                 latlng: new kakao.maps.LatLng({{ shelterYs.0 }}, {{ shelterXs.0 }})
             },
             {
-                content: '<div>{{ locLoc.1 }}</div>',
+                content: '<div>{{ locNames.1 }}</div>',
                 latlng: new kakao.maps.LatLng({{ shelterYs.1 }}, {{ shelterXs.1 }})
             },
             {
-                content: '<div>{{ locLoc.2 }}</div>',
+                content: '<div>{{ locNames.2 }}</div>',
                 latlng: new kakao.maps.LatLng({{ shelterYs.2 }}, {{ shelterXs.2 }})
             },
             {
-                content: '<div>{{ locLoc.3 }}</div>',
+                content: '<div>{{ locNames.3 }}</div>',
                 latlng: new kakao.maps.LatLng({{ shelterYs.3 }}, {{ shelterXs.3 }})
             },
             {
-                content: '<div>{{ locLoc.4 }}</div>',
+                content: '<div>{{ locNames.4 }}</div>',
                 latlng: new kakao.maps.LatLng({{ shelterYs.4 }}, {{ shelterXs.4 }})
             }
         ];
@@ -74,10 +74,32 @@
         for (var i = 0; i < positions.length; i ++) {
 
             var marker = new kakao.maps.Marker({
-            map: map, // 마커를 표시할 지도
-            position: positions[i].latlng // 마커의 위치
+                map: map, // 마커를 표시할 지도
+                position: positions[i].latlng // 마커의 위치
             });
 
+            // 마커에 표시할 인포윈도우를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+                content: positions[i].content // 인포윈도우에 표시할 내용
+            });
+
+            kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+            kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
+        }
+
+        // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
+        function makeOverListener(map, marker, infowindow) {
+            return function() {
+                infowindow.open(map, marker);
+            };
+        }
+
+        // 인포윈도우를 닫는 클로저를 만드는 함수입니다
+        function makeOutListener(infowindow) {
+            return function() {
+                infowindow.close();
+            };
         }
     </script>
     <script src="{% static 'js/shelter2.js' %}"></script>

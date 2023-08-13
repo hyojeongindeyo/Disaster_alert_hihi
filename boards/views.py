@@ -330,9 +330,6 @@ def shelter_location(request):
     locName = []
     shelterX = []
     shelterY = []
-    kakao_url = f'https://dapi.kakao.com/v2/local/geo/coord2address.json?x={locX}&y={locY}&input_coord=WGS84'
-    headers = {'Authorization': f'KakaoAK {os.getenv("KAKAO_REST_API")}'}
-    api_json = requests.get(kakao_url, headers=headers)
 
     for line in rdr :
         if line[7] == '01':
@@ -360,12 +357,21 @@ def shelter_location(request):
 
     f.close()
 
+    api_json = geocode_myposition(locX, locY)
+
     json_body = json.loads(api_json.text)
     full_address = json_body['documents'][0]['road_address']['address_name']
+
+    avgX = (locX + shelterX[0] + shelterX[1] + shelterX[2] + shelterX[3] + shelterX[4]) / 6.0
+    avgY = (locY + shelterY[0] + shelterY[1] + shelterY[2] + shelterY[3] + shelterY[4]) / 6.0
+
+    print(avgX, avgY)
 
     context = {
         'locX': locX,
         'locY': locY,
+        'avgX': avgX,
+        'avgY': avgY,
         'locLocs': locLoc,
         'locNames': locName,
         'shelterXs': shelterX,
@@ -375,6 +381,14 @@ def shelter_location(request):
     }
 
     return render(request, 'boards/shelter.html', context)
+
+def geocode_myposition(locX, locY) :
+
+    kakao_url = f'https://dapi.kakao.com/v2/local/geo/coord2address.json?x={locX}&y={locY}&input_coord=WGS84'
+    headers = {'Authorization': f'KakaoAK {os.getenv("KAKAO_REST_API")}'}
+    api_json = requests.get(kakao_url, headers=headers)
+
+    return api_json
 
 
 def random_banner(request):
