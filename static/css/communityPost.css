@@ -107,6 +107,11 @@ body {
     font-size: 15px;
     margin-bottom: 16px;
     word-break: break-all; /*영어 이상하게 잘려서 추가*/
+    line-height: 1.5;
+}
+
+.text {
+    margin-left: 2px;
 }
 
 .post > img {

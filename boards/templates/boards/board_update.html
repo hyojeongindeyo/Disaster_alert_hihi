@@ -12,11 +12,13 @@
             </select>
 
             <div class="pushBtn">
-                <button type="submit">등록</button>
+                <button type="submit" id="stop">등록</button>
             </div>
             <input type="hidden" name="username" value="{{ user.username }}" />
             <textarea name="description" rows="0" id="editArea" maxlength="150" oninput="maxLengthCheck(this)">{{ board.description }}</textarea>
             <div id="charCount">(0 / 150)</div> <!--글자수-->
+
+            <p id="alertText">글을 작성해주세요!</p>
 
             {% if board.info_image %}
             <img src="{{ board.info_image.url }}" alt=" " id="change">

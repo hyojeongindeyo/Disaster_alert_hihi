@@ -205,7 +205,8 @@ a:visited {
 
 .text {
     font-size: 15px;
-    margin: 15px 0px 0px 0px;
+    margin: 15px 0px 0px 2px;
+    line-height: 1.5;
     /* overflow-x: hidden; */
 }
 

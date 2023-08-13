@@ -95,3 +95,34 @@ del.addEventListener('click', () => {
   fileInput.value = ''; /*!!!여기!!!*/
   console.log(fileInput.value);
 });
+
+//textarea 유효성 검사
+// let text = document.getElementById('editArea');
+// let textValue = text.value;
+// console.log(textValue);
+// document.querySelector(".stop").addEventListener("submit", function (e) {
+//   console.log(textValue);
+//   if(textValue.length <= 0){
+//     // e.preventDefault();
+//     // text.style.border = '1px solid red';
+//     alert('stop');
+//   }  
+// });
+
+// 등록 버튼 클릭 이벤트 처리
+let submitButton = document.getElementById('stop'); 
+let tvalue = document.getElementById('editArea'); 
+let alert = document.getElementById('alertText');
+alert.style.display = 'none';
+
+submitButton.addEventListener('click', function (event) {
+  let text = tvalue.value.trim(); // textarea의 텍스트를 가져와서 앞뒤 공백을 제거
+  
+  if (text.length === 0) {
+    // 텍스트가 비어있을 경우 폼 제출 막기
+    event.preventDefault(); // 폼 제출을 막기
+    // tvalue.style.border = '1px solid #68B1F4';
+    // tvalue.style.borderRadius = '10px';
+    alert.style.display = 'block';
+  }
+});
