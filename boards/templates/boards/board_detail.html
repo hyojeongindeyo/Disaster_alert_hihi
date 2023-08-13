@@ -56,8 +56,9 @@
             <input type="hidden" name="username" value="{{ user.username }}" />
             <textarea name="description" rows="0" id="commentText" maxlength="150" oninput="maxLengthCheck(this)"></textarea>
             <div class="border">
-                <button type="submit">등록</button>
+                <button type="submit" id="stop">등록</button>
                 <div id="charCount">(0 / 150)</div> <!--글자 수 세기-->
+                <p id="alertText">글을 작성해주세요!</p>
             </div>
         </form> <!--댓글 달기 끝-->
         {% endif %}
