@@ -237,6 +237,7 @@ ul.hashtag li {
 
 .cd-image {
     position: relative;
+    opacity: 0.7;
 }
 
 .cd-image > img {
@@ -277,7 +278,7 @@ ul.hashtag li {
     height: 24px;
     flex-shrink: 0;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0;
 }
 
