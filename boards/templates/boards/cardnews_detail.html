@@ -1,3 +1,4 @@
+
 {% extends 'menuBar.html' %}
 {% block content %}
 {% load static %}
@@ -7,32 +8,19 @@
         <div class="hd"> <!--상단-->
             <p class="cardnews">카드뉴스</p>
         </div>
-
+        {% for behavior in behaviors %}
         <div class="title">
-            <p class="cardTitle">폭염대비 건강수칙</p>
-            <p class="time">등록일 2022.05.31</p> <!--삭제?-->
+            <p class="cardTitle">{{behavior.title_nm}}</p>
+            <p class="time">등록일 {{behavior.created_date}}</p> <!--삭제?-->
         </div>
 
         <div class="slide-container">
             <ul class="slide">
+                {% for image in behavior.image_src %}
                 <li>
-                    <img src="{% static 'image/hot1.png' %}" alt="">
+                    <img src="{{ image }}" alt="">
                 </li>
-                <li>
-                    <img src="{% static 'image/hot2.png' %}" alt="">
-                </li>
-                <li>
-                    <img src="{% static 'image/hot3.png' %}" alt="">
-                </li>
-                <li>
-                    <img src="{% static 'image/hot4.png' %}" alt="">
-                </li>
-                <li>
-                    <img src="{% static 'image/hot5.png' %}" alt="">
-                </li>
-                <li>
-                    <img src="{% static 'image/hot6.png' %}" alt="">
-                </li>
+                {% endfor %}
             </ul>
 
             <div class="btn-container">
@@ -44,5 +32,6 @@
                 </button>
             </div>
         </div>
+        {% endfor %}
     <script src="{% static 'js/cardnews_detail.js' %}"></script>
 {% endblock %}

@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('actions/', actions, name='actions'),
     path('manuals_type/<int:card_id>', manual_view, name='manual_view'),
-    # path('cards_type/<int:card_id>', manual_view, name='manual_view'),
+    path('cardnews_type/<int:card_id>', cardnews_view, name='cardnews_view'),
     path('manuals/', manuals, name='manuals'),
     path('cardNews/', cardNews, name='cardNews'),
     # 이 부분도 살릴 수 있으면 그때 살리고 정 아니면 그냥 죽일게요.
