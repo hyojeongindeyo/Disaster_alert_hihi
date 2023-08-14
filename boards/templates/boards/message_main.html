@@ -27,22 +27,22 @@
         </div>
 
 
-        <form method="post" name="area" id="area">
+        <div name="area" id="area">
+            {% csrf_token %}
             {% if user.is_authenticated %}
                 <!--즐겨찾기 박스들-->
                 <div class="areaBox">
                     <div>
                         <button type="button" class="starBtn" onclick="toggleImage(this)">
-                            <img src="{% static 'image/star_black.png' %}" alt="별">
+                            <img src="{% static 'image/star_white.png' %}" alt="별">
                         </button>
-                        <a href="#">
+                        <a href="">
                             <div class="box">
-                                <p class="areaName">서울</p>
+                                <p class="areaName"></p>
                             </div>
                         </a>
                     </div>
                 </div>
-
             <hr class="line">
             {% endif %}
             <!--지역별-->
@@ -50,9 +50,12 @@
                 {% for c in categories %}
                 <div>
                     {% if user.is_authenticated %}
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
+                    <form action="{% url 'category_star' c.slug %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="starBtn" onclick="toggleImage(this)">
+                            <img src="{% static 'image/star_white.png' %}" alt="별">
+                        </button>
+                    </form>
                     {% else %}
                     <button type="button" class="starBtn">
                         <img src="{% static 'image/white_box.png' %}" alt="별">
@@ -66,6 +69,6 @@
                 </div>
                 {% endfor %}
             </div>
-        </form>
+        </div>
     <script src="{% static 'js/messageMain.js' %}"></script>
 {% endblock %}

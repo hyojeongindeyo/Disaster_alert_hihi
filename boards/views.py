@@ -1,15 +1,14 @@
 import math
 import time
 from itertools import islice
+from django.http import JsonResponse
 
 from django.contrib.auth.decorators import login_required
 import csv
 
 from pyproj import Proj, transform
-import requests, json, pprint
+import requests, json
 from django.shortcuts import render, get_object_or_404, redirect
-from django.template.defaultfilters import pprint
-from .models import Banner
 import random
 
 from .forms import boardForm, commentForm
@@ -39,23 +38,6 @@ def main_page(request):
 
     return render(request, 'boards/board_main_page.html', context)
 
-
-# 임시 검색 뷰
-# def board_search(request):
-#    if request.method == 'GET':
-#        query = request.GET.get('q')
-#        if query:
-#            results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
-#            return render(request, 'board_search.html', {'results': results})
-#    return redirect('boards/board_list.html')
-
-# 임시 신고 뷰
-# def post_report(request, pk):
-#    if request.method == 'POST':
-#        post = get_object_or_404(Post, id=post_id)
-#        post.is_reported = True
-#        post.save()
-#        return redirrect('boards/board_detail.html', post_id=post_id)
 
 def board_list(request):
     region_filter = request.GET.get('region', '')  # 주소 필터링 값을 가져옴
@@ -218,6 +200,11 @@ def region_in_category(request, category_slug=None):
     if category_slug:
         current_category = get_object_or_404(RegionCategory, slug=category_slug)
 
+    if request.method == 'POST' :
+        print(request.POST)
+        print(request.user)
+        print(current_category)
+
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
 
@@ -228,7 +215,6 @@ def region_in_category(request, category_slug=None):
     }
 
     return render(request, 'boards/message_main.html', context)
-
 
 def detail_in_category(request, category_slug=None):
     region = get_object_or_404(RegionCategory, slug=category_slug)
@@ -365,8 +351,11 @@ def shelter_location(request):
 
     api_json = geocode_myposition(locX, locY)
 
-    json_body = json.loads(api_json.text)
-    full_address = json_body['documents'][0]['road_address']['address_name']
+    if api_json.status_code == 200 :
+        json_body = json.loads(api_json.text)
+        full_address = json_body['documents'][0]['road_address']['address_name']
+    else:
+        full_address = "Address not available"
 
     avgX = (locX + shelterX[0] + shelterX[1] + shelterX[2] + shelterX[3] + shelterX[4]) / 6.0
     avgY = (locY + shelterY[0] + shelterY[1] + shelterY[2] + shelterY[3] + shelterY[4]) / 6.0

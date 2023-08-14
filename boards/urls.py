@@ -20,6 +20,7 @@ urlpatterns = [
 
     path('region/', region_in_category, name='region_all'),
     path('region/<category_slug>/', detail_in_category, name='region_in_category'),
+    path('region/star/<category_slug>/', region_in_category, name='category_star'),
 
     path('shelter/', shelter_enter, name='shelter_enter'),
     path('sheltersearch/', shelter_location, name='shelter_location'),
