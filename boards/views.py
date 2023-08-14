@@ -1,15 +1,14 @@
 import math
 import time
 from itertools import islice
+from django.http import JsonResponse
 
 from django.contrib.auth.decorators import login_required
 import csv
 
 from pyproj import Proj, transform
-import requests, json, pprint
+import requests, json
 from django.shortcuts import render, get_object_or_404, redirect
-from django.template.defaultfilters import pprint
-from .models import Banner
 import random
 
 from .forms import boardForm, commentForm
@@ -39,23 +38,6 @@ def main_page(request):
 
     return render(request, 'boards/board_main_page.html', context)
 
-
-# 임시 검색 뷰
-# def board_search(request):
-#    if request.method == 'GET':
-#        query = request.GET.get('q')
-#        if query:
-#            results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
-#            return render(request, 'board_search.html', {'results': results})
-#    return redirect('boards/board_list.html')
-
-# 임시 신고 뷰
-# def post_report(request, pk):
-#    if request.method == 'POST':
-#        post = get_object_or_404(Post, id=post_id)
-#        post.is_reported = True
-#        post.save()
-#        return redirrect('boards/board_detail.html', post_id=post_id)
 
 def board_list(request):
     region_filter = request.GET.get('region', '')  # 주소 필터링 값을 가져옴
@@ -214,9 +196,22 @@ def comment_report(request, board_id, comment_id):
 def region_in_category(request, category_slug=None):
     current_category = None
     categories = RegionCategory.objects.all()
+    count = {}
 
     if category_slug:
         current_category = get_object_or_404(RegionCategory, slug=category_slug)
+
+    for category in categories :
+        count[str(category)] = category.count
+
+    sorted_count = dict(sorted(count.items(), key=lambda item: item[1], reverse=True))
+
+    top_categories = []
+    for category, _ in sorted_count.items():
+        if category not in top_categories and len(top_categories) < 3:
+            top_categories.append(category)
+
+    print(top_categories)
 
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
@@ -225,13 +220,18 @@ def region_in_category(request, category_slug=None):
         'selected_banner': selected_banner,
         'current_category': current_category,
         'categories': categories,
+        'top_categories': top_categories
     }
 
     return render(request, 'boards/message_main.html', context)
 
-
 def detail_in_category(request, category_slug=None):
-    region = get_object_or_404(RegionCategory, slug=category_slug)
+
+    region = RegionCategory.objects.get(slug=category_slug)
+
+    region.count += 1
+    region.save()
+
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
 
@@ -365,8 +365,11 @@ def shelter_location(request):
 
     api_json = geocode_myposition(locX, locY)
 
-    json_body = json.loads(api_json.text)
-    full_address = json_body['documents'][0]['road_address']['address_name']
+    if api_json.status_code == 200 :
+        json_body = json.loads(api_json.text)
+        full_address = json_body['documents'][0]['road_address']['address_name']
+    else:
+        full_address = "Address not available"
 
     avgX = (locX + shelterX[0] + shelterX[1] + shelterX[2] + shelterX[3] + shelterX[4]) / 6.0
     avgY = (locY + shelterY[0] + shelterY[1] + shelterY[2] + shelterY[3] + shelterY[4]) / 6.0

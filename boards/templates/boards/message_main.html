@@ -18,46 +18,20 @@
 
         <div class="fixArea"> <!--즐겨찾기 부분-->
             <div class="title">지역별 재난문자</div>
-            {% if user.is_authenticated %}
-            <div class="star">
-                <p class="starText">즐겨찾기</p>
-                <p class="starIcon"><img src="{% static 'image/star_black.png' %}" alt="별" class="change"></p>
-            </div>
-            {% endif %}
         </div>
 
-
-        <form method="post" name="area" id="area">
-            {% if user.is_authenticated %}
-                <!--즐겨찾기 박스들-->
-                <div class="areaBox">
-                    <div>
-                        <button type="button" class="starBtn" onclick="toggleImage(this)">
-                            <img src="{% static 'image/star_black.png' %}" alt="별">
-                        </button>
-                        <a href="#">
-                            <div class="box">
-                                <p class="areaName">서울</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-            <hr class="line">
-            {% endif %}
+        <div name="area" id="area">
             <!--지역별-->
             <div class="areaBox">
                 {% for c in categories %}
                 <div>
-                    {% if user.is_authenticated %}
-                    <button type="button" class="starBtn" onclick="toggleImage(this)">
-                        <img src="{% static 'image/star_white.png' %}" alt="별">
-                    </button>
-                    {% else %}
                     <button type="button" class="starBtn">
+                        {% if c.region_name in top_categories %}
+                        <img src="{% static 'image/star_black.png' %}" alt="별">
+                        {% else %}
                         <img src="{% static 'image/white_box.png' %}" alt="별">
+                        {% endif %}
                     </button>
-                    {% endif %}
                     <a href="{{ c.get_absolute_url }}">
                         <div class="box">
                             <p class="areaName">{{ c.region_name }}</p>
@@ -66,6 +40,6 @@
                 </div>
                 {% endfor %}
             </div>
-        </form>
+        </div>
     <script src="{% static 'js/messageMain.js' %}"></script>
 {% endblock %}

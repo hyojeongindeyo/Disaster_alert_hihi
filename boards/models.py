@@ -9,8 +9,8 @@ from django.urls import reverse
 class RegionCategory(models.Model):
     region_name = models.CharField(max_length=20, db_index=True)
     region_num = models.IntegerField(unique=True)
-
     slug = models.SlugField(max_length=200, db_index=True, allow_unicode=True)
+    count = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['region_name']
@@ -30,13 +30,6 @@ class RegionCategory(models.Model):
         except cls.DoesNotExist:
             return None
 
-class RegionStar(models.Model) :
-    region = models.ForeignKey(RegionCategory, on_delete=models.CASCADE, related_name='star_region')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='star_user')
-    star = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.user
 
 class Board(models.Model):
     category = models.ForeignKey(RegionCategory, on_delete=models.SET_NULL, null=True, related_name='region')
