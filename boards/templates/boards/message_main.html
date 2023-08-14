@@ -18,49 +18,16 @@
 
         <div class="fixArea"> <!--즐겨찾기 부분-->
             <div class="title">지역별 재난문자</div>
-            {% if user.is_authenticated %}
-            <div class="star">
-                <p class="starText">즐겨찾기</p>
-                <p class="starIcon"><img src="{% static 'image/star_black.png' %}" alt="별" class="change"></p>
-            </div>
-            {% endif %}
         </div>
 
-
         <div name="area" id="area">
-            {% csrf_token %}
-            {% if user.is_authenticated %}
-                <!--즐겨찾기 박스들-->
-                <div class="areaBox">
-                    <div>
-                        <button type="button" class="starBtn" onclick="toggleImage(this)">
-                            <img src="{% static 'image/star_white.png' %}" alt="별">
-                        </button>
-                        <a href="">
-                            <div class="box">
-                                <p class="areaName"></p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            <hr class="line">
-            {% endif %}
             <!--지역별-->
             <div class="areaBox">
                 {% for c in categories %}
                 <div>
-                    {% if user.is_authenticated %}
-                    <form action="{% url 'category_star' c.slug %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="starBtn" onclick="toggleImage(this)">
-                            <img src="{% static 'image/star_white.png' %}" alt="별">
-                        </button>
-                    </form>
-                    {% else %}
                     <button type="button" class="starBtn">
                         <img src="{% static 'image/white_box.png' %}" alt="별">
                     </button>
-                    {% endif %}
                     <a href="{{ c.get_absolute_url }}">
                         <div class="box">
                             <p class="areaName">{{ c.region_name }}</p>

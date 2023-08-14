@@ -200,11 +200,6 @@ def region_in_category(request, category_slug=None):
     if category_slug:
         current_category = get_object_or_404(RegionCategory, slug=category_slug)
 
-    if request.method == 'POST' :
-        print(request.POST)
-        print(request.user)
-        print(current_category)
-
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
 
