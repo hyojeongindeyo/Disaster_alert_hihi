@@ -18,9 +18,12 @@
                 확인해주시고 스팸폴더를 확인해주세요</p>
 
         </div>
-        <form action="">
-            <div class="button">
-                <button type="submit"><a href="{% url 'accounts:login' %}">로그인</a></button>
-            </div>
-        </form>
+        <a href="{% url 'accounts:login' %}">
+            <form action="">
+                <div class="button">
+                    <button type="button">로그인</button>
+                </div>
+            </form>
+        </a>
+        
 {% endblock %}

@@ -47,6 +47,8 @@ body {
     margin-top: 22px;
     margin-left: 103px;
     margin-right: 104px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* 닉네임 */

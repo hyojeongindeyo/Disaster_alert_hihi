@@ -66,19 +66,6 @@ body {
 
 /* 버튼 */
 
-.button > button > a {
-    font-family: 'GmarketSansMedium';
-    color: #FFF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-}
-
-
-
-
 
 .button button {
     width: 298px;
@@ -90,6 +77,12 @@ body {
     margin-left: 38px;
     border: none;
     text-decoration: none;
+    color: #FFF;
+    font-family: 'GmarketSansMedium';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
    
 
 }
