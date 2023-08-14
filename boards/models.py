@@ -140,3 +140,14 @@ class ImageMulti(models.Model) :
 class Banner(models.Model) :
     bannerwinner = models.ImageField(upload_to='banner/%Y/%m/%d', null=True)
     banner_title = models.CharField(max_length=50, null = True)
+
+class Behavior(models.Model):
+    card = models.ForeignKey(CardNews, on_delete=models.CASCADE, related_name='cardnews_behavior')
+    title_cd = models.IntegerField()
+    title_nm = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    create_date = models.DateTimeField(auto_now_add=True)
+
+class BehaviorImage(models.Model):
+    behavior = models.ForeignKey(Behavior, on_delete=models.CASCADE, related_name='behavior')
+    image = models.ImageField(upload_to='cardnews/%Y/%m/%d', null=True, blank=True)
