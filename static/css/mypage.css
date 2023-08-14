@@ -358,7 +358,8 @@ body {
 /*위치 알려주는 부분*/
 .okay-button {
     background-color: #ABD4FA;
-    margin-top: 7px;
+    margin-top: 10px; /*수정 7->10*/
+    padding-top: 3px; /*추가*/
 }
 
 #result-info {

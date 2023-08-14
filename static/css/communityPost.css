@@ -59,6 +59,8 @@ body {
     width: 24px;
     height: 24px;
     margin-right: 6px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .userInfo {
@@ -226,6 +228,8 @@ form {
 .commentsUser > img {
     width: 19px;
     height: 19px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .commentsName {
@@ -380,6 +384,7 @@ form {
     padding: 0;
     text-align: center;
     z-index: 999;
+    border: 1px solid #EDEDED;
 }
 
 .modal-content > p {
