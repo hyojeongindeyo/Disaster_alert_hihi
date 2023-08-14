@@ -82,6 +82,8 @@ select::-ms-expand {
 .profile {
     width: 29px;
     height: 29px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .login {
