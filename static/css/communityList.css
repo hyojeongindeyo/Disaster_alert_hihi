@@ -138,6 +138,8 @@ select::-ms-expand {
     height: 24px;
     margin-right: 6px;
     margin-top: 2px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .userInfo {
