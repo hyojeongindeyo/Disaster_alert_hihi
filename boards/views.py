@@ -196,9 +196,22 @@ def comment_report(request, board_id, comment_id):
 def region_in_category(request, category_slug=None):
     current_category = None
     categories = RegionCategory.objects.all()
+    count = {}
 
     if category_slug:
         current_category = get_object_or_404(RegionCategory, slug=category_slug)
+
+    for category in categories :
+        count[str(category)] = category.count
+
+    sorted_count = dict(sorted(count.items(), key=lambda item: item[1], reverse=True))
+
+    top_categories = []
+    for category, _ in sorted_count.items():
+        if category not in top_categories and len(top_categories) < 3:
+            top_categories.append(category)
+
+    print(top_categories)
 
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
@@ -207,12 +220,18 @@ def region_in_category(request, category_slug=None):
         'selected_banner': selected_banner,
         'current_category': current_category,
         'categories': categories,
+        'top_categories': top_categories
     }
 
     return render(request, 'boards/message_main.html', context)
 
 def detail_in_category(request, category_slug=None):
-    region = get_object_or_404(RegionCategory, slug=category_slug)
+
+    region = RegionCategory.objects.get(slug=category_slug)
+
+    region.count += 1
+    region.save()
+
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
 
