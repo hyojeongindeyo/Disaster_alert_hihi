@@ -2,9 +2,6 @@ import math
 import time
 from itertools import islice
 
-from collections import defaultdict
-from django.db.models import F
-
 from django.contrib.auth.decorators import login_required
 import csv
 
@@ -18,11 +15,17 @@ import random
 from .forms import boardForm, commentForm
 from .models import *
 from django.contrib import messages
+from django.db.models import F
 
 import os
 from dotenv import load_dotenv
+import logging
+from collections import defaultdict
 
 load_dotenv()
+
+logger = logging.getLogger(__name__)
+
 
 # Create your views here.
 
@@ -122,7 +125,7 @@ def board_update(request, pk):
             # 사용자가 선택한 지역 이름
             selected_region_name = request.POST.get('region')
 
-            if request.POST.get('info_image') == '' :
+            if request.POST.get('info_image') == '':
                 board.info_image = ''
 
             try:
@@ -181,12 +184,13 @@ def board_report(request, pk):
         board.count += 1
         if board.count == 3:
             board.delete()
-        else :
+        else:
             board.save()
     else:
         messages.warning(request, '이미 신고한 게시글 입니다.')
 
     return redirect('board_list')
+
 
 def comment_report(request, board_id, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
@@ -199,12 +203,13 @@ def comment_report(request, board_id, comment_id):
         comment.count += 1
         if comment.count == 3:
             comment.delete()
-        else :
+        else:
             comment.save()
     else:
         messages.warning(request, '이미 신고한 댓글 입니다.')
 
     return redirect('board_detail', pk=board_id)
+
 
 def region_in_category(request, category_slug=None):
     current_category = None
@@ -224,23 +229,22 @@ def region_in_category(request, category_slug=None):
 
     return render(request, 'boards/message_main.html', context)
 
-def detail_in_category(request, category_slug=None):
 
+def detail_in_category(request, category_slug=None):
     region = get_object_or_404(RegionCategory, slug=category_slug)
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
 
     context = {
         'selected_banner': selected_banner,
-        'region' : region,
-        'appkey' : os.getenv('MESSAGE_KEY')
+        'region': region,
+        'appkey': os.getenv('MESSAGE_KEY')
     }
 
     return render(request, 'boards/message_detail.html', context)
 
 
-def BtoW_coordinate_transform(x1, y1) :
-
+def BtoW_coordinate_transform(x1, y1):
     inProj = Proj(init='epsg:2097')
     outProj = Proj(init='epsg:4326')
 
@@ -248,19 +252,18 @@ def BtoW_coordinate_transform(x1, y1) :
 
     return x2, y2
 
-def WtoB_coordinate_transform(a,b) :
 
+def WtoB_coordinate_transform(a, b):
     inProj = Proj(init='epsg:4326')
     outProj = Proj(init='epsg:2097')
-
 
     x1, y1 = a, b
     x2, y2 = transform(inProj, outProj, x1, y1)  # 구형 좌표계를 투영 좌표계로 변환
 
     return x2, y2
 
-def shelter_enter(request):
 
+def shelter_enter(request):
     locX = 127.048995
     locY = 37.5571237
 
@@ -275,22 +278,22 @@ def shelter_enter(request):
     shelterX = []
     shelterY = []
 
-    for line in rdr :
+    for line in rdr:
         if line[7] == '01':
             x2 = line[26]
             y2 = line[27]
-            if x2=='' or y2== '' :
+            if x2 == '' or y2 == '':
                 pass
-            else :
-                x = float(x1)-float(x2)
-                y = float(y1)-float(y2)
+            else:
+                x = float(x1) - float(x2)
+                y = float(y1) - float(y2)
                 locLength[float(math.sqrt(pow(x, 2) + pow(y, 2)))] = [line[19], line[21], line[26], line[27]]
 
     dic = dict(sorted(locLength.items()))
     dic = dict(islice(dic.items(), 5))
     result = list(dic.values())
 
-    for i in result :
+    for i in result:
         x, y = BtoW_coordinate_transform(float(i[2]), float(i[3]))
         locLoc.append(i[0])
         locName.append(i[1])
@@ -313,8 +316,8 @@ def shelter_enter(request):
 
     return render(request, 'boards/shelter_first.html', context)
 
-def shelter_location(request):
 
+def shelter_location(request):
     locX = 0
     locY = 0
 
@@ -334,22 +337,22 @@ def shelter_location(request):
     shelterX = []
     shelterY = []
 
-    for line in rdr :
+    for line in rdr:
         if line[7] == '01':
             x2 = line[26]
             y2 = line[27]
-            if x2=='' or y2== '' :
+            if x2 == '' or y2 == '':
                 pass
-            else :
-                x = float(x1)-float(x2)
-                y = float(y1)-float(y2)
+            else:
+                x = float(x1) - float(x2)
+                y = float(y1) - float(y2)
                 locLength[float(math.sqrt(pow(x, 2) + pow(y, 2)))] = [line[19], line[21], line[26], line[27]]
 
     dic = dict(sorted(locLength.items()))
     dic = dict(islice(dic.items(), 5))
     result = list(dic.values())
 
-    for i in result :
+    for i in result:
         x, y = BtoW_coordinate_transform(float(i[2]), float(i[3]))
         locLoc.append(i[0])
         locName.append(i[1])
@@ -380,13 +383,13 @@ def shelter_location(request):
         'shelterXs': shelterX,
         'shelterYs': shelterY,
         'kakao_key': os.getenv('KAKAO_APP_KEY'),
-        'full_address' : full_address
+        'full_address': full_address
     }
 
     return render(request, 'boards/shelter.html', context)
 
-def geocode_myposition(locX, locY) :
 
+def geocode_myposition(locX, locY):
     kakao_url = f'https://dapi.kakao.com/v2/local/geo/coord2address.json?x={locX}&y={locY}&input_coord=WGS84'
     headers = {'Authorization': f'KakaoAK {os.getenv("KAKAO_REST_API")}'}
     api_json = requests.get(kakao_url, headers=headers)
@@ -404,27 +407,30 @@ def random_banner(request):
 
     return render(request, 'boards/board_main_page.html', context)
 
-def actions(request) :
+
+def actions(request):
     return render(request, 'boards/actionTips_main.html')
 
 
 def manuals(request):
     menus = CardNews.objects.filter(kind='메뉴얼').order_by('-id')
-    return render(request, 'boards/actionTips_menual.html', {'menus':menus})
+    return render(request, 'boards/actionTips_menual.html', {'menus': menus})
+
 
 def cardNews(request):
     cards = CardNews.objects.filter(kind='카드뉴스').order_by('-id')
-    return render(request, 'boards/actionTips_cardnews.html', {'cards':cards})
+    return render(request, 'boards/actionTips_cardnews.html', {'cards': cards})
+
 
 def manual_view(request, card_id):
-    #manual = ImageMulti.objects.get(card_id=card_id)
+    # manual = ImageMulti.objects.get(card_id=card_id)
     behaviors = Behavior.objects.filter(card_id=card_id)
     behaviors_with_images = BehaviorImage.objects.select_related('behavior').filter(behavior__in=behaviors).values(
-        card_id = F('behavior__card'),
-        title_cd = F('behavior__title_cd'),
-        title_nm = F('behavior__title_nm'),
-        description = F('behavior__description'),
-        image_src = F('image'))
+        card_id=F('behavior__card'),
+        title_cd=F('behavior__title_cd'),
+        title_nm=F('behavior__title_nm'),
+        description=F('behavior__description'),
+        image_src=F('image'))
 
     title_cd_dict = defaultdict(list)
     for data in behaviors_with_images:
@@ -440,7 +446,7 @@ def manual_view(request, card_id):
             'image_src': [data['image_src'] for data in behaviors_with_images],
         }
         result.append(result_data)
-    #print(result)
+    # print(result)
 
     manual_type_nm = "none"
     if card_id == 1:
@@ -452,10 +458,43 @@ def manual_view(request, card_id):
 
     context = {
         'behaviors': result,
-        'type':manual_type_nm,
+        'type': manual_type_nm,
     }
-    #print(behaviors_with_images)
+    # print(behaviors_with_images)
     return render(request, 'boards/manual_view.html', context)
+
+
+def cardnews_view(request, card_id):
+    behaviors = Behavior.objects.filter(card_id=card_id)
+    behaviors_with_images = BehaviorImage.objects.select_related('behavior').filter(behavior__in=behaviors).values(
+        card_id=F('behavior__card'),
+        title_cd=F('behavior__title_cd'),
+        title_nm=F('behavior__title_nm'),
+        description=F('behavior__description'),
+        created_date=F('behavior__create_date'),
+        image_src=F('image'))
+
+    title_cd_dict = defaultdict(list)
+    for data in behaviors_with_images:
+        title_cd_dict[data['title_cd']].append(data)
+
+    result = []
+    for title_cd, behaviors_with_images in title_cd_dict.items():
+        result_data = {
+            'card_id': behaviors_with_images[0]['card_id'],
+            'title_cd': title_cd,
+            'title_nm': behaviors_with_images[0]['title_nm'],
+            'description': behaviors_with_images[0]['description'],
+            'created_date': behaviors_with_images[0]['created_date'],
+            'image_src': [data['image_src'] for data in behaviors_with_images],
+        }
+        result.append(result_data)
+
+    print(result)
+    context = {
+        'behaviors': result,
+    }
+    return render(request, 'boards/cardnews_detail.html', context)
 # def card_view(request, card_id):
 #    card = ImageMulti.objects.get(card_id=card_id)
 #    card_type_nm = "none"
