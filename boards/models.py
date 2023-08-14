@@ -33,7 +33,7 @@ class RegionCategory(models.Model):
 class RegionStar(models.Model) :
     region = models.ForeignKey(RegionCategory, on_delete=models.CASCADE, related_name='star_region')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='star_user')
-    star = models.BooleanField(default=False)
+    starred = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user
