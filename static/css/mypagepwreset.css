@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
-
-* {
-    font-family: 'Inter', sans-serif;
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
     z-index: 0;
     background-color: #FFF;
     border: 1px solid #989898;
+    font-family: 'GmarketSansMedium';
 
 }
 
@@ -33,7 +35,6 @@ body {
 
 h3 {
     color: #2A2A2A;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -45,7 +46,6 @@ h3 {
 
 form>p {
     color: #000;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -122,7 +122,6 @@ form .pw-btn1 button {
     margin-bottom: 251px;
     border: none;
     color: #FFF;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
