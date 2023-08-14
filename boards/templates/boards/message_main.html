@@ -52,7 +52,6 @@
                     {% if user.is_authenticated %}
                     <form action="{% url 'category_star' c.slug %}" method="post">
                         {% csrf_token %}
-                        <input name="slug" value="{{ c.region_name }}" hidden>
                         <button type="submit" class="starBtn" onclick="toggleImage(this)">
                             <img src="{% static 'image/star_white.png' %}" alt="별">
                         </button>

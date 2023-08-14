@@ -197,6 +197,8 @@ def region_in_category(request, category_slug=None):
 
     if request.method == 'POST' :
         print(request.POST)
+        print(request.user)
+        print(current_category)
 
     banners = Banner.objects.all()
     selected_banner = random.choice(banners)
