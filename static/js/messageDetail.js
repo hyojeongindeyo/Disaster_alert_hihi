@@ -103,6 +103,20 @@ function getDisasterMessages(pageNumber) {
 
                 console.log(disasterMsgList);
 
+                //추가 코드: 문자가 잘 안 오는 제주도는 데이터가 상대적으로 적어서 다음페이지로 띄울 데이터가 없는 줄 알고
+                //다음페이지 버튼이 안 생김. 그래서 그런 경우를 위해 데이터가 10개보다 적거나 같으면 뒤에 1000개의 데이터를
+                //가져와서 배열에 추가하기로 함.
+                if(pageNumber === 1 && disasterMsgList.length <= 10) {
+                    var test = new Date(disasterMsgList[disasterMsgList.length - 1].create_date);
+                    test = test.getDate();
+
+                    if(test > thirtyDaysAgoDate.getDate()) {
+                        console.log(test > thirtyDaysAgoDate.getDate());
+                        console.log("데이터 모자라서 더 받기!");
+                        getDisasterMessages(2);
+                    }
+                }
+
                 messageListDiv = document.querySelector('.message-list');
 
                 // 페이지에 표시할 데이터 추가
