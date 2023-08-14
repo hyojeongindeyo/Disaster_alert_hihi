@@ -8,7 +8,7 @@
             <h4>{{type}} 시 행동요령</h4>
                 <div class="scrap-button">
                 <form action="" method="post">
-                    <input type="checkbox" id="scrap-checkbox" onclick="toggleStar()">
+                    <input type="checkbox" id="scrap-checkbox" onclick="toggleStar() " checked>
                     <label for="scrap-checkbox">
                         <span class="scrap-text">스크랩</span>
                         <span class="star">&#9734;</span>
@@ -21,20 +21,17 @@
         </div>
         <img src="{% static 'image/line.svg' %}" alt="">
         <div class="content">
+            {% for behavior in behaviors %}
             <div class="content1">
-                <h4>{{ manual.sub_title }}</h4>
+                <h4>{{behavior.title_nm}}</h4>
                 <div class="slide-container">
                     <h2 class="slide-title"></h2>
                     <ul class="slide">
+                        {% for image in behavior.image_src %}
                         <li>
-                            <img src="/{{ manual.image1 }}" alt="" />
+                            <img src="/{{ image }}" alt="" />
                         </li>
-                        <li>
-                            <img src="/{{ manual.image2 }}" alt="" />
-                        </li>
-                        <li>
-                            <img src="/{{ manual.image3 }}" alt="" />
-                        </li>
+                        {% endfor %}
                     </ul>
                     <div class="btn-container">
                         <button class="prev-btn">prev</button>
@@ -42,60 +39,11 @@
                     </div>
                 </div>
                 <div class="text">
-                    <p>{{manual.description|linebreaksbr }}</p>
+                    <p>{{behavior.description|linebreaksbr }}</p>
                 </div>
             </div>
-            <div class="content2">
-                <h4>{{ manual.sub_title2 }}</h4>
-                <div class="slide-container">
-                    <h2 class="slide-title"></h2>
-                    <ul class="slide">
-                        <li>
-                            <img src="/{{ manual.image4 }}" alt="">
-                        </li>
-                        <li>
-                            <img src="/{{ manual.image5 }}" alt="" />
-                        </li>
-                        <li>
-                            <img src="/{{ manual.image6 }}" alt="" />
-                        </li>
+            {% endfor %}
 
-                    </ul>
-                    <div class="btn-container">
-                        <button class="prev-btn">prev</button>
-                        <button class="next-btn">next</button>
-                    </div>
-                </div>
-                <div class="text">
-
-                    <p>{{manual.description_2|linebreaksbr }}</p>
-                </div>
-            </div>
-            <div class="content3">
-                <h4>{{ manual.sub_title3 }}</h4>
-                <div class="slide-container">
-                    <h2 class="slide-title"></h2>
-                    <ul class="slide">
-                        <li>
-                            <img src="/{{ manual.image7 }}" alt="" />
-                        </li>
-                        <li>
-                            <img src="/{{ manual.image8 }}" alt="" />
-                        </li>
-                        <li>
-                            <img src="/{{ manual.image9 }}" alt="" />
-                        </li>
-                    </ul>
-                    <div class="btn-container">
-                        <button class="prev-btn">prev</button>
-                        <button class="next-btn">next</button>
-                    </div>
-                </div>
-                <div class="text">
-
-                    <p>{{manual.description_3|linebreaksbr }}</p>
-                </div>
-            </div>
         </div>
         <script src="{% static 'js/manual_scrap.js' %}"></script>
 {% endblock %}

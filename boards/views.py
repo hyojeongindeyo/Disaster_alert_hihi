@@ -3,6 +3,9 @@ import time
 from itertools import islice
 from django.http import JsonResponse
 
+from collections import defaultdict
+from django.db.models import F
+
 from django.contrib.auth.decorators import login_required
 import csv
 
@@ -404,7 +407,31 @@ def cardNews(request):
     return render(request, 'boards/actionTips_cardnews.html', {'cards':cards})
 
 def manual_view(request, card_id):
-    manual = ImageMulti.objects.get(card_id=card_id)
+    #manual = ImageMulti.objects.get(card_id=card_id)
+    behaviors = Behavior.objects.filter(card_id=card_id)
+    behaviors_with_images = BehaviorImage.objects.select_related('behavior').filter(behavior__in=behaviors).values(
+        card_id = F('behavior__card'),
+        title_cd = F('behavior__title_cd'),
+        title_nm = F('behavior__title_nm'),
+        description = F('behavior__description'),
+        image_src = F('image'))
+
+    title_cd_dict = defaultdict(list)
+    for data in behaviors_with_images:
+        title_cd_dict[data['title_cd']].append(data)
+
+    result = []
+    for title_cd, behaviors_with_images in title_cd_dict.items():
+        result_data = {
+            'card_id': behaviors_with_images[0]['card_id'],
+            'title_cd': title_cd,
+            'title_nm': behaviors_with_images[0]['title_nm'],
+            'description': behaviors_with_images[0]['description'],
+            'image_src': [data['image_src'] for data in behaviors_with_images],
+        }
+        result.append(result_data)
+    #print(result)
+
     manual_type_nm = "none"
     if card_id == 1:
         manual_type_nm = "태풍"
@@ -412,8 +439,13 @@ def manual_view(request, card_id):
         manual_type_nm = "지진"
     elif card_id == 6:
         manual_type_nm = "호우"
-    return render(request, 'boards/manual_view.html', {'manual': manual, 'type':manual_type_nm})
 
+    context = {
+        'behaviors': result,
+        'type':manual_type_nm,
+    }
+    #print(behaviors_with_images)
+    return render(request, 'boards/manual_view.html', context)
 # def card_view(request, card_id):
 #    card = ImageMulti.objects.get(card_id=card_id)
 #    card_type_nm = "none"

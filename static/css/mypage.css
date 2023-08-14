@@ -47,6 +47,8 @@ body {
     margin-top: 22px;
     margin-left: 103px;
     margin-right: 104px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* 닉네임 */
@@ -115,23 +117,23 @@ body {
 }
 
 /* email */
-.email {
+/* .email {
     width: 180px;
     height: 23px;
     margin-left: 100px;
     margin-right: 104px;
     margin-bottom: 16px;
   
-    /* text-align: center; */
+    text-align: center; 
     
    
 
-}
+} */
 
 .email>p {
+    font-family: 'GmarketSansMedium';
     color: #878080;
-    font-family: Inter;
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
