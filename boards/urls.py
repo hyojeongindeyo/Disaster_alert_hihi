@@ -29,8 +29,6 @@ urlpatterns = [
     path('cardnews_type/<int:card_id>', cardnews_view, name='cardnews_view'),
     path('manuals/', manuals, name='manuals'),
     path('cardNews/', cardNews, name='cardNews'),
-    # 이 부분도 살릴 수 있으면 그때 살리고 정 아니면 그냥 죽일게요.
-    # path('card/scrap/<int:card_id>/', manual_scrap, name='manual_scrap')
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

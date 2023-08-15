@@ -12,8 +12,7 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('my_page/<int:pk>/', views.my_page, name='my_page'),
     path('my_page_update/<int:pk>/', views.my_page_update, name='my_page_update'),
-    # path('profile_page/<int:pk>', views.profile_page, name="profile_page"),
-    # path('my_page/update/<int:pk>', views.my_page_update, name="my_page_update"),
+    path('my_page_scrap/<int:pk>/', views.my_page_scrap, name='my_page_scrap'),
     path('password_reset/', views.password_reset_request, name="pwfind"),
 
 

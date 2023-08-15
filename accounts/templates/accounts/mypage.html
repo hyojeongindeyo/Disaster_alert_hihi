@@ -56,18 +56,13 @@
 
         <div class="section2">
             <img src="{% static 'image/ph-newspaper-clipping-light.svg' %}" alt="">
-            <a href="scrap.html">
+            <a href="{% url 'accounts:my_page_scrap' pk=user.id %}">
                 <p>내가 스크랩한 글</p>
             </a>
         </div>
     </div>
     <img src="{% static 'image/line.svg'% }" alt="">
 
-    <!-- 탈퇴하기 -->
-    <!-- 혹시 몰라서 button 태그 주석처리 했어요  -->
-        <!-- <div class="button">
-            <button onclick="location.href='{% url 'accounts:logout' %}'">로그아웃하기</button>
-        </div> -->
         <div class="logout">
             <a class="btn" href="{% url 'accounts:logout' %}">로그아웃</a>
         </div>
