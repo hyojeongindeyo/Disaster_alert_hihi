@@ -32,11 +32,9 @@ body {
 
 /* 캐러슬 시작 */
 .slide-container {
-    width: 300px;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
-    /* background: rgba(245, 97, 204, 0.53); */
 }
 
 .slide {
@@ -45,14 +43,11 @@ body {
     margin: 0;
     padding: 0;
     width: 900px;
-    /* background-color: aqua; */
 }
 
 .slide li {
-    /* width: 280px;
-    height: 190px; */
-    
     margin-top: 0px;
+    margin-left: 37px;
     flex: 0 0 300px;
 }
 
@@ -60,13 +55,59 @@ body {
     width: 100%;
     height: auto;
     cursor: pointer; 
-
     border-radius: 10px;
     display: block;
     margin: 0 auto;
     margin: 13px 0px 34px;
 }
+
+.btn-container {
+    width: 375px;
+    height: 30px;
+    /* background-color: white; */
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    border: none;
+    margin-bottom: 120px;
+}
+
+.prev-btn{
+    display: block;
+    /* float: right; */
+    border: none;
+    /* margin-right: 295px; */
+    background-color: transparent;
+    border-radius: 7px;
+    /* margin-top: 5px; */
+    float: left;
+}
+
+.next-btn{
+    background-color: transparent;
+    border: none;
+    border-radius: 7px;
+    /* margin-top: 5px; */
+    /* float: right; */
+    display: block;
+    float: right;
+}
+
+.next-btn > img, .prev-btn > img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.6;
+}
+
+.prev {
+    transform: scaleX(-1);
+}
+
 /* 캐러슬 끝 */
+
 
 /* 한 페이지 당 전체 크기 */
 .tab_container {
