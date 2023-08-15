@@ -3,10 +3,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from django.contrib import auth
 from django.contrib.auth import authenticate, login
 
 from .models import *
+from boards.models import *
 from .forms import UserForm, UserChangeForm
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
@@ -64,6 +64,17 @@ def my_page_update(request, pk):
     else:
         form = UserChangeForm(instance=user)
     return render(request, "accounts/profile.html", {'form': form})
+
+def my_page_scrap(request, pk) :
+    user = get_object_or_404(User, pk=pk)
+    user_scrap = user.menu_card.all()
+
+    context = {
+        'user' : user,
+        'user_scrap' : user_scrap
+    }
+
+    return render(request, "accounts/scrap.html", context)
 
 
 def password_reset_request(request):

@@ -1,6 +1,6 @@
 from django import forms
-from .models import Board
-from .models import Comment
+from .models import Board, Comment, CardScrap
+
 
 # boardForm
 class boardForm(forms.ModelForm):
@@ -29,6 +29,8 @@ class commentForm(forms.ModelForm):
         model = Comment
         fields = ['description']
 
-# 임시 신고 form
-#class ReportForm(forms.Form):
-#    reason = forms.CharField(widget=forms.Textarea, max_length=200)
+class scrapForm(forms.ModelForm) :
+
+    class Meta :
+        model = CardScrap
+        fields = ['user', 'card', 'scrap']

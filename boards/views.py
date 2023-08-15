@@ -1,7 +1,6 @@
 import math
 import time
 from itertools import islice
-from django.http import JsonResponse
 
 from django.contrib.auth.decorators import login_required
 import csv
@@ -11,8 +10,9 @@ import requests, json
 from django.shortcuts import render, get_object_or_404, redirect
 import random
 
-from .forms import boardForm, commentForm
+from .forms import boardForm, commentForm, scrapForm
 from .models import *
+from accounts.models import User
 from django.contrib import messages
 from django.db.models import F
 
@@ -426,7 +426,24 @@ def cardNews(request):
 
 
 def manual_view(request, card_id):
-    # manual = ImageMulti.objects.get(card_id=card_id)
+    user_scrap = request.user.menu_card.all()
+    card = CardNews.objects.get(id=card_id)
+    existing_scrap = CardScrap.objects.filter(user=request.user, card=card).first()
+
+    if request.method == 'POST' :
+        scrap_value = request.POST.get('scrap')
+        if scrap_value is None:
+            if existing_scrap :
+                existing_scrap.delete()
+        else:
+            if existing_scrap :
+                existing_scrap.scrap = True
+            else :
+                scrap_card = CardScrap(user=request.user, card=card, scrap=True)
+                scrap_card.save()
+
+        return redirect('manual_view', card_id)
+
     behaviors = Behavior.objects.filter(card_id=card_id)
     behaviors_with_images = BehaviorImage.objects.select_related('behavior').filter(behavior__in=behaviors).values(
         card_id=F('behavior__card'),
@@ -449,7 +466,6 @@ def manual_view(request, card_id):
             'image_src': [data['image_src'] for data in behaviors_with_images],
         }
         result.append(result_data)
-    # print(result)
 
     manual_type_nm = "none"
     if card_id == 1:
@@ -462,8 +478,9 @@ def manual_view(request, card_id):
     context = {
         'behaviors': result,
         'type': manual_type_nm,
+        'card' : card,
+        'user_scrap': user_scrap
     }
-    # print(behaviors_with_images)
     return render(request, 'boards/manual_view.html', context)
 
 
@@ -498,27 +515,3 @@ def cardnews_view(request, card_id):
         'behaviors': result,
     }
     return render(request, 'boards/cardnews_detail.html', context)
-# def card_view(request, card_id):
-#    card = ImageMulti.objects.get(card_id=card_id)
-#    card_type_nm = "none"
-#    if card_id == 7:
-#        card_type_nm = "침수차량"
-#    elif card_id == 8:
-#        card_type_nm = "여름철"
-#    elif card_id == 9:
-#        card_type_nm = "손씻기"
-#    return render(request, 'boards/card_view.html', {'card': card, 'type':card_type_nm})
-
-## 이 부분은 현재 모델 고친다는 얘기 들었기 때문에 일단 주석처리하고 고치고 난 후에 다시 살릴게요.
-# def manual_scrap (request, card_id):
-#     card = get_object_or_404(CardNews, card_id=card_id)
-#     scrap = CardScrap.objects.filter(card=card, user=request.user).first()
-#
-#     if scrap is None:
-#         apply = CardScrap(card=card, user=request.user, scrap=True)
-#         apply.save()
-#     else:
-#         apply = CardScrap(card=card, user=request.user, scrap=False)
-#         apply.save()
-#
-#     return redirect('boards/manual_view.html', card_id)

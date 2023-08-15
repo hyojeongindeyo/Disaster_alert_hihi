@@ -7,8 +7,19 @@
         <div class="header">
             <h4>{{type}} 시 행동요령</h4>
                 <div class="scrap-button">
-                <form action="" method="post">
-                    <input type="checkbox" id="scrap-checkbox" onclick="toggleStar() " checked>
+                <form action="{% url 'manual_view' card_id=card.id %}" method="post" id="scrap_form">
+                    {% csrf_token %}
+                    {% if user_scrap %}
+                        {% for us in user_scrap %}
+                            {% if us.card.title in card.title %}
+                                <input type="checkbox" id="scrap-checkbox" name="scrap" onclick="toggleStar()" checked>
+                            {% else %}
+                                <input type="checkbox" id="scrap-checkbox" name="scrap" onclick="toggleStar()">
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <input type="checkbox" id="scrap-checkbox" name="scrap" onclick="toggleStar()">
+                    {% endif %}
                     <label for="scrap-checkbox">
                         <span class="scrap-text">스크랩</span>
                         <span class="star">&#9734;</span>
@@ -16,8 +27,6 @@
                     </label>
                 </form>
             </div>
-
-
         </div>
         <img src="{% static 'image/line.svg' %}" alt="">
         <div class="content">
