@@ -82,14 +82,14 @@ body {
 
 /*제목과 즐겨찾기 부분*/
 .fixArea {
-    height: 114px;
+    height: 80px;
     width: 328px;
     margin: 0 auto;
 }
 
 .title {
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .star {

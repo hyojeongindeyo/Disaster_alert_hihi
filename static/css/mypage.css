@@ -427,3 +427,18 @@ body {
     
     
 }
+
+/*추가*/
+@media screen and (max-height: 740px) {
+    .container {
+        height: 100%;
+        padding-bottom: 150px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .container {
+        height: 100%;
+        padding-bottom: 200px;
+    }
+}
