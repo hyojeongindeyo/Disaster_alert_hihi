@@ -6,13 +6,16 @@
         <div class="slide-container">
             <ul class="slide">
                 <li>
-                    <img src="{% static 'image/finedust-preview.png' %}" alt="" />
+                    <a href="{% url 'cardnews_view' card_id=2 %}"><img src="{% static 'image/finedust-preview.png' %}" alt="" /></a>
+
                 </li>
                 <li>
-                    <img src="{% static 'image/heatWave-preview.png' %}" alt="" />
+                    <a href="{% url 'cardnews_view' card_id=3 %}"><img src="{% static 'image/heatWave-preview.png' %}" alt="" /></a>
+
                 </li>
                 <li>
-                    <img src="{% static 'image/typhoon-preview.png' %}" alt="" />
+                    <a href=""><img src="{% static 'image/typhoon-preview.png' %}" alt="" /></a>
+
                 </li>
             </ul>
         </div>
