@@ -9,10 +9,27 @@
         <div class="banner" style="background-image: url('{{ selected_banner.bannerwinner.url }}')"> <!--여기!!!-->
             <p class="bannerTitle">{{ selected_banner.banner_title }}</p>
             <p class="move">
-                <a href="">
-                    <span class="text">알아보기</span>
-                    <img src="{% static 'image/arrow.svg' %}" alt="화살표">
-                </a>
+                {% if selected_banner.id == 5 %}
+                    <a href="{% url 'cardnews_view' card_id=2 %}">
+                        <span class="text">알아보기</span>
+                        <img src="{% static 'image/arrow.svg' %}" alt="화살표">
+                    </a>
+                {% elif selected_banner.id == 1 %}
+                    <a href="{% url 'manual_view' card_id=5 %}">
+                        <span class="text">알아보기</span>
+                        <img src="{% static 'image/arrow.svg' %}" alt="화살표">
+                    </a>
+                {% elif selected_banner.id == 2 %}
+                    <a href="{% url 'manual_view' card_id=1 %}">
+                        <span class="text">알아보기</span>
+                        <img src="{% static 'image/arrow.svg' %}" alt="화살표">
+                    </a>
+                {% elif selected_banner.id == 3 %}
+                    <a href="{% url 'manual_view' card_id=6 %}">
+                        <span class="text">알아보기</span>
+                        <img src="{% static 'image/arrow.svg' %}" alt="화살표">
+                    </a>
+                {% endif %}
             </p>
         </div>
 
