@@ -117,3 +117,18 @@ form>input {
     font-weight: 400;
     line-height: normal;
 }
+
+/*추가*/
+@media screen and (max-height: 740px) {
+    .container {
+        height: 100%;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .container {
+        height: 100%;
+        padding-bottom: 200px;
+    }
+}
