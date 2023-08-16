@@ -1,10 +1,12 @@
 const fileInput = document.getElementById('fileInput');
+const boolInput = document.getElementById('boolInput');
 const file = document.getElementById('fileName');
 const del = document.getElementById('del');
 let change = document.getElementById('change');
 
 // 이미지가 이미 선택되어 있는지 확인 후, 파일 이름을 표시
 window.onload=function(){
+
   if (change.src != '') {
     // console.log(encodeURI(change.src));
     let last = change.src.lastIndexOf('/')
@@ -12,8 +14,7 @@ window.onload=function(){
     name = decodeURIComponent(name);
     let test = name.substring(0, name.lastIndexOf('.'));
     let extension = name.substring(name.lastIndexOf('.'), name.length+1);
-    
-    console.log(name);
+
     if (name !== '') {
       if(test.length <= 10) {
         file.innerText = `${name}`;
@@ -107,6 +108,7 @@ del.addEventListener('click', () => {
   file.textContent = '';
   del.style.display = 'none';
   fileInput.value = "";
+  boolInput.value = "N";
 })
 
 // 등록 버튼 클릭 이벤트 처리

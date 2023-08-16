@@ -47,6 +47,7 @@ class Board(models.Model):
     region = models.CharField(max_length=20, choices=region_choice, null=True)
     count = models.IntegerField(default=0)
     complete = models.BooleanField(default=False)
+    image_del = models.BooleanField(default=False)
 
     def __str__(self):
         return self.description
