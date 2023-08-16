@@ -314,7 +314,7 @@ form {
 /* 댓글 부분 끝 */
 
 /*-------하단 메뉴바-------css */
-/* #ft {
+#ft {
     margin: 0;
     padding: 0;
     z-index: 998;
@@ -337,7 +337,7 @@ form {
 }
 
 .back > a > img {
-    width: 25x;
+    width: 25px;
     height: 23px;
     margin: 15px 0px;
 }
@@ -352,7 +352,7 @@ form {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
-} */
+}
 
 /*모달창*/
 .modal {
