@@ -3,6 +3,7 @@
 {% load static %}
 
     <link rel="stylesheet" href="{% static 'css/actionTips.css' %}">
+    <link rel="stylesheet" href="{% static 'css/actionTips_main.css' %}">
     <div class="nav_bar">
         <p>행동요령</p>
     </div>
@@ -27,7 +28,6 @@
                 </button>
             </div>
         </div>
-       
 
         <div class="tab_container">
             <ul class="tab_menu">
@@ -45,72 +45,109 @@
             </ul>
 
             <div id="tab_1" class="tab_content current">
-                <div class="search_container">
-                    <label>
-                        <input type="text" id="search" onkeyup="filter()" placeholder="검색어를 입력해주세요." />
-                        <span class="search_con" data-icon="ic:baseline-search"></span>
-                        <hr class="search_line">
-                    </label>
-                </div>
                 <div class="tab_menual_container">
                     <div class="listInner">
-                        <div class="tab_cardnews_box">
-                            <a href="{% url 'cardnews_view' card_id=7 %}">
-                                <div class="cd-image">
-                                    <img class="hashtag" src="{% static 'image/floodedCar_000.png' %}" alt="">
+                        <div class="tab_cardnews_box_main">
+                            <div class="slide-container">
+                                <ul class="slide">
+                                    <li class="slide_cardnewsBox">
+                                        <a href="{% url 'cardnews_view' card_id=7 %}">
+                                            <div class="cd-image_main1">
+                                                <img class="hashtag" src="{% static 'image/waterCar_000.png' %}" alt="">
+                                            </div>
+                                            <div class="cd-hashtag_main1">
+                                                <p class="p-cardnews">#카드뉴스</p>
+                                            </div>
+                                            <div class="cd-text_main1">
+                                                <p class="title">침수차량 탈출법</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="slide_cardnewsBox">
+                                        <a href="{% url 'cardnews_view' card_id=9 %}">
+                                            <div class="cd-image_main1">
+                                                <img class="hashtag" src="{% static 'image/handWash_000png' %}" alt="">
+                                            </div>
+                                            <div class="cd-hashtag_main1">
+                                                <p class="p-cardnews">#카드뉴스</p>
+                                            </div>
+                                            <div class="cd-text_main1">
+                                                <p class="title">감염병 예방</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="slide_cardnewsBox">
+                                        <a href="{% url 'cardnews_view' card_id=8 %}">
+                                            <div class="cd-image_main1">
+                                                <img class="hashtag" src="{% static 'image/summerLeisure_000.png' %}" alt="">
+                                            </div>
+                                            <div class="cd-hashtag_main1">
+                                                <p class="p-cardnews">#카드뉴스</p>
+                                            </div>
+                                            <div class="cd-text_main1">
+                                                <p class="title">여름철 수상레저</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="btn-container_main1">
+                                    <button class="prev-btn">
+                                        <img src="{% static 'image/newsArrow.png' %}" alt="뒤로가기" class="prev">
+                                        
+                                    </button>
+                                    <button class="next-btn">
+                                        <img src="{% static 'image/newsArrow.png' %}" alt="앞으로 가기">
+                                    </button>
                                 </div>
-                                <div class="cd-hashtag">
-                                    <p class="p-cardnews">#카드뉴스</p>
-                                </div>
-                                <div class="cd-text">
-                                    <p class="title">침수차량 탈출법</p>
-                                </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="mainLine"></div>
-                    <div class="listInner">
-                        <div class="menual_box">
-                            <a href="{% url 'manual_view' card_id=1 %}">
-                                <p class="title">태풍 발생 시 행동요령</p>
-                                <ul class="hashtag">
-                                    <li>#태풍_예보_시</li>
-                                    <li>#태풍_특보_시</li>
-                                    <li>#태풍_특보_중</li>
-                                </ul>
-                            </a>
-                            <hr class="menual_line">
+                    <div class="mainBox">
+                        <div class="mainLine"></div>
+                        <div class="listInner">
+                            <div class="menual_box">
+                                <a href="{% url 'manual_view' card_id=1 %}">
+                                    <p class="title">태풍 발생 시 행동요령</p>
+                                    <ul class="hashtag">
+                                        <li>#태풍_예보_시</li>
+                                        <li>#태풍_특보_시</li>
+                                        <li>#태풍_특보_중</li>
+                                    </ul>
+                                </a>
+                                <hr class="menual_line">
+                            </div>
                         </div>
-                    </div>
-                    <div class="listInner">
-                        <div class="menual_box">
-                            <a href="{% url 'manual_view' card_id=5 %}">
-                                <p class="title">지진 발생 시 행동요령</p>
-                                <ul class="hashtag">
-                                    <li>#지진_예보시</li>
-                                    <li>#지진경보</li>
-                                </ul>
-                            </a>
-                            <hr class="menual_line">
+                        <div class="listInner">
+                            <div class="menual_box">
+                                <a href="{% url 'manual_view' card_id=5 %}">
+                                    <p class="title">지진 발생 시 행동요령</p>
+                                    <ul class="hashtag">
+                                        <li>#지진_예보시</li>
+                                        <li>#지진경보</li>
+                                    </ul>
+                                </a>
+                                <hr class="menual_line">
+                            </div>
                         </div>
-                    </div>
-                    <div class="listInner">
-                        <div class="menual_box">
-                            <a href="{% url 'manual_view' card_id=6 %}">
-                                <p class="title">호우 발생 시 행동요령</p>
-                                <ul class="hashtag">
-                                    <li>#사전준비</li>
-                                    <li>#호우특보</li>
-                                    <li>#호우_이후</li>
-                                </ul>
-                            </a>
-                            <hr class="menual_line">
+                        <div class="listInner">
+                            <div class="menual_box">
+                                <a href="{% url 'manual_view' card_id=6 %}">
+                                    <p class="title">호우 발생 시 행동요령</p>
+                                    <ul class="hashtag">
+                                        <li>#사전준비</li>
+                                        <li>#호우특보</li>
+                                        <li>#호우_이후</li>
+                                    </ul>
+                                </a>
+                                <hr class="menual_line">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/cardnews_detail.js'}"></script>
     <script src="{% static 'js/actionTips_search.js' %}"></script>
-    <script src="{% static 'js/cardnews_detail.js' %}"></script>
+    <script src="{% static 'js/actionTips_carousel.js' %}"></script>
 {% endblock %}
