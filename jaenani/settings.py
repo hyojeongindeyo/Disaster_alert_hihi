@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-9%mwuutvcd$ih#6_id8&y*ddxv*sf4^v_v5!xc-8+rt=433b1m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -143,14 +143,13 @@ MEDIA_URL = '/'
 
 # admin 수정
 AUTH_USER_MODEL = 'accounts.User'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/boards/board/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 # session
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-CSRF_COOKIE_SECURE = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 PROTOCOL = 'http'
