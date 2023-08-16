@@ -2,6 +2,9 @@
 {% block content %}
 {% load static %}
     <link rel="stylesheet" href="{% static 'css/communityEdit.css' %}">
+        <div class="nav_bar">
+        <p>게시글 수정</p>
+        </div>
         <form  class="editText" method="POST" action="{% url 'board_update' pk=board.pk %}" enctype="multipart/form-data">
             {% csrf_token %}
             <select name="region" id="area" required>

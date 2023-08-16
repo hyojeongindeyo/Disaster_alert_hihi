@@ -2,6 +2,9 @@
 {% block content %}
 {% load static %}
     <link rel="stylesheet" href="{% static 'css/communityList.css' %}">
+        <div class="nav_bar">
+        <p>지역별 커뮤니티</p>
+      </div>
         <div class="hd"> <!-- 커뮤니티 상단 -->
             <form method="GET" class="areaSelect" action="{% url 'board_list' %}" > <!-- select box form으로 묶기-->
                 <select name="region" id="area" onchange="this.form.submit()" required>
