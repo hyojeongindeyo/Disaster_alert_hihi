@@ -107,8 +107,14 @@ def board_update(request, pk):
             # 사용자가 선택한 지역 이름
             selected_region_name = request.POST.get('region')
 
-            if request.POST.get('info_image') == '':
-                board.info_image = ''
+            if request.POST.get('info_image') == '' :
+                if request.POST.get('image_del') == 'N' :
+                    board.info_image = ''
+                else :
+                    board.info_image = board.info_image
+
+            else :
+                board.info_image = board.info_image
 
             try:
                 # 사용자가 선택한 지역 이름으로 'RegionCategory' 모델에서 인스턴스를 찾음

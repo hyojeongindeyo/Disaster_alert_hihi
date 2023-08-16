@@ -18,6 +18,7 @@
                 <button type="submit" id="stop">등록</button>
             </div>
             <input type="hidden" name="username" value="{{ user.username }}" />
+            <input type="hidden" id="boolInput" name="image_del" value="Y">
             <textarea name="description" rows="0" id="editArea" maxlength="150" oninput="maxLengthCheck(this)">{{ board.description }}</textarea>
             <div id="charCount">(0 / 150)</div> <!--글자수-->
 
@@ -28,6 +29,7 @@
             {% else %}
             <img src='' alt=" " id="change" onerror="this.style.display='none'">
             {% endif %}
+
 
             <div class="image"> <!--사진 등록 부분-->
                 <label for="fileInput" id="imageButton">
