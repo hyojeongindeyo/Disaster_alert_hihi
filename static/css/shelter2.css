@@ -136,7 +136,14 @@ body {
 
 }
 
-
+#messsage_shelter {
+    width : 125px;
+    height : auto;
+    text-align : center;
+    padding-left : 10px;
+    border-radius : 10px;
+    border-color : #D9D9D9;
+}
 
 
 
