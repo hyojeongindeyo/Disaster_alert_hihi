@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{% static 'css/messageMain.css' %}">
         <!-- 배너 -->
-        <div class="banner" style="background-image: url('{{ selected_banner.bannerwinner.url }}')"> <!--여기!!!-->
+        <div class="banner" style="background-image: url('{{ selected_banner.bannerwinner.url }}'); background-size:cover; "> <!--여기!!!-->
             <p class="bannerTitle">{{ selected_banner.banner_title }}</p>
             <p class="move">
                 {% if selected_banner.id == 5 %}
