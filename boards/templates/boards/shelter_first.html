@@ -14,8 +14,12 @@
         </div>
         <div id="map"></div>
         <!-- <form action="" method=""> -->
-        <p id="locationInfo">옆의 버튼을 눌러 위치를 찾아주세요. <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button></p>
+          
         <!-- </form> -->
+        <div class="location">
+          <p id="locationInfo">옆의 버튼을 눌러 위치를 찾아주세요</p>
+          <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button>
+        </div>
 
         <form action="{% url 'shelter_location' %}" method="post" id="myinput">
             {% csrf_token %}
