@@ -5,9 +5,9 @@ slideContainers.forEach((container) => {
     const nextBtn = container.querySelector('.next-btn');
     let currentSlide = 0; // 이미지 인덱스는 0부터 시작
     const slides = slide.querySelectorAll('li');
-    const btnWidth = prevBtn.offsetWidth; // 버튼의 너비
+    const btnWidth = prevBtn.offsetWidth; //버튼의 너비
     const slideCount = slides.length;
-    const slideWidth = slides[0].offsetWidth + 37; // 한 항목의 너비와 margin 값의 합
+    const slideWidth = slides[0].offsetWidth + 37.5; // 한 항목의 너비와 margin 값의 합
     const containerWidth = slideWidth * slideCount;
     slide.style.width = `${containerWidth}px`;
 
