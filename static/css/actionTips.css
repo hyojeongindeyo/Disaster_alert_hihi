@@ -190,6 +190,11 @@ ul.tab_menu li.menuLine {
     display: flex;
 }
 
+.btn__search {
+    border: 0;
+    background-color: transparent;
+}
+
 .search_line {
     width: 316.002px;
     height: 1px;
@@ -279,6 +284,12 @@ ul.hashtag li {
     background: #878080;
     color: #878080;
     margin-left: 6px;
+
+}
+
+.mainBox {
+    /* background-color: pink; */
+    transform: translateY(-30px);
 }
 
 /* [메뉴얼] */

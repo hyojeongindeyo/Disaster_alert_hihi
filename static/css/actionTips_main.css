@@ -1,0 +1,64 @@
+.slide_cardnewsBox {
+    width: 186px;
+    height: 161px;
+    /* margin-top: 19.03px; */
+    position: flex;
+    /* margin-bottom: 19.97px; */
+    padding: 0px 20px 0px  20px;
+    transform: translateX(-50px);
+    font-family: 'GmarketSansMedium';
+    /* border: 1px solid blue; */
+    /* background-color: pink; */
+    /* margin-bottom: 5px; */
+}
+
+.cd-image_main1{
+    width: 270px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-container_main1{
+    transform: translateY(-100px);
+}
+
+.cd-text_main1 {
+    width: 186.572px;
+    height: auto; 
+    position: absolute;
+    transform: translate(16%, -450%);
+}
+
+.cd-text_main1 > p {
+    color: #000;
+    width: 186.572px;
+    height: 20px;
+    flex-shrink: 0;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.cd-hashtag_main1 {
+    width: 71.218px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF;
+    /* position: absolute; */
+    position: relative;
+    transform: translate(40%, -550%);
+}
+
+.cd-image_main1 > img.hashtag {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* .slide_cardnewsBox > a {
+    margin: 0;
+    padding: 0;
+} */
+
