@@ -15,11 +15,11 @@
                 </select>
             </form>
             <div class="hdIcons"> <!-- 아이콘 부분 -->
-                <div>
+                <!-- <div>
                     <a href="/">
                         <img src="{% static 'image/glass.png' %}" class="search" alt="돋보기">
                     </a>
-                </div>
+                </div> -->
                 {% if user.is_authenticated %}
                 <div>
                     <a href="{% url 'board_post' %}">
