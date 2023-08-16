@@ -13,7 +13,7 @@
     <div class="container">
         <!-- <div class="nav-bar"></div> --> <!--!!! 지우기 !!!!-->
         <!-- 배너 -->
-        <div class="banner" style="background-image: url('{{ selected_banner.bannerwinner.url }}')">
+        <div class="banner" style="background-image: url('{{ selected_banner.bannerwinner.url }}'); background-size:cover; ">
             <p class="bannerTitle">{{ selected_banner.banner_title }}</p>
             <p class="move">
                 {% if selected_banner.id == 5 %}
