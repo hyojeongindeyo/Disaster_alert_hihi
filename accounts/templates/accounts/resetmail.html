@@ -1,10 +1,15 @@
-{% extends 'accounts/menuBar_mp.html' %}
-
-{% block content %}
-
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
-    <link rel="stylesheet" href="{% static 'css/resetmail.css' %}">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
+        <link rel="stylesheet" href="{% static 'css/resetmail.css' %}">
+    <title>피해피해</title>
+</head>
+<body>
+    <div class="container">
         <div class="nav-bar"></div>
        
         <div class="header">
@@ -26,4 +31,6 @@
             </form>
         </a>
         
-{% endblock %}
+    </div>
+</body>
+</html>
