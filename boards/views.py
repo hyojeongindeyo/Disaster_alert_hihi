@@ -266,6 +266,7 @@ def WtoB_coordinate_transform(a, b):
 def shelter_enter(request):
     locX = 127.048995
     locY = 37.5571237
+    location = '내 위치 : '
 
     x1, y1 = WtoB_coordinate_transform(locX, locY)
 
@@ -300,8 +301,6 @@ def shelter_enter(request):
         shelterX.append(x)
         shelterY.append(y)
 
-    print(locLoc)
-
     f.close()
 
     context = {
@@ -311,7 +310,8 @@ def shelter_enter(request):
         'locNames': locName,
         'shelterXs': shelterX,
         'shelterYs': shelterY,
-        'kakao_key': os.getenv('KAKAO_APP_KEY')
+        'kakao_key': os.getenv('KAKAO_POSITION'),
+        'location' : location
     }
 
     return render(request, 'boards/shelter_first.html', context)
@@ -320,11 +320,13 @@ def shelter_enter(request):
 def shelter_location(request):
     locX = 0
     locY = 0
+    location = ''
 
     if request.method == 'POST':
         print(request.POST)
         locX = float(request.POST['locationY'])
         locY = float(request.POST['locationX'])
+        location = request.POST['location']
 
     x1, y1 = WtoB_coordinate_transform(locX, locY)
 
@@ -363,13 +365,13 @@ def shelter_location(request):
 
     f.close()
 
-    api_json = geocode_myposition(locX, locY)
-
-    if api_json.status_code == 200 :
-        json_body = json.loads(api_json.text)
-        full_address = json_body['documents'][0]['road_address']['address_name']
-    else:
-        full_address = "Address not available"
+    # api_json = geocode_myposition(locX, locY)
+    #
+    # if api_json.status_code == 200 :
+    #     json_body = json.loads(api_json.text)
+    #     full_address = json_body['documents'][0]['road_address']['address_name']
+    # else:
+    #     full_address = "Address not available"
 
     avgX = (locX + shelterX[0] + shelterX[1] + shelterX[2] + shelterX[3] + shelterX[4]) / 6.0
     avgY = (locY + shelterY[0] + shelterY[1] + shelterY[2] + shelterY[3] + shelterY[4]) / 6.0
@@ -385,19 +387,20 @@ def shelter_location(request):
         'locNames': locName,
         'shelterXs': shelterX,
         'shelterYs': shelterY,
-        'kakao_key': os.getenv('KAKAO_APP_KEY'),
-        'full_address': full_address
+        'kakao_key': os.getenv('KAKAO_POSITION'),
+        'location' : location,
+        # 'full_address': full_address
     }
 
     return render(request, 'boards/shelter.html', context)
 
 
-def geocode_myposition(locX, locY):
-    kakao_url = f'https://dapi.kakao.com/v2/local/geo/coord2address.json?x={locX}&y={locY}&input_coord=WGS84'
-    headers = {'Authorization': f'KakaoAK {os.getenv("KAKAO_REST_API")}'}
-    api_json = requests.get(kakao_url, headers=headers)
-
-    return api_json
+# def geocode_myposition(locX, locY):
+#     kakao_url = f'https://dapi.kakao.com/v2/local/geo/coord2address.json?x={locX}&y={locY}&input_coord=WGS84'
+#     headers = {'Authorization': f'KakaoAK {os.getenv("KAKAO_REST_API")}'}
+#     api_json = requests.get(kakao_url, headers=headers)
+#
+#     return api_json
 
 
 def random_banner(request):

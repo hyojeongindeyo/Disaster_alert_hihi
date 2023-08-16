@@ -5,7 +5,7 @@
 
 {% load static %}
 {% load customtags %}
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_key }}"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_key }}&libraries=services"></script>
     <link rel="stylesheet" href="{% static 'css/shelter2.css' %}">
 
         <div class="nav_bar">
@@ -14,7 +14,7 @@
         <div id="map"></div>
         <!-- <form action="" method=""> -->
         <div class="location">
-          <p id="locationInfo">내 위치: {{ full_address }}</p>
+          <p id="locationInfo">{{ location }}</p>
           <button id="getMyPositionBtn" onclick="getCurrentPosBtn()">내 위치 찾기</button>
         </div>
         <!-- </form> -->
@@ -23,6 +23,7 @@
             {% csrf_token %}
             <input id="inputX" name="locationX" hidden>
             <input id="inputY" name="locationY" hidden>
+            <input id="location" name="location" hidden>
         </form>
 
         <div class="site">

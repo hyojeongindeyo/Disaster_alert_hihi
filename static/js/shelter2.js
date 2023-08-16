@@ -1,4 +1,3 @@
-
 function locationLoadSuccess(pos) {
   // 현재 위치 받아오기
   var currentPos = new kakao.maps.LatLng(
@@ -8,8 +7,27 @@ function locationLoadSuccess(pos) {
 
   locX = pos.coords.latitude;
   locY = pos.coords.longitude;
+  const locationInfo = document.getElementById("location");
 
   setValue(locX, locY);
+
+  var geocoder = new kakao.maps.services.Geocoder();
+  var coord = new kakao.maps.LatLng(locX, locY);
+  var callback = function(result, status) {
+      if (status === kakao.maps.services.Status.OK) {
+          locationInfo.value = "내 위치 : " + result[0].address.address_name
+          console.log(locationInfo.value);
+
+          submitForm();
+      }
+  };
+
+  geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+
+    // 카카오맵 API 로드하기
+  kakao.maps.load(function () {
+
+  });
 
   // 마커 생성
   var marker = new kakao.maps.Marker({
@@ -19,8 +37,6 @@ function locationLoadSuccess(pos) {
   // 기존에 마커가 있다면 제거
   marker.setMap(null);
   marker.setMap(map);
-
-  submitForm();
 
 }
 
