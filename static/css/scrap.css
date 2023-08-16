@@ -1,38 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dongle:wght@300&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nanum+Gothic&family=Press+Start+2P&display=swap');
-
-* {
-    font-family: 'Inter', sans-serif;
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
+* {
+    font-family: 'GmarketSansMedium';
+}
+
+
 body {
-    margin: 0;
-    padding: 0;
+    height: 100vh;
 }
 
 .container {
-    width: 375px;
-    height: 844px;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    z-index: 0;
-    background-color: #FFF;
-  
+    height: 100vh; 
+    height: -webkit-fill-available; 
+    height: fill-available; 
+
 
 }
 
 .nav-bar {
     width: 375px;
-    height: 50px;
+    height: 30px;
 
 
 }
 
 h3 {
     color: #000;
-    font-family: Inter;
+    font-family: 'GmarketSansMedium';
     font-size: 18px;
     font-style: normal;
     font-weight: bold;
@@ -47,6 +46,7 @@ image {
     width: 315px;
     height: 1px;
 }
+
 /* 스크랩한 글 리스트 */
 .article {
 
@@ -72,16 +72,16 @@ image {
     margin-bottom: 0;
 }
 
-.article1 > h5 > a {
+.article1>h5>a {
     text-decoration: none;
     color: black
-
 }
+
 /* 글 리스트 해시태그 */
 
 .article1>h6 {
     color: #878080;
-    font-family: Inter;
+    font-family: 'GmarketSansMedium';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -104,10 +104,9 @@ image {
     margin-bottom: 0;
 }
 
-.article2 > h5 > a {
+.article2>h5>a {
     text-decoration: none;
     color: black
-
 }
 
 /* 글 리스트 해시태그 */
@@ -134,11 +133,11 @@ image {
     margin-bottom: 0;
 }
 
-.article3 > h5 > a {
+.article3>h5>a {
     text-decoration: none;
     color: black
-
 }
+
 /* 글 리스트 해시태그 */
 .article3>h6 {
     color: #878080;
@@ -165,11 +164,11 @@ image {
     margin-bottom: 0;
 }
 
-.article4 > h5 > a {
+.article4>h5>a {
     text-decoration: none;
     color: black
-
 }
+
 /* 글 리스트 해시태그 */
 .article4>h6 {
     color: #878080;
@@ -197,11 +196,11 @@ image {
     margin-bottom: 0;
 }
 
-.article5 > h5 > a {
+.article5>h5>a {
     text-decoration: none;
     color: black
-
 }
+
 /* 글 리스트 해시태그 */
 .article5>h6 {
     color: #878080;
@@ -229,11 +228,11 @@ image {
     margin-bottom: 0;
 }
 
-.article6 > h5 > a {
+.article6>h5>a {
     text-decoration: none;
     color: black
-
 }
+
 /* 글 리스트 해시태그 */
 .article6>h6 {
     color: #878080;
@@ -275,6 +274,7 @@ image {
 
 
 }
+
 /* 오른쪽 버튼 - 위치조정 */
 
 .button2>img {
@@ -321,4 +321,25 @@ image {
     width: 27px;
     height: 27px;
     margin: 13px 0px;
+}
+
+/* 여긴 미디어쿼리 */
+@media screen and (max-height: 740px) {
+    .container {
+        height: 100%;
+        padding-bottom: 110px;
+    }
+    .nav-bar {
+        width: 375px;
+        height: 30px;
+    
+    
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .container {
+        height: 100%;
+        padding-bottom: 200px;
+    }
 }
