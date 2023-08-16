@@ -21,6 +21,24 @@ body {
     padding-bottom: 100px;
 }
 
+.nav_bar{
+    width: 375px;
+    height: 30px;
+    
+    /* position: fixed; */
+    /* border: 1px solid grey; */
+}
+
+.nav_bar > p {
+    font-size: 16px;
+    padding: 0;
+    margin: 15px 0px 15px 0px;
+    font-weight: bold;
+    text-align: center;
+    justify-items: center;
+    /* border: 1px solid gray; */
+}
+
 /* 상단 부분 */
 select option[value=""][disabled] { /*select box placeholder를 위해*/
 	display: none;
@@ -32,7 +50,7 @@ select option[value=""][disabled] { /*select box placeholder를 위해*/
     width: 200px;
     height: 33px;
     font-size: 16px;
-    margin: 21px 21px 28px 0px;
+    margin: 10px 21px 28px 0px;
     border-radius: 10px;
     border-color: #A1A1A1;
     /* select box 세모 부분 이미지로 변경 */
@@ -61,7 +79,7 @@ select::-ms-expand {
     height: 28px;
     font-size: 15px;
     float: right;
-    margin: 24px 0px 24px 0px;
+    margin: 13px 0px 24px 0px;
     background-color: #ABD4FA;
     border: none;
     border-radius: 5px;
