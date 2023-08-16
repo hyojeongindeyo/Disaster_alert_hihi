@@ -276,7 +276,7 @@ def shelter_enter(request):
 
     x1, y1 = WtoB_coordinate_transform(locX, locY)
 
-    f = open('boards/shelter.csv', 'r')
+    f = open('boards/shelter.csv', 'r', encoding = 'cp949')
     rdr = csv.reader(f)
 
     locLength = {}
