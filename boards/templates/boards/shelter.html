@@ -1,9 +1,14 @@
-
-{% extends 'menuBar.html' %}
-
-{% block content %}
-
+<!DOCTYPE html>
 {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피해피해</title>
+    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
+</head>
+<body>
+    <div class="container">
 {% load customtags %}
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_key }}&libraries=services"></script>
     <link rel="stylesheet" href="{% static 'css/shelter2.css' %}">
@@ -35,6 +40,32 @@
                 </div>
             {% endfor %}
         </div>
+        <div id="ft"> <!-- 메뉴 하단바 -->
+            <div class="ftIcons">
+                <a class="back" href="{% url 'main' %}"> <!--뒤로가기-->
+                    <img src="{% static 'image/back_blue.png' %}" alt="">
+                </a>
+
+                <div class="home"> <!--메인(홈)으로 가기-->
+                    <a href="{% url 'main' %}">
+                        <img src="{% static 'image/home_gray.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="user"> <!--마이페이지로 가기-->
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'accounts:my_page' pk=user.id %}">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'accounts:login' %}">
+                        <img src="{% static 'image/user_gray.png' %}" alt="">
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div> <!-- 메뉴 하단바 div 끝-->
+    </div>
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
             mapOption = {
@@ -104,5 +135,6 @@
         }
     </script>
     <script src="{% static 'js/shelter2.js' %}"></script>
-{% endblock %}
+</body>
+</html>
 
