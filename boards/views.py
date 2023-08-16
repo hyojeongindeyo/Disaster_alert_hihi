@@ -426,23 +426,26 @@ def cardNews(request):
 
 
 def manual_view(request, card_id):
-    user_scrap = request.user.menu_card.all()
     card = CardNews.objects.get(id=card_id)
-    existing_scrap = CardScrap.objects.filter(user=request.user, card=card).first()
+    user_scrap = []
 
-    if request.method == 'POST' :
-        scrap_value = request.POST.get('scrap')
-        if scrap_value is None:
-            if existing_scrap :
-                existing_scrap.delete()
-        else:
-            if existing_scrap :
-                existing_scrap.scrap = True
-            else :
-                scrap_card = CardScrap(user=request.user, card=card, scrap=True)
-                scrap_card.save()
+    if request.user.is_authenticated :
+        user_scrap = request.user.menu_card.all()
+        existing_scrap = CardScrap.objects.filter(user=request.user, card=card).first()
 
-        return redirect('manual_view', card_id)
+        if request.method == 'POST' :
+            scrap_value = request.POST.get('scrap')
+            if scrap_value is None:
+                if existing_scrap :
+                    existing_scrap.delete()
+            else:
+                if existing_scrap :
+                    existing_scrap.scrap = True
+                else :
+                    scrap_card = CardScrap(user=request.user, card=card, scrap=True)
+                    scrap_card.save()
+
+            return redirect('manual_view', card_id)
 
     behaviors = Behavior.objects.filter(card_id=card_id)
     behaviors_with_images = BehaviorImage.objects.select_related('behavior').filter(behavior__in=behaviors).values(

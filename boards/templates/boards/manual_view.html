@@ -6,6 +6,7 @@
         </div>
         <div class="header">
             <h4>{{type}} 시 행동요령</h4>
+            {% if user.is_authenticated %}
                 <div class="scrap-button">
                 <form action="{% url 'manual_view' card_id=card.id %}" method="post" id="scrap_form">
                     {% csrf_token %}
@@ -26,7 +27,8 @@
                         <span class="filled-star">&#9733;</span>
                     </label>
                 </form>
-            </div>
+                </div>
+            {% endif %}
         </div>
         <img src="{% static 'image/line.svg' %}" alt="">
         <div class="content">
