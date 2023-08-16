@@ -265,7 +265,7 @@ body {
     height: 70px;
     /*변경 62 -> 70*/
     flex-shrink: 0;
-    transform: translateY(-29px);
+    transform: translateY(-36px);
     margin: 0px 6px 18px 75px;
     /*변경 원래 margin-left: 70px; 였음*/
 }
