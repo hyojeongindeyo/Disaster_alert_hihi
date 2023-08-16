@@ -22,6 +22,22 @@ body {
     padding-bottom: 120px;
 }
 
+.nav_bar{
+    width: 375px;
+    height: 30px;
+    
+    /* position: fixed; */
+    /* border: 1px solid grey; */
+}
+.nav_bar > p {
+    font-size: 16px;
+    padding: 0;
+    margin: 15px 0px 15px 0px;
+    font-weight: bold;
+    text-align: center;
+    justify-items: center;
+    /* border: 1px solid gray; */
+}
 
 /* .header {
     width: 375px;
@@ -58,7 +74,7 @@ body {
     border-radius: 10px;
     display: block;
     margin: 0 auto;
-    margin: 13px 0px 34px;
+    margin: 0px 0px 34px;
 }
 
 .btn-container {

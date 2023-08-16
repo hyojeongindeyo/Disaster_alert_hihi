@@ -40,10 +40,12 @@ body {
 
 .nav_bar > p {
     font-size: 14px;
-    transform: translateY(-3px);
+    padding: 0;
+    margin: 15px 0px 15px 0px;
     font-weight: bold;
     text-align: center;
     justify-items: center;
+    /* border: 1px solid gray; */
 }
 
 #map {
