@@ -5,7 +5,9 @@
  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_key }}&libraries=services"></script>
 <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
     <!-- 상단바 공간 -->
-    <div class="nav-bar"></div>
+    <div class="nav_bar">
+        <!-- <p>마이페이지</p> -->
+    </div>
     <!-- 프로필 -->
     <img id="user" src="{{ user.user_image.url }}" alt="">
     <!-- 닉네임   -->
