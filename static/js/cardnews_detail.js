@@ -1,43 +1,55 @@
- // 캐러셀 기능
- const slideContainers = document.querySelectorAll('.slide-container');
- slideContainers.forEach((container) => {
-     const slide = container.querySelector('.slide');
-     const prevBtn = container.querySelector('.prev-btn');
-     const nextBtn = container.querySelector('.next-btn');
-     let currentSlide = 0; // 이미지 인덱스는 0부터 시작
-     const slides = slide.querySelectorAll('li');
- 
-     // 첫 번째 이미지 보여주기
-     showSlide(currentSlide);
- 
-     // 다음 버튼 클릭 이벤트
-     nextBtn.addEventListener('click', next);
-     function next() {
-         currentSlide++;
-         if (currentSlide >= slides.length) {
-             currentSlide = 0; // 이미지 인덱스가 마지막 이미지 인덱스를 넘어가면 처음 이미지로 
-         }
-         showSlide(currentSlide);
-     }
- 
-     // 이전 버튼 클릭 이벤트
-     prevBtn.addEventListener('click', prev);
-     function prev() {
-         currentSlide--;
-         if (currentSlide < 0) {
-             currentSlide = slides.length - 1; // 이미지 인덱스가 0 미만이면 마지막 이미지로 
-         }
-         showSlide(currentSlide);
-     }
- 
-     // 이미지 보여주는 함수
-     function showSlide(index) {
-         slides.forEach((slide, i) => {
-             if (i === index) {
-                 slide.style.display = 'block'; // 현재 이미지를 보여줌
-             } else {
-                 slide.style.display = 'none'; // 다른 이미지들은 숨김
-             }
-         });
-     }
- });
+// 첫 번째 캐러셀
+const firstCarouselContainer = document.querySelector('.tab_cardnews_box_main');
+
+if (firstCarouselContainer) {
+    const firstSlide = firstCarouselContainer.querySelector('.slide');
+    const firstPrevBtn = firstCarouselContainer.querySelector('.prev-btn');
+    const firstNextBtn = firstCarouselContainer.querySelector('.next-btn');
+    let firstCurrentSlide = 0;
+    const firstSlides = firstSlide.querySelectorAll('li');
+    const firstSlideWidth = firstSlide.clientWidth;
+
+    firstPrevBtn.addEventListener('click', () => {
+        firstCurrentSlide--;
+        if (firstCurrentSlide < 0) {
+            firstCurrentSlide = firstSlides.length - 1;
+        }
+        firstSlide.style.transform = `translateX(-${firstCurrentSlide * firstSlideWidth}px)`;
+    });
+
+    firstNextBtn.addEventListener('click', () => {
+        firstCurrentSlide++;
+        if (firstCurrentSlide >= firstSlides.length) {
+            firstCurrentSlide = 0;
+        }
+        firstSlide.style.transform = `translateX(-${firstCurrentSlide * firstSlideWidth}px)`;
+    });
+}
+
+// 두 번째 캐러셀
+const secondCarouselContainer = document.querySelector('.tab_menual_container');
+
+if (secondCarouselContainer) {
+    const secondSlide = secondCarouselContainer.querySelector('.slide');
+    const secondPrevBtn = secondCarouselContainer.querySelector('.prev-btn');
+    const secondNextBtn = secondCarouselContainer.querySelector('.next-btn');
+    let secondCurrentSlide = 0;
+    const secondSlides = secondSlide.querySelectorAll('li');
+    const secondSlideWidth = secondSlide.clientWidth;
+
+    secondPrevBtn.addEventListener('click', () => {
+        secondCurrentSlide--;
+        if (secondCurrentSlide < 0) {
+            secondCurrentSlide = secondSlides.length - 1;
+        }
+        secondSlide.style.transform = `translateX(-${secondCurrentSlide * secondSlideWidth}px)`;
+    });
+
+    secondNextBtn.addEventListener('click', () => {
+        secondCurrentSlide++;
+        if (secondCurrentSlide >= secondSlides.length) {
+            secondCurrentSlide = 0;
+        }
+        secondSlide.style.transform = `translateX(-${secondCurrentSlide * secondSlideWidth}px)`;
+    });
+}
