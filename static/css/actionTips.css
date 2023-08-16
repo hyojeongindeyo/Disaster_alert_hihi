@@ -257,6 +257,13 @@ ul.hashtag li {
     background: #878080;
 }
 
+.mainLine {
+    width: 316px;
+    height: 1px;
+    background: #878080;
+    color: #878080;
+    margin-left: 6px;
+}
 
 /* [메뉴얼] */
 .menual_container {
