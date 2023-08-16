@@ -1,7 +1,15 @@
-{% extends 'accounts/menuBar_mp.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/menuBar.css' %}">
     <link rel="stylesheet" href="{% static 'css/pwfind.css' %}">
+    <title>피해피해</title>
+</head>
+<body>
+    <div class="container">
         <div class="nav-bar"></div>
         <h3>비밀번호 찾기</h3>
         <div class="input">
@@ -17,6 +25,8 @@
             </form>
         </div>
         <script src="{% static 'js/pwfind.js' %}"></script>
-{% endblock %}
+    </div>
+</body>
+</html>
 
 
