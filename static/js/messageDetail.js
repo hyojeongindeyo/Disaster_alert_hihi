@@ -61,7 +61,7 @@ document.querySelector('.loading').style.display = 'block';
 //데이터 불러오기
 function getDisasterMessages(pageNumber) {
     var xhr = new XMLHttpRequest();
-    var url = 'http://apis.data.go.kr/1741000/DisasterMsg3/getDisasterMsg1List';
+    var url = 'https://apis.data.go.kr/1741000/DisasterMsg3/getDisasterMsg1List';
     var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + appkey;
     queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent(pageNumber); //페이지번호
     queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); //한 페이지결과 수
