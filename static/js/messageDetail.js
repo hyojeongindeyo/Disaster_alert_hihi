@@ -126,6 +126,12 @@ function getDisasterMessages(pageNumber) {
                 //한 페이지당 개수 조절하면 됨
                 console.log(displayedData);
 
+                if (displayedData.length <=3 ) { /*추가*/
+                    console.log(3);
+                    document.querySelector('body').style.height = '100vh';
+                    document.querySelector('.container').style.height = '100vh';
+                }
+
                 displayedData.forEach(function (row) {
                     var createDate = parseDateString(row.create_date);
                     createDate.setHours(0, 0, 0, 0);
