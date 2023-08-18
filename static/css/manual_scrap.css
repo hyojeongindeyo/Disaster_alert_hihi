@@ -33,20 +33,25 @@ body {
     transform: translateY(30px);
 }
 
+/* p 태그 클라스 추가 */
+.small {
+    font-size: 18px;
+    padding: 30px;
+}
+
 .scrap-button {
     cursor: pointer;
     position: relative;
     width: 78px;
     height: 34px;
     margin-left: 279px;
-    margin-top: 63px;
+    margin-top: 23px;
     flex-shrink: 0;
     background-color: #E8E8E8;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    ;
     transform: translateY(-10px);
 }
 
