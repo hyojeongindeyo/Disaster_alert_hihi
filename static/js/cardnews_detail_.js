@@ -23,7 +23,7 @@
      // 이전 버튼 클릭 이벤트
      prevBtn.addEventListener('click', prev);
      function prev() {
-         currentSlide—;
+         currentSlide--;
          if (currentSlide < 0) {
              currentSlide = slides.length - 1; // 이미지 인덱스가 0 미만이면 마지막 이미지로
          }
