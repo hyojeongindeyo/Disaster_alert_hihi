@@ -159,7 +159,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 PROTOCOL = 'http'
-HOSTNAME = '127.0.0.1:8000'
+HOSTNAME = '115.85.183.131:8000'
 # email
 # 메일을 보내는 호스트 서버
 EMAIL_HOST = 'smtp.gmail.com'
