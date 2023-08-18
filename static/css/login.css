@@ -132,7 +132,7 @@ form>input {
 }
 
 /*추가*/
-@media screen and (max-height: 740px) {
+@media screen and (max-height: 840px) {
     .container {
         height: 100%;
         padding-bottom: 100px;
