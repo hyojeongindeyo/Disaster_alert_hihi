@@ -158,7 +158,7 @@ CSRF_COOKIE_SECURE = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-PROTOCOL = 'http'
+PROTOCOL = 'https'
 HOSTNAME = '115.85.183.131:8000'
 # email
 # 메일을 보내는 호스트 서버
